@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_PANEL_INITIALIZED_Popup</Name>
+      <Width>800</Width>
+      <Height>400</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>800</Width>
+          <Height>400</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Orange</Name>
+          <Left>3</Left>
+          <Top>3</Top>
+          <Width>794</Width>
+          <Height>394</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Save</Name>
+          <Left>290</Left>
+          <Top>255</Top>
+          <Width>220</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Input_HMI_No</Name>
+          <Left>427</Left>
+          <Top>185</Top>
+          <Width>102</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Warning</Name>
+          <Left>200</Left>
+          <Top>85</Top>
+          <Width>400</Width>
+          <Height>70</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_HMI_No</Name>
+          <Left>272</Left>
+          <Top>185</Top>
+          <Width>150</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

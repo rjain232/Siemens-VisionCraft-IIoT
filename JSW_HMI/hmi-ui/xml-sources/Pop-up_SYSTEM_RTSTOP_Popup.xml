@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_SYSTEM_RTSTOP_Popup</Name>
+      <Width>210</Width>
+      <Height>126</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>210</Width>
+          <Height>126</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Descr_SafateyDialog</Name>
+          <Left>2</Left>
+          <Top>26</Top>
+          <Width>180</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_SafetyDialog</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>208</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>110</Left>
+          <Top>56</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Stop_RT</Name>
+          <Left>10</Left>
+          <Top>56</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

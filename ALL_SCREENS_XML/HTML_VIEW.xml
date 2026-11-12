@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>HTML_VIEW</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>390</Left>
+          <Top>2</Top>
+          <Width>500</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DeviceAdress</Name>
+          <Left>390</Left>
+          <Top>36</Top>
+          <Width>150</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>EA-Field_DeviceAdress</Name>
+          <Left>540</Left>
+          <Top>36</Top>
+          <Width>350</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiWebControl</Type>
+          <Name>网络控件_1</Name>
+          <Left>0</Left>
+          <Top>68</Top>
+          <Width>1280</Width>
+          <Height>586</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>CENTRAL LOADING FIFO</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>13</Left>
+          <Top>5</Top>
+          <Width>90</Width>
+          <Height>46</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode4_Foreground_Blocked</Name>
+          <Left>1163</Left>
+          <Top>0</Top>
+          <Width>88</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_2</Name>
+          <Left>1163</Left>
+          <Top>0</Top>
+          <Width>88</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_OPOverview_ScreenOverview_X390_Y2</Name>
+          <Left>433</Left>
+          <Top>13</Top>
+          <Width>500</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_1</Name>
+          <Left>0</Left>
+          <Top>65</Top>
+          <Width>1362</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_1</Name>
+          <Left>18</Left>
+          <Top>73</Top>
+          <Width>1239</Width>
+          <Height>577</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

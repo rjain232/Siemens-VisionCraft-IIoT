@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - Pop-up_EEM_LEGEND_Popup</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          Pop-up_EEM_LEGEND_Popup
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function PopupEEMLEGENDPopupComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '690px', height: '536px', minHeight: '536px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Group Container Rectangle: Background */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '0px', top: '0px', width: '430px', height: '496px' }} />
+      {/* Action Button: Text_Legend1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '86px', top: '96px', width: '140px', height: '25px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Action Button: Text_Legend2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '10px', top: '32px', width: '325px', height: '20px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Action Button: Text_ButtonsLeds */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '10px', top: '56px', width: '150px', height: '20px' }}>
+        <span className="truncate w-full text-center">Text ButtonsLeds</span>
+      </button>
+      {/* Action Button: Cancel Mode */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '337px', top: '3px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Cancel Mode</span>
+      </button>
+      {/* Diagnostic Row: Text_P-Meas1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '78px', width: '60px', height: '40px' }}>
+        <span className="truncate font-sans">Text P-Meas1</span>
+      </div>
+      {/* Diagnostic Row: Text_P-Meas2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-sm flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '76px', width: '350px', height: '54px' }}>
+        <span className="truncate font-sans">Text P-Meas2</span>
+      </div>
+      {/* Diagnostic Row: Text_Control+1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '190px', width: '60px', height: '40px' }}>
+        <span className="truncate font-sans">Text Control+1</span>
+      </div>
+      {/* Diagnostic Row: Text_UIPE1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '232px', width: '60px', height: '40px' }}>
+        <span className="truncate font-sans">Text UIPE1</span>
+      </div>
+      {/* Siemens Status LED: Symbol_Meas1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '250px', top: '100px', width: '100px', height: '30px' }} />
+      {/* Siemens Status LED: Symbol_RefMeas1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '100px', width: '100px', height: '30px' }} />
+      {/* Siemens Status LED: Symbol1_RefMeas1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '550px', top: '100px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text_Meas2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '132px', width: '350px', height: '18px' }}>
+        <span className="truncate font-sans">Text Meas2</span>
+      </div>
+      {/* Diagnostic Row: Text_RefMeas2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '151px', width: '350px', height: '18px' }}>
+        <span className="truncate font-sans">Text RefMeas2</span>
+      </div>
+      {/* Diagnostic Row: Text_DevNo_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '170px', width: '350px', height: '18px' }}>
+        <span className="truncate font-sans">Text DevNo 3</span>
+      </div>
+      {/* Diagnostic Row: Text_Control+2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '193px', width: '350px', height: '35px' }}>
+        <span className="truncate font-sans">Text Control+2</span>
+      </div>
+      {/* Action Button: Button_ResetText_4 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '75px', top: '235px', width: '350px', height: '35px' }}>
+        <span className="truncate w-full text-center">ResetText 4</span>
+      </button>
+      {/* Diagnostic Row: Text_InfoMachine1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '274px', width: '60px', height: '40px' }}>
+        <span className="truncate font-sans">Text InfoMachine1</span>
+      </div>
+      {/* Siemens Status LED: Symbol2_RefMeas1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '160px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text_InfoMachine2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '277px', width: '350px', height: '35px' }}>
+        <span className="truncate font-sans">Text InfoMachine2</span>
+      </div>
+      {/* Diagnostic Row: Text_ScreenContent */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '318px', width: '150px', height: '20px' }}>
+        <span className="truncate font-sans">Text ScreenContent</span>
+      </div>
+      {/* Diagnostic Row: Text_MeasPoint */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '340px', width: '415px', height: '35px' }}>
+        <span className="truncate font-sans">Text MeasPoint</span>
+      </div>
+      {/* Siemens Status LED: Symbol3_RefMeas1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '250px', top: '160px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text_GraphDisplay1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '377px', width: '415px', height: '35px' }}>
+        <span className="truncate font-sans">Text GraphDisplay1</span>
+      </div>
+      {/* Diagnostic Row: Text_GraphDisplay2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '414px', width: '415px', height: '35px' }}>
+        <span className="truncate font-sans">Text GraphDisplay2</span>
+      </div>
+      {/* Diagnostic Row: Text_GraphDisplay3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '451px', width: '415px', height: '35px' }}>
+        <span className="truncate font-sans">Text GraphDisplay3</span>
+      </div>
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<PopupEEMLEGENDPopupComponent />);
+  </script>
+</body>
+</html>

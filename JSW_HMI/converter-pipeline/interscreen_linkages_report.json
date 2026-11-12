@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "totalScreens": 211,
+    "screenBreakdown": {
+      "layouts": 18,
+      "submenus": 8,
+      "diagnostics": 0,
+      "alarms": 1,
+      "popups": 33,
+      "others": 151
+    },
+    "totalExtractedTags": 0,
+    "sharedTagsCount": 0,
+    "isolatedTagsCount": 0,
+    "totalNavigationsFound": 0
+  },
+  "topSharedTags": [],
+  "sampleScreenLinkages": []
+}

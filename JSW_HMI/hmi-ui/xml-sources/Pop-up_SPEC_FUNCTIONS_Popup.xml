@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_SPEC_FUNCTIONS_Popup</Name>
+      <Width>530</Width>
+      <Height>171</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>532</Width>
+          <Height>171</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_Special</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>523</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>408</Left>
+          <Top>-3</Top>
+          <Width>116</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Stop Mode</Name>
+          <Left>10</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode Home Position</Name>
+          <Left>10</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode End of Cycle</Name>
+          <Left>103</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode Release Enty</Name>
+          <Left>103</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode Single Step</Name>
+          <Left>196</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode SingleStep plus1</Name>
+          <Left>196</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode Empty Position</Name>
+          <Left>289</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Mode WithoutPart Dryrun</Name>
+          <Left>289</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfield_SelectedOPMode</Name>
+          <Left>196</Left>
+          <Top>1</Top>
+          <Width>34</Width>
+          <Height>24</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>stop_Foreground_Blocked</Name>
+          <Left>10</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>stop_Blocked</Name>
+          <Left>13</Left>
+          <Top>43</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>home_Foreground_Blocked</Name>
+          <Left>11</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>home_Blocked</Name>
+          <Left>13</Left>
+          <Top>103</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>eoc_Foreground_Blocked</Name>
+          <Left>103</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>eoc_Blocked</Name>
+          <Left>105</Left>
+          <Top>43</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>relEntry_Foreground_Blocked</Name>
+          <Left>103</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>relEntry_Blocked</Name>
+          <Left>104</Left>
+          <Top>103</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>singleStep_Foreground_Blocked</Name>
+          <Left>196</Left>
+          <Top>38</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>singleStep_Blocked</Name>
+          <Left>197</Left>
+          <Top>43</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>stepPlus_Foreground_Blocked</Name>
+          <Left>196</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>stepPlus_Blocked</Name>
+          <Left>198</Left>
+          <Top>103</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>emptyLine_Foreground_Blocked</Name>
+          <Left>289</Left>
+          <Top>37</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>emptyLine_Blocked</Name>
+          <Left>293</Left>
+          <Top>43</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>noPart_Foreground_Blocked</Name>
+          <Left>289</Left>
+          <Top>101</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>noPart_Blocked</Name>
+          <Left>292</Left>
+          <Top>103</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_1</Name>
+          <Left>408</Left>
+          <Top>103</Top>
+          <Width>116</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

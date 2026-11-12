@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview (Modified)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [isOpen, setIsOpen] = useState(true);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isRetrying, setIsRetrying] = useState(false);
+
+  const handleRetry = () => {
+    setIsRetrying(true);
+    setStatusMessage('Checking port 8090 availability...');
+    setTimeout(() => {
+      setIsRetrying(false);
+      setStatusMessage('Port 8090 is still occupied by PID 14202 (node).');
+    }, 1200);
+  };
+
+  const handleCancel = () => {
+    setIsOpen(false);
+  };
+
+  if (!isOpen) {
+    return (
+      React.createElement('div', { className: "w-screen h-screen bg-slate-100 flex items-center justify-center font-sans"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 43}}
+        , React.createElement('div', { className: "text-center", __self: this, __source: {fileName: _jsxFileName, lineNumber: 44}}
+          , React.createElement('p', { className: "text-slate-600 mb-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 45}}, "Application dialog closed."  )
+          , React.createElement('button', { 
+            onClick: () => { setIsOpen(true); setStatusMessage(''); },
+            className: "px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 text-sm font-medium transition-colors"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 46}}
+, "Reopen Warning Dialog"
+
+          )
+        )
+      )
+    );
+  }
+
+  return (
+    React.createElement('div', { className: "w-screen h-screen bg-slate-900 flex items-center justify-center font-sans select-none overflow-hidden relative"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 58}}
+
+      /* Background Mock macOS Desktop Environment */
+      , React.createElement('div', { className: "absolute inset-0 bg-gradient-to-tr from-indigo-900 via-purple-900 to-slate-900 flex flex-col opacity-50"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 61}}
+        /* macOS Menu Bar */
+        , React.createElement('div', { className: "h-7 bg-black/30 backdrop-blur-md flex items-center justify-between px-4 text-white text-xs border-b border-white/10"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 63}}
+          , React.createElement('div', { className: "flex items-center space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 64}}
+            , React.createElement('span', { className: "font-bold", __self: this, __source: {fileName: _jsxFileName, lineNumber: 65}}, "")
+            , React.createElement('span', { className: "font-semibold", __self: this, __source: {fileName: _jsxFileName, lineNumber: 66}}, "Server Manager" )
+            , React.createElement('span', { className: "opacity-75", __self: this, __source: {fileName: _jsxFileName, lineNumber: 67}}, "File")
+            , React.createElement('span', { className: "opacity-75", __self: this, __source: {fileName: _jsxFileName, lineNumber: 68}}, "Edit")
+            , React.createElement('span', { className: "opacity-75", __self: this, __source: {fileName: _jsxFileName, lineNumber: 69}}, "View")
+            , React.createElement('span', { className: "opacity-75", __self: this, __source: {fileName: _jsxFileName, lineNumber: 70}}, "Window")
+          )
+          , React.createElement('div', { className: "flex items-center space-x-3 opacity-75"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 72}}
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 73}}, "Wi-Fi")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 74}}, "10:42 AM" )
+          )
+        )
+
+        , React.createElement('div', { className: "flex-1 p-8 text-white text-sm"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 78}}
+          , React.createElement('p', { className: "font-medium opacity-90" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 79}}, "Initializing background services..."  )
+          , React.createElement('p', { className: "opacity-60 mt-1" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 80}}, "Listening on interfaces: 127.0.0.1, ::1"    )
+          , statusMessage && (
+            React.createElement('div', { className: "mt-6 p-3 bg-black/40 backdrop-blur-md border border-amber-500/30 rounded-xl text-amber-300 max-w-md shadow-lg"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 82}}
+              , React.createElement('span', { className: "font-semibold", __self: this, __source: {fileName: _jsxFileName, lineNumber: 83}}, "System log:" ), " " , statusMessage
+            )
+          )
+        )
+      )
+
+      /* macOS Desktop Modal Dialog */
+      , React.createElement('div', { className: "relative w-[460px] bg-[#1e1e1e]/90 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl flex flex-col text-slate-100 overflow-hidden ring-1 ring-black/40"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 90}}
+
+        /* macOS TitleBar */
+        , React.createElement('div', { className: "h-10 flex items-center px-4 select-none relative"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 93}}
+          /* Traffic Lights */
+          , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 95}}
+            , React.createElement('button', { 
+              onClick: handleCancel,
+              className: "w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e] flex items-center justify-center group focus:outline-none"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 96}}
+
+              , React.createElement('span', { className: "opacity-0 group-hover:opacity-100 text-[9px] text-black font-bold leading-none"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 100}}, "×")
+            )
+            , React.createElement('button', { className: "w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123] flex items-center justify-center group focus:outline-none cursor-default"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 102}}
+              , React.createElement('span', { className: "opacity-0 group-hover:opacity-100 text-[9px] text-black font-bold leading-none"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 103}}, "-")
+            )
+            , React.createElement('button', { className: "w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29] flex items-center justify-center group focus:outline-none cursor-default"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 105}}
+              , React.createElement('span', { className: "opacity-0 group-hover:opacity-100 text-[8px] text-black font-bold leading-none"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}, "+")
+            )
+          )
+          , React.createElement('div', { className: "absolute inset-0 flex items-center justify-center pointer-events-none"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}
+            , React.createElement('span', { className: "text-xs font-medium text-slate-300 tracking-wide"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}, "Server Manager" )
+          )
+        )
+
+        /* Content Area */
+        , React.createElement('div', { className: "p-6 flex flex-col justify-between flex-1"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 115}}
+          , React.createElement('div', { className: "flex items-start space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 116}}
+            /* Warning Icon (macOS style alert icon placeholder / exclamation) */
+            , React.createElement('div', { className: "flex-shrink-0 pt-0.5" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}
+              , React.createElement('div', { className: "w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 119}}
+                , React.createElement('svg', { className: "w-6 h-6" , viewBox: "0 0 24 24"   , fill: "none", stroke: "currentColor", strokeWidth: "2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}
+                  , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 121}} )
+                )
+              )
+            )
+
+            /* Message Body */
+            , React.createElement('div', { className: "text-[13px] leading-relaxed text-slate-200 font-normal"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 127}}
+              , React.createElement('h2', { className: "font-semibold text-white text-sm mb-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 128}}, "Port 8090 is already in use"     ), "It appears that port "
+                  , React.createElement('span', { className: "font-semibold text-white" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}, "8090"), " is already in use. Please exit the application that uses that port, or change the port number for this application in the "                       , React.createElement('span', { className: "font-semibold text-white" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}, "Server"), " tab of the "    , React.createElement('span', { className: "font-semibold text-white" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}, "App Settings" ), " dialog."
+
+              , statusMessage && (
+                React.createElement('div', { className: "mt-3 text-xs text-rose-400 font-medium"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 132}}
+                  , statusMessage
+                )
+              )
+            )
+          )
+
+          /* Button Group */
+          , React.createElement('div', { className: "mt-8 flex items-center justify-end space-x-3"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 140}}
+            /* Cancel Button */
+            , React.createElement('button', {
+              onClick: handleCancel,
+              className: "px-4 py-1.5 bg-white/10 hover:bg-white/20 active:bg-white/5 text-slate-200 text-xs font-medium rounded-lg border border-white/10 shadow-sm focus:outline-none transition-all duration-150"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 142}}
+, "Cancel"
+
+            )
+
+            /* Retry Button */
+            , React.createElement('button', {
+              onClick: handleRetry,
+              disabled: isRetrying,
+              className: "px-4 py-1.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xs font-medium rounded-lg shadow-lg shadow-blue-600/30 focus:outline-none transition-all duration-150 disabled:opacity-50"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 150}}
+
+              , isRetrying ? 'Retrying...' : 'Retry'
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

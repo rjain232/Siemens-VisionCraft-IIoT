@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>SYSTEM_SETTINGS_1</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>390</Left>
+          <Top>2</Top>
+          <Width>510</Width>
+          <Height>57</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1280</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_StandardProperties_1</Name>
+          <Left>825</Left>
+          <Top>327</Top>
+          <Width>350</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_HMIData</Name>
+          <Left>825</Left>
+          <Top>70</Top>
+          <Width>350</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_StandardProperties</Name>
+          <Left>465</Left>
+          <Top>70</Top>
+          <Width>350</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_SafetyData</Name>
+          <Left>465</Left>
+          <Top>201</Top>
+          <Width>350</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_PLC_Checksum</Name>
+          <Left>105</Left>
+          <Top>332</Top>
+          <Width>710</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Textlists_DateTime</Name>
+          <Left>222</Left>
+          <Top>422</Top>
+          <Width>215</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Before</Name>
+          <Left>635</Left>
+          <Top>334</Top>
+          <Width>170</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Safety_Checksum_1</Name>
+          <Left>107</Left>
+          <Top>395</Top>
+          <Width>110</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Safety_Current</Name>
+          <Left>438</Left>
+          <Top>395</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Safety_Before</Name>
+          <Left>625</Left>
+          <Top>395</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Textlists_Checksum</Name>
+          <Left>107</Left>
+          <Top>422</Top>
+          <Width>110</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Textlists_Current</Name>
+          <Left>438</Left>
+          <Top>422</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Textlists_Before</Name>
+          <Left>625</Left>
+          <Top>422</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DateTime</Name>
+          <Left>311</Left>
+          <Top>335</Top>
+          <Width>120</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Standard_DateTime</Name>
+          <Left>222</Left>
+          <Top>368</Top>
+          <Width>215</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Safety_DateTime</Name>
+          <Left>222</Left>
+          <Top>395</Top>
+          <Width>215</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Standard_Before</Name>
+          <Left>625</Left>
+          <Top>368</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Standard_DateTime</Name>
+          <Left>221</Left>
+          <Top>367</Top>
+          <Width>217</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Textlists_Current</Name>
+          <Left>437</Left>
+          <Top>421</Top>
+          <Width>187</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Safety_DateTime</Name>
+          <Left>221</Left>
+          <Top>394</Top>
+          <Width>217</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Standard_Current</Name>
+          <Left>437</Left>
+          <Top>367</Top>
+          <Width>187</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PLC-Checksum</Name>
+          <Left>106</Left>
+          <Top>333</Top>
+          <Width>170</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Current</Name>
+          <Left>453</Left>
+          <Top>334</Top>
+          <Width>170</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Standard_Checksum</Name>
+          <Left>107</Left>
+          <Top>368</Top>
+          <Width>110</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Checksum_Standard_Current</Name>
+          <Left>438</Left>
+          <Top>368</Top>
+          <Width>185</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Textlists_DateTime</Name>
+          <Left>221</Left>
+          <Top>421</Top>
+          <Width>217</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_SMC-Diag</Name>
+          <Left>826</Left>
+          <Top>328</Top>
+          <Width>145</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiBar</Type>
+          <Name>Bar_SMCAssignedIn</Name>
+          <Left>1006</Left>
+          <Top>344</Top>
+          <Width>148</Width>
+          <Height>10</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_</Name>
+          <Left>1154</Left>
+          <Top>344</Top>
+          <Width>14</Width>
+          <Height>10</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_WarningFromMemorySpace</Name>
+          <Left>954</Left>
+          <Top>390</Top>
+          <Width>50</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_AlarmFromMemorySpace</Name>
+          <Left>1118</Left>
+          <Top>390</Top>
+          <Width>50</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Frame_Checksum_Safety_Current</Name>
+          <Left>437</Left>
+          <Top>394</Top>
+          <Width>187</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_UsedLifetimeRed</Name>
+          <Left>953</Left>
+          <Top>416</Top>
+          <Width>52</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_SMCAssigned</Name>
+          <Left>1083</Left>
+          <Top>362</Top>
+          <Width>85</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_SMCMemorySize</Name>
+          <Left>919</Left>
+          <Top>362</Top>
+          <Width>85</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_UsedLifetime</Name>
+          <Left>954</Left>
+          <Top>417</Top>
+          <Width>50</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_ParaLifetime</Name>
+          <Left>1118</Left>
+          <Top>417</Top>
+          <Width>50</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_SMCAssignedOrange</Name>
+          <Left>1082</Left>
+          <Top>362</Top>
+          <Width>87</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_SMCAssignedRed</Name>
+          <Left>1082</Left>
+          <Top>362</Top>
+          <Width>87</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_ParaLifetime</Name>
+          <Left>1005</Left>
+          <Top>417</Top>
+          <Width>110</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCPropertiesMaxCycleTime</Name>
+          <Left>677</Left>
+          <Top>106</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCMinPropertiesCycleTime</Name>
+          <Left>467</Left>
+          <Top>133</Top>
+          <Width>250</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCPropertiesMinCycleTime</Name>
+          <Left>677</Left>
+          <Top>133</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCPropertiesComm</Name>
+          <Left>467</Left>
+          <Top>160</Top>
+          <Width>250</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCPropertiesComm</Name>
+          <Left>677</Left>
+          <Top>160</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PLC-Settings</Name>
+          <Left>466</Left>
+          <Top>71</Top>
+          <Width>300</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_HMIData</Name>
+          <Left>826</Left>
+          <Top>71</Top>
+          <Width>170</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_HMINumber</Name>
+          <Left>827</Left>
+          <Top>106</Top>
+          <Width>180</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>HMINumber</Name>
+          <Left>1069</Left>
+          <Top>106</Top>
+          <Width>100</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SMCMemorySize</Name>
+          <Left>827</Left>
+          <Top>362</Top>
+          <Width>105</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_UsedLifetime</Name>
+          <Left>827</Left>
+          <Top>417</Top>
+          <Width>125</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="55">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_WarningFromMemorySpace</Name>
+          <Left>827</Left>
+          <Top>390</Top>
+          <Width>125</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="56">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SMCAssigned</Name>
+          <Left>1005</Left>
+          <Top>362</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="57">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_AlarmFromMemorySpace</Name>
+          <Left>1005</Left>
+          <Top>390</Top>
+          <Width>110</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="58">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCMaxPropertiesCycleTime</Name>
+          <Left>467</Left>
+          <Top>106</Top>
+          <Width>250</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="59">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PLC-SafetyData_1</Name>
+          <Left>106</Left>
+          <Top>202</Top>
+          <Width>225</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="60">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSafetyMinCycleTime</Name>
+          <Left>107</Left>
+          <Top>264</Top>
+          <Width>240</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="61">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSafetyMaxCycleTime</Name>
+          <Left>107</Left>
+          <Top>291</Top>
+          <Width>240</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="62">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCSafatyMinCycleTime</Name>
+          <Left>350</Left>
+          <Top>264</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="63">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCSafetyMaxCycleTime</Name>
+          <Left>350</Left>
+          <Top>291</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="64">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_SafetyModeDeaktiv</Name>
+          <Left>636</Left>
+          <Top>204</Top>
+          <Width>225</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="65">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_FSignatur</Name>
+          <Left>467</Left>
+          <Top>237</Top>
+          <Width>150</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="66">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PLC-SafetyData</Name>
+          <Left>466</Left>
+          <Top>203</Top>
+          <Width>160</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="67">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_FTimeStamp</Name>
+          <Left>467</Left>
+          <Top>264</Top>
+          <Width>150</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="68">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>FTimeStamp</Name>
+          <Left>636</Left>
+          <Top>264</Top>
+          <Width>225</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="69">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_SafetyModeAktiv</Name>
+          <Left>636</Left>
+          <Top>204</Top>
+          <Width>225</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="70">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>FSignatur</Name>
+          <Left>636</Left>
+          <Top>237</Top>
+          <Width>225</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="71">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCSafetyCycleTime</Name>
+          <Left>350</Left>
+          <Top>237</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="72">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCCycleTime</Name>
+          <Left>107</Left>
+          <Top>106</Top>
+          <Width>248</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="73">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCCycleTime</Name>
+          <Left>350</Left>
+          <Top>106</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="74">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PLC-StandardData</Name>
+          <Left>106</Left>
+          <Top>71</Top>
+          <Width>250</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="75">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCMinCycleTime</Name>
+          <Left>107</Left>
+          <Top>133</Top>
+          <Width>248</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="76">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCMaxCycleTime</Name>
+          <Left>107</Left>
+          <Top>160</Top>
+          <Width>248</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="77">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCMinCycleTime</Name>
+          <Left>350</Left>
+          <Top>133</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="78">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>PLCMaxCycleTime</Name>
+          <Left>350</Left>
+          <Top>160</Top>
+          <Width>90</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="79">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSafetyCycleTime</Name>
+          <Left>107</Left>
+          <Top>237</Top>
+          <Width>240</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="80">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_PMLogon</Name>
+          <Left>827</Left>
+          <Top>133</Top>
+          <Width>100</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="81">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_CardUID</Name>
+          <Left>827</Left>
+          <Top>160</Top>
+          <Width>120</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="82">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_NoCard</Name>
+          <Left>1015</Left>
+          <Top>133</Top>
+          <Width>150</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="83">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_CardAvailable</Name>
+          <Left>1015</Left>
+          <Top>133</Top>
+          <Width>150</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="84">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_CardUID</Name>
+          <Left>951</Left>
+          <Top>160</Top>
+          <Width>220</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="85">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_CurveFCycleTimes</Name>
+          <Left>105</Left>
+          <Top>201</Top>
+          <Width>345</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="86">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_CurveStdCycleTimes</Name>
+          <Left>105</Left>
+          <Top>70</Top>
+          <Width>345</Width>
+          <Height>121</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="87">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_SICARHelp</Name>
+          <Left>1182</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="88">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Language</Name>
+          <Left>1183</Left>
+          <Top>137</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="89">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_UpdateSMC</Name>
+          <Left>1183</Left>
+          <Top>204</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="90">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_DeleteBuffer</Name>
+          <Left>1090</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="91">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Stop RT</Name>
+          <Left>1184</Left>
+          <Top>271</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="92">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_ResetFMinMaxTimes</Name>
+          <Left>1</Left>
+          <Top>201</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="93">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_ResetStdMinMaxTimes</Name>
+          <Left>1</Left>
+          <Top>70</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="94">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_SaveSettings</Name>
+          <Left>1183</Left>
+          <Top>70</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="95">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_SystemSettings</Name>
+          <Left>94</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="96">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_UpdateSMC_1</Name>
+          <Left>1</Left>
+          <Top>332</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="97">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="98">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

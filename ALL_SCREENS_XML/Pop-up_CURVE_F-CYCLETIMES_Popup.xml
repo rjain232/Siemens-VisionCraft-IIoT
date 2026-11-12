@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_CURVE_F-CYCLETIMES_Popup</Name>
+      <Width>640</Width>
+      <Height>320</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>640</Width>
+          <Height>320</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTrendControl</Type>
+          <Name>趋势控件_1</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>640</Width>
+          <Height>320</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ButtonClose</Name>
+          <Left>568</Left>
+          <Top>0</Top>
+          <Width>72</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_USER_OPERATION_LEGEND_Popup</Name>
+      <Width>380</Width>
+      <Height>350</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>380</Width>
+          <Height>350</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_9</Name>
+          <Left>223</Left>
+          <Top>315</Top>
+          <Width>126</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_Legende</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>378</Width>
+          <Height>45</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_15</Name>
+          <Left>10</Left>
+          <Top>50</Top>
+          <Width>305</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_17</Name>
+          <Left>10</Left>
+          <Top>88</Top>
+          <Width>66</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PB_ADV</Name>
+          <Left>137</Left>
+          <Top>111</Top>
+          <Width>46</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PB_RTN</Name>
+          <Left>235</Left>
+          <Top>110</Top>
+          <Width>46</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow</Name>
+          <Left>128</Left>
+          <Top>178</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_1</Name>
+          <Left>142</Left>
+          <Top>82</Top>
+          <Width>60</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_2</Name>
+          <Left>238</Left>
+          <Top>82</Top>
+          <Width>60</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_3</Name>
+          <Left>10</Left>
+          <Top>147</Top>
+          <Width>66</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow_1</Name>
+          <Left>229</Left>
+          <Top>178</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_4</Name>
+          <Left>10</Left>
+          <Top>177</Top>
+          <Width>66</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow_2</Name>
+          <Left>128</Left>
+          <Top>206</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow_3</Name>
+          <Left>229</Left>
+          <Top>206</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_5</Name>
+          <Left>10</Left>
+          <Top>206</Top>
+          <Width>104</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_6</Name>
+          <Left>10</Left>
+          <Top>254</Top>
+          <Width>66</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow_4</Name>
+          <Left>125</Left>
+          <Top>254</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>ADV_Slow_5</Name>
+          <Left>124</Left>
+          <Top>284</Top>
+          <Width>62</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_7</Name>
+          <Left>226</Left>
+          <Top>253</Top>
+          <Width>105</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_8</Name>
+          <Left>223</Left>
+          <Top>282</Top>
+          <Width>126</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PB_ADV_1</Name>
+          <Left>133</Left>
+          <Top>314</Top>
+          <Width>46</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>289</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

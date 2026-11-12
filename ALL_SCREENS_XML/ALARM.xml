@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>ALARM</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back_1</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2_1</Name>
+          <Left>390</Left>
+          <Top>2</Top>
+          <Width>500</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>390</Left>
+          <Top>0</Top>
+          <Width>510</Width>
+          <Height>57</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Language</Name>
+          <Left>97</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiAlarmControl</Type>
+          <Name>acMessages</Name>
+          <Left>0</Left>
+          <Top>100</Top>
+          <Width>1276</Width>
+          <Height>569</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>Txt_AlarmClassFilter</Name>
+          <Left>5</Left>
+          <Top>66</Top>
+          <Width>160</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Btn_AlarmClassFilter</Name>
+          <Left>167</Left>
+          <Top>66</Top>
+          <Width>109</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Btn_AlarmCodeView</Name>
+          <Left>1184</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_BlockedRed</Name>
+          <Left>1258</Left>
+          <Top>5</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64_1</Name>
+          <Left>0</Left>
+          <Top>62</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_Hmi_Opmodes6_h_Popup</Name>
+      <Width>507</Width>
+      <Height>540</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>507</Width>
+          <Height>540</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_1</Name>
+          <Left>109</Left>
+          <Top>102</Top>
+          <Width>29</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Dummy6</Name>
+          <Left>273</Left>
+          <Top>106</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_HmiPanelNo</Name>
+          <Left>136</Left>
+          <Top>49</Top>
+          <Width>160</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Descr_OPMode</Name>
+          <Left>100</Left>
+          <Top>26</Top>
+          <Width>305</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_OPMode</Name>
+          <Left>0</Left>
+          <Top>1</Top>
+          <Width>507</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode1_Select</Name>
+          <Left>143</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode1_NotSelect</Name>
+          <Left>143</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode1_Vis</Name>
+          <Left>143</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode2_Select</Name>
+          <Left>169</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode2_NotSelect</Name>
+          <Left>169</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode2_Vis</Name>
+          <Left>169</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode3_Select</Name>
+          <Left>195</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode3_NotSelect</Name>
+          <Left>195</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode3_Vis</Name>
+          <Left>195</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode4_Select</Name>
+          <Left>221</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode4_NotSelect</Name>
+          <Left>221</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode4_Vis</Name>
+          <Left>221</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode5_Select</Name>
+          <Left>247</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode5_NotSelect</Name>
+          <Left>247</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode5_Vis</Name>
+          <Left>247</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode6_Select</Name>
+          <Left>273</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>State_OPMode6_NotSelect</Name>
+          <Left>273</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>State_OPMode6_Vis</Name>
+          <Left>273</Left>
+          <Top>76</Top>
+          <Width>25</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Close</Name>
+          <Left>417</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_OPModeArea</Name>
+          <Left>-84</Left>
+          <Top>288</Top>
+          <Width>260</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

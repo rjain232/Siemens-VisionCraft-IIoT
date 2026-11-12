@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  // ---------------------------------------------------------------------------
+  // 1. PLC TAGS & LIVE STATE SYSTEM (Siemens WinCC / TIA Portal Architecture)
+  // ---------------------------------------------------------------------------
+  const [plcTags, setPlcTags] = useState({
+    Line_Auto_Running: true,
+    Operating_Mode: 'AUTO', // 'AUTO' | 'MANUAL'
+    Power_ON: true,
+    E_Stop_Active: false,
+    CycleTimeSeconds: 42.8,
+    MB140_BIW_No: 2045,
+    ActiveStation: 'MB110-140',
+    PLC_Connected: true,
+    RFID_Reader_Status: 'OK',
+    ActiveAlarmCount: 1,
+    ActiveAlarmText: 'LineHighAlarm.Astop.Astop_140LHLC1 : 140LHLoadLC1_Grating fault',
+    Zone1_Status: 'RUNNING',
+    Zone2_Status: 'WAIT_TAKEOUT',
+    StationNodes: [
+      { id: 1, status: 'fault' }, { id: 2, status: 'ok' }, { id: 3, status: 'ok' },
+      { id: 4, status: 'ok' }, { id: 5, status: 'ok' }, { id: 6, status: 'ok' },
+      { id: 7, status: 'ok' }, { id: 8, status: 'fault' }, { id: 9, status: 'fault' },
+      { id: 10, status: 'ok' }, { id: 11, status: 'ok' }, { id: 12, status: 'ok' },
+      { id: 13, status: 'ok' }, { id: 14, status: 'ok' }, { id: 15, status: 'ok' },
+      { id: 16, status: 'ok' }, { id: 17, status: 'ok' }, { id: 18, status: 'ok' },
+      { id: 19, status: 'ok' }, { id: 20, status: 'ok' }, { id: 21, status: 'ok' },
+      { id: 22, status: 'ok' }, { id: 23, status: 'ok' }, { id: 24, status: 'ok' },
+    ]
+  });
+
+  // HMI UI Control States
+  const [alarmMuted, setAlarmMuted] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [activeNavTab, setActiveNavTab] = useState('Station data Modify');
+  const [toastMessage, setToastMessage] = useState(null);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleString());
+
+  // Form Data State: Manual Pre To Actual (Actual Data)
+  const [actualData, setActualData] = useState({
+    seqNo: '1042',
+    vinNo: 'MA3EWB1100049281',
+    variant: 'SUV_X5_PLUS',
+    variantCode: '582',
+    subVariant: 'FLAT_ROOF_PANORAMIC',
+    biwNo: '2045',
+    bodyState: 'Normal/Ok',
+    takeOutLocation: 'No Action',
+    takeInTakeOutReason: 'No Action',
+    skidNo: 'SKID-882'
+  });
+
+  // Form Data State: Manual Actual To Transfer (Transfer Data)
+  const [transferData, setTransferData] = useState({
+    seqNo: '0',
+    vinNo: '',
+    variant: 'Select Variant',
+    variantCode: '0',
+    subVariant: 'Select Sub-Variant',
+    biwNo: '0',
+    bodyState: 'Normal/Ok',
+    takeOutLocation: 'No Action',
+    takeInTakeOutReason: 'No Action',
+    skidNo: '0'
+  });
+
+  // Dynamic timestamp update loop
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date().toLocaleString('de-DE', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      }));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Toast auto-clear
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3500);
+  };
+
+  // PLC Action Handlers
+  const togglePower = () => {
+    const nextPower = !plcTags.Power_ON;
+    setPlcTags(prev => ({ ...prev, Power_ON: nextPower }));
+    showToast(nextPower ? 'PLC System Powered ON' : 'PLC System Powered OFF');
+  };
+
+  const setOperatingMode = (mode) => {
+    setPlcTags(prev => ({
+      ...prev,
+      Operating_Mode: mode,
+      Line_Auto_Running: mode === 'AUTO'
+    }));
+    showToast(`Operating Mode switched to ${mode}`);
+  };
+
+  const handleMuteAlarm = () => {
+    setAlarmMuted(prev => !prev);
+    showToast(alarmMuted ? 'Alarm Sound Unmuted' : 'Alarm Sound Muted');
+  };
+
+  const handleResetAll = () => {
+    setShowResetConfirm(true);
+  };
+
+  const confirmResetAll = () => {
+    setPlcTags(prev => ({
+      ...prev,
+      ActiveAlarmCount: 0,
+      ActiveAlarmText: 'SYSTEM OK: All station faults cleared',
+      E_Stop_Active: false
+    }));
+    setShowResetConfirm(false);
+    showToast('PLC Alarm Buffer Cleared & Reset Signal Transmitted');
+  };
+
+  const handleModifySubmit = () => {
+    if (!isLoggedIn) {
+      showToast('Error: Authentication required to write station data!');
+      return;
+    }
+    showToast(`PLC Tag DB110.Write: Data synchronized for Station ${plcTags.ActiveStation}`);
+  };
+
+  const handleEmptySkid = (target) => {
+    if (target === 'actual') {
+      setActualData(prev => ({ ...prev, skidNo: '0' }));
+      showToast('Actual Data: Skid unassigned (SKID = 0)');
+    } else {
+      setTransferData(prev => ({ ...prev, skidNo: '0' }));
+      showToast('Transfer Data: Skid unassigned (SKID = 0)');
+    }
+  };
+
+  const handleDataDelete = (target) => {
+    const emptyForm = {
+      seqNo: '0',
+      vinNo: '',
+      variant: 'Select Variant',
+      variantCode: '0',
+      subVariant: 'Select Sub-Variant',
+      biwNo: '0',
+      bodyState: 'Normal/Ok',
+      takeOutLocation: 'No Action',
+      takeInTakeOutReason: 'No Action',
+      skidNo: '0'
+    };
+    if (target === 'actual') {
+      setActualData(emptyForm);
+      showToast('Actual Data block cleared');
+    } else {
+      setTransferData(emptyForm);
+      showToast('Transfer Data block cleared');
+    }
+  };
+
+  // Helper for variant code sync
+  const updateVariant = (target, value) => {
+    const codes = {
+      'SUV_X5_PLUS': '582',
+      'SEDAN_M3': '411',
+      'EV_CROSSOVER': '920',
+      'Select Variant': '0'
+    };
+    const code = codes[value] || '0';
+    if (target === 'actual') {
+      setActualData(prev => ({ ...prev, variant: value, variantCode: code }));
+    } else {
+      setTransferData(prev => ({ ...prev, variant: value, variantCode: code }));
+    }
+  };
+
+  const navItems = [
+    'Type', 'Robot', 'SEW-Drives', 'Alarm', 'ProdData',
+    'Diagnostic', 'System', 'Style.View', 'Style.Write',
+    'RFID', 'Order Control', 'Zone1Type Overview', 'Zone2Type Overview'
+  ];
+
+  return (
+    React.createElement('div', { className: "flex flex-col h-screen w-full bg-[#111923] text-gray-100 font-sans select-none overflow-hidden"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 232}}
+
+      /* -------------------------------------------------------------------- */
+      /* 1. TOP SCADA OPERATIONAL BAR                                         */
+      /* -------------------------------------------------------------------- */
+      , React.createElement('header', { className: "flex items-stretch bg-[#0c131c] border-b-2 border-[#1e2e3e] h-14 text-sm font-semibold shrink-0"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 237}}
+
+        /* Left Operational Buttons */
+        , React.createElement('div', { className: "flex items-center space-x-1 px-2 border-r border-[#1e2e3e]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 240}}
+          /* ON/OFF Button */
+          , React.createElement('button', {
+            onClick: togglePower,
+            className: `px-3 py-2 rounded font-bold shadow-md transition-colors text-xs uppercase tracking-wider ${
+              plcTags.Power_ON 
+                ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 border-b-2 border-amber-700' 
+                : 'bg-red-700 hover:bg-red-600 text-white'
+            }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 242}}
+
+            , plcTags.Power_ON ? 'ON/OFF' : 'POWER OFF'
+          )
+
+          /* START Button */
+          , React.createElement('button', {
+            onClick: () => showToast('PLC Cycle START signal pulsed'),
+            className: "px-3 py-2 bg-[#007799] hover:bg-[#0088aa] text-white rounded border-b-2 border-cyan-900 text-xs tracking-wider"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 254}}
+, "START"
+
+          )
+
+          /* AUTO Button */
+          , React.createElement('button', {
+            onClick: () => setOperatingMode('AUTO'),
+            className: `px-3 py-2 rounded text-xs font-bold transition-all border-b-2 ${
+              plcTags.Operating_Mode === 'AUTO'
+                ? 'bg-emerald-600 text-white border-emerald-900 ring-1 ring-emerald-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]'
+                : 'bg-[#007799] hover:bg-[#0088aa] text-gray-200 border-cyan-900'
+            }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 262}}
+, "AUTO"
+
+          )
+
+          /* MANUAL Button */
+          , React.createElement('button', {
+            onClick: () => setOperatingMode('MANUAL'),
+            className: `px-3 py-2 rounded text-xs font-bold transition-all border-b-2 ${
+              plcTags.Operating_Mode === 'MANUAL'
+                ? 'bg-amber-600 text-white border-amber-900 ring-1 ring-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.5)]'
+                : 'bg-[#007799] hover:bg-[#0088aa] text-gray-200 border-cyan-900'
+            }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 274}}
+, "MANUAL"
+
+          )
+        )
+
+        /* 24-Node Dynamic Matrix Display */
+        , React.createElement('div', { className: "flex items-center px-3 border-r border-[#1e2e3e]"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 287}}
+          , React.createElement('div', { className: "grid grid-cols-8 grid-rows-3 gap-[2px] bg-[#050a0f] p-1 rounded border border-[#233547]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 288}}
+            , plcTags.StationNodes.map((node) => (
+              React.createElement('div', {
+                key: node.id,
+                className: `w-5 h-3 flex items-center justify-center text-[9px] font-mono font-bold leading-none ${
+                  node.status === 'fault'
+                    ? 'bg-red-600 text-white animate-pulse'
+                    : 'bg-indigo-900 text-cyan-200 border border-indigo-700'
+                }`,
+                title: `Node ${node.id}: ${node.status.toUpperCase()}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 290}}
+
+                , node.id
+              )
+            ))
+          )
+        )
+
+        /* Station Title & Live Stats */
+        , React.createElement('div', { className: "flex-1 flex items-center justify-between px-4"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 306}}
+          , React.createElement('div', { className: "flex items-center space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 307}}
+            , React.createElement('span', { className: "text-cyan-400 font-extrabold text-lg tracking-wider drop-shadow"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 308}}
+              , plcTags.ActiveStation
+            )
+            , React.createElement('span', { className: "text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 311}}, "BIW: #"
+               , plcTags.MB140_BIW_No
+            )
+            , React.createElement('span', { className: "text-xs bg-slate-800 text-cyan-300 px-2 py-0.5 rounded border border-slate-700"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 314}}, "CT: "
+               , plcTags.CycleTimeSeconds, "s"
+            )
+          )
+
+          /* PLC Communication Status Icons */
+          , React.createElement('div', { className: "flex items-center space-x-4 text-xs"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 320}}
+            , React.createElement('div', { className: "flex items-center space-x-1"  , title: "Siemens TIA Portal S7-1500 Connection"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 321}}
+              , React.createElement('svg', { className: "w-4 h-4 text-emerald-400"  , fill: "none", viewBox: "0 0 24 24"   , stroke: "currentColor", __self: this, __source: {fileName: _jsxFileName, lineNumber: 322}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M5 12h14M5 12l4-4m-4 4l4 4"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 323}} )
+              )
+              , React.createElement('span', { className: "text-emerald-400 font-mono" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 325}}, "PLC_OK")
+            )
+
+            , React.createElement('div', { className: "flex items-center space-x-1"  , title: "RFID Reader Head"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 328}}
+              , React.createElement('svg', { className: "w-4 h-4 text-cyan-400"  , fill: "none", viewBox: "0 0 24 24"   , stroke: "currentColor", __self: this, __source: {fileName: _jsxFileName, lineNumber: 329}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M13 10V3L4 14h7v7l9-11h-7z"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 330}} )
+              )
+              , React.createElement('span', { className: "text-cyan-300 font-mono" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 332}}, "RFID_READ")
+            )
+
+            , React.createElement('span', { className: "text-slate-300 font-mono text-xs pl-2 border-l border-slate-700"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 335}}
+              , currentTime
+            )
+          )
+        )
+
+        /* Top Right Safety Control Buttons */
+        , React.createElement('div', { className: "flex items-center space-x-2 px-3 border-l border-[#1e2e3e]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 342}}
+          /* Alarm Mute */
+          , React.createElement('button', {
+            onClick: handleMuteAlarm,
+            className: `px-3 py-2 rounded text-xs font-bold border-b-2 ${
+              alarmMuted
+                ? 'bg-slate-700 text-amber-300 border-slate-900'
+                : 'bg-[#007799] hover:bg-[#0088aa] text-white border-cyan-900'
+            }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 344}}
+
+            , alarmMuted ? 'Muted' : 'Alarm Mute'
+          )
+
+          /* RESET All */
+          , React.createElement('button', {
+            onClick: handleResetAll,
+            className: "px-3 py-2 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white font-bold rounded border-b-2 border-rose-900 text-xs"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 356}}
+, "RESET All"
+
+          )
+
+          /* Special Action */
+          , React.createElement('button', {
+            onClick: () => showToast('Special Diagnostic Routine triggered'),
+            className: "px-3 py-2 bg-[#007799] hover:bg-[#0088aa] text-white font-semibold rounded border-b-2 border-cyan-900 text-xs"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 364}}
+, "Special"
+
+          )
+
+          /* Home Icon */
+          , React.createElement('button', { 
+            onClick: () => showToast('Navigated to Main Station Overview'),
+            className: "p-2 bg-teal-700 hover:bg-teal-600 text-white rounded border border-teal-500"      ,
+            title: "Return to Line Overview"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 372}}
+
+            , React.createElement('svg', { className: "w-4 h-4" , fill: "currentColor", viewBox: "0 0 20 20"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 377}}
+              , React.createElement('path', { d: "M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"                                   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 378}} )
+            )
+          )
+        )
+      )
+
+      /* -------------------------------------------------------------------- */
+      /* 2. INDUSTRIAL ALARM BANNER (HIGH VISIBILITY)                         */
+      /* -------------------------------------------------------------------- */
+      , React.createElement('div', { className: `px-4 py-1.5 flex items-center justify-between text-xs font-mono font-bold border-b border-yellow-600 ${
+        alarmMuted ? 'bg-yellow-600/90 text-black' : 'bg-yellow-400 text-black animate-pulse'
+      }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 387}}
+        , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 390}}
+          , React.createElement('svg', { className: "w-4 h-4 text-black shrink-0"   , fill: "currentColor", viewBox: "0 0 20 20"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 391}}
+            , React.createElement('path', { fillRule: "evenodd", d: "M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"                              , clipRule: "evenodd", __self: this, __source: {fileName: _jsxFileName, lineNumber: 392}} )
+          )
+          , React.createElement('span', { className: "truncate", __self: this, __source: {fileName: _jsxFileName, lineNumber: 394}}, plcTags.ActiveAlarmText)
+        )
+        , React.createElement('div', { className: "flex items-center space-x-3 text-[11px] shrink-0 font-sans"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 396}}
+          , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 397}}, "FAULT CODE: 140LHLC1"  )
+          , React.createElement('span', { className: "underline cursor-pointer hover:text-red-950"  , onClick: handleMuteAlarm, __self: this, __source: {fileName: _jsxFileName, lineNumber: 398}}
+            , alarmMuted ? '[UNMUTE]' : '[ACKNOWLEDGE]'
+          )
+        )
+      )
+
+      /* -------------------------------------------------------------------- */
+      /* 3. SUB-HEADER TOOLBAR & STATION SELECTION CONTROL PANEL               */
+      /* -------------------------------------------------------------------- */
+      , React.createElement('div', { className: "flex items-center justify-between bg-[#14212e] px-4 py-2 border-b border-[#233547]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 407}}
+        /* Back Button */
+        , React.createElement('button', { 
+          onClick: () => showToast('Navigated back to previous station view'),
+          className: "px-6 py-1.5 bg-[#007799] hover:bg-[#0088aa] text-white font-bold rounded border border-cyan-500 text-sm shadow"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 409}}
+, "Back"
+
+        )
+
+        /* Center Station Selector Dropdown Panel */
+        , React.createElement('div', { className: "flex flex-col items-center"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 417}}
+          , React.createElement('div', { className: "bg-[#0088aa] text-white text-xs px-8 py-0.5 rounded-t-md font-bold tracking-wide uppercase"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 418}}, "Station data Modify"
+
+          )
+          , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 421}}
+            , React.createElement('select', {
+              value: plcTags.ActiveStation,
+              onChange: (e) => {
+                setPlcTags(prev => ({ ...prev, ActiveStation: e.target.value }));
+                showToast(`Station context switched to ${e.target.value}`);
+              },
+              className: "bg-white text-slate-900 font-extrabold text-base px-6 py-1 pr-10 rounded border-2 border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-300 cursor-pointer shadow-inner"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 422}}
+
+              , React.createElement('option', { value: "MB110-140", __self: this, __source: {fileName: _jsxFileName, lineNumber: 430}}, "MB110-140 (LH Main Body Station)"    )
+              , React.createElement('option', { value: "MB110-150", __self: this, __source: {fileName: _jsxFileName, lineNumber: 431}}, "MB110-150 (RH Main Body Station)"    )
+              , React.createElement('option', { value: "MB110-160", __self: this, __source: {fileName: _jsxFileName, lineNumber: 432}}, "MB110-160 (Roof Laser Weld)"   )
+              , React.createElement('option', { value: "MB110-170", __self: this, __source: {fileName: _jsxFileName, lineNumber: 433}}, "MB110-170 (Underbody Framing)"  )
+            )
+          )
+        )
+
+        /* Auth & Commit Action Buttons */
+        , React.createElement('div', { className: "flex items-center space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 439}}
+          , React.createElement('button', { 
+            onClick: () => {
+              setIsLoggedIn(!isLoggedIn);
+              showToast(isLoggedIn ? 'User logged out' : 'User Authenticated: Level 3 Engineer');
+            },
+            className: `px-6 py-1.5 rounded font-bold text-sm shadow border transition-colors ${
+              isLoggedIn 
+                ? 'bg-slate-700 hover:bg-slate-600 text-cyan-300 border-slate-500' 
+                : 'bg-amber-600 hover:bg-amber-500 text-white border-amber-400'
+            }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 440}}
+
+            , isLoggedIn ? 'Logout (L3)' : 'Login'
+          )
+
+          , React.createElement('button', {
+            onClick: handleModifySubmit,
+            className: "px-6 py-1.5 bg-[#0088aa] hover:bg-[#0099bb] active:bg-cyan-700 text-white font-bold rounded border border-cyan-300 text-sm shadow-md"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 454}}
+, "Modify"
+
+          )
+        )
+      )
+
+      /* -------------------------------------------------------------------- */
+      /* 4. MAIN SPLIT FORM LAYOUT & RIGHT SIDEBAR NAVIGATION                 */
+      /* -------------------------------------------------------------------- */
+      , React.createElement('div', { className: "flex-1 flex overflow-hidden"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 466}}
+
+        /* CENTER CONTENT AREA - Dual Industrial Form Blocks */
+        , React.createElement('div', { className: "flex-1 p-3 overflow-y-auto space-y-3 bg-[#111923]"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 469}}
+
+          /* ================================================================ */
+          /* PANEL 1: MANUAL PRE TO ACTUAL (ACTUAL DATA)                      */
+          /* ================================================================ */
+          , React.createElement('div', { className: "bg-[#182635] border border-[#263c52] rounded shadow-md overflow-hidden"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 474}}
+            /* Panel Header */
+            , React.createElement('div', { className: "flex items-center justify-between bg-gradient-to-r from-[#0088aa] to-[#005577] px-4 py-1.5 border-b border-[#294863]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 476}}
+              , React.createElement('div', { className: "flex items-center space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 477}}
+                , React.createElement('span', { className: "bg-cyan-950 text-cyan-200 text-xs px-2.5 py-0.5 rounded font-bold uppercase tracking-wider border border-cyan-800"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 478}}, "Manual Pre To Actual"
+
+                )
+                , React.createElement('span', { className: "text-white font-semibold text-sm"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 481}}, "Actual Data" )
+              )
+              , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 483}}
+                , React.createElement('button', {
+                  onClick: () => handleEmptySkid('actual'),
+                  className: "px-4 py-1 bg-[#007799] hover:bg-[#0088aa] text-white text-xs font-bold rounded border border-cyan-400"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 484}}
+, "Empty Skid"
+
+                )
+                , React.createElement('button', {
+                  onClick: () => handleDataDelete('actual'),
+                  className: "px-4 py-1 bg-[#007799] hover:bg-[#0088aa] text-white text-xs font-bold rounded border border-cyan-400"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 490}}
+, "Data Delete"
+
+                )
+              )
+            )
+
+            /* Panel Form Grid (2 Columns) */
+            , React.createElement('div', { className: "p-3 grid grid-cols-2 gap-x-6 gap-y-2 text-xs"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 500}}
+
+              /* Left Column Controls */
+              , React.createElement('div', { className: "space-y-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 503}}
+                /* Seq No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 505}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 506}}, "Seq No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: actualData.seqNo,
+                    onChange: (e) => setActualData({ ...actualData, seqNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 509}}
+                  )
+                )
+
+                /* VIN No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 518}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 519}}, "VIN No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: actualData.vinNo,
+                    onChange: (e) => setActualData({ ...actualData, vinNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-cyan-300 font-mono text-center font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 522}}
+                  )
+                )
+
+                /* Variant */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 531}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 532}}, "Variant"
+
+                  )
+                  , React.createElement('select', {
+                    value: actualData.variant,
+                    onChange: (e) => updateVariant('actual', e.target.value),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 535}}
+
+                    , React.createElement('option', { value: "Select Variant" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 540}}, "Select Variant" )
+                    , React.createElement('option', { value: "SUV_X5_PLUS", __self: this, __source: {fileName: _jsxFileName, lineNumber: 541}}, "SUV_X5_PLUS")
+                    , React.createElement('option', { value: "SEDAN_M3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 542}}, "SEDAN_M3")
+                    , React.createElement('option', { value: "EV_CROSSOVER", __self: this, __source: {fileName: _jsxFileName, lineNumber: 543}}, "EV_CROSSOVER")
+                  )
+                )
+
+                /* Variant Code */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 548}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 549}}, "Variant Code"
+
+                  )
+                  , React.createElement('div', { className: "flex-1 bg-[#0d1620] text-white font-mono text-center font-bold py-1.5 rounded-r border border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 552}}
+                    , actualData.variantCode
+                  )
+                )
+
+                /* Sub-Variant */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 558}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 559}}, "Sub-Variant"
+
+                  )
+                  , React.createElement('select', {
+                    value: actualData.subVariant,
+                    onChange: (e) => setActualData({ ...actualData, subVariant: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 562}}
+
+                    , React.createElement('option', { value: "Select Sub-Variant" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 567}}, "Select Sub-Variant" )
+                    , React.createElement('option', { value: "FLAT_ROOF_PANORAMIC", __self: this, __source: {fileName: _jsxFileName, lineNumber: 568}}, "FLAT_ROOF_PANORAMIC")
+                    , React.createElement('option', { value: "SUNROOF_STANDARD", __self: this, __source: {fileName: _jsxFileName, lineNumber: 569}}, "SUNROOF_STANDARD")
+                  )
+                )
+              )
+
+              /* Right Column Controls */
+              , React.createElement('div', { className: "space-y-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 575}}
+                /* BIW No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 577}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 578}}, "BIW No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: actualData.biwNo,
+                    onChange: (e) => setActualData({ ...actualData, biwNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 581}}
+                  )
+                )
+
+                /* Body State */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 590}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 591}}, "Body State"
+
+                  )
+                  , React.createElement('select', {
+                    value: actualData.bodyState,
+                    onChange: (e) => setActualData({ ...actualData, bodyState: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 594}}
+
+                    , React.createElement('option', { value: "Normal/Ok", __self: this, __source: {fileName: _jsxFileName, lineNumber: 599}}, "Normal/Ok")
+                    , React.createElement('option', { value: "Rework Required" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 600}}, "Rework Required" )
+                    , React.createElement('option', { value: "Quality Inspection Hold"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 601}}, "Quality Inspection Hold"  )
+                    , React.createElement('option', { value: "Scrap / Eject"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 602}}, "Scrap / Eject"  )
+                  )
+                )
+
+                /* Take Out Location */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 607}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 608}}, "Take Out Location"
+
+                  )
+                  , React.createElement('select', {
+                    value: actualData.takeOutLocation,
+                    onChange: (e) => setActualData({ ...actualData, takeOutLocation: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 611}}
+
+                    , React.createElement('option', { value: "No Action" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 616}}, "No Action" )
+                    , React.createElement('option', { value: "Buffer Station 01"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 617}}, "Buffer Station 01"  )
+                    , React.createElement('option', { value: "Offline Quality Spur"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 618}}, "Offline Quality Spur"  )
+                  )
+                )
+
+                /* Takein TakeOut Reason */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 623}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 624}}, "Takein TakeOut Reason"
+
+                  )
+                  , React.createElement('select', {
+                    value: actualData.takeInTakeOutReason,
+                    onChange: (e) => setActualData({ ...actualData, takeInTakeOutReason: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 627}}
+
+                    , React.createElement('option', { value: "No Action" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 632}}, "No Action" )
+                    , React.createElement('option', { value: "Weld Fault Recovery"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 633}}, "Weld Fault Recovery"  )
+                    , React.createElement('option', { value: "Dimensional Audit" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 634}}, "Dimensional Audit" )
+                    , React.createElement('option', { value: "Manual Intervention" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 635}}, "Manual Intervention" )
+                  )
+                )
+
+                /* Skid No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 640}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 641}}, "Skid No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: actualData.skidNo,
+                    onChange: (e) => setActualData({ ...actualData, skidNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 644}}
+                  )
+                )
+              )
+
+            )
+          )
+
+
+          /* ================================================================ */
+          /* PANEL 2: MANUAL ACTUAL TO TRANSFER (TRANSFER DATA)               */
+          /* ================================================================ */
+          , React.createElement('div', { className: "bg-[#182635] border border-[#263c52] rounded shadow-md overflow-hidden"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 660}}
+            /* Panel Header */
+            , React.createElement('div', { className: "flex items-center justify-between bg-gradient-to-r from-[#0088aa] to-[#005577] px-4 py-1.5 border-b border-[#294863]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 662}}
+              , React.createElement('div', { className: "flex items-center space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 663}}
+                , React.createElement('span', { className: "bg-cyan-950 text-cyan-200 text-xs px-2.5 py-0.5 rounded font-bold uppercase tracking-wider border border-cyan-800"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 664}}, "Manual Actual To Transfer"
+
+                )
+                , React.createElement('span', { className: "text-white font-semibold text-sm"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 667}}, "Transfer Data" )
+              )
+              , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 669}}
+                , React.createElement('button', {
+                  onClick: () => handleEmptySkid('transfer'),
+                  className: "px-4 py-1 bg-[#007799] hover:bg-[#0088aa] text-white text-xs font-bold rounded border border-cyan-400"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 670}}
+, "Empty Skid"
+
+                )
+                , React.createElement('button', {
+                  onClick: () => handleDataDelete('transfer'),
+                  className: "px-4 py-1 bg-[#007799] hover:bg-[#0088aa] text-white text-xs font-bold rounded border border-cyan-400"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 676}}
+, "Data Delete"
+
+                )
+              )
+            )
+
+            /* Panel Form Grid (2 Columns) */
+            , React.createElement('div', { className: "p-3 grid grid-cols-2 gap-x-6 gap-y-2 text-xs"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 686}}
+
+              /* Left Column Controls */
+              , React.createElement('div', { className: "space-y-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 689}}
+                /* Seq No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 691}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 692}}, "Seq No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: transferData.seqNo,
+                    onChange: (e) => setTransferData({ ...transferData, seqNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 695}}
+                  )
+                )
+
+                /* VIN No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 704}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 705}}, "VIN No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: transferData.vinNo,
+                    placeholder: "Enter VIN..." ,
+                    onChange: (e) => setTransferData({ ...transferData, vinNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-cyan-300 font-mono text-center font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 708}}
+                  )
+                )
+
+                /* Variant */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 718}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 719}}, "Variant"
+
+                  )
+                  , React.createElement('select', {
+                    value: transferData.variant,
+                    onChange: (e) => updateVariant('transfer', e.target.value),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 722}}
+
+                    , React.createElement('option', { value: "Select Variant" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 727}}, "Select Variant" )
+                    , React.createElement('option', { value: "SUV_X5_PLUS", __self: this, __source: {fileName: _jsxFileName, lineNumber: 728}}, "SUV_X5_PLUS")
+                    , React.createElement('option', { value: "SEDAN_M3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 729}}, "SEDAN_M3")
+                    , React.createElement('option', { value: "EV_CROSSOVER", __self: this, __source: {fileName: _jsxFileName, lineNumber: 730}}, "EV_CROSSOVER")
+                  )
+                )
+
+                /* Variant Code */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 735}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 736}}, "Variant Code"
+
+                  )
+                  , React.createElement('div', { className: "flex-1 bg-[#0d1620] text-white font-mono text-center font-bold py-1.5 rounded-r border border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 739}}
+                    , transferData.variantCode
+                  )
+                )
+
+                /* Sub-Variant */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 745}}
+                  , React.createElement('label', { className: "w-36 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 746}}, "Sub-Variant"
+
+                  )
+                  , React.createElement('select', {
+                    value: transferData.subVariant,
+                    onChange: (e) => setTransferData({ ...transferData, subVariant: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 749}}
+
+                    , React.createElement('option', { value: "Select Sub-Variant" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 754}}, "Select Sub-Variant" )
+                    , React.createElement('option', { value: "FLAT_ROOF_PANORAMIC", __self: this, __source: {fileName: _jsxFileName, lineNumber: 755}}, "FLAT_ROOF_PANORAMIC")
+                    , React.createElement('option', { value: "SUNROOF_STANDARD", __self: this, __source: {fileName: _jsxFileName, lineNumber: 756}}, "SUNROOF_STANDARD")
+                  )
+                )
+              )
+
+              /* Right Column Controls */
+              , React.createElement('div', { className: "space-y-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 762}}
+                /* BIW No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 764}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 765}}, "BIW No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: transferData.biwNo,
+                    onChange: (e) => setTransferData({ ...transferData, biwNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 768}}
+                  )
+                )
+
+                /* Body State */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 777}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 778}}, "Body State"
+
+                  )
+                  , React.createElement('select', {
+                    value: transferData.bodyState,
+                    onChange: (e) => setTransferData({ ...transferData, bodyState: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 781}}
+
+                    , React.createElement('option', { value: "Normal/Ok", __self: this, __source: {fileName: _jsxFileName, lineNumber: 786}}, "Normal/Ok")
+                    , React.createElement('option', { value: "Rework Required" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 787}}, "Rework Required" )
+                    , React.createElement('option', { value: "Quality Inspection Hold"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 788}}, "Quality Inspection Hold"  )
+                    , React.createElement('option', { value: "Scrap / Eject"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 789}}, "Scrap / Eject"  )
+                  )
+                )
+
+                /* Take Out Location */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 794}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 795}}, "Take Out Location"
+
+                  )
+                  , React.createElement('select', {
+                    value: transferData.takeOutLocation,
+                    onChange: (e) => setTransferData({ ...transferData, takeOutLocation: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 798}}
+
+                    , React.createElement('option', { value: "No Action" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 803}}, "No Action" )
+                    , React.createElement('option', { value: "Buffer Station 01"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 804}}, "Buffer Station 01"  )
+                    , React.createElement('option', { value: "Offline Quality Spur"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 805}}, "Offline Quality Spur"  )
+                  )
+                )
+
+                /* Takein TakeOut Reason */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 810}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 811}}, "Takein TakeOut Reason"
+
+                  )
+                  , React.createElement('select', {
+                    value: transferData.takeInTakeOutReason,
+                    onChange: (e) => setTransferData({ ...transferData, takeInTakeOutReason: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center py-1 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none cursor-pointer"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 814}}
+
+                    , React.createElement('option', { value: "No Action" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 819}}, "No Action" )
+                    , React.createElement('option', { value: "Weld Fault Recovery"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 820}}, "Weld Fault Recovery"  )
+                    , React.createElement('option', { value: "Dimensional Audit" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 821}}, "Dimensional Audit" )
+                    , React.createElement('option', { value: "Manual Intervention" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 822}}, "Manual Intervention" )
+                  )
+                )
+
+                /* Skid No. */
+                , React.createElement('div', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 827}}
+                  , React.createElement('label', { className: "w-44 bg-[#203244] text-cyan-200 font-semibold px-3 py-1.5 rounded-l border border-r-0 border-[#2c445c]"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 828}}, "Skid No."
+
+                  )
+                  , React.createElement('input', {
+                    type: "text",
+                    value: transferData.skidNo,
+                    onChange: (e) => setTransferData({ ...transferData, skidNo: e.target.value }),
+                    className: "flex-1 bg-[#0d1620] text-white text-center font-mono font-bold py-1.5 rounded-r border border-[#2c445c] focus:border-cyan-400 focus:outline-none"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 831}}
+                  )
+                )
+              )
+
+            )
+          )
+
+        )
+
+        /* -------------------------------------------------------------------- */
+        /* RIGHT TOUCH NAVIGATION SIDEBAR (Industrial Touch Screen Panel)       */
+        /* -------------------------------------------------------------------- */
+        , React.createElement('aside', { className: "w-48 bg-[#0a111a] border-l border-[#1e2e3e] flex flex-col p-1.5 space-y-1 overflow-y-auto shrink-0"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 848}}
+          , navItems.map((item) => {
+            const isActive = activeNavTab === item;
+            return (
+              React.createElement('button', {
+                key: item,
+                onClick: () => {
+                  setActiveNavTab(item);
+                  showToast(`Switched HMI Screen Context: ${item}`);
+                },
+                className: `w-full py-2.5 px-3 rounded text-xs font-bold text-center leading-tight transition-all border ${
+                  isActive
+                    ? 'bg-[#0088aa] text-white border-cyan-300 shadow-[0_0_12px_rgba(0,136,170,0.6)] ring-1 ring-cyan-200'
+                    : 'bg-[#121c27] hover:bg-[#1a293a] text-cyan-100 border-[#1e2e3e]'
+                }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 852}}
+
+                , item
+              )
+            );
+          })
+        )
+
+      )
+
+      /* -------------------------------------------------------------------- */
+      /* 5. INTERACTIVE TOAST FEEDBACK FLOATER                                */
+      /* -------------------------------------------------------------------- */
+      , toastMessage && (
+        React.createElement('div', { className: "fixed bottom-4 left-1/2 -translate-x-1/2 bg-slate-900 text-cyan-300 border border-cyan-500 px-6 py-2.5 rounded-full shadow-2xl flex items-center space-x-3 z-50 animate-bounce"                , __self: this, __source: {fileName: _jsxFileName, lineNumber: 876}}
+          , React.createElement('span', { className: "w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 877}} )
+          , React.createElement('span', { className: "text-xs font-mono font-bold tracking-wide"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 878}}, toastMessage)
+        )
+      )
+
+      /* -------------------------------------------------------------------- */
+      /* 6. RESET ALL CONFIRMATION MODAL                                      */
+      /* -------------------------------------------------------------------- */
+      , showResetConfirm && (
+        React.createElement('div', { className: "fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 886}}
+          , React.createElement('div', { className: "bg-[#182635] border-2 border-rose-500 rounded-lg p-6 max-w-md w-full shadow-2xl"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 887}}
+            , React.createElement('h3', { className: "text-lg font-bold text-rose-400 mb-2 flex items-center space-x-2"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 888}}
+              , React.createElement('svg', { className: "w-6 h-6 text-rose-500"  , fill: "none", viewBox: "0 0 24 24"   , stroke: "currentColor", __self: this, __source: {fileName: _jsxFileName, lineNumber: 889}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 890}} )
+              )
+              , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 892}}, "Confirm Global Master Reset"   )
+            )
+            , React.createElement('p', { className: "text-slate-300 text-xs leading-relaxed mb-6"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 894}}, "This action will issue an interactive PLC Tag reset pulse across Line MB110, acknowledging active safety interlocks and clearing fault registers."
+
+            )
+            , React.createElement('div', { className: "flex justify-end space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 897}}
+              , React.createElement('button', {
+                onClick: () => setShowResetConfirm(false),
+                className: "px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded text-xs font-bold"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 898}}
+, "Cancel"
+
+              )
+              , React.createElement('button', {
+                onClick: confirmResetAll,
+                className: "px-5 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded text-xs font-bold shadow-lg"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 904}}
+, "Execute Master Reset"
+
+              )
+            )
+          )
+        )
+      )
+
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

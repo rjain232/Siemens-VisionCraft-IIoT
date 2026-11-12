@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - Sew_TurnTable</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          Sew_TurnTable
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function SewTurnTableComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1320px', height: '712px', minHeight: '712px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Group Container Rectangle: Rectangle_5 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '197px', top: '72px', width: '248px', height: '590px' }} />
+      {/* Group Container Rectangle: Rectangle_3 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '451px', top: '72px', width: '248px', height: '585px' }} />
+      {/* Header Selector: 符号 IO 域_7 */}
+      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '390px', top: '6px', width: '500px', height: '41px' }}>
+        <span className="truncate tracking-wide">Symbol IO Field 7</span>
+        <span className="text-[9px] text-white/90 ml-1">▼</span>
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '65px', width: '100%' }} />
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="./tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Diagnostic Row: Text_DigitalOutputs_30 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '519px', top: '134px', width: '124px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 30</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_31 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '519px', top: '158px', width: '124px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 31</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_32 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '519px', top: '182px', width: '124px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 32</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_34 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '519px', top: '207px', width: '124px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 34</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_35 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '519px', top: '231px', width: '124px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 35</span>
+      </div>
+      {/* Siemens Status LED: LED_1_Left_33 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_23 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_24 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_25 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_26 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Action Button: 按钮_5 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '202px', top: '562px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 5</span>
+      </button>
+      {/* Action Button: 按钮_8 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '320px', top: '562px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 8</span>
+      </button>
+      {/* Action Button: 按钮_9 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '202px', top: '395px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 9</span>
+      </button>
+      {/* Action Button: 按钮_10 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '323px', top: '395px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 10</span>
+      </button>
+      {/* Action Button: 按钮_3 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '459px', top: '561px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 3</span>
+      </button>
+      {/* Action Button: 按钮_2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '459px', top: '486px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 2</span>
+      </button>
+      {/* Action Button: 按钮_1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '459px', top: '412px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 1</span>
+      </button>
+      {/* Action Button: 按钮_7 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '459px', top: '338px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 7</span>
+      </button>
+      {/* Process Value IOField: IO 域_9 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '576px', top: '338px', width: '115px', height: '72px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: 文本_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '470px', top: '314px', width: '94px', height: '24px' }}>
+        <span className="truncate font-sans">Signal #1</span>
+      </div>
+      {/* Diagnostic Row: 文本_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '587px', top: '314px', width: '94px', height: '24px' }}>
+        <span className="truncate font-sans">Signal #2</span>
+      </div>
+      {/* Process Value IOField: IO 域_10 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '576px', top: '412px', width: '115px', height: '72px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_11 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '576px', top: '486px', width: '115px', height: '72px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_12 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '576px', top: '561px', width: '115px', height: '72px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: 文本_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '207px', top: '130px', width: '94px', height: '24px' }}>
+        <span className="truncate font-sans">Signal #3</span>
+      </div>
+      {/* Process Value IOField: IO 域_13 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '305px', top: '122px', width: '116px', height: '39px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: 文本_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '207px', top: '170px', width: '94px', height: '24px' }}>
+        <span className="truncate font-sans">Signal #4</span>
+      </div>
+      {/* Process Value IOField: IO 域_14 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '305px', top: '162px', width: '116px', height: '39px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Action Button: 按钮_11 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '202px', top: '203px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 11</span>
+      </button>
+      {/* Action Button: 按钮_12 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-sm rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '202px', top: '319px', width: '115px', height: '72px' }}>
+        <span className="truncate w-full text-center">Button 12</span>
+      </button>
+      {/* Action Button: 按钮_6 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '199px', top: '73px', width: '498px', height: '40px' }}>
+        <span className="truncate w-full text-center">Button 6</span>
+      </button>
+      {/* Group Container Rectangle: Rectangle_4 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '9px', top: '64px', width: '180px', height: '273px' }} />
+      {/* Siemens Graphic View: Graphic view_1 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '14px', top: '75px', width: '61px', height: '38px' }}>
+        <img src="./tia_graphics/TurnTable.png" alt="Graphic view_1" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Graphic view_2 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '124px', top: '75px', width: '61px', height: '38px' }}>
+        <img src="./tia_graphics/TurnTable.png" alt="Graphic view_2" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_33 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '16px', top: '120px', width: '91px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 33</span>
+      </div>
+      {/* Siemens Status LED: LED_1_Left_1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Diagnostic Row: Text_DigitalOutputs_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '209px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 1</span>
+      </div>
+      {/* Process Value IOField: IO 域_1 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '117px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_2 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '139px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_3 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '161px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_4 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '183px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '16px', top: '142px', width: '91px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 2</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '16px', top: '164px', width: '91px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 3</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '16px', top: '186px', width: '91px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 4</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '225px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 5</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '258px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 6</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '274px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 7</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_8 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '291px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 8</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_9 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '307px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 9</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_10 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '324px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 10</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_11 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '241px', width: '100px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 11</span>
+      </div>
+      {/* Siemens Status LED: LED_1_Left_2 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_3 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_4 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_5 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_6 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_7 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_8 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Schematic Trace: 线_1 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '76px', top: '95px', width: '45px' }} />
+      {/* Group Container Rectangle: Rectangle_1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '9px', top: '337px', width: '180px', height: '335px' }} />
+      {/* Diagnostic Row: Text_DigitalOutputs_12 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '442px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 12</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_13 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '458px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 13</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_14 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '474px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 14</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_20 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '491px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 20</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_21 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '507px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 21</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_22 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '524px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 22</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_23 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '540px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 23</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_24 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '557px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 24</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_25 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '573px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 25</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_26 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '590px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 26</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_27 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '606px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 27</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_28 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '623px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 28</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_29 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '639px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 29</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_44 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '13px', top: '385px', width: '73px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 44</span>
+      </div>
+      {/* Process Value IOField: IO 域_5 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '382px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_6 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '404px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IO 域_7 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '110px', top: '426px', width: '54px', height: '21px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_45 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '13px', top: '407px', width: '73px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 45</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_46 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '13px', top: '429px', width: '73px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 46</span>
+      </div>
+      {/* Diagnostic Row: Text_DigitalOutputs_47 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-semibold text-[8px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '33px', top: '656px', width: '108px', height: '16px' }}>
+        <span className="truncate font-sans">Text DigitalOutputs 47</span>
+      </div>
+      {/* Siemens Status LED: LED_1_Left_9 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_10 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_11 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_12 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_13 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_14 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_15 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_16 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_17 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_18 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_19 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_20 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_21 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_22 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Schematic Trace: 线_2 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '80px', top: '358px', width: '44px' }} />
+      {/* Siemens Graphic View: Graphic view_3 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '125px', top: '340px', width: '61px', height: '38px' }}>
+        <img src="./tia_graphics/TurnTable.png" alt="Graphic view_3" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Graphic view_4 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '14px', top: '340px', width: '61px', height: '38px' }}>
+        <img src="./tia_graphics/TurnTable.png" alt="Graphic view_4" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Status LED: LED_1_Left_30 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_29 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_28 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: LED_1_Left_27 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Schematic Trace: 线_3 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '199px', top: '310px', width: '242px' }} />
+      {/* Schematic Trace: 线_4 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '199px', top: '491px', width: '241px' }} />
+      {/* Schematic Trace: 线_7 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '453px', top: '285px', width: '242px' }} />
+      {/* Siemens Graphic View: Zone01 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '706px', top: '68px', width: '569px', height: '585px' }}>
+        <img src="./tia_graphics/Zone01.png" alt="Zone01" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Status LED: LED_1_Left_34 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Diagnostic Row: 文本域_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1029px', top: '150px', width: '119px', height: '33px' }}>
+        <span className="truncate font-sans">Signal #7</span>
+      </div>
+      {/* Diagonal Trace: Line_1V1_4 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '1021px', top: '210px', width: '9px', height: '149px' }}>
+        <line x1="0" y1="0" x2="9" y2="149" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagnostic Row: 文本域_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '731px', top: '576px', width: '119px', height: '33px' }}>
+        <span className="truncate font-sans">Signal #1</span>
+      </div>
+      {/* Diagnostic Row: 文本域_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '713px', top: '202px', width: '119px', height: '33px' }}>
+        <span className="truncate font-sans">Signal #2</span>
+      </div>
+      {/* Diagnostic Row: 文本域_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1130px', top: '474px', width: '119px', height: '33px' }}>
+        <span className="truncate font-sans">Signal #3</span>
+      </div>
+      {/* Diagonal Trace: Line_1V1_1 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '771px', top: '286px', width: '139px', height: '71px' }}>
+        <line x1="0" y1="0" x2="139" y2="71" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_1V1_3 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '1074px', top: '483px', width: '55px', height: '25px' }}>
+        <line x1="0" y1="0" x2="55" y2="25" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_1V1_5 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '780px', top: '500px', width: '72px', height: '87px' }}>
+        <line x1="0" y1="0" x2="72" y2="87" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<SewTurnTableComponent />);
+  </script>
+</body>
+</html>

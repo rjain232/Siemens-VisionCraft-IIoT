@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>MarriageFIFO_MB200_MB200RB04</Name>
+      <Width>1260</Width>
+      <Height>525</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_4</Name>
+          <Left>-3</Left>
+          <Top>2</Top>
+          <Width>1255</Width>
+          <Height>515</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_2</Name>
+          <Left>259</Left>
+          <Top>47</Top>
+          <Width>0</Width>
+          <Height>299</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_6</Name>
+          <Left>4</Left>
+          <Top>5</Top>
+          <Width>1244</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_7</Name>
+          <Left>319</Left>
+          <Top>9</Top>
+          <Width>593</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_1</Name>
+          <Left>3</Left>
+          <Top>47</Top>
+          <Width>1258</Width>
+          <Height>466</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

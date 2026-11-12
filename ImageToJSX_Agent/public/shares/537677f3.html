@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview (Modified)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [activeTab, setActiveTab] = useState('Overall OEE');
+  const [activeSidebarItem, setActiveSidebarItem] = useState('OEE');
+  const [isSearched, setIsSearched] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
+
+  // Filter states
+  const [area, setArea] = useState('Cluster 02');
+  const [line, setLine] = useState('FE');
+  const [station, setStation] = useState('FE110');
+  const [shift, setShift] = useState('All Shifts');
+  const [startDate, setStartDate] = useState('2026-10-23');
+  const [endDate, setEndDate] = useState('2026-10-23');
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
+  const handleSearch = () => {
+    setIsSearched(true);
+    showToast('OEE data loaded successfully for ' + station);
+  };
+
+  const handleDownload = () => {
+    showToast('Downloading report as CSV...');
+  };
+
+  const handleSendEmail = () => {
+    showToast('Report successfully sent to registered email list.');
+  };
+
+  const sidebarItems = [
+    { category: 'DASHBOARD', items: [{ name: 'Overview', icon: 'grid' }] },
+    { 
+      category: 'PRODUCTION', 
+      items: [
+        { name: 'OEE', icon: 'chart' },
+        { name: 'Robot Monitoring', icon: 'robot' },
+        { name: 'Production Control', icon: 'cpu' },
+        { name: 'Maintenance', icon: 'wrench' }
+      ] 
+    },
+    { 
+      category: 'CONFIGURATION', 
+      items: [
+        { name: 'Process Configurator', icon: 'settings' },
+        { name: 'Third Party Report', icon: 'document' }
+      ] 
+    },
+    { category: 'OPERATIONS', items: [{ name: 'Part Marriage', icon: 'box' }] }
+  ];
+
+  const renderIcon = (name) => {
+    switch(name) {
+      case 'grid':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}, React.createElement('rect', { width: "7", height: "7", x: "3", y: "3", rx: "1", __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}), React.createElement('rect', { width: "7", height: "7", x: "14", y: "3", rx: "1", __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}), React.createElement('rect', { width: "7", height: "7", x: "14", y: "14", rx: "1", __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}), React.createElement('rect', { width: "7", height: "7", x: "3", y: "14", rx: "1", __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}));
+      case 'chart':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}));
+      case 'robot':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"                    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}));
+      case 'cpu':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 112}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 9h10v6H7V9z"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 112}}));
+      case 'wrench':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"                                              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}}), React.createElement('circle', { cx: "12", cy: "12", r: "3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}}));
+      case 'settings':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 116}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"                            , __self: this, __source: {fileName: _jsxFileName, lineNumber: 116}}));
+      case 'document':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"                    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}));
+      case 'box':
+        return React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}));
+      default:
+        return null;
+    }
+  };
+
+  return (
+    React.createElement('div', { className: "flex flex-col h-screen w-screen bg-[#F8F9FA] text-[#333333] font-sans overflow-hidden select-none"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 127}}
+
+      /* Toast Notification */
+      , toastMessage && (
+        React.createElement('div', { className: "fixed top-16 right-6 z-50 bg-[#0066CC] text-white px-4 py-2 rounded shadow-lg flex items-center space-x-2 text-sm animate-fade-in"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 131}}
+          , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 132}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 132}}))
+          , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 133}}, toastMessage)
+        )
+      )
+
+      /* TOPBAR / HEADER */
+      , React.createElement('header', { className: "h-14 bg-white border-b border-[#E2E8F0] flex items-center justify-between px-4 z-20"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 138}}
+        , React.createElement('div', { className: "flex items-center space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 139}}
+          , React.createElement('button', { className: "text-[#666666] hover:text-[#0066CC] focus:outline-none"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 140}}
+            , React.createElement('svg', { className: "w-6 h-6" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 141}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M4 6h16M4 12h16M4 18h16"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 141}}))
+          )
+          , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 143}}
+            , React.createElement('span', { className: "font-bold text-lg tracking-wider text-[#0066CC] italic"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 144}}, "TATA")
+            , React.createElement('span', { className: "text-xl font-extrabold text-[#D32F2F]"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 145}}, "Motors")
+          )
+        )
+
+        , React.createElement('div', { className: "flex items-center space-x-6"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 149}}
+          , React.createElement('button', { className: "relative text-[#666666] hover:text-[#0066CC] focus:outline-none"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 150}}
+            , React.createElement('span', { className: "absolute -top-1 -right-1 bg-red-500 w-2 h-2 rounded-full"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 151}})
+            , React.createElement('svg', { className: "w-5 h-5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 152}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"                           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 152}}))
+          )
+          , React.createElement('div', { className: "flex items-center space-x-2 bg-slate-100 px-3 py-1 rounded-full border border-[#E2E8F0]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 154}}
+            , React.createElement('div', { className: "w-7 h-7 bg-[#0066CC] rounded-full flex items-center text-white font-bold justify-center text-xs"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 155}}, "N+")
+            , React.createElement('span', { className: "text-xs font-bold text-slate-700"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 156}}, "NET+ve")
+          )
+        )
+      )
+
+      /* MAIN LAYOUT */
+      , React.createElement('div', { className: "flex flex-1 overflow-hidden"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 162}}
+
+        /* SIDEBAR */
+        , React.createElement('aside', { className: "w-64 bg-white border-r border-[#E2E8F0] flex flex-col justify-between overflow-y-auto"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 165}}
+          , React.createElement('div', { className: "py-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 166}}
+            , sidebarItems.map((sec, idx) => (
+              React.createElement('div', { key: idx, className: "mb-4", __self: this, __source: {fileName: _jsxFileName, lineNumber: 168}}
+                , React.createElement('div', { className: "px-4 py-1 text-[10px] font-bold tracking-wider text-[#666666] uppercase"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 169}}
+                  , sec.category
+                )
+                , React.createElement('div', { className: "mt-1 space-y-0.5" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 172}}
+                  , sec.items.map((item, iIndex) => {
+                    const isActive = activeSidebarItem === item.name;
+                    return (
+                      React.createElement('button', {
+                        key: iIndex,
+                        onClick: () => setActiveSidebarItem(item.name),
+                        className: `w-full flex items-center space-x-3 px-4 py-2.5 text-xs font-medium transition-colors border-l-4 ${
+                          isActive 
+                            ? 'bg-[#EBF5FF] text-[#0066CC] border-[#0066CC]' 
+                            : 'text-[#666666] hover:bg-slate-50 hover:text-[#333333] border-transparent'
+                        }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 176}}
+
+                        , React.createElement('span', { className: isActive ? 'text-[#0066CC]' : 'text-[#666666]', __self: this, __source: {fileName: _jsxFileName, lineNumber: 185}}
+                          , renderIcon(item.icon)
+                        )
+                        , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 188}}, item.name)
+                      )
+                    );
+                  })
+                )
+              )
+            ))
+          )
+
+          /* User profile footer inside sidebar */
+          , React.createElement('div', { className: "p-3 border-t border-[#E2E8F0] bg-white flex items-center justify-between"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 198}}
+            , React.createElement('div', { className: "flex items-center space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 199}}
+              , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 200}}
+                , React.createElement('div', { className: "w-8 h-8 rounded-full bg-[#0066CC] text-white flex items-center justify-center font-bold text-sm"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 201}}, "P"
+
+                )
+                , React.createElement('div', { className: "absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 204}})
+              )
+              , React.createElement('div', { className: "flex flex-col" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 206}}
+                , React.createElement('span', { className: "text-xs font-semibold text-[#333333]"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 207}}, "Priyanka")
+                , React.createElement('span', { className: "text-[10px] text-[#666666]" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 208}}, "user")
+              )
+            )
+            , React.createElement('button', { className: "text-[#666666] hover:text-[#0066CC] p-1"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 211}}
+              , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 212}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"                  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 212}}))
+            )
+          )
+        )
+
+        /* MAIN CONTENT AREA */
+        , React.createElement('main', { className: "flex-1 flex flex-col overflow-y-auto bg-[#F8F9FA]"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 218}}
+
+          /* BREADCRUMB HEADER */
+          , React.createElement('div', { className: "bg-white border-b border-[#E2E8F0] px-6 py-3 flex items-center text-xs text-[#666666] space-x-2"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 221}}
+            , React.createElement('svg', { className: "w-4 h-4 text-[#666666]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 222}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"                              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 222}}))
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 223}}, "Dashboard")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 224}}, ">")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 225}}, "Production")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 226}}, ">")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 227}}, "OEE")
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 228}}, ">")
+            , React.createElement('span', { className: "font-semibold text-[#333333]" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 229}}, "Overall OEE" )
+          )
+
+          /* OEE NAVIGATION TABS */
+          , React.createElement('div', { className: "bg-white border-b border-[#E2E8F0] px-6 flex space-x-8"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 233}}
+            , ['Overall OEE', 'Production Summary'].map((tab) => {
+              const active = activeTab === tab;
+              return (
+                React.createElement('button', {
+                  key: tab,
+                  onClick: () => { setActiveTab(tab); setIsSearched(false); },
+                  className: `py-3 text-xs font-semibold border-b-2 flex items-center space-x-2 transition-colors ${
+                    active 
+                      ? 'border-[#0066CC] text-[#0066CC]' 
+                      : 'border-transparent text-[#666666] hover:text-[#333333]'
+                  }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 237}}
+
+                  , tab === 'Overall OEE' ? (
+                    React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 247}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"                , __self: this, __source: {fileName: _jsxFileName, lineNumber: 247}}))
+                  ) : (
+                    React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 249}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"                                              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 249}}))
+                  )
+                  , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 251}}, tab)
+                )
+              );
+            })
+          )
+
+          /* FILTER CONTROLS & ACTIONS CONTAINER */
+          , React.createElement('div', { className: "p-6 space-y-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 258}}
+
+            /* Filter Bar Card 1 */
+            , React.createElement('div', { className: "bg-white p-4 rounded-lg border border-[#E2E8F0] shadow-sm grid grid-cols-1 md:grid-cols-4 gap-4"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 261}}
+
+              /* Area */
+              , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 264}}
+                , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 265}}, "Area")
+                , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 266}}
+                  , React.createElement('select', { 
+                    value: area, 
+                    onChange: (e) => setArea(e.target.value),
+                    className: "w-full bg-white border border-[#E2E8F0] text-xs rounded px-3 py-2 appearance-none focus:outline-none focus:border-[#0066CC]"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 267}}
+
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 272}}, "Cluster 02" )
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 273}}, "Cluster 01" )
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 274}}, "Cluster 03" )
+                  )
+                  , React.createElement('div', { className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#666666]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 276}}
+                    , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 277}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M19 9l-7 7-7-7"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 277}}))
+                  )
+                )
+              )
+
+              /* Line */
+              , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 283}}
+                , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 284}}, "Line")
+                , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 285}}
+                  , React.createElement('select', { 
+                    value: line, 
+                    onChange: (e) => setLine(e.target.value),
+                    className: "w-full bg-white border border-[#E2E8F0] text-xs rounded px-3 py-2 appearance-none focus:outline-none focus:border-[#0066CC]"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 286}}
+
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 291}}, "FE")
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 292}}, "GE")
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 293}}, "ME")
+                  )
+                  , React.createElement('div', { className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#666666]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 295}}
+                    , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 296}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M19 9l-7 7-7-7"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 296}}))
+                  )
+                )
+              )
+
+              /* Station */
+              , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 302}}
+                , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 303}}, "Station")
+                , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 304}}
+                  , React.createElement('select', { 
+                    value: station, 
+                    onChange: (e) => setStation(e.target.value),
+                    className: "w-full bg-white border border-[#E2E8F0] text-xs rounded px-3 py-2 appearance-none focus:outline-none focus:border-[#0066CC]"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 305}}
+
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 310}}, "FE110")
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 311}}, "FE120")
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 312}}, "FE130")
+                  )
+                  , React.createElement('div', { className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#666666]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 314}}
+                    , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 315}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M19 9l-7 7-7-7"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 315}}))
+                  )
+                )
+              )
+
+              /* Shift */
+              , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 321}}
+                , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 322}}, "Shift")
+                , React.createElement('div', { className: "relative flex items-center bg-white border border-[#E2E8F0] rounded px-2 py-1"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 323}}
+                  , React.createElement('span', { className: "bg-[#EBF5FF] text-[#0066CC] text-[10px] px-2 py-0.5 rounded flex items-center space-x-1 mr-1"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 324}}
+                    , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 325}}, "All Shifts" )
+                    , React.createElement('button', { onClick: () => setShift(''), className: "hover:text-red-500 font-bold ml-1"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 326}}, "×")
+                  )
+                  , React.createElement('select', { 
+                    value: shift, 
+                    onChange: (e) => setShift(e.target.value),
+                    className: "w-full bg-transparent text-xs appearance-none focus:outline-none"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 328}}
+
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 333}}, "All Shifts" )
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 334}}, "Shift A (Morning)"  )
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 335}}, "Shift B (Evening)"  )
+                    , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 336}}, "Shift C (Night)"  )
+                  )
+                  , React.createElement('div', { className: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#666666]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 338}}
+                    , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 339}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M19 9l-7 7-7-7"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 339}}))
+                  )
+                )
+              )
+
+            )
+
+            /* Filter Bar Card 2 */
+            , React.createElement('div', { className: "bg-white p-4 rounded-lg border border-[#E2E8F0] shadow-sm flex flex-col md:flex-row justify-between items-center gap-4"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 347}}
+
+              , React.createElement('div', { className: "flex flex-wrap items-center gap-4 w-full md:w-auto"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 349}}
+                /* Start Date */
+                , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 351}}
+                  , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 352}}, "Start Date" )
+                  , React.createElement('div', { className: "flex items-center bg-white border border-[#E2E8F0] rounded px-3 py-1.5 space-x-2"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 353}}
+                    , React.createElement('svg', { className: "w-4 h-4 text-[#666666]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 354}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"                  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 354}}))
+                    , React.createElement('input', { 
+                      type: "date", 
+                      value: startDate, 
+                      onChange: (e) => setStartDate(e.target.value),
+                      className: "text-xs focus:outline-none bg-transparent"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 355}}
+                    )
+                    , React.createElement('button', { onClick: () => setStartDate(''), className: "text-[#666666] hover:text-[#333333]" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 361}}, "×")
+                  )
+                )
+
+                /* End Date */
+                , React.createElement('div', { className: "flex flex-col space-y-1.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 366}}
+                  , React.createElement('label', { className: "text-[10px] font-bold text-[#666666] tracking-wider uppercase"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 367}}, "End Date" )
+                  , React.createElement('div', { className: "flex items-center bg-white border border-[#E2E8F0] rounded px-3 py-1.5 space-x-2"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 368}}
+                    , React.createElement('svg', { className: "w-4 h-4 text-[#666666]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 369}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"                  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 369}}))
+                    , React.createElement('input', { 
+                      type: "date", 
+                      value: endDate, 
+                      onChange: (e) => setEndDate(e.target.value),
+                      className: "text-xs focus:outline-none bg-transparent"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 370}}
+                    )
+                    , React.createElement('button', { onClick: () => setEndDate(''), className: "text-[#666666] hover:text-[#333333]" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 376}}, "×")
+                  )
+                )
+              )
+
+              /* Action Buttons */
+              , React.createElement('div', { className: "flex items-center space-x-3 w-full md:w-auto justify-end"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 382}}
+                , React.createElement('button', { 
+                  onClick: handleSearch,
+                  className: "bg-[#0066CC] hover:bg-[#0052A3] text-white px-4 py-2 rounded text-xs font-semibold flex items-center space-x-2 transition-colors shadow-sm"            , __self: this, __source: {fileName: _jsxFileName, lineNumber: 383}}
+
+                  , React.createElement('svg', { className: "w-4 h-4" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 387}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 387}}))
+                  , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 388}}, "Search")
+                )
+                , React.createElement('button', { 
+                  onClick: handleDownload,
+                  className: "bg-white border border-[#E2E8F0] hover:bg-slate-50 text-[#333333] px-4 py-2 rounded text-xs font-semibold flex items-center space-x-2 transition-colors shadow-sm"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 390}}
+
+                  , React.createElement('svg', { className: "w-4 h-4 text-[#666666]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 394}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 394}}))
+                  , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 395}}, "Download")
+                )
+                , React.createElement('button', { 
+                  onClick: handleSendEmail,
+                  className: "bg-white border border-[#E2E8F0] hover:bg-slate-50 text-[#333333] px-4 py-2 rounded text-xs font-semibold flex items-center space-x-2 transition-colors shadow-sm"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 397}}
+
+                  , React.createElement('svg', { className: "w-4 h-4 text-[#666666]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 401}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"                      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 401}}))
+                  , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 402}}, "Send Email" )
+                )
+              )
+
+            )
+
+            /* DATA DISPLAY AREA */
+            , React.createElement('div', { className: "bg-white p-8 rounded-lg border border-[#E2E8F0] shadow-sm min-h-[350px] flex flex-col items-center justify-center text-center"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 409}}
+              , !isSearched ? (
+                React.createElement('div', { className: "flex flex-col items-center space-y-4"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 411}}
+                  , React.createElement('div', { className: "w-14 h-14 bg-[#EBF5FF] text-[#0066CC] rounded-full flex items-center justify-center shadow-inner"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 412}}
+                    , React.createElement('svg', { className: "w-7 h-7" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 413}}, React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 413}}))
+                  )
+                  , React.createElement('p', { className: "text-xs font-medium text-[#666666]"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 415}}
+                    , activeTab === 'Overall OEE' ? 'Select filters and click Search to view OEE data' : 'Select filters and click Search to view Production Summary'
+                  )
+                )
+              ) : (
+                React.createElement('div', { className: "w-full space-y-6" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 420}}
+                  , React.createElement('div', { className: "flex justify-between items-center border-b border-[#E2E8F0] pb-3"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 421}}
+                    , React.createElement('h3', { className: "text-sm font-bold text-[#333333]"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 422}}
+                      , activeTab, " Report — Station: "    , station, " (" , line, " Line, "  , area, ")"
+                    )
+                    , React.createElement('span', { className: "text-[10px] bg-green-100 text-green-700 px-2 py-1 rounded font-semibold"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 425}}, "Live Data Connected"  )
+                  )
+
+                  /* Mock Metrics Grid */
+                  , React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-4 gap-4"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 429}}
+                    , React.createElement('div', { className: "bg-[#F8F9FA] p-4 rounded border border-[#E2E8F0] text-left"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 430}}
+                      , React.createElement('span', { className: "text-[10px] text-[#666666] font-bold uppercase"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 431}}, "Availability")
+                      , React.createElement('p', { className: "text-xl font-bold text-[#0066CC] mt-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 432}}, "94.2%")
+                    )
+                    , React.createElement('div', { className: "bg-[#F8F9FA] p-4 rounded border border-[#E2E8F0] text-left"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 434}}
+                      , React.createElement('span', { className: "text-[10px] text-[#666666] font-bold uppercase"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 435}}, "Performance")
+                      , React.createElement('p', { className: "text-xl font-bold text-[#0066CC] mt-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 436}}, "88.7%")
+                    )
+                    , React.createElement('div', { className: "bg-[#F8F9FA] p-4 rounded border border-[#E2E8F0] text-left"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 438}}
+                      , React.createElement('span', { className: "text-[10px] text-[#666666] font-bold uppercase"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 439}}, "Quality")
+                      , React.createElement('p', { className: "text-xl font-bold text-[#0066CC] mt-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 440}}, "99.1%")
+                    )
+                    , React.createElement('div', { className: "bg-[#EBF5FF] p-4 rounded border border-[#0066CC] text-left"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 442}}
+                      , React.createElement('span', { className: "text-[10px] text-[#0066CC] font-bold uppercase"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 443}}, "Overall OEE" )
+                      , React.createElement('p', { className: "text-xl font-extrabold text-[#0066CC] mt-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 444}}, "82.8%")
+                    )
+                  )
+
+                  /* Mock Table */
+                  , React.createElement('div', { className: "overflow-x-auto border border-[#E2E8F0] rounded"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 449}}
+                    , React.createElement('table', { className: "w-full text-left text-xs"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 450}}
+                      , React.createElement('thead', { className: "bg-[#F8F9FA] text-[#666666] border-b border-[#E2E8F0]"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 451}}
+                        , React.createElement('tr', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 452}}
+                          , React.createElement('th', { className: "p-3 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 453}}, "Timestamp")
+                          , React.createElement('th', { className: "p-3 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 454}}, "Shift")
+                          , React.createElement('th', { className: "p-3 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 455}}, "Planned Time" )
+                          , React.createElement('th', { className: "p-3 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 456}}, "Operating Time" )
+                          , React.createElement('th', { className: "p-3 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 457}}, "Status")
+                        )
+                      )
+                      , React.createElement('tbody', { className: "divide-y divide-[#E2E8F0]" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 460}}
+                        , React.createElement('tr', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 461}}
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 462}}, "2026-10-23 08:00:00" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 463}}, "Shift A" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 464}}, "480 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 465}}, "452 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 466}}, React.createElement('span', { className: "bg-green-100 text-green-800 px-2 py-0.5 rounded text-[10px]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 466}}, "Optimal"))
+                        )
+                        , React.createElement('tr', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 468}}
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 469}}, "2026-10-23 12:00:00" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 470}}, "Shift B" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 471}}, "480 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 472}}, "430 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 473}}, React.createElement('span', { className: "bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 473}}, "Warning"))
+                        )
+                        , React.createElement('tr', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 475}}
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 476}}, "2026-10-23 16:00:00" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 477}}, "Shift C" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 478}}, "480 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 479}}, "465 mins" )
+                          , React.createElement('td', { className: "p-3", __self: this, __source: {fileName: _jsxFileName, lineNumber: 480}}, React.createElement('span', { className: "bg-green-100 text-green-800 px-2 py-0.5 rounded text-[10px]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 480}}, "Optimal"))
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+
+          )
+
+          /* FOOTER */
+          , React.createElement('footer', { className: "mt-auto bg-white border-t border-[#E2E8F0] px-6 py-2.5 flex items-center justify-between text-[11px] text-[#666666]"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 492}}
+            , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 493}}
+              , React.createElement('span', { className: "font-bold text-green-600" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 494}}, "SCHAEFFLER")
+              , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 495}}, "© 2026 All rights reserved."    )
+            )
+            , React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 497}}
+              , React.createElement('span', { className: "text-[#666666]", __self: this, __source: {fileName: _jsxFileName, lineNumber: 498}}, "v0.0.2")
+            )
+          )
+
+        )
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

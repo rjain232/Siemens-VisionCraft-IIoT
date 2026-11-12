@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>SWEServoHelp</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>符号 IO 域_8</Name>
+          <Left>579</Left>
+          <Top>239</Top>
+          <Width>653</Width>
+          <Height>291</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>符号 IO 域_14</Name>
+          <Left>61</Left>
+          <Top>239</Top>
+          <Width>490</Width>
+          <Height>293</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>符号 IO 域_15</Name>
+          <Left>454</Left>
+          <Top>130</Top>
+          <Width>696</Width>
+          <Height>39</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_39</Name>
+          <Left>62</Left>
+          <Top>132</Top>
+          <Width>260</Width>
+          <Height>43</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IO Field_ROBOT INFO_1</Name>
+          <Left>332</Left>
+          <Top>132</Top>
+          <Width>76</Width>
+          <Height>45</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_24</Name>
+          <Left>16</Left>
+          <Top>90</Top>
+          <Width>1246</Width>
+          <Height>551</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_1</Name>
+          <Left>65</Left>
+          <Top>187</Top>
+          <Width>487</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_2</Name>
+          <Left>590</Left>
+          <Top>193</Top>
+          <Width>383</Width>
+          <Height>29</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>65</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>241</Left>
+          <Top>4</Top>
+          <Width>768</Width>
+          <Height>57</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

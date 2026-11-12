@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: 'Shivangi Shah',
+      isMe: false,
+      timestamp: 'Oct 2, 12:00 PM',
+      content: 'with sdet.\n\ntry to do some AI certifications copilot gh300 its quite easy, gemini agent development and if possible go for claude its value addon and nowadays everyone is looking for AI certifications. invest your time in AI. alongside you can also start practicing leet code problems begin with easy ones that itself builds good confidence and try to prepare one framework on your own covering all the practical usecases. and nowadays interviews are more focused on scenario based. try to utilise AI for your interview preparation.'
+    },
+    {
+      id: 2,
+      sender: 'Me',
+      isMe: true,
+      timestamp: 'Oct 2, 12:01 PM',
+      content: 'whats tools and technologies are you working on ?'
+    },
+    {
+      id: 3,
+      sender: 'Shivangi Shah',
+      isMe: false,
+      timestamp: 'Oct 2, 12:04 PM',
+      content: 'Playwright is in demand as compared to selenium as it has mcp capability. also it has more opening and less competition.'
+    }
+  ]);
+
+  const [inputText, setInputText] = useState('');
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    _optionalChain([messagesEndRef, 'access', _4 => _4.current, 'optionalAccess', _5 => _5.scrollIntoView, 'call', _6 => _6({ behavior: 'smooth' })]);
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (!inputText.trim()) return;
+
+    const newMessage = {
+      id: Date.now(),
+      sender: 'Me',
+      isMe: true,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      content: inputText.trim()
+    };
+
+    setMessages((prev) => [...prev, newMessage]);
+    setInputText('');
+  };
+
+  return (
+    React.createElement('div', { className: "flex justify-center items-center min-h-screen bg-gray-100 font-sans"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 103}}
+      /* Mobile Device Frame */
+      , React.createElement('div', { className: "w-full max-w-md h-[100vh] sm:h-[844px] bg-white flex flex-col shadow-2xl sm:rounded-[40px] overflow-hidden relative border border-gray-200"            , __self: this, __source: {fileName: _jsxFileName, lineNumber: 105}}
+
+        /* iOS Status Bar */
+        , React.createElement('div', { className: "h-12 bg-white flex justify-between items-center px-6 pt-2 select-none z-20"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}
+          , React.createElement('span', { className: "text-black font-semibold text-sm tracking-tight"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}, "3:18")
+          , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}
+            /* Cellular & 5G Icon */
+            , React.createElement('div', { className: "flex items-end space-x-[2px] h-3"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 112}}
+              , React.createElement('span', { className: "w-[3px] h-1.5 bg-black rounded-sm"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 113}})
+              , React.createElement('span', { className: "w-[3px] h-2 bg-black rounded-sm"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}})
+              , React.createElement('span', { className: "w-[3px] h-2.5 bg-black rounded-sm"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 115}})
+              , React.createElement('span', { className: "w-[3px] h-3 bg-black rounded-sm"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 116}})
+            )
+            , React.createElement('span', { className: "text-xs font-bold tracking-tighter"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}, "5G")
+            /* Battery Icon */
+            , React.createElement('div', { className: "w-6 h-3 border border-black rounded-sm p-[1px] flex items-center"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}
+              , React.createElement('div', { className: "h-full w-full bg-black rounded-[1px]"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 121}})
+            )
+          )
+        )
+
+        /* Header Bar */
+        , React.createElement('div', { className: "flex items-center justify-between px-4 py-3 bg-white border-b border-gray-100 z-10 shadow-xs"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 127}}
+          , React.createElement('div', { className: "flex items-center space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 128}}
+            , React.createElement('button', { className: "text-[#ff6b4a] focus:outline-none hover:opacity-80 transition-opacity"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}
+              , React.createElement('svg', { className: "w-6 h-6 stroke-[2.5]"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 130}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 19l-7-7 7-7"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 131}} )
+              )
+            )
+            , React.createElement('div', { className: "flex items-center space-x-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 134}}
+              , React.createElement('div', { className: "relative", __self: this, __source: {fileName: _jsxFileName, lineNumber: 135}}
+                , React.createElement('div', { className: "w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center overflow-hidden border border-gray-200"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 136}}
+                  /* Avatar Illustration */
+                  , React.createElement('div', { className: "w-full h-full bg-amber-200 flex items-end justify-center pt-2"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 138}}
+                    , React.createElement('div', { className: "w-7 h-7 bg-amber-400 rounded-t-full relative flex items-center justify-center"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 139}}
+                      /* Glasses & Hair Mock */
+                      , React.createElement('div', { className: "absolute top-1 w-6 h-2 border border-black rounded-full"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 141}})
+                    )
+                  )
+                )
+                , React.createElement('div', { className: "absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 145}})
+              )
+              , React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 147}}
+                , React.createElement('h1', { className: "font-semibold text-gray-900 text-base leading-tight"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 148}}, "Shivangi Shah" )
+                , React.createElement('p', { className: "text-xs text-gray-400" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 149}}, "Online")
+              )
+            )
+          )
+          , React.createElement('button', { className: "text-gray-600 focus:outline-none hover:text-gray-900"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 153}}
+            , React.createElement('svg', { className: "w-6 h-6" , fill: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 154}}
+              , React.createElement('circle', { cx: "12", cy: "6", r: "1.5", __self: this, __source: {fileName: _jsxFileName, lineNumber: 155}} )
+              , React.createElement('circle', { cx: "12", cy: "12", r: "1.5", __self: this, __source: {fileName: _jsxFileName, lineNumber: 156}} )
+              , React.createElement('circle', { cx: "12", cy: "18", r: "1.5", __self: this, __source: {fileName: _jsxFileName, lineNumber: 157}} )
+            )
+          )
+        )
+
+        /* Message Feed / Stream */
+        , React.createElement('div', { className: "flex-1 overflow-y-auto px-4 py-6 space-y-6 bg-white"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 163}}
+          , messages.map((msg, index) => {
+            const showTimestamp = index === 0 || messages[index - 1].timestamp !== msg.timestamp;
+            return (
+              React.createElement(React.Fragment, { key: msg.id, __self: this, __source: {fileName: _jsxFileName, lineNumber: 167}}
+                , showTimestamp && (
+                  React.createElement('div', { className: "flex justify-center my-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 169}}
+                    , React.createElement('span', { className: "text-[11px] text-gray-400 font-medium tracking-wide"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 170}}
+                      , msg.timestamp
+                    )
+                  )
+                )
+                , React.createElement('div', { className: `flex ${msg.isMe ? 'justify-end' : 'justify-start'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 175}}
+                  , React.createElement('div', {
+                    className: `max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap shadow-xs ${
+                      msg.isMe
+                        ? 'bg-[#ff6b4a] text-white rounded-br-xs'
+                        : 'bg-[#f2f2f2] text-[#333333] rounded-bl-xs border border-gray-200/60'
+                    }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 176}}
+
+                    , msg.content
+                  )
+                )
+              )
+            );
+          })
+          , React.createElement('div', { ref: messagesEndRef, __self: this, __source: {fileName: _jsxFileName, lineNumber: 189}} )
+        )
+
+        /* Chat Input Bar */
+        , React.createElement('div', { className: "p-3 bg-white border-t border-gray-100 flex items-center space-x-2"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 193}}
+          , React.createElement('form', { onSubmit: handleSendMessage, className: "flex-1 flex items-center space-x-2"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 194}}
+            , React.createElement('div', { className: "flex-1 relative" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 195}}
+              , React.createElement('input', {
+                type: "text",
+                value: inputText,
+                onChange: (e) => setInputText(e.target.value),
+                placeholder: "Type a message..."  ,
+                className: "w-full bg-[#f2f2f2] text-[#333333] placeholder-gray-400 text-sm rounded-full pl-4 pr-10 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff6b4a]/50 transition-all border border-transparent"              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 196}}
+              )
+            )
+            , React.createElement('button', {
+              type: "submit",
+              disabled: !inputText.trim(),
+              className: `w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+                inputText.trim()
+                  ? 'bg-[#ff6b4a] text-white shadow-md hover:bg-[#e05a3b] cursor-pointer'
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+              }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 204}}
+
+              , React.createElement('svg', { className: "w-5 h-5 transform rotate-45 -mr-0.5"    , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 213}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 214}} )
+              )
+            )
+          )
+        )
+
+        /* iOS Home Indicator Bar */
+        , React.createElement('div', { className: "h-5 bg-white flex justify-center items-center pb-1"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 221}}
+          , React.createElement('div', { className: "w-32 h-1 bg-black rounded-full"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 222}})
+        )
+
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

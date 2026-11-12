@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_PN_DEV_DIAG_Counter_Popup</Name>
+      <Width>290</Width>
+      <Height>322</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>290</Width>
+          <Height>322</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_ReadedDEVNumbers</Name>
+          <Left>8</Left>
+          <Top>163</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Configured</Name>
+          <Left>10</Left>
+          <Top>37</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Configured</Name>
+          <Left>145</Left>
+          <Top>38</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Faulty</Name>
+          <Left>10</Left>
+          <Top>112</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Faulty</Name>
+          <Left>145</Left>
+          <Top>113</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Deaktivated</Name>
+          <Left>10</Left>
+          <Top>87</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Deaktivated</Name>
+          <Left>145</Left>
+          <Top>88</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Present</Name>
+          <Left>10</Left>
+          <Top>62</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Present</Name>
+          <Left>145</Left>
+          <Top>63</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Problem</Name>
+          <Left>10</Left>
+          <Top>137</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Problem</Name>
+          <Left>145</Left>
+          <Top>138</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxDevices</Name>
+          <Left>10</Left>
+          <Top>266</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxModules</Name>
+          <Left>10</Left>
+          <Top>291</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_MaxDevices</Name>
+          <Left>145</Left>
+          <Top>267</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Max_Modules</Name>
+          <Left>145</Left>
+          <Top>292</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PNDEVCounter</Name>
+          <Left>1</Left>
+          <Top>3</Top>
+          <Width>288</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSettings</Name>
+          <Left>10</Left>
+          <Top>241</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Lowest</Name>
+          <Left>10</Left>
+          <Top>185</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Highest</Name>
+          <Left>10</Left>
+          <Top>210</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_LowDevice</Name>
+          <Left>145</Left>
+          <Top>187</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_HighDevice</Name>
+          <Left>145</Left>
+          <Top>212</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode_1</Name>
+          <Left>206</Left>
+          <Top>278</Top>
+          <Width>82</Width>
+          <Height>42</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_1</Name>
+          <Left>8</Left>
+          <Top>8</Top>
+          <Width>290</Width>
+          <Height>322</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_ReadedDEVNumbers_1</Name>
+          <Left>16</Left>
+          <Top>171</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Configured_1</Name>
+          <Left>18</Left>
+          <Top>45</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Configured_1</Name>
+          <Left>153</Left>
+          <Top>46</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Faulty_1</Name>
+          <Left>18</Left>
+          <Top>120</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Faulty_1</Name>
+          <Left>153</Left>
+          <Top>121</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Deaktivated_1</Name>
+          <Left>18</Left>
+          <Top>95</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Deaktivated_1</Name>
+          <Left>153</Left>
+          <Top>96</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Present_1</Name>
+          <Left>18</Left>
+          <Top>70</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Present_1</Name>
+          <Left>153</Left>
+          <Top>71</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Problem_1</Name>
+          <Left>18</Left>
+          <Top>145</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Problem_1</Name>
+          <Left>153</Left>
+          <Top>146</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxDevices_1</Name>
+          <Left>18</Left>
+          <Top>274</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxModules_1</Name>
+          <Left>18</Left>
+          <Top>299</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_MaxDevices_1</Name>
+          <Left>153</Left>
+          <Top>275</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Max_Modules_1</Name>
+          <Left>153</Left>
+          <Top>300</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PNDEVCounter_1</Name>
+          <Left>9</Left>
+          <Top>11</Top>
+          <Width>288</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSettings_1</Name>
+          <Left>18</Left>
+          <Top>249</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Lowest_1</Name>
+          <Left>18</Left>
+          <Top>193</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Highest_1</Name>
+          <Left>18</Left>
+          <Top>218</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_LowDevice_1</Name>
+          <Left>153</Left>
+          <Top>195</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_HighDevice_1</Name>
+          <Left>153</Left>
+          <Top>220</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode_2</Name>
+          <Left>214</Left>
+          <Top>286</Top>
+          <Width>82</Width>
+          <Height>42</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_2</Name>
+          <Left>402</Left>
+          <Top>11</Top>
+          <Width>290</Width>
+          <Height>322</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_ReadedDEVNumbers_2</Name>
+          <Left>410</Left>
+          <Top>174</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Configured_2</Name>
+          <Left>412</Left>
+          <Top>48</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Configured_2</Name>
+          <Left>547</Left>
+          <Top>49</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Faulty_2</Name>
+          <Left>412</Left>
+          <Top>123</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Faulty_2</Name>
+          <Left>547</Left>
+          <Top>124</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Deaktivated_2</Name>
+          <Left>412</Left>
+          <Top>98</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="55">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Deaktivated_2</Name>
+          <Left>547</Left>
+          <Top>99</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="56">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Present_2</Name>
+          <Left>412</Left>
+          <Top>73</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="57">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Present_2</Name>
+          <Left>547</Left>
+          <Top>74</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="58">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Problem_2</Name>
+          <Left>412</Left>
+          <Top>148</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="59">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Problem_2</Name>
+          <Left>547</Left>
+          <Top>149</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="60">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxDevices_2</Name>
+          <Left>412</Left>
+          <Top>277</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="61">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaxModules_2</Name>
+          <Left>412</Left>
+          <Top>302</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="62">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_MaxDevices_2</Name>
+          <Left>547</Left>
+          <Top>278</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="63">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_Max_Modules_2</Name>
+          <Left>547</Left>
+          <Top>303</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="64">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PNDEVCounter_2</Name>
+          <Left>403</Left>
+          <Top>14</Top>
+          <Width>288</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="65">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PLCSettings_2</Name>
+          <Left>412</Left>
+          <Top>252</Top>
+          <Width>276</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="66">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Lowest_2</Name>
+          <Left>412</Left>
+          <Top>196</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="67">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Highest_2</Name>
+          <Left>412</Left>
+          <Top>221</Top>
+          <Width>130</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="68">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_LowDevice_2</Name>
+          <Left>547</Left>
+          <Top>198</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="69">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Counter_HighDevice_2</Name>
+          <Left>547</Left>
+          <Top>223</Top>
+          <Width>44</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="70">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode_3</Name>
+          <Left>608</Left>
+          <Top>289</Top>
+          <Width>82</Width>
+          <Height>42</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

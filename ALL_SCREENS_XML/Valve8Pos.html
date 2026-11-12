@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - Valve8Pos</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          Valve8Pos
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function Valve8PosComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1317px', height: '673px', minHeight: '673px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Diagnostic Row: OBJECT_37 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '226px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Enable HOME</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_40 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '96px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">pair monitoring</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_42 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '70px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">"hardwareOK" missing</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_47 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '174px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Time monitoring expired, position Work not reached</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_48 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '226px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Position Home left without command</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_51 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '252px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Position Home left without command</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_15 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '252px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Position WORK</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_24 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '278px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Position HOME</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_27 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '356px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Output WORK</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_28 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '382px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Output HOME</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_30 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '122px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Manual mode active</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_31 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '96px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Automatic mode active</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_33 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '174px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Start HOME in automatic mode</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_34 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '148px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Start WORK in automatic mode</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_35 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '200px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Enable WORK</span>
+      </div>
+      {/* Diagnostic Row: OBJ1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '122px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">No enable Work, "enableWork" missing</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '148px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">No enable Home, "enableHome" missing</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '200px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Time monitoring expired, position Home not reached</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '278px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Time monitoring expired, position Work not left</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '304px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Time monitoring expired, position Home not left</span>
+      </div>
+      {/* Header Selector: Title_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white font-medium text-xs rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '687px', top: '5px', width: '144px', height: '30px' }}>
+        <span className="truncate tracking-wide">Valve1To8Pos</span>
+        <span className="text-[9px] text-white/90 ml-1">▼</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '330px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Hardware OK</span>
+      </div>
+      {/* Diagnostic Row: OBJECT_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '304px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">Enable Block</span>
+      </div>
+      {/* Header Label: TecUnit_Type */}
+      <div className="absolute bg-transparent text-[#262221] font-bold text-xs tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '571px', top: '35px', width: '200px', height: '22px' }}>
+        <span className="truncate">TecUnit: Valve1To8Pos</span>
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Diagnostic Row: Reserved_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '642px', top: '330px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">safetyOK missing</span>
+      </div>
+      {/* Header Label: Textfield_Overview_Alarms */}
+      <div className="absolute bg-[#F5DCDD] text-[#dc2626] border border-[#dc2626] font-bold text-xs rounded-sm shadow-sm flex items-center justify-center px-1.5 z-20" style={{ left: '910px', top: '32px', width: '100px', height: '25px' }}>
+        <span className="truncate">Alarms</span>
+      </div>
+      {/* Action Button: Tec-Unit-Diag_Legend */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1184px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Diagnostic Row: OBJECT_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '2px', top: '70px', width: '635px', height: '25px' }}>
+        <span className="truncate font-sans">safetyOK</span>
+      </div>
+      {/* Actuator Badge: Position_Left_9 */}
+      <div className="absolute bg-[#DEDFE1] text-[#15803d] border-[#15803d] font-bold text-[9px] shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '10px', top: '542px', width: '45px', height: '20px' }}>
+        <span className="truncate">HOME</span>
+      </div>
+      {/* Actuator Badge: Position_Left_10 */}
+      <div className="absolute bg-[#DEDFE1] text-[#15803d] border-[#15803d] font-bold text-[9px] shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '10px', top: '498px', width: '45px', height: '20px' }}>
+        <span className="truncate">WORK</span>
+      </div>
+      {/* Actuator Badge: Position_Left_11 */}
+      <div className="absolute bg-[#DEDFE1] text-[#dc2626] border-[#dc2626] font-bold text-[9px] shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '10px', top: '520px', width: '45px', height: '20px' }}>
+        <span className="truncate">ALARM</span>
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_23 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '1150px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_23" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_8 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1164px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">8H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_8 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1164px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">8W</span>
+      </div>
+      {/* Actuator Badge: Position_Y8 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1164px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y8</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_23 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '1156px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_23" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_22 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '995px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_22" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1009px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">7H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_7 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1009px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">7W</span>
+      </div>
+      {/* Actuator Badge: Position_Y7 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '1009px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y7</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_22 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '1001px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_22" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_21 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '841px', top: '471px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_21" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '855px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">6H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_6 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '855px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">6W</span>
+      </div>
+      {/* Actuator Badge: Position_Y6 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '855px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y6</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_21 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '847px', top: '475px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_21" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_20 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '687px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_20" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '701px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">5H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_5 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '701px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">5W</span>
+      </div>
+      {/* Actuator Badge: Position_Y5 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '701px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y5</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_20 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '693px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_20" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_19 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '532px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_19" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '546px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">4H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_4 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '546px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">4W</span>
+      </div>
+      {/* Actuator Badge: Position_Y4 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '546px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y4</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_19 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '538px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_19" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_18 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '378px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_18" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '392px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">3H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_3 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '392px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">3W</span>
+      </div>
+      {/* Actuator Badge: Position_Y3 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '392px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y3</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_18 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '384px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_18" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_17 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '224px', top: '470px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_17" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Left_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '238px', top: '542px', width: '30px', height: '20px' }}>
+        <span className="truncate">2H</span>
+      </div>
+      {/* Actuator Badge: Position_Right_2 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '238px', top: '498px', width: '30px', height: '20px' }}>
+        <span className="truncate">2W</span>
+      </div>
+      {/* Actuator Badge: Position_Y2 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '238px', top: '520px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y2</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_17 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '230px', top: '474px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_17" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: Grafik_Cylinder_16 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '101px', top: '467px', width: '60px', height: '112px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Grafik_Cylinder_16" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Actuator Badge: Position_Right_1 */}
+      <div className="absolute bg-[#D2D9BA] text-[#4A5320] border-[#838C5F] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '115px', top: '495px', width: '30px', height: '20px' }}>
+        <span className="truncate">1W</span>
+      </div>
+      {/* Actuator Badge: Position_Left_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border-[#B0B7BD] font-semibold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '115px', top: '539px', width: '30px', height: '20px' }}>
+        <span className="truncate">1H</span>
+      </div>
+      {/* Actuator Badge: Position_Y1 */}
+      <div className="absolute bg-[#FFFFFF] text-[#262221] border-[#B0B7BD] font-bold shadow-sm border rounded-sm flex items-center justify-center text-[10px] leading-tight px-0.5 z-20" style={{ left: '115px', top: '517px', width: '30px', height: '20px' }}>
+        <span className="truncate">Y1</span>
+      </div>
+      {/* Siemens Graphic View: Text_Cylinder_16 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '107px', top: '471px', width: '50px', height: '21px' }}>
+        <img src="./tia_graphics/SICAR_Zylinder_60x112.png" alt="Text_Cylinder_16" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Header Selector: Title_ScreenOverview_X390_Y2_1 */}
+      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white font-medium text-xs rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '511px', top: '5px', width: '162px', height: '30px' }}>
+        <span className="truncate tracking-wide">SelectJGValve</span>
+        <span className="text-[9px] text-white/90 ml-1">▼</span>
+      </div>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="./tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Header Label: Textfield_Overview_State_1 */}
+      <div className="absolute bg-[#E2F0E5] text-[#15803d] border border-[#15803d] font-bold text-xs rounded-sm shadow-sm flex items-center justify-center px-1.5 z-20" style={{ left: '284px', top: '32px', width: '100px', height: '25px' }}>
+        <span className="truncate">State</span>
+      </div>
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Valve8PosComponent />);
+  </script>
+</body>
+</html>

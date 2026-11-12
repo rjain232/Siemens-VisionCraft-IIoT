@@ -1,0 +1,253 @@
+import React, { useState } from 'react';
+
+function Screen_200RB04V23Component() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1316px', height: '684px', minHeight: '684px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Siemens Graphic View: Graphic view_1 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '85px', top: '86px', width: '878px', height: '526px' }}>
+        <img src="/tia_graphics/RB04_J5.png" alt="Graphic view_1" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Group Container Rectangle: Rectangle_3 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '80px', top: '90px', width: '166px', height: '43px' }} />
+      {/* Diagnostic Row: 文本域_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '86px', top: '96px', width: '134px', height: '36px' }}>
+        <span className="truncate font-sans">Signal #3</span>
+      </div>
+      {/* Siemens Status LED: 圆_3 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: 圆_4 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Diagnostic Row: 文本域_9 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '963px', top: '181px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #9</span>
+      </div>
+      {/* Diagonal Trace: Line_7 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '552px', top: '324px', width: '18px', height: '141px' }}>
+        <line x1="0" y1="0" x2="18" y2="141" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagnostic Row: 文本域_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '169px', top: '196px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #2</span>
+      </div>
+      {/* Diagnostic Row: 文本域_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '437px', top: '85px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #4</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle_5 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '360px', top: '90px', width: '166px', height: '43px' }} />
+      {/* Diagnostic Row: 文本域_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '366px', top: '96px', width: '134px', height: '36px' }}>
+        <span className="truncate font-sans">Signal #5</span>
+      </div>
+      {/* Siemens Status LED: 圆_1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '475px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: 圆_2 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '495px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Diagnostic Row: 文本域_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '484px', top: '463px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #6</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle_13 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '640px', top: '90px', width: '166px', height: '43px' }} />
+      {/* Diagnostic Row: 文本域_14 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '646px', top: '96px', width: '134px', height: '36px' }}>
+        <span className="truncate font-sans">Signal #14</span>
+      </div>
+      {/* Siemens Status LED: 圆_5 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '755px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: 圆_6 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '775px', top: '104px', width: '16px', height: '16px' }} />
+      {/* Diagnostic Row: 文本域_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '618px', top: '560px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #1</span>
+      </div>
+      {/* Diagnostic Row: 文本域_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '963px', top: '75px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #7</span>
+      </div>
+      {/* Diagnostic Row: 文本域_8 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '213px', top: '98px', width: '134px', height: '40px' }}>
+        <span className="truncate font-sans">Signal #8</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_20 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '254px', top: '162px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 20</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_21 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '281px', top: '162px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 21</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_22 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '254px', top: '142px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 22</span>
+      </div>
+      {/* Vertical Bus Line: Line_1 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '674px', top: '458px', height: '101px' }} />
+      {/* Diagonal Trace: Line_2 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '668px', top: '315px', width: '305px', height: '144px' }}>
+        <line x1="0" y1="0" x2="305" y2="144" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_3 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '385px', top: '320px', width: '153px', height: '141px' }}>
+        <line x1="0" y1="0" x2="153" y2="141" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_4 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '346px', top: '123px', width: '130px', height: '116px' }}>
+        <line x1="0" y1="0" x2="130" y2="116" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_5 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '828px', top: '328px', width: '145px', height: '68px' }}>
+        <line x1="0" y1="0" x2="145" y2="68" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_6 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '571px', top: '104px', width: '63px', height: '96px' }}>
+        <line x1="0" y1="0" x2="63" y2="96" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Schematic Trace: Line_8 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '897px', top: '324px', width: '77px' }} />
+      {/* Diagonal Trace: Line_9 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '753px', top: '93px', width: '209px', height: '102px' }}>
+        <line x1="0" y1="0" x2="209" y2="102" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_10 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '302px', top: '215px', width: '109px', height: '70px' }}>
+        <line x1="0" y1="0" x2="109" y2="70" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Diagonal Trace: Line_11 */}
+      <svg className="absolute pointer-events-none z-10 overflow-visible" style={{ left: '791px', top: '206px', width: '174px', height: '108px' }}>
+        <line x1="0" y1="0" x2="174" y2="108" stroke="#838C5F" strokeWidth="1.5" strokeOpacity="0.85" />
+      </svg>
+      {/* Group Container Rectangle: Rectangle_10 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '920px', top: '90px', width: '52px', height: '43px' }} />
+      {/* Header Label: Title_ScreenOverview_X390_Y2_111 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '0px', top: '21px', width: '25px', height: '21px' }}>
+        <span className="truncate">200RB04 V23</span>
+      </div>
+      {/* Header Label: Title_ScreenOverview_X390_Y2_90 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '27px', top: '21px', width: '25px', height: '21px' }}>
+        <span className="truncate">200RB04 V23</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_88 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '250px', top: '280px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 88</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle_9 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '525px', top: '505px', width: '52px', height: '43px' }} />
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_17 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '525px', top: '526px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 17</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_18 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '552px', top: '526px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 18</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_19 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '525px', top: '506px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 19</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_11 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '210px', top: '260px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 11</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_12 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '237px', top: '260px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 12</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_13 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '210px', top: '240px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 13</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '478px', top: '149px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 5</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '505px', top: '149px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 6</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '478px', top: '129px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 7</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_23 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '659px', top: '622px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 23</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_24 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '686px', top: '622px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 24</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_25 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '659px', top: '602px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 25</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_26 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1004px', top: '138px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 26</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_27 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1031px', top: '138px', width: '25px', height: '21px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 27</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_28 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1004px', top: '118px', width: '52px', height: '19px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 28</span>
+      </div>
+      {/* Header Label: Title_ScreenOverview_X390_Y2_2 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '392px', top: '4px', width: '510px', height: '57px' }}>
+        <span className="truncate">200RB04 V23</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-sm flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1130px', top: '78px', width: '139px', height: '57px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 1</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-sm flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1130px', top: '144px', width: '139px', height: '57px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 3</span>
+      </div>
+      {/* Diagnostic Row: Title_ScreenOverview_X390_Y2_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-sm flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '1130px', top: '144px', width: '139px', height: '57px' }}>
+        <span className="truncate font-sans">Title ScreenOverview X390 Y2 4</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle_6 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '210px', top: '239px', width: '52px', height: '43px' }} />
+      {/* Group Container Rectangle: Rectangle_2 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '478px', top: '128px', width: '52px', height: '43px' }} />
+      {/* Group Container Rectangle: Rectangle_1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '659px', top: '601px', width: '52px', height: '43px' }} />
+      {/* Group Container Rectangle: Rectangle_12 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '1004px', top: '116px', width: '52px', height: '43px' }} />
+      {/* Group Container Rectangle: Rectangle_8 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '254px', top: '141px', width: '52px', height: '43px' }} />
+      {/* Group Container Rectangle: Rectangle_4 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '80px', top: '185px', width: '166px', height: '43px' }} />
+      {/* Diagnostic Row: 文本域_10 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '86px', top: '191px', width: '134px', height: '36px' }}>
+        <span className="truncate font-sans">Signal #10</span>
+      </div>
+      {/* Siemens Status LED: 圆_7 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '195px', top: '199px', width: '16px', height: '16px' }} />
+      {/* Siemens Status LED: 圆_8 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '215px', top: '199px', width: '16px', height: '16px' }} />
+      {/* Action Button: Fusszeile_Button_ManualOPMode1_1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1179px', top: '3px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Manual OP 1</span>
+      </button>
+    </div>
+  );
+}
+
+export default Screen_200RB04V23Component;

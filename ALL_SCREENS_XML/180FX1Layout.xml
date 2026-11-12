@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>180FX1Layout</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Move_Legend</Name>
+          <Left>1182</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Fusszeile_Button_ManualOPMode1_2</Name>
+          <Left>279</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_3</Name>
+          <Left>1107</Left>
+          <Top>71</Top>
+          <Width>139</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_1</Name>
+          <Left>1107</Left>
+          <Top>160</Top>
+          <Width>156</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_22</Name>
+          <Left>1124</Left>
+          <Top>283</Top>
+          <Width>104</Width>
+          <Height>23</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_2</Name>
+          <Left>1090</Left>
+          <Top>4</Top>
+          <Width>88</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode1_Blocked</Name>
+          <Left>1164</Left>
+          <Top>6</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode4_Foreground_Blocked</Name>
+          <Left>1090</Left>
+          <Top>5</Top>
+          <Width>88</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Fusszeile_Button_ManualOPMode1_1</Name>
+          <Left>95</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_1</Name>
+          <Left>119</Left>
+          <Top>217</Top>
+          <Width>756</Width>
+          <Height>259</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_2</Name>
+          <Left>174</Left>
+          <Top>159</Top>
+          <Width>40</Width>
+          <Height>96</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_6</Name>
+          <Left>799</Left>
+          <Top>329</Top>
+          <Width>128</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Fusszeile_Button_ManualOPMode1_3</Name>
+          <Left>187</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_6</Name>
+          <Left>144</Left>
+          <Top>91</Top>
+          <Width>140</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_12</Name>
+          <Left>929</Left>
+          <Top>305</Top>
+          <Width>100</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_13</Name>
+          <Left>514</Left>
+          <Top>91</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_14</Name>
+          <Left>936</Left>
+          <Top>-172</Top>
+          <Width>140</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_15</Name>
+          <Left>914</Left>
+          <Top>173</Top>
+          <Width>140</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2_1</Name>
+          <Left>384</Left>
+          <Top>5</Top>
+          <Width>510</Width>
+          <Height>57</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_12</Name>
+          <Left>831</Left>
+          <Top>210</Top>
+          <Width>82</Width>
+          <Height>77</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_24</Name>
+          <Left>685</Left>
+          <Top>91</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_26</Name>
+          <Left>914</Left>
+          <Top>418</Top>
+          <Width>140</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_14</Name>
+          <Left>745</Left>
+          <Top>139</Top>
+          <Width>43</Width>
+          <Height>179</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_15</Name>
+          <Left>741</Left>
+          <Top>342</Top>
+          <Width>47</Width>
+          <Height>197</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_19</Name>
+          <Left>830</Left>
+          <Top>372</Top>
+          <Width>82</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_1</Name>
+          <Left>585</Left>
+          <Top>338</Top>
+          <Width>103</Width>
+          <Height>201</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_3</Name>
+          <Left>574</Left>
+          <Top>136</Top>
+          <Width>97</Width>
+          <Height>122</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_5</Name>
+          <Left>144</Left>
+          <Top>133</Top>
+          <Width>143</Width>
+          <Height>50</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_10</Name>
+          <Left>514</Left>
+          <Top>111</Top>
+          <Width>153</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_15</Name>
+          <Left>914</Left>
+          <Top>458</Top>
+          <Width>149</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_6</Name>
+          <Left>914</Left>
+          <Top>215</Top>
+          <Width>149</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_6</Name>
+          <Left>949</Left>
+          <Top>346</Top>
+          <Width>59</Width>
+          <Height>45</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_4</Name>
+          <Left>685</Left>
+          <Top>112</Top>
+          <Width>142</Width>
+          <Height>51</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_1</Name>
+          <Left>685</Left>
+          <Top>559</Top>
+          <Width>142</Width>
+          <Height>51</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_7</Name>
+          <Left>554</Left>
+          <Top>579</Top>
+          <Width>59</Width>
+          <Height>45</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_23</Name>
+          <Left>1178</Left>
+          <Top>251</Top>
+          <Width>96</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_22</Name>
+          <Left>1068</Left>
+          <Top>251</Top>
+          <Width>96</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5</Name>
+          <Left>1099</Left>
+          <Top>95</Top>
+          <Width>160</Width>
+          <Height>53</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1</Name>
+          <Left>1099</Left>
+          <Top>183</Top>
+          <Width>160</Width>
+          <Height>53</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_20</Name>
+          <Left>875</Left>
+          <Top>91</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_11</Name>
+          <Left>875</Left>
+          <Top>539</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_9</Name>
+          <Left>875</Left>
+          <Top>559</Top>
+          <Width>148</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_4</Name>
+          <Left>813</Left>
+          <Top>400</Top>
+          <Width>69</Width>
+          <Height>137</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_5</Name>
+          <Left>817</Left>
+          <Top>120</Top>
+          <Width>71</Width>
+          <Height>139</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64_1</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_27</Name>
+          <Left>-1</Left>
+          <Top>126</Top>
+          <Width>120</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_5</Name>
+          <Left>-1</Left>
+          <Top>82</Top>
+          <Width>120</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_25</Name>
+          <Left>685</Left>
+          <Top>539</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>文本域_8</Name>
+          <Left>534</Left>
+          <Top>539</Top>
+          <Width>100</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>面板容器_7</Name>
+          <Left>875</Left>
+          <Top>111</Top>
+          <Width>148</Width>
+          <Height>58</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

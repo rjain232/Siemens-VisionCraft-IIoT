@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>01_ScreenLayout</Name>
+      <Width>1366</Width>
+      <Height>768</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiScreenWindow</Type>
+          <Name>swHeader</Name>
+          <Left>0</Left>
+          <Top>1</Top>
+          <Width>1366</Width>
+          <Height>65</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiScreenWindow</Type>
+          <Name>swAlarm</Name>
+          <Left>0</Left>
+          <Top>65</Top>
+          <Width>1276</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiScreenWindow</Type>
+          <Name>swMainSmall</Name>
+          <Left>1276</Left>
+          <Top>65</Top>
+          <Width>90</Width>
+          <Height>703</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiScreenWindow</Type>
+          <Name>swContent</Name>
+          <Left>0</Left>
+          <Top>95</Top>
+          <Width>1276</Width>
+          <Height>673</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

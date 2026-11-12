@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>CycleTime</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_1</Name>
+          <Left>135</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_22</Name>
+          <Left>128</Left>
+          <Top>84</Top>
+          <Width>1</Width>
+          <Height>400</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_46</Name>
+          <Left>110</Left>
+          <Top>355</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_47</Name>
+          <Left>111</Left>
+          <Top>420</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_48</Name>
+          <Left>112</Left>
+          <Top>484</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_56</Name>
+          <Left>62</Left>
+          <Top>271</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_57</Name>
+          <Left>62</Left>
+          <Top>339</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_59</Name>
+          <Left>62</Left>
+          <Top>405</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_60</Name>
+          <Left>62</Left>
+          <Top>468</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_49</Name>
+          <Left>109</Left>
+          <Top>224</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_7</Name>
+          <Left>62</Left>
+          <Top>209</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_8</Name>
+          <Left>62</Left>
+          <Top>143</Top>
+          <Width>48</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_50</Name>
+          <Left>109</Left>
+          <Top>158</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_51</Name>
+          <Left>109</Left>
+          <Top>103</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_52</Name>
+          <Left>110</Left>
+          <Top>286</Top>
+          <Width>17</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_27</Name>
+          <Left>87</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_31</Name>
+          <Left>171</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_32</Name>
+          <Left>242</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_35</Name>
+          <Left>310</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_37</Name>
+          <Left>388</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_38</Name>
+          <Left>460</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_39</Name>
+          <Left>524</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_40</Name>
+          <Left>597</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_41</Name>
+          <Left>671</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_42</Name>
+          <Left>739</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_43</Name>
+          <Left>809</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_44</Name>
+          <Left>884</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_45</Name>
+          <Left>955</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_46</Name>
+          <Left>1026</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_47</Name>
+          <Left>1106</Left>
+          <Top>577</Top>
+          <Width>151</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_2</Name>
+          <Left>206</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_3</Name>
+          <Left>277</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_4</Name>
+          <Left>348</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_5</Name>
+          <Left>419</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_6</Name>
+          <Left>490</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_7</Name>
+          <Left>563</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_8</Name>
+          <Left>634</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_9</Name>
+          <Left>707</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_10</Name>
+          <Left>778</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_11</Name>
+          <Left>927</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_12</Name>
+          <Left>993</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_13</Name>
+          <Left>1066</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_14</Name>
+          <Left>850</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_15</Name>
+          <Left>1139</Left>
+          <Top>81</Top>
+          <Width>64</Width>
+          <Height>420</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_23</Name>
+          <Left>133</Left>
+          <Top>286</Top>
+          <Width>1103</Width>
+          <Height>1</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_45</Name>
+          <Left>130</Left>
+          <Top>483</Top>
+          <Width>1110</Width>
+          <Height>1</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_26</Name>
+          <Left>6</Left>
+          <Top>6</Top>
+          <Width>1267</Width>
+          <Height>47</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Move_Legend</Name>
+          <Left>1183</Left>
+          <Top>7</Top>
+          <Width>90</Width>
+          <Height>44</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_1</Name>
+          <Left>-34</Left>
+          <Top>295</Top>
+          <Width>145</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_1</Name>
+          <Left>39</Left>
+          <Top>168</Top>
+          <Width>1</Width>
+          <Height>122</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Casella di testo_2</Name>
+          <Left>626</Left>
+          <Top>614</Top>
+          <Width>67</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_2</Name>
+          <Left>757</Left>
+          <Top>566</Top>
+          <Width>1</Width>
+          <Height>122</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FHD (1920x1080) HMI Live Scaling Test</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0b111e;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // Viewport Scaler Component for FHD 1920x1080
+    function HMIViewport({ nativeWidth = 1316, nativeHeight = 706, children }) {
+      const [scale, setScale] = useState(1);
+      const [dims, setDims] = useState({ w: window.innerWidth, h: window.innerHeight });
+
+      useEffect(() => {
+        const handleResize = () => {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          setDims({ w, h });
+          const scaleX = w / nativeWidth;
+          const scaleY = h / nativeHeight;
+          setScale(Math.min(scaleX, scaleY));
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, [nativeWidth, nativeHeight]);
+
+      return (
+        <div style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative'
+        }}>
+          {/* Diagnostic Overlay Banner */}
+          <div style={{
+            position: 'absolute',
+            top: 8,
+            left: 12,
+            zIndex: 9999,
+            background: 'rgba(15, 23, 42, 0.85)',
+            color: '#38bdf8',
+            padding: '6px 14px',
+            borderRadius: '6px',
+            fontSize: '13px',
+            fontFamily: 'monospace',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            display: 'flex',
+            gap: '16px'
+          }}>
+            <span>Display: <b>{dims.w} x {dims.h} px</b></span>
+            <span>Target Native: <b>{nativeWidth} x {nativeHeight}</b></span>
+            <span>Scale Factor: <b style={{ color: '#4ade80' }}>{(scale * 100).toFixed(1)}% ({scale.toFixed(3)}x)</b></span>
+            <span style={{ color: '#fbbf24' }}>Status: Pixel-Perfect FHD Ready</span>
+          </div>
+
+          {/* Scaled HMI Screen */}
+          <div style={{
+            width: `${nativeWidth}px`,
+            height: `${nativeHeight}px`,
+            transform: `scale(${scale})`,
+            transformOrigin: 'center center',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7)',
+            borderRadius: '4px',
+            overflow: 'hidden'
+          }}>
+            {children}
+          </div>
+        </div>
+      );
+    }
+
+    // Live Converted Station Screen (160FX1Layout / 190V23RoofGeo Component)
+    function StationLayoutScreen() {
+      const [opMode, setOpMode] = useState('Manual OP 1');
+      const [activeValve, setActiveValve] = useState(1);
+      const [valveState, setValveState] = useState({ 1: 'WORK', 2: 'HOME', 3: 'HOME' });
+
+      const toggleValve = (vNum) => {
+        setValveState(prev => ({
+          ...prev,
+          [vNum]: prev[vNum] === 'WORK' ? 'HOME' : 'WORK'
+        }));
+      };
+
+      return (
+        <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] overflow-hidden select-none w-full h-full">
+          {/* Siemens Top Header Navigation Bar */}
+          <div className="w-full h-[64px] bg-[#006487] flex items-center justify-between px-3 shadow-md z-30 relative">
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => alert('Navigating back to Plant Overview...')} 
+                className="bg-[#004e6a] hover:bg-[#003c52] text-white px-5 py-2 font-bold text-sm rounded shadow border border-cyan-400/30 flex items-center gap-2 cursor-pointer transition active:scale-95"
+              >
+                ⬅ Back
+              </button>
+              {['Manual OP 1', 'Manual OP 2', 'Manual OP 3', 'Manual OP 4', 'Manual OP 5'].map((mode, i) => (
+                <button
+                  key={mode}
+                  onClick={() => setOpMode(mode)}
+                  className={`px-4 py-2 font-bold text-xs rounded transition cursor-pointer ${opMode === mode ? 'bg-[#00a3cc] text-white shadow-inner border border-white/40' : 'bg-[#005775] text-cyan-100 hover:bg-[#004963]'}`}
+                >
+                  {mode}
+                </button>
+              ))}
+            </div>
+
+            <div className="text-white font-extrabold text-base tracking-wider bg-[#00445c] px-4 py-1.5 rounded border border-cyan-500/20">
+              160FX1Layout • Roof Tooling Geostation
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5 bg-[#004e6a] px-3 py-1.5 rounded text-xs text-white">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>PLC S7-1500: ONLINE</span>
+              </div>
+              <button 
+                onClick={() => alert('Opening Andon / Cycle Time Legend Popup')}
+                className="bg-[#004e6a] hover:bg-[#003c52] text-white px-4 py-2 font-bold text-xs rounded shadow border border-cyan-400/30 cursor-pointer"
+              >
+                Legend
+              </button>
+            </div>
+          </div>
+
+          {/* Main Visual Station Body */}
+          <div className="relative w-full h-[642px] bg-[#dbe1e6] p-6 flex">
+            {/* Center Graphic View: CAD Car Body / Tooling */}
+            <div className="flex-1 flex flex-col items-center justify-center relative">
+              <div className="relative w-[780px] h-[440px] bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700 flex items-center justify-center">
+                {/* SVG Vehicle Mockup */}
+                <svg viewBox="0 0 800 450" className="w-full h-full p-4">
+                  <rect x="180" y="80" width="440" height="290" rx="40" fill="#15803d" stroke="#22c55e" strokeWidth="4"/>
+                  <rect x="220" y="110" width="360" height="230" rx="20" fill="#0284c7" stroke="#38bdf8" strokeWidth="3"/>
+                  <circle cx="270" cy="150" r="12" fill="#fff" opacity="0.8"/>
+                  <circle cx="530" cy="150" r="12" fill="#fff" opacity="0.8"/>
+                  <circle cx="270" cy="300" r="12" fill="#fff" opacity="0.8"/>
+                  <circle cx="530" cy="300" r="12" fill="#fff" opacity="0.8"/>
+                  <text x="400" y="235" fill="white" fontSize="22" fontWeight="bold" textAnchor="middle" letterSpacing="2">
+                    ROOF GEO FIXTURE - STATION 160
+                  </text>
+                  <text x="400" y="265" fill="#bae6fd" fontSize="14" textAnchor="middle">
+                    Active Mode: {opMode}
+                  </text>
+                </svg>
+
+                {/* Status Badges Overlaid on Graphic */}
+                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded text-xs text-white border border-white/20">
+                  Cad Graphic View #1 • 860x259 px
+                </div>
+              </div>
+            </div>
+
+            {/* Right-Hand Valve & Faceplate Control Rack */}
+            <div className="w-[320px] bg-white/70 backdrop-blur-sm rounded-lg p-4 border border-slate-300 shadow flex flex-col gap-3">
+              <h3 className="font-extrabold text-sm text-[#006487] border-b pb-2 flex items-center justify-between">
+                <span>SICAR Valve 8-Pos Controls</span>
+                <span className="text-[10px] bg-[#006487] text-white px-2 py-0.5 rounded">DB Tags Bound</span>
+              </h3>
+
+              {[1, 2, 3].map(v => (
+                <div key={v} className="bg-slate-100 p-3 rounded border border-slate-200 shadow-sm flex flex-col gap-2">
+                  <div className="flex justify-between items-center text-xs font-bold">
+                    <span>Clamp Cylinder #{v}</span>
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-extrabold ${valveState[v] === 'WORK' ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-white'}`}>
+                      {valveState[v]}
+                    </span>
+                  </div>
+                  <div className="flex gap-2">
+                    <button 
+                      onClick={() => toggleValve(v)}
+                      className="flex-1 bg-[#006487] hover:bg-[#004e6a] text-white text-xs font-bold py-1.5 rounded transition cursor-pointer"
+                    >
+                      Toggle Clamp
+                    </button>
+                    <button 
+                      onClick={() => alert(`Jogging Cylinder #${v}...`)}
+                      className="px-3 bg-slate-300 hover:bg-slate-400 text-slate-800 text-xs font-bold py-1.5 rounded cursor-pointer"
+                    >
+                      JOG
+                    </button>
+                  </div>
+                </div>
+              ))}
+
+              <div className="mt-auto bg-slate-200/80 p-3 rounded text-[11px] text-slate-600 font-mono">
+                <div>PLC Tag: <b>OpmodePanel.opmode[1]</b></div>
+                <div>Status: <b>Cyclic in operation (T1s)</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <HMIViewport nativeWidth={1316} nativeHeight={706}>
+        <StationLayoutScreen />
+      </HMIViewport>
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eff6ff', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
+            surface: { 900: '#0b0f17', 850: '#111827', 800: '#1f2937', 700: '#374151' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- React & ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Lucide Icons UMD -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Babel Standalone for dynamic browser-side JSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f17; }
+    ::-webkit-scrollbar-thumb { background: #262f40; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .glow-accent { box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.3); }
+  </style>
+</head>
+<body class="bg-surface-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- FAANG-Grade Navigation Header -->
+  <header class="border-b border-white/10 bg-surface-900/80 backdrop-blur-md px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-extrabold text-white shadow-lg glow-accent">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Live Metrics Badges -->
+    <div class="flex items-center gap-3">
+      <!-- Latency Badge -->
+      <div id="latencyBadge" class="hidden px-3 py-1.5 rounded-lg bg-surface-850 border border-white/5 text-xs flex items-center gap-2 font-mono">
+        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+        <span class="text-slate-400">Latency:</span>
+        <span id="latencyValue" class="font-bold text-cyan-300">0ms</span>
+      </div>
+      <!-- Token Badge -->
+      <div id="tokenBadge" class="hidden px-3 py-1.5 rounded-lg bg-surface-850 border border-white/5 text-xs flex items-center gap-2 font-mono">
+        <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+        <span class="text-slate-400">Tokens:</span>
+        <span id="tokenValue" class="font-bold text-brand-300">0</span>
+      </div>
+      <!-- Cost Badge -->
+      <div id="costBadge" class="hidden px-3 py-1.5 rounded-lg bg-surface-850 border border-white/5 text-xs flex items-center gap-2 font-mono">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="text-slate-400">Cost:</span>
+        <span id="costValue" class="font-bold text-emerald-400">$0.00</span>
+        <span class="text-slate-500">(<span id="inrValue">₹0.00</span>)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Workspace Shell -->
+  <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-y-auto min-h-0">
+
+    <!-- Left Rail: Control Station & Agent Timeline (4 Cols) -->
+    <div class="lg:col-span-4 border-r border-white/10 p-5 flex flex-col gap-4 bg-surface-850/50 overflow-y-auto">
+
+      <!-- Upload Section -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label class="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            1. Source Design Input
+          </label>
+        </div>
+
+        <!-- URL Ingestion & Clipboard Paste Row -->
+        <div class="mb-3">
+          <div class="flex items-center gap-2">
+            <input type="text" id="imageUrlInput" placeholder="Paste image URL (http://... or data:...) or press Ctrl+V" class="flex-1 bg-surface-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500 transition font-mono" />
+            <button id="loadUrlBtn" type="button" class="px-3 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-xl transition shadow flex items-center gap-1 flex-shrink-0">
+              <span>Load URL</span>
+            </button>
+          </div>
+          <p class="text-[10px] text-slate-400 mt-1 flex items-center gap-1">
+            <span>💡</span> Tip: Press <kbd class="px-1.5 py-0.5 bg-surface-900 border border-white/10 rounded text-slate-300 font-mono">Ctrl + V</kbd> anywhere to paste screenshot from clipboard
+          </p>
+        </div>
+
+        <!-- TIA Portal V20 Siemens HMI Screens & Tag Explorer -->
+        <div class="mb-3.5 p-3 rounded-xl bg-gradient-to-br from-cyan-950/40 via-surface-900 to-slate-900 border border-cyan-500/30 shadow-lg">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-cyan-400 flex items-center gap-1.5 uppercase tracking-wider">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+              Siemens TIA V20 Plant HMI
+            </span>
+            <span id="tagCountBadge" class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">1,148 Tags</span>
+          </div>
+                      <!-- Station Manual Interactive Link -->
+            <div class="mb-2.5 p-2 rounded-lg bg-surface-900 border border-blue-500/30 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                <span class="text-[11px] font-semibold text-blue-300">MB2 Line Stations</span>
+              </div>
+              <button onclick="window.open('/api/mb2/stations', '_blank')" class="px-2 py-0.5 rounded bg-blue-500/20 hover:bg-blue-500/40 text-blue-300 border border-blue-400/30 text-[10px] font-mono transition flex items-center gap-1">
+                <span>View 5 Stations</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </button>
+            </div>
+            <div class="grid grid-cols-1 gap-1.5 mb-2.5">
+            <button id="loadHmi1Btn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-850 hover:bg-cyan-600/20 text-slate-200 hover:text-cyan-300 border border-white/5 hover:border-cyan-500/40 transition text-[11px] font-medium flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><span>🖥️</span> 1. Station Overview (Type)</span>
+              <span class="text-[9px] font-mono text-cyan-400/80">42 Tags</span>
+            </button>
+            <button id="loadHmi2Btn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-850 hover:bg-cyan-600/20 text-slate-200 hover:text-cyan-300 border border-white/5 hover:border-cyan-500/40 transition text-[11px] font-medium flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><span>⚙️</span> 2. Station Modify (Style)</span>
+              <span class="text-[9px] font-mono text-cyan-400/80">28 Tags</span>
+            </button>
+            <button id="loadHmi3Btn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-850 hover:bg-cyan-600/20 text-slate-200 hover:text-cyan-300 border border-white/5 hover:border-cyan-500/40 transition text-[11px] font-medium flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><span>🤖</span> 3. Robot & Weld (KUKA)</span>
+              <span class="text-[9px] font-mono text-cyan-400/80">64 Tags</span>
+            </button>
+            <button id="loadHmi4Btn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-850 hover:bg-cyan-600/20 text-slate-200 hover:text-cyan-300 border border-white/5 hover:border-cyan-500/40 transition text-[11px] font-medium flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><span>🛡️</span> 4. System & Safety (F-CPU)</span>
+              <span class="text-[9px] font-mono text-cyan-400/80">36 Tags</span>
+            </button>
+            <button id="loadHmi5Btn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-850 hover:bg-cyan-600/20 text-slate-200 hover:text-cyan-300 border border-white/5 hover:border-cyan-500/40 transition text-[11px] font-medium flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><span>📊</span> 5. Production Hourly Status</span>
+              <span class="text-[9px] font-mono text-cyan-400/80">52 Tags</span>
+            </button>
+          </div>
+          <!-- Tag Generation & Quick Search Modal Trigger -->
+          <div class="flex items-center gap-1.5">
+            <button id="openTagExplorerBtn" type="button" class="w-full py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold rounded-lg transition shadow flex items-center justify-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+              <span>Explore & Map 1,148 PLC Tags</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1-Click Mockup Preset Gallery -->
+        <div class="mb-3">
+          <p class="text-[11px] text-slate-400 mb-1.5 font-medium">Other Mockup Presets:</p>
+          <div class="grid grid-cols-2 gap-1.5">
+            <button id="loadTeamsBtn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-900 hover:bg-brand-600/20 text-slate-300 hover:text-brand-300 border border-white/5 hover:border-brand-500/30 transition text-[11px] font-medium flex items-center gap-1.5">
+              <span>💬</span> Teams Chat
+            </button>
+            <button id="loadModalBtn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-900 hover:bg-brand-600/20 text-slate-300 hover:text-brand-300 border border-white/5 hover:border-brand-500/30 transition text-[11px] font-medium flex items-center gap-1.5">
+              <span>⚠️</span> Port 8090 Dialog
+            </button>
+            <button id="loadDevOpsBtn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-900 hover:bg-brand-600/20 text-slate-300 hover:text-brand-300 border border-white/5 hover:border-brand-500/30 transition text-[11px] font-medium flex items-center gap-1.5">
+              <span>🚀</span> DevOps Pipeline
+            </button>
+            <button id="loadSqlBtn" class="text-left px-2.5 py-1.5 rounded-lg bg-surface-900 hover:bg-brand-600/20 text-slate-300 hover:text-brand-300 border border-white/5 hover:border-brand-500/30 transition text-[11px] font-medium flex items-center gap-1.5">
+              <span>🗄️</span> SQL Studio Query
+            </button>
+          </div>
+        </div>
+
+        <!-- Real TIA Portal 211+ XML Screens Direct Selector (Method 1 + 3 Combined) -->
+        <div class="mb-3 p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/30">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-[11px] font-bold text-cyan-300 flex items-center gap-1.5">
+              <span>⚡</span> 211+ Native Siemens Screens
+            </span>
+            <!-- Engine Mode Switcher: React Clone vs Native WebRH -->
+            <div class="flex items-center gap-1 bg-surface-900 p-0.5 rounded-md border border-cyan-500/20">
+              <button type="button" id="modeReactBtn" class="px-1.5 py-0.5 rounded bg-cyan-600 text-white text-[9px] font-bold transition">React 18</button>
+              <button type="button" id="modeWebRhBtn" class="px-1.5 py-0.5 rounded text-slate-400 hover:text-cyan-300 text-[9px] font-bold transition" title="Expose directly via Siemens WinCC Unified WebRH">WebRH Live</button>
+            </div>
+          </div>
+          <select id="tiaScreenSelector" class="w-full bg-slate-900 border border-cyan-500/30 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-cyan-400 font-mono">
+            <option value="">-- Choose Exported Siemens Screen --</option>
+          </select>
+          
+          <!-- WinCC Unified WebRH IP Config Bar (Expandable) -->
+          <div id="webRhSettingsBar" class="hidden mt-2 p-2 rounded-lg bg-surface-900/90 border border-cyan-500/20 text-[10px] space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-cyan-300 font-semibold flex items-center gap-1">🌐 Siemens WebRH Host:</span>
+              <span id="webrhStatusBadge" class="text-[9px] text-emerald-400 font-mono">Active</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <input type="text" id="webrhHostInput" value="127.0.0.1:443" placeholder="Panel IP (e.g. 192.168.0.10:443)" class="flex-1 bg-black/40 border border-white/10 rounded px-2 py-1 text-white font-mono text-[10px]" />
+              <button type="button" id="saveWebrhBtn" class="px-2 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-[9px] transition">Connect</button>
+            </div>
+            <p class="text-[9px] text-slate-400">Loads exact live Siemens screen straight from panel over WebSockets.</p>
+          </div>
+        </div>
+
+        <!-- File Selection Input (Supports Image & Siemens XML Screens) -->
+        <input type="file" id="imageInput" accept="image/*,.xml,text/xml" style="display:none" />
+        <div id="dropZone" onclick="document.getElementById('imageInput').click()" class="border-2 border-dashed border-white/10 hover:border-brand-500 rounded-xl p-5 flex flex-col items-center justify-center cursor-pointer transition bg-surface-900/40 hover:bg-surface-900/80 group select-none">
+          <div class="w-10 h-10 rounded-full bg-brand-500/10 text-brand-400 flex items-center justify-center mb-2 group-hover:scale-110 transition pointer-events-none">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          </div>
+          <span class="text-xs font-semibold text-slate-200 pointer-events-none">Drop Panel Screenshot or Siemens XML Screen</span>
+          <span class="text-[11px] text-cyan-400 mt-1 pointer-events-none font-mono">PNG, JPG, WebP or .XML (SimaticML)</span>
+        </div>
+
+        <!-- Preview Container -->
+        <div id="previewContainer" class="hidden mt-2 relative rounded-xl overflow-hidden border border-white/10 bg-surface-900 p-2">
+          <div id="xmlFileBadge" class="hidden flex items-center justify-between p-2 rounded-lg bg-cyan-950/40 border border-cyan-500/30">
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400 text-sm">📄</span>
+              <div>
+                <p id="xmlFileNameText" class="text-xs font-bold text-white font-mono truncate max-w-[180px]">screen.xml</p>
+                <p class="text-[10px] text-cyan-300">SimaticML Screen</p>
+              </div>
+            </div>
+            <button id="cancelXmlBtn" type="button" onclick="cancelXmlUpload()" class="px-2 py-1 rounded bg-rose-600/20 hover:bg-rose-600 text-rose-300 hover:text-white text-[10px] font-semibold transition border border-rose-500/30">
+              ✕ Cancel
+            </button>
+          </div>
+          <img id="imagePreview" class="w-full max-h-48 object-contain" />
+          <button id="removeImage" class="absolute top-2 right-2 bg-rose-600/80 hover:bg-rose-600 text-white rounded-full p-1 text-xs px-2 transition shadow">✕</button>
+        </div>
+      </div>
+
+      <!-- Agent Model & Intelligence Selection -->
+      <div>
+        <label class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 block flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          2. Vision Model Engine
+        </label>
+        <select id="modelSelect" class="w-full bg-surface-900 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-brand-500 transition font-mono">
+          <option value="gemini-3.5-flash" selected>Google Gemini 3.5 Flash (Ultra-Fast & Cascading Auto-Downgrade)</option>
+          <option value="gemini-3-flash-preview">Google Gemini 3 Flash Preview</option>
+          <option value="gemini-3.1-flash-lite">Google Gemini 3.1 Flash-Lite (Low Latency)</option>
+          <option value="claude-3-5-sonnet">Claude 3.5 Sonnet (Requires Anthropic Key)</option>
+        </select>
+      </div>
+
+      <!-- API Key Optional Override -->
+      <div>
+        <label class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 block flex items-center justify-between">
+          <span>3. API Key (Optional)</span>
+          <span class="text-[10px] text-emerald-400">Offline Mock Supported</span>
+        </label>
+        <input type="password" id="apiKeyInput" placeholder="Paste Gemini or Claude API Key (or leave blank to test mock)..." class="w-full bg-surface-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500 transition font-mono" />
+      </div>
+
+      <!-- Duplicate Image Prompt Banner (Hidden by default) -->
+      <div id="duplicateImageBanner" class="hidden p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex flex-col gap-2">
+        <div class="flex items-center gap-1.5 font-semibold text-amber-200">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <span>This screenshot was previously generated</span>
+        </div>
+        <p class="text-[11px] text-amber-300/80 leading-relaxed">
+          Would you like to instantly load the identical saved JSX (0 tokens), or ask the AI agents to synthesize a fresh version?
+        </p>
+        <div class="flex items-center gap-2 pt-1">
+          <button id="loadSavedBtn" type="button" class="flex-1 py-1.5 px-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 rounded-lg text-[11px] font-medium transition">
+            ⚡ Use Saved JSX (Instant)
+          </button>
+          <button id="regenerateNewBtn" type="button" class="flex-1 py-1.5 px-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-[11px] font-medium transition">
+            ✨ Make New JSX
+          </button>
+        </div>
+      </div>
+
+      <!-- Conversion Trigger Button -->
+      <button id="generateBtn" class="w-full py-3 bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white font-semibold rounded-xl shadow-lg glow-accent transition duration-200 disabled:opacity-50 flex items-center justify-center gap-2 text-xs tracking-wide uppercase">
+        <span id="btnText">Execute Agentic Pipeline</span>
+        <div id="btnSpinner" class="hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+      </button>
+
+      <!-- Autonomous Agent Execution Timeline (FAANG Trace UI) -->
+      <div class="mt-auto pt-2 border-t border-white/10">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <span class="relative flex h-2 w-2">
+              <span id="pulsePing" class="hidden animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span id="pulseDot" class="relative inline-flex rounded-full h-2 w-2 bg-slate-500"></span>
+            </span>
+            Agent Activity Trace
+          </span>
+          <span id="pipelineStatus" class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-400 font-mono">Idle</span>
+        </div>
+
+        <div id="agentTimeline" class="space-y-2 p-3 bg-surface-900 rounded-xl border border-white/5 text-xs font-mono max-h-56 overflow-y-auto">
+          <div class="text-slate-500 italic text-[11px]">Ready. Run pipeline to observe multi-agent orchestration, AST compilation, and self-healing.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Workspace: Responsive Live Canvas & Source Code (8 Cols) -->
+    <div class="lg:col-span-8 flex flex-col h-full bg-surface-900 overflow-y-auto">
+
+      <!-- View Switcher & Responsive Canvas Bar -->
+      <div class="flex items-center justify-between border-b border-white/10 px-5 py-2.5 bg-surface-850/80 sticky top-0 z-20">
+        <div class="flex items-center gap-1.5 bg-surface-900 p-1 rounded-xl border border-white/5">
+          <button id="tabPreview" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition flex items-center gap-1.5 shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            Interactive Canvas
+          </button>
+          <button id="tabCode" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            Production JSX
+          </button>
+          <button id="tabPlcLogic" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-cyan-400 hover:text-white hover:bg-cyan-600/20 border border-cyan-500/20 transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            PLC Logic (SCL / LAD)
+          </button>
+        </div>
+
+        <!-- Viewport Controls & Code Action -->
+        <div class="flex items-center gap-3">
+          <!-- Breakpoint Toggles & Scale Controls -->
+          <div class="hidden md:flex items-center gap-1 bg-surface-900 px-2 py-1 rounded-lg border border-white/5 text-xs text-slate-400">
+            <button id="vpFit" class="px-2 py-0.5 rounded text-cyan-300 bg-cyan-600/20 border border-cyan-500/30 font-mono text-[11px] font-bold" title="Fit to Screen (Auto-Scale)">Fit</button>
+            <button id="vpDesktop" class="px-2 py-0.5 rounded hover:text-white font-mono text-[11px]" title="100% Actual Size">100%</button>
+            <button id="vp75" class="px-2 py-0.5 rounded hover:text-white font-mono text-[11px]" title="75% Scale">75%</button>
+            <button id="vpTablet" class="px-2 py-0.5 rounded hover:text-white font-mono text-[11px]" title="Tablet 768px">Tablet</button>
+            <button id="vpMobile" class="px-2 py-0.5 rounded hover:text-white font-mono text-[11px]" title="Mobile 375px">Mobile</button>
+          </div>
+
+          <!-- Theme Inverter Toggle Button -->
+          <button id="themeToggleBtn" class="text-xs px-2.5 py-1.5 bg-surface-800 hover:bg-surface-700 text-slate-300 rounded-lg border border-white/10 transition flex items-center gap-1 font-medium" title="Invert Theme (Dark/Light)">
+            <span id="themeIcon">🌙</span>
+            <span id="themeText" class="hidden sm:inline">Theme</span>
+          </button>
+
+          <!-- 1-Click Export Project ZIP Button -->
+          <button id="exportZipBtn" class="text-xs px-3 py-1.5 bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 rounded-lg border border-indigo-500/30 transition flex items-center gap-1.5 font-medium shadow-sm" title="Download Complete Vite + React Project ZIP">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Export ZIP</span>
+          </button>
+
+          <!-- 1-Click Save as SimaticML XML Button -->
+          <button id="saveXmlBtn" class="text-xs px-3 py-1.5 bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 rounded-lg border border-cyan-500/30 transition flex items-center gap-1.5 font-medium shadow-sm" title="Download Native Siemens SimaticML XML File">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span id="saveXmlBtnText">Save XML</span>
+          </button>
+
+          <button id="copyBtn" class="text-xs px-3 py-1.5 bg-brand-500/10 hover:bg-brand-500/20 text-brand-300 rounded-lg border border-brand-500/20 transition flex items-center gap-1.5 font-medium">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span id="copyBtnText">Copy JSX</span>
+          </button>
+
+          <!-- Push directly to JSW Repository Button -->
+          <button id="pushToJswBtn" class="text-xs px-3 py-1.5 bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 rounded-lg border border-cyan-500/30 transition flex items-center gap-1.5 font-medium shadow-sm" title="Push Component into JSW_UI Repo & Auto-Register Route">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span id="pushJswText">🚀 Push to JSW</span>
+          </button>
+
+          <!-- Siemens Visual Asset Gallery Trigger Button -->
+          <button id="openGraphicsModalBtn" type="button" class="text-xs px-3 py-1.5 bg-gradient-to-r from-cyan-600/30 to-blue-600/30 hover:from-cyan-600/50 hover:to-blue-600/50 text-cyan-200 rounded-lg border border-cyan-400/30 transition flex items-center gap-1.5 font-medium shadow-sm" title="Browse 476+ Imported Siemens Graphics, Tooling & Mechanical Icons">
+            <span>🎨</span>
+            <span>Siemens Assets (<span id="assetCountBadge">476</span>)</span>
+          </button>
+
+          <!-- Share / Open Standalone URL Button -->
+          <a id="openShareUrlBtn" href="#" target="_blank" class="hidden text-xs px-3 py-1.5 bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 rounded-lg border border-emerald-500/30 transition flex items-center gap-1.5 font-medium shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            <span>Open Live URL ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Preview Canvas Wrapper with dynamic width -->
+      <div id="renderView" class="flex-1 p-4 md:p-6 overflow-y-auto bg-slate-950 flex flex-col justify-start items-center gap-4">
+        <div id="canvasViewport" class="w-full max-w-full bg-[#0b0f17] rounded-2xl shadow-2xl border border-white/10 transition-all duration-300 min-h-[580px] overflow-x-auto overflow-y-auto">
+          <div id="renderedComponent" class="w-full h-full flex justify-center p-2">
+            <div id="previewPlaceholder" class="h-full flex flex-col items-center justify-center text-slate-500 text-xs py-28 text-center px-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-3 text-slate-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <p class="font-medium text-slate-300">No screen converted yet</p>
+              <p class="text-slate-500 mt-1 max-w-sm">Click any preset or drag & drop a screenshot, then press "Execute Agentic Pipeline".</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat-to-Modify Prompt Bar (Direct Conversational Edits) -->
+        <div id="conversationalEditBar" class="w-full max-w-full bg-surface-850 border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+          <div class="w-8 h-8 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
+          <input id="promptEditInput" type="text" placeholder="Chat with Agent to modify screen (e.g. 'Add a search bar', 'Change badge to green', 'Make buttons rounded')..." class="flex-1 bg-surface-900 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 transition" />
+          <button id="sendModifyBtn" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shrink-0 disabled:opacity-50">
+            <span id="sendModifyText">Apply Tweak 🪄</span>
+            <div id="modifySpinner" class="hidden w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Code Inspector Tab -->
+      <div id="codeView" class="hidden flex-1 p-5 overflow-y-auto font-mono text-xs text-slate-200 bg-surface-900">
+        <pre><code id="jsxCodeOutput">// Converted production React JSX code will appear here...</code></pre>
+      </div>
+
+      <!-- PLC SCL & LAD Logic Studio Tab -->
+      <div id="plcLogicView" class="hidden flex-1 flex flex-col overflow-hidden bg-slate-950 font-mono text-xs">
+        <!-- Studio Header Toolbar -->
+        <div class="p-3 bg-surface-900 border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-cyan-400 flex items-center gap-1.5 uppercase tracking-wider">
+              ⚡ Siemens S7-1500 Logic Studio
+            </span>
+            <div class="flex items-center gap-1 bg-surface-850 p-1 rounded-lg border border-white/10">
+              <button id="subtabScl" class="px-3 py-1 rounded bg-cyan-600 text-white font-bold text-[11px] transition">SCL Code</button>
+              <button id="subtabLad" class="px-3 py-1 rounded text-slate-400 hover:text-white font-bold text-[11px] transition">LAD (Ladder)</button>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="generateSclBtn" class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-lg transition flex items-center gap-1.5 shadow">
+              <span>🪄 AI Generate SCL/LAD</span>
+            </button>
+            <button id="copyPlcLogicBtn" class="px-3 py-1.5 bg-surface-800 hover:bg-surface-700 text-slate-200 rounded-lg border border-white/10 transition">
+              Copy SCL
+            </button>
+          </div>
+        </div>
+
+        <!-- Description Input & Preset Selector -->
+        <div class="px-4 py-2 bg-surface-900/60 border-b border-white/5 flex flex-wrap items-center justify-between gap-2.5">
+          <div class="flex items-center gap-2 flex-1 min-w-[320px]">
+            <span class="text-[11px] text-slate-400 font-sans font-medium">Domain Spec:</span>
+            <input type="text" id="plcLogicSpecInput" value="Station sequencing with clamping interlocks, auto/manual mode, and KUKA weld release with 5s timeout" class="flex-1 bg-surface-900 border border-white/10 rounded px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 font-sans" />
+          </div>
+          <div class="flex items-center gap-1.5 font-sans">
+            <span class="text-[10px] text-slate-400">Industry Presets:</span>
+            <button type="button" onclick="setPlcPreset('AUTOMOTIVE')" class="px-2 py-0.5 rounded bg-surface-800 hover:bg-cyan-600/30 text-cyan-300 text-[10px] border border-white/5">🚗 Automotive Station</button>
+            <button type="button" onclick="setPlcPreset('HVAC_CLEANROOM')" class="px-2 py-0.5 rounded bg-surface-800 hover:bg-emerald-600/30 text-emerald-300 text-[10px] border border-white/5">🔬 Cleanroom HVAC (Fab)</button>
+            <button type="button" onclick="setPlcPreset('BESS_ENERGY')" class="px-2 py-0.5 rounded bg-surface-800 hover:bg-amber-600/30 text-amber-300 text-[10px] border border-white/5">🔋 BESS Storage</button>
+          </div>
+        </div>
+
+        <!-- SCL Pane -->
+        <div id="sclPane" class="flex-1 p-5 overflow-y-auto text-slate-200 bg-slate-950 leading-relaxed select-text">
+          <pre><code id="sclCodeOutput">// Click "AI Generate SCL/LAD" to synthesize IEC 61131-3 Siemens S7-1500 logic...</code></pre>
+        </div>
+
+        <!-- LAD (Ladder Diagram) Pane -->
+        <div id="ladPane" class="hidden flex-1 p-5 overflow-y-auto bg-[#0a0f18] text-slate-200 space-y-4 select-text">
+          <div id="ladNetworksContainer" class="space-y-4">
+            <p class="text-slate-500 italic">No Ladder networks generated yet. Click "AI Generate SCL/LAD" above.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Push to JSW Enterprise Modal Dialog -->
+  <div id="pushModalOverlay" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl w-full max-w-lg p-6 animate-in fade-in zoom-in-95 text-slate-100">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+            🚀
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Push Screen to JSW UI</h3>
+            <p class="text-xs text-slate-400">Deploy directly into JSW Steel & Motors application</p>
+          </div>
+        </div>
+        <button id="closePushModalBtn" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 py-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1.5">Where should this component appear in JSW?</label>
+          <select id="modalTargetPage" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-cyan-500">
+            <option value="global-widget" selected>🌟 Global AI Drag & Drop Widget (Available on ALL JSW Pages)</option>
+            <option value="robot-monitoring">🤖 Robot Monitoring Sub-Tab (/robot-monitoring)</option>
+            <option value="oee">🏭 OEE Module Sub-Tab (/oee)</option>
+            <option value="maintenance">🔧 Maintenance Sub-Tab (/maintenance)</option>
+            <option value="hvac-cleanroom">🔬 Cleanroom HVAC (Semiconductor & EEE Fab)</option>
+            <option value="standalone">🌐 Standalone Page Route</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1.5">Component Name (PascalCase):</label>
+          <input type="text" id="modalCompName" value="GeneratedScreen" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-cyan-500" placeholder="e.g. RobotSpotHitRateReport" />
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1.5">Display Title / Tab Label:</label>
+          <input type="text" id="modalTabLabel" value="Generated Screen" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-cyan-500" placeholder="e.g. Live Spot Hit Rate" />
+        </div>
+
+        <!-- Full-Stack AI Backend Option -->
+        <div class="rounded-xl border border-indigo-500/30 bg-indigo-950/20 p-3.5 space-y-2.5">
+          <label class="flex items-center gap-2 cursor-pointer select-none">
+            <input type="checkbox" id="generateBackendCheck" checked class="w-4 h-4 rounded text-indigo-600 focus:ring-0 cursor-pointer" />
+            <span class="font-bold text-indigo-300 text-xs">⚡ Auto-Synthesize Backend API & SQL Query (Full-Stack Mode)</span>
+          </label>
+          <div id="backendConfigBox" class="space-y-1.5 pl-6">
+            <label class="block text-[11px] text-slate-400">Backend Feature / Aggregation Logic (e.g., Yearly filter, MSSQL query):</label>
+            <input type="text" id="backendRequirementInput" value="Add yearly filter aggregation with 5-year trend rollup" class="w-full bg-slate-900 border border-indigo-500/20 rounded-lg px-2.5 py-1.5 text-slate-200 text-xs focus:outline-none focus:border-indigo-400" />
+          </div>
+        </div>
+
+        <div id="pushResultBox" class="hidden p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 text-xs space-y-1.5">
+          <div class="font-bold flex items-center gap-1.5">
+            <span>✅ Pushed Successfully!</span>
+          </div>
+          <div id="pushResultDetails" class="text-[11px] text-slate-300"></div>
+          <div class="pt-2">
+            <a id="pushResultLink" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500 text-slate-950 font-bold rounded-lg hover:bg-emerald-400 transition">
+              <span>Open in JSW UI ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800 flex justify-end gap-2.5">
+        <button id="cancelPushModalBtn" class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition">
+          Cancel
+        </button>
+        <button id="submitPushModalBtn" class="px-5 py-2 text-xs font-bold bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg transition shadow-md flex items-center gap-2">
+          <span>🚀 Deploy to JSW</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLC Tag Explorer & Generator Modal -->
+  <div id="tagExplorerModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surface-850 border border-cyan-500/30 rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-surface-900">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+            ⚡
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-white">Siemens TIA Portal V20 Tag Explorer & Generator</h3>
+            <p class="text-[11px] text-slate-400">1,148 Tags extracted from D:\TIA v20\hmi tags.xlsx (S7-1500 SICAR standard)</p>
+          </div>
+        </div>
+        <button id="closeTagModalBtn" class="text-slate-400 hover:text-white text-lg p-1">✕</button>
+      </div>
+
+      <div class="p-4 border-b border-white/10 bg-surface-900/50 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-1 min-w-[240px]">
+          <input type="text" id="tagSearchInput" placeholder="Filter by Tag Name, PLC Symbol, or Type (e.g. Opmode, Robot, Seq, Alarm)..." class="w-full bg-surface-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 font-mono" />
+          <button id="searchTagsBtn" class="px-3.5 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold rounded-xl transition">
+            Search
+          </button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="autoMapScreenTagsBtn" type="button" class="px-3 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold rounded-xl transition flex items-center gap-1.5 shadow-lg border border-cyan-400/40">
+            <svg class="w-4 h-4 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>⚡ Auto-Map Tags to Screen</span>
+          </button>
+          <button id="generateMockPlcBtn" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-xl transition flex items-center gap-1.5 shadow">
+            <span>⚡ Generate Mock PLC JSON</span>
+          </button>
+          <button id="copyAllTagsBtn" class="px-3 py-2 bg-surface-800 hover:bg-surface-700 text-slate-200 text-xs font-medium rounded-xl border border-white/10 transition">
+            Copy Schema
+          </button>
+        </div>
+      </div>
+
+      <!-- Tag Summary Subsystems -->
+      <div id="subsystemsBar" class="px-4 py-2 bg-surface-900/80 border-b border-white/5 flex gap-4 text-[11px] text-slate-400 overflow-x-auto">
+        <span class="text-slate-300 font-semibold">Subsystems:</span>
+        <span class="cursor-pointer hover:text-cyan-400" onclick="filterSubsystem('OpmodePanel')">OpmodePanel (256)</span>
+        <span class="cursor-pointer hover:text-cyan-400" onclick="filterSubsystem('Station')">Station Sequencing (184)</span>
+        <span class="cursor-pointer hover:text-cyan-400" onclick="filterSubsystem('Robot')">Robots/Welding (92)</span>
+        <span class="cursor-pointer hover:text-cyan-400" onclick="filterSubsystem('Alarm')">Alarms (310)</span>
+        <span class="cursor-pointer hover:text-cyan-400" onclick="filterSubsystem('Safety')">F-CPU Safety (45)</span>
+      </div>
+
+      <!-- Tag Table View -->
+      <div class="flex-1 overflow-y-auto p-4 bg-slate-950 font-mono text-xs">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10 text-slate-400 text-[11px]">
+              <th class="pb-2 font-semibold">HMI Tag Name</th>
+              <th class="pb-2 font-semibold">PLC Symbolic Tag</th>
+              <th class="pb-2 font-semibold">Type</th>
+              <th class="pb-2 font-semibold">Cycle</th>
+              <th class="pb-2 font-semibold text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tagTableBody" class="divide-y divide-white/5 text-slate-300">
+            <tr>
+              <td colspan="5" class="py-8 text-center text-slate-500">Loading tags from server...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="p-3 bg-surface-900 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+        <span id="tagPaginationInfo">Showing 1-50 of 1,148 tags</span>
+        <div class="flex gap-2">
+          <button id="prevTagPage" class="px-2.5 py-1 bg-surface-800 rounded border border-white/5 hover:text-white">Prev</button>
+          <button id="nextTagPage" class="px-2.5 py-1 bg-surface-800 rounded border border-white/5 hover:text-white">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Siemens Visual Assets & Graphics Library Modal -->
+  <div id="graphicsGalleryModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surface-850 border border-cyan-500/30 rounded-2xl w-full max-w-5xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-surface-900">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-600 text-white flex items-center justify-center font-bold text-sm shadow">
+            🎨
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span>Siemens HMI Visual Assets & Mechanical Graphics</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">476 Native TIA Assets</span>
+            </h3>
+            <p class="text-[11px] text-slate-400 font-mono">Authentic SICAR, KUKA Robot, Valves, Lifters, Cylinders & Diagnostics</p>
+          </div>
+        </div>
+        <button id="closeGraphicsModalBtn" class="text-slate-400 hover:text-white text-lg p-1">✕</button>
+      </div>
+
+      <!-- Category Filter Tabs & Search Bar -->
+      <div class="p-3 border-b border-white/10 bg-surface-900/60 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-1.5 overflow-x-auto text-[11px] flex-1">
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg bg-cyan-600 text-white font-semibold transition" data-cat="all">All (476)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="robots_tooling">🤖 Robots (30)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="lifters_conveyors">🏗️ Lifters (25)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="valves_cylinders">⚙️ Cylinders</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="alarms_safety">⚠️ Alarms/Safety (17)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="navigation_controls">🧭 Navigation (29)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="status_indicators">🟢 Status/LEDs (27)</button>
+          <button type="button" class="graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition" data-cat="automation_plant_hardware">🔌 Hardware/PROFINET (111)</button>
+        </div>
+        <div class="w-64">
+          <input type="text" id="graphicsSearchInput" placeholder="Filter graphics..." class="w-full bg-surface-900 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-mono" />
+        </div>
+      </div>
+
+      <!-- Assets Grid Gallery -->
+      <div id="graphicsGrid" class="flex-1 overflow-y-auto p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 bg-slate-950">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentImageFile = null;
+    let currentBase64 = null;
+    let latestJsx = '';
+    let latestXmlContent = '';
+    let currentScreenName = 'Screen';
+    let latestPipelineResult = null;
+    let currentHash = null;
+
+    const duplicateBanner = document.getElementById('duplicateImageBanner');
+    const loadSavedBtn = document.getElementById('loadSavedBtn');
+    const regenerateNewBtn = document.getElementById('regenerateNewBtn');
+
+    // SHA-256 calculator in browser using Web Crypto API
+    async function calculateSha256(base64Str) {
+      try {
+        const cleaned = base64Str.replace(/^data:image\/\w+;base64,/, '');
+        const binary = atob(cleaned);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+          bytes[i] = binary.charCodeAt(i);
+        }
+        const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (e) {
+        return null;
+      }
+    }
+
+    async function checkImageCache(base64Str) {
+      currentHash = await calculateSha256(base64Str);
+      if (!currentHash) return;
+      try {
+        const res = await fetch('/api/check-cache/' + currentHash);
+        const data = await res.json();
+        if (data.cached) {
+          duplicateBanner.classList.remove('hidden');
+        } else {
+          duplicateBanner.classList.add('hidden');
+        }
+      } catch (e) {
+        duplicateBanner.classList.add('hidden');
+      }
+    }
+
+    const imageInput = document.getElementById('imageInput');
+    const imagePreview = document.getElementById('imagePreview');
+    const previewContainer = document.getElementById('previewContainer');
+    const dropZone = document.getElementById('dropZone');
+    const removeImage = document.getElementById('removeImage');
+    const loadTeamsBtn = document.getElementById('loadTeamsBtn');
+    const loadModalBtn = document.getElementById('loadModalBtn');
+    const loadDevOpsBtn = document.getElementById('loadDevOpsBtn');
+    const loadSqlBtn = document.getElementById('loadSqlBtn');
+    const generateBtn = document.getElementById('generateBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+
+    const tabPreview = document.getElementById('tabPreview');
+    const tabCode = document.getElementById('tabCode');
+    const renderView = document.getElementById('renderView');
+    const codeView = document.getElementById('codeView');
+    const canvasViewport = document.getElementById('canvasViewport');
+    const jsxCodeOutput = document.getElementById('jsxCodeOutput');
+    const copyBtn = document.getElementById('copyBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+
+    const latencyBadge = document.getElementById('latencyBadge');
+    const latencyValue = document.getElementById('latencyValue');
+    const costBadge = document.getElementById('costBadge');
+    const costValue = document.getElementById('costValue');
+    const inrValue = document.getElementById('inrValue');
+    const tokenBadge = document.getElementById('tokenBadge');
+    const tokenValue = document.getElementById('tokenValue');
+    const agentTimeline = document.getElementById('agentTimeline');
+    const pipelineStatus = document.getElementById('pipelineStatus');
+    const pulsePing = document.getElementById('pulsePing');
+    const pulseDot = document.getElementById('pulseDot');
+    const mountEl = document.getElementById('renderedComponent');
+
+    // Viewport Toggle & Responsive Scaling Controls
+    const vpFit = document.getElementById('vpFit');
+    const vpDesktop = document.getElementById('vpDesktop');
+    const vp75 = document.getElementById('vp75');
+    const vpTablet = document.getElementById('vpTablet');
+    const vpMobile = document.getElementById('vpMobile');
+    let currentVpMode = 'fit';
+
+    function applyCanvasScaling() {
+      const renderedChild = mountEl && mountEl.firstElementChild;
+      if (!renderedChild || renderedChild.id === 'previewPlaceholder') {
+        if (mountEl) {
+          mountEl.style.transform = 'none';
+          mountEl.style.transformOrigin = 'top center';
+          mountEl.style.width = '100%';
+          mountEl.style.height = 'auto';
+          mountEl.style.marginBottom = '0px';
+        }
+        return;
+      }
+
+      if (currentVpMode === 'fit') {
+        canvasViewport.style.width = '100%';
+        canvasViewport.style.maxWidth = '100%';
+        canvasViewport.style.overflowX = 'auto';
+        canvasViewport.style.overflowY = 'auto';
+        
+        // Measure child's intrinsic width (from style or bounding rect)
+        let childW = 0;
+        let childH = 0;
+        if (renderedChild.style && renderedChild.style.width) {
+          childW = parseFloat(renderedChild.style.width);
+        }
+        if (renderedChild.style && renderedChild.style.height) {
+          childH = parseFloat(renderedChild.style.height);
+        }
+        if (!childW || !childH) {
+          const rect = renderedChild.getBoundingClientRect();
+          childW = rect.width || 1314;
+          childH = rect.height || 706;
+        }
+
+        const availW = Math.max(300, (canvasViewport.clientWidth || window.innerWidth - 420) - 40);
+        
+        if (availW > 0 && childW > availW) {
+          const scale = Math.min(1, availW / childW);
+          mountEl.style.transform = `scale(${scale.toFixed(4)})`;
+          mountEl.style.transformOrigin = 'top center';
+          mountEl.style.width = `${childW}px`;
+          mountEl.style.minWidth = `${childW}px`;
+          mountEl.style.height = `${Math.ceil(childH * scale)}px`;
+          mountEl.style.marginBottom = `${Math.ceil(childH * (scale - 1))}px`;
+        } else {
+          mountEl.style.transform = 'none';
+          mountEl.style.transformOrigin = 'top center';
+          mountEl.style.width = '100%';
+          mountEl.style.minWidth = '0px';
+          mountEl.style.height = 'auto';
+          mountEl.style.marginBottom = '0px';
+        }
+      } else if (currentVpMode === '75') {
+        canvasViewport.style.width = '100%';
+        canvasViewport.style.maxWidth = '100%';
+        canvasViewport.style.overflowX = 'auto';
+        canvasViewport.style.overflowY = 'auto';
+        let childW = parseFloat(renderedChild.style && renderedChild.style.width) || 1314;
+        let childH = parseFloat(renderedChild.style && renderedChild.style.height) || 706;
+        mountEl.style.transform = 'scale(0.75)';
+        mountEl.style.transformOrigin = 'top center';
+        mountEl.style.width = `${childW}px`;
+        mountEl.style.minWidth = `${childW}px`;
+        mountEl.style.height = `${Math.ceil(childH * 0.75)}px`;
+        mountEl.style.marginBottom = `${Math.ceil(childH * -0.25)}px`;
+      } else {
+        mountEl.style.transform = 'none';
+        mountEl.style.transformOrigin = 'top center';
+        mountEl.style.width = '100%';
+        mountEl.style.minWidth = '0px';
+        mountEl.style.height = 'auto';
+        mountEl.style.marginBottom = '0px';
+        canvasViewport.style.overflowX = 'auto';
+        canvasViewport.style.overflowY = 'auto';
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      if (currentVpMode === 'fit') {
+        applyCanvasScaling();
+      }
+    });
+
+    function setViewport(size, activeBtn) {
+      currentVpMode = size;
+      [vpFit, vpDesktop, vp75, vpTablet, vpMobile].forEach(b => {
+        if (!b) return;
+        b.className = 'px-2 py-0.5 rounded hover:text-white font-mono text-[11px]';
+      });
+      activeBtn.className = 'px-2 py-0.5 rounded text-cyan-300 bg-cyan-600/20 border border-cyan-500/30 font-mono text-[11px] font-bold';
+      
+      if (size === 'fit') {
+        canvasViewport.style.width = '100%';
+        canvasViewport.style.maxWidth = '100%';
+      } else if (size === 'desktop') {
+        canvasViewport.style.width = '100%';
+        canvasViewport.style.maxWidth = '100%';
+      } else if (size === '75') {
+        canvasViewport.style.width = '100%';
+        canvasViewport.style.maxWidth = '100%';
+      } else if (size === 'tablet') {
+        canvasViewport.style.width = '768px';
+        canvasViewport.style.maxWidth = '768px';
+      } else if (size === 'mobile') {
+        canvasViewport.style.width = '390px';
+        canvasViewport.style.maxWidth = '390px';
+      }
+
+      applyCanvasScaling();
+    }
+
+    if (vpFit) vpFit.addEventListener('click', () => setViewport('fit', vpFit));
+    if (vpDesktop) vpDesktop.addEventListener('click', () => setViewport('desktop', vpDesktop));
+    if (vp75) vp75.addEventListener('click', () => setViewport('75', vp75));
+    if (vpTablet) vpTablet.addEventListener('click', () => setViewport('tablet', vpTablet));
+    if (vpMobile) vpMobile.addEventListener('click', () => setViewport('mobile', vpMobile));
+
+    // File Selection
+    imageInput.addEventListener('change', (e) => {
+      console.log('imageInput change event fired!', e.target.files);
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        handleFile(file);
+      }
+    });
+
+    // URL and Clipboard Paste Ingestion Handlers
+    const imageUrlInput = document.getElementById('imageUrlInput');
+    const loadUrlBtn = document.getElementById('loadUrlBtn');
+
+    async function handleUrlFetch(inputVal) {
+      const url = (inputVal || imageUrlInput.value || '').trim();
+      if (!url) {
+        alert('Please paste an image URL or data URI first.');
+        return;
+      }
+      loadUrlBtn.disabled = true;
+      loadUrlBtn.innerText = 'Loading...';
+      try {
+        const res = await fetch('/api/fetch-image-url', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to fetch image');
+        
+        // Convert base64 to File object
+        const byteCharacters = atob(data.base64);
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: data.mimeType || 'image/png' });
+        const file = new File([blob], 'screenshot.png', { type: data.mimeType || 'image/png' });
+        
+        imageUrlInput.value = '';
+        handleFile(file);
+      } catch (err) {
+        alert('Failed to load image from URL: ' + err.message);
+      } finally {
+        loadUrlBtn.disabled = false;
+        loadUrlBtn.innerText = 'Load URL';
+      }
+    }
+
+    loadUrlBtn.addEventListener('click', () => handleUrlFetch());
+    imageUrlInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleUrlFetch();
+      }
+    });
+
+    // Global Paste Listener (Ctrl + V)
+    window.addEventListener('paste', async (e) => {
+      // If user pasted image files directly from clipboard
+      const items = (e.clipboardData || e.originalEvent?.clipboardData)?.items;
+      if (items) {
+        for (const item of items) {
+          if (item.type.indexOf('image') !== -1) {
+            e.preventDefault();
+            const blob = item.getAsFile();
+            if (blob) {
+              const file = new File([blob], 'clipboard-screenshot.png', { type: blob.type });
+              handleFile(file);
+              return;
+            }
+          }
+        }
+      }
+
+      // If user pasted a URL string or raw Siemens XML into the page
+      const text = (e.clipboardData || window.clipboardData)?.getData('text');
+      if (text) {
+        const trimmed = text.trim();
+        // Detect Siemens SimaticML XML paste!
+        if (trimmed.startsWith('<?xml') || trimmed.includes('<Hmi.Screen') || trimmed.includes('<Document>')) {
+          e.preventDefault();
+          window.__currentXmlContent = trimmed;
+          executeXmlConversion();
+          return;
+        }
+        if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:image/')) {
+          e.preventDefault();
+          imageUrlInput.value = trimmed;
+          handleUrlFetch(trimmed);
+        }
+      }
+    });
+
+    // Native Drag and Drop Listeners on DropZone
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.classList.add('border-brand-500', 'bg-surface-900/80', 'scale-[1.02]');
+      }, false);
+    });
+
+    ['dragleave'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.classList.remove('border-brand-500', 'bg-surface-900/80', 'scale-[1.02]');
+      }, false);
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.classList.remove('border-brand-500', 'bg-surface-900/80', 'scale-[1.02]');
+      const dt = e.dataTransfer;
+      const file = dt?.files?.[0];
+      console.log('dropZone drop event file:', file);
+      if (file && file.type.startsWith('image/')) {
+        handleFile(file);
+      } else if (file) {
+        alert('Please drop an image file (PNG, JPG, WebP).');
+      }
+    }, false);
+
+    // Also support dropping anywhere on the page
+    window.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    }, false);
+
+    window.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const file = e.dataTransfer?.files?.[0];
+      if (file && file.type.startsWith('image/')) {
+        handleFile(file);
+      }
+    }, false);
+
+    function handleFile(file) {
+      if (!file) return;
+      currentImageFile = file;
+      duplicateBanner.classList.add('hidden');
+
+      const isXml = file.name.toLowerCase().endsWith('.xml') || (file.type && file.type.includes('xml'));
+
+      const xmlFileBadge = document.getElementById('xmlFileBadge');
+      const xmlFileNameText = document.getElementById('xmlFileNameText');
+
+      if (isXml) {
+        previewContainer.classList.remove('hidden');
+        dropZone.classList.add('hidden');
+        imagePreview.style.display = 'none';
+        removeImage.style.display = 'none';
+        if (xmlFileBadge) {
+          xmlFileBadge.classList.remove('hidden');
+          if (xmlFileNameText) xmlFileNameText.innerText = file.name;
+        }
+
+        const placeholder = document.getElementById('previewPlaceholder');
+        if (placeholder) {
+          placeholder.innerHTML = `
+            <div class="flex flex-col items-center justify-center p-6 text-center max-w-lg">
+              <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/20 shadow-lg">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <h3 class="text-sm font-bold text-white mb-1">Siemens SimaticML XML Screen Loaded</h3>
+              <p class="text-xs text-slate-400 mb-4 font-mono">${file.name} (${(file.size / 1024).toFixed(1)} KB)</p>
+              <div class="flex items-center gap-3">
+                <button type="button" onclick="executeXmlConversion()" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold rounded-xl shadow-lg transition flex items-center gap-2">
+                  <span>⚡ Convert XML Screen to JSX</span>
+                </button>
+                <button type="button" onclick="cancelXmlUpload()" class="px-4 py-2.5 bg-slate-800 hover:bg-rose-900/40 text-slate-300 hover:text-rose-300 border border-white/10 hover:border-rose-500/40 text-xs font-semibold rounded-xl transition flex items-center gap-1.5 shadow">
+                  <span>✕ Cancel & Choose Another</span>
+                </button>
+              </div>
+            </div>
+          `;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          window.__currentXmlContent = e.target.result;
+        };
+        reader.readAsText(file);
+        return;
+      }
+
+      // If normal image file
+      if (xmlFileBadge) xmlFileBadge.classList.add('hidden');
+      removeImage.style.display = 'block';
+      imagePreview.style.display = 'block';
+      const objectUrl = URL.createObjectURL(file);
+      imagePreview.src = objectUrl;
+      previewContainer.classList.remove('hidden');
+      dropZone.classList.add('hidden');
+
+      const placeholder = document.getElementById('previewPlaceholder');
+      if (placeholder) {
+        placeholder.innerHTML = `
+          <div class="flex flex-col items-center justify-center p-6 text-center max-w-lg">
+            <div class="relative w-full max-h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-surface-850 p-2 mb-4">
+              <img src="${objectUrl}" class="w-full max-h-80 object-contain rounded-lg" alt="Selected Design" />
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Image Loaded: ${file.name}</h3>
+            <p class="text-xs text-slate-400 mb-4">${(file.size / 1024).toFixed(1)} KB &bull; Ready for Agent Pipeline</p>
+            <button type="button" onclick="document.getElementById('generateBtn').click()" class="px-5 py-2.5 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-xs font-semibold rounded-xl shadow-lg transition flex items-center gap-2 mx-auto">
+              <span>⚡ Execute Agentic Pipeline</span>
+            </button>
+          </div>
+        `;
+      }
+
+      // Read as base64 in background for the API payload
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        currentBase64 = e.target.result;
+        try {
+          await checkImageCache(currentBase64);
+        } catch (err) {
+          console.warn('Cache check non-fatal error:', err);
+        }
+      };
+      reader.onerror = (err) => {
+        alert('Failed to read image file: ' + err.message);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Cancel XML Upload and reset drop zone without page reload
+    window.cancelXmlUpload = function() {
+      currentImageFile = null;
+      window.__currentXmlContent = null;
+      currentBase64 = null;
+      currentHash = null;
+      imageInput.value = '';
+      previewContainer.classList.add('hidden');
+      dropZone.classList.remove('hidden');
+
+      const mountEl = document.getElementById('renderedComponent');
+      if (mountEl) {
+        mountEl.innerHTML = `
+          <div id="previewPlaceholder" class="h-full flex flex-col items-center justify-center text-slate-500 text-xs py-28 text-center px-4">
+            <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-3 text-slate-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <p class="font-medium text-slate-300">No screen converted yet</p>
+            <p class="text-slate-500 mt-1 max-w-sm">Click any preset or drag & drop a screenshot, then press "Execute Agentic Pipeline".</p>
+          </div>
+        `;
+      }
+    };
+
+    removeImage.addEventListener('click', () => {
+      currentImageFile = null;
+      currentBase64 = null;
+      currentHash = null;
+      duplicateBanner.classList.add('hidden');
+      imageInput.value = '';
+      previewContainer.classList.add('hidden');
+      dropZone.classList.remove('hidden');
+
+      const placeholder = document.getElementById('previewPlaceholder');
+      if (placeholder) {
+        placeholder.innerHTML = `
+          <div class="w-16 h-16 rounded-2xl bg-surface-850 flex items-center justify-center mb-4 text-slate-600 shadow-inner">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <p class="font-medium text-slate-300">No screen converted yet</p>
+          <p class="text-slate-500 mt-1 max-w-sm">Click any preset or drag & drop a screenshot, then press "Execute Agentic Pipeline".</p>
+        `;
+      }
+    });
+
+    async function loadPreset(url, name) {
+      try {
+        const res = await fetch(url);
+        const blob = await res.blob();
+        const file = new File([blob], name, { type: 'image/png' });
+        handleFile(file);
+      } catch (e) {
+        alert('Could not load preset: ' + e.message);
+      }
+    }
+
+    loadTeamsBtn.addEventListener('click', () => loadPreset('/mockups/Teams_Chat.png', 'Teams_Chat.png'));
+    loadModalBtn.addEventListener('click', () => loadPreset('/mockups/Port_Warning_Modal.png', 'Port_Warning_Modal.png'));
+    loadDevOpsBtn.addEventListener('click', () => loadPreset('/mockups/DevOps_Pipeline_Infographic.png', 'DevOps_Pipeline_Infographic.png'));
+    loadSqlBtn.addEventListener('click', () => loadPreset('/mockups/SQL_Studio_Query.png', 'SQL_Studio_Query.png'));
+
+    // Siemens TIA V20 HMI Presets
+    const loadHmi1Btn = document.getElementById('loadHmi1Btn');
+    const loadHmi2Btn = document.getElementById('loadHmi2Btn');
+    const loadHmi3Btn = document.getElementById('loadHmi3Btn');
+    const loadHmi4Btn = document.getElementById('loadHmi4Btn');
+    const loadHmi5Btn = document.getElementById('loadHmi5Btn');
+    if (loadHmi1Btn) loadHmi1Btn.addEventListener('click', () => loadPreset('/mockups/image1.png', 'Siemens_Station_Overview.png'));
+    if (loadHmi2Btn) loadHmi2Btn.addEventListener('click', () => loadPreset('/mockups/image2.png', 'Siemens_Station_Modify.png'));
+    if (loadHmi3Btn) loadHmi3Btn.addEventListener('click', () => loadPreset('/mockups/image3.png', 'Siemens_Robot_Welding.png'));
+    if (loadHmi4Btn) loadHmi4Btn.addEventListener('click', () => loadPreset('/mockups/image4.png', 'Siemens_Safety_System.png'));
+    if (loadHmi5Btn) loadHmi5Btn.addEventListener('click', () => loadPreset('/mockups/image5.png', 'Siemens_Hourly_Production.png'));
+
+    const tabPlcLogic = document.getElementById('tabPlcLogic');
+    const plcLogicView = document.getElementById('plcLogicView');
+    const subtabScl = document.getElementById('subtabScl');
+    const subtabLad = document.getElementById('subtabLad');
+    const sclPane = document.getElementById('sclPane');
+    const ladPane = document.getElementById('ladPane');
+    const generateSclBtn = document.getElementById('generateSclBtn');
+    const sclCodeOutput = document.getElementById('sclCodeOutput');
+    const ladNetworksContainer = document.getElementById('ladNetworksContainer');
+    const copyPlcLogicBtn = document.getElementById('copyPlcLogicBtn');
+    const plcLogicSpecInput = document.getElementById('plcLogicSpecInput');
+
+    let currentSclCode = '';
+
+    // Tab Switching
+    tabPreview.addEventListener('click', () => {
+      tabPreview.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition flex items-center gap-1.5 shadow-sm";
+      tabCode.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5";
+      if (tabPlcLogic) tabPlcLogic.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-cyan-400 hover:text-white hover:bg-cyan-600/20 border border-cyan-500/20 transition flex items-center gap-1.5";
+      renderView.classList.remove('hidden');
+      codeView.classList.add('hidden');
+      if (plcLogicView) plcLogicView.classList.add('hidden');
+    });
+
+    tabCode.addEventListener('click', () => {
+      tabCode.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition flex items-center gap-1.5 shadow-sm";
+      tabPreview.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5";
+      if (tabPlcLogic) tabPlcLogic.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-cyan-400 hover:text-white hover:bg-cyan-600/20 border border-cyan-500/20 transition flex items-center gap-1.5";
+      codeView.classList.remove('hidden');
+      renderView.classList.add('hidden');
+      if (plcLogicView) plcLogicView.classList.add('hidden');
+    });
+
+    if (tabPlcLogic) {
+      tabPlcLogic.addEventListener('click', () => {
+        tabPlcLogic.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium bg-cyan-600 text-white transition flex items-center gap-1.5 shadow-sm";
+        tabPreview.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5";
+        tabCode.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5";
+        plcLogicView.classList.remove('hidden');
+        renderView.classList.add('hidden');
+        codeView.classList.add('hidden');
+      });
+    }
+
+    if (subtabScl && subtabLad) {
+      subtabScl.addEventListener('click', () => {
+        subtabScl.className = "px-3 py-1 rounded bg-cyan-600 text-white font-bold text-[11px] transition";
+        subtabLad.className = "px-3 py-1 rounded text-slate-400 hover:text-white font-bold text-[11px] transition";
+        sclPane.classList.remove('hidden');
+        ladPane.classList.add('hidden');
+      });
+      subtabLad.addEventListener('click', () => {
+        subtabLad.className = "px-3 py-1 rounded bg-cyan-600 text-white font-bold text-[11px] transition";
+        subtabScl.className = "px-3 py-1 rounded text-slate-400 hover:text-white font-bold text-[11px] transition";
+        ladPane.classList.remove('hidden');
+        sclPane.classList.add('hidden');
+      });
+    }
+
+    if (generateSclBtn) {
+      generateSclBtn.addEventListener('click', async () => {
+        const desc = plcLogicSpecInput ? plcLogicSpecInput.value.trim() : 'Station sequence';
+        generateSclBtn.innerHTML = '<span>⚡ Synthesizing SCL & LAD...</span>';
+        generateSclBtn.disabled = true;
+
+        try {
+          const res = await fetch('/api/plc/generate-logic', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              blockName: 'FB_Station_Auto_Sequence',
+              blockType: 'FUNCTION_BLOCK',
+              description: desc
+            })
+          });
+
+          const data = await res.json();
+          if (!data.success) throw new Error(data.error);
+
+          currentSclCode = data.sclCode;
+          sclCodeOutput.innerText = data.sclCode;
+
+          // Render Ladder networks
+          if (data.ladRepresentation && data.ladRepresentation.length > 0) {
+            ladNetworksContainer.innerHTML = data.ladRepresentation.map(net => `
+              <div class="border border-cyan-500/30 rounded-xl bg-surface-900 p-4 space-y-2">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                  <span class="font-bold text-cyan-300 text-xs">${net.title || 'Network'}</span>
+                  <span class="text-[10px] text-slate-400">${net.comment || ''}</span>
+                </div>
+                <div class="p-3 bg-black/40 rounded-lg flex items-center gap-3 overflow-x-auto font-mono text-xs">
+                  <span class="text-cyan-400 font-bold">|</span>
+                  ${(net.rungs || []).map(r => `
+                    <div class="flex flex-col items-center px-2 py-1 bg-surface-850 border border-white/10 rounded">
+                      <span class="text-[10px] text-slate-400">${r.desc || ''}</span>
+                      <span class="text-amber-300 font-bold my-0.5">${r.instruction}</span>
+                      <span class="text-emerald-400 font-semibold text-[11px]">${r.operand}</span>
+                    </div>
+                    <span class="text-cyan-400 font-bold">---</span>
+                  `).join('')}
+                  <span class="text-cyan-400 font-bold">|</span>
+                </div>
+              </div>
+            `).join('');
+          }
+
+        } catch (err) {
+          alert('Failed to generate PLC logic: ' + err.message);
+        } finally {
+          generateSclBtn.innerHTML = '<span>🪄 AI Generate SCL/LAD</span>';
+          generateSclBtn.disabled = false;
+        }
+      });
+    }
+
+    window.setPlcPreset = function(type) {
+      if (!plcLogicSpecInput) return;
+      if (type === 'AUTOMOTIVE') {
+        plcLogicSpecInput.value = 'Automotive BIW station sequencing with hydraulic clamp advance, part seating sensor, KUKA robot weld release handshake, and 5.0s timeout';
+      } else if (type === 'HVAC_CLEANROOM') {
+        plcLogicSpecInput.value = 'Semiconductor cleanroom AHU with cascade temperature control (+/- 0.1C), RH control (42% +/- 1%), positive pressure cascade (+45Pa), and HEPA filter delta-P alarm';
+      } else if (type === 'BESS_ENERGY') {
+        plcLogicSpecInput.value = 'Battery Energy Storage System (BESS) container PLC with HV contactor sequencing, off-gas thermal runaway interlock, liquid chiller modulating pump, and E-Stop shunt trip';
+      }
+      if (generateSclBtn) generateSclBtn.click();
+    };
+
+    if (copyPlcLogicBtn) {
+      copyPlcLogicBtn.addEventListener('click', () => {
+        if (!currentSclCode) {
+          alert('Please click "AI Generate SCL/LAD" first.');
+          return;
+        }
+        navigator.clipboard.writeText(currentSclCode);
+        alert('Siemens S7-1500 SCL code copied to clipboard!');
+      });
+    }
+
+    // Execute Agent Pipeline
+    async function executePipeline(forceNew = false) {
+      // If user uploaded an XML file, seamlessly route to XML conversion!
+      if (window.__currentXmlContent) {
+        return executeXmlConversion();
+      }
+
+      if (!currentBase64) {
+        alert('Please select an image, choose a Siemens XML screen from the dropdown, or click a preset first.');
+        return;
+      }
+
+      const model = document.getElementById('modelSelect').value;
+      const userKey = document.getElementById('apiKeyInput').value.trim();
+
+      generateBtn.disabled = true;
+      btnText.innerText = forceNew ? 'Synthesizing Fresh JSX...' : 'Agents In Execution...';
+      btnSpinner.classList.remove('hidden');
+
+      pipelineStatus.innerText = 'Orchestrating';
+      pipelineStatus.className = 'text-[10px] px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-400 border border-brand-500/30 font-mono animate-pulse';
+      pulsePing.classList.remove('hidden');
+      pulseDot.className = 'relative inline-flex rounded-full h-2 w-2 bg-brand-400';
+
+      const startTime = performance.now();
+
+      try {
+        const bodyPayload = {
+          imageBase64: currentBase64,
+          mimeType: currentImageFile?.type || 'image/png',
+          imageName: currentImageFile?.name || '',
+          model,
+          forceNew
+        };
+        if (userKey) {
+          if (model.startsWith('claude')) bodyPayload.claudeKey = userKey;
+          else bodyPayload.geminiKey = userKey;
+        }
+
+        const res = await fetch('/api/convert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bodyPayload)
+        });
+
+        const data = await res.json();
+        const duration = Math.round(performance.now() - startTime);
+
+        if (!res.ok) throw new Error(data.error || 'Agent execution failed');
+
+        latestPipelineResult = data;
+        latestJsx = data.jsxCode;
+        jsxCodeOutput.innerText = latestJsx;
+
+        // Metrics display
+        latencyValue.innerText = duration + 'ms' + (data.fromCache ? ' (⚡ Cached)' : '');
+        latencyBadge.classList.remove('hidden');
+
+        costValue.innerText = '$' + (data.estimatedCost?.costUsd || '0.0000');
+        inrValue.innerText = '₹' + (data.estimatedCost?.costInr || '0.00');
+        costBadge.classList.remove('hidden');
+
+        tokenValue.innerText = (data.tokens?.totalTokens || 0).toLocaleString() + (data.fromCache ? ' (0 Tokens)' : '');
+        tokenBadge.classList.remove('hidden');
+
+        // Show standalone preview URL button
+        const openShareUrlBtn = document.getElementById('openShareUrlBtn');
+        if (data.previewUrl && openShareUrlBtn) {
+          openShareUrlBtn.href = data.previewUrl;
+          openShareUrlBtn.classList.remove('hidden');
+        }
+
+        // Agent Execution Trace Render
+        if (data.fromCache) {
+          duplicateBanner.classList.remove('hidden');
+          agentTimeline.innerHTML = `
+            <div class="border-l-2 border-emerald-500 pl-3 py-1 text-[11px] bg-emerald-500/10 rounded-r my-1">
+              <div class="flex items-center justify-between font-sans text-[10px]">
+                <span class="font-bold text-emerald-400 uppercase tracking-wider">CACHE_RESOLVER</span>
+                <span class="text-slate-500">Instant</span>
+              </div>
+              <div class="text-slate-200 mt-0.5 leading-relaxed">Identical image recognized. Re-used previously verified React component at 0 token cost.</div>
+            </div>`;
+          pipelineStatus.innerText = 'Cached';
+          pipelineStatus.className = 'text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono';
+        } else if (data.agentLog && data.agentLog.length > 0) {
+          agentTimeline.innerHTML = '';
+          data.agentLog.forEach(log => {
+            const item = document.createElement('div');
+            item.className = 'border-l-2 border-brand-500 pl-3 py-1 text-[11px] bg-white/[0.02] rounded-r my-1';
+            item.innerHTML = '<div class="flex items-center justify-between font-sans text-[10px]">' +
+              '<span class="font-bold text-brand-400 uppercase tracking-wider">' + (log.agent || '') + '</span>' +
+              '<span class="text-slate-500">' + (log.timestamp || '') + '</span>' +
+              '</div>' +
+              '<div class="text-slate-200 mt-0.5 leading-relaxed">' + (log.status || '') + '</div>';
+            agentTimeline.appendChild(item);
+          });
+          pipelineStatus.innerText = 'Success';
+          pipelineStatus.className = 'text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono';
+        }
+
+        // Live Component Mounting (with automatic fallback to raw JSX transpile)
+        renderLiveFromCompiled(data.compiledJs, data.compName, data.jsxCode);
+
+      } catch (err) {
+        console.error('Pipeline execution error:', err);
+        const errorMsg = err.message === 'Failed to fetch' 
+          ? 'Failed to connect to backend server. If the server was just restarted, please try clicking Execute again.'
+          : err.message;
+        alert('Pipeline Failure: ' + errorMsg);
+        pipelineStatus.innerText = 'Failed';
+        pipelineStatus.className = 'text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30 font-mono';
+      } finally {
+        generateBtn.disabled = false;
+        btnText.innerText = 'Execute Agentic Pipeline';
+        btnSpinner.classList.add('hidden');
+        pulsePing.classList.add('hidden');
+        pulseDot.className = 'relative inline-flex rounded-full h-2 w-2 bg-emerald-400';
+      }
+    }
+
+    generateBtn.addEventListener('click', () => executePipeline(false));
+    loadSavedBtn?.addEventListener('click', () => executePipeline(false));
+    regenerateNewBtn?.addEventListener('click', () => executePipeline(true));
+
+    let reactMountRoot = null;
+
+    // Render in-browser with multi-layer fallback & automated cleanup
+    function renderLiveFromCompiled(compiledJs, compName, rawJsxFallback) {
+      const mountEl = document.getElementById('renderedComponent');
+      if (!mountEl) return;
+
+      // Ensure view is on Preview canvas
+      if (tabPreview && tabCode && renderView && codeView) {
+        tabPreview.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition flex items-center gap-1.5 shadow-sm";
+        tabCode.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5";
+        renderView.classList.remove('hidden');
+        codeView.classList.add('hidden');
+      }
+
+      // Safely unmount previous root to prevent React 18 race conditions
+      if (reactMountRoot) {
+        try {
+          reactMountRoot.unmount();
+        } catch (e) {
+          // ignore unmount errors
+        }
+        reactMountRoot = null;
+      }
+      mountEl.innerHTML = '';
+
+      let Comp = null;
+
+      // ATTEMPT 1: Execute server-side precompiled JS
+      if (compiledJs) {
+        try {
+          window.eval(compiledJs);
+          Comp = window.__LatestGeneratedComponent || window[compName] || window.GeneratedScreen;
+        } catch (evalErr) {
+          console.warn('Server compiled JS execution failed, falling back to browser Babel:', evalErr);
+        }
+      }
+
+      // ATTEMPT 2: Browser-side dynamic Babel transpile if Attempt 1 failed or Comp is null
+      if (!Comp && rawJsxFallback && typeof Babel !== 'undefined') {
+        try {
+          let detectedName = 'GeneratedScreen';
+          const matchFn = rawJsxFallback.match(/(?:function|const|let|var)\s+([A-Za-z0-9_]+)/);
+          if (matchFn && matchFn[1]) {
+            detectedName = matchFn[1];
+          }
+
+          // Extract any icons imported from lucide-react or similar libraries so we can polyfill them
+          const iconMatches = rawJsxFallback.match(/import\s*\{([^}]+)\}\s*from\s*['"][^'"]+['"]/g) || [];
+          const iconNames = [];
+          iconMatches.forEach(m => {
+            const inner = m.match(/\{([^}]+)\}/);
+            if (inner && inner[1]) {
+              inner[1].split(',').forEach(s => {
+                const name = s.trim().split(/\s+as\s+/)[0].trim();
+                if (name && name !== 'useState' && name !== 'useEffect' && name !== 'useRef' && name !== 'useMemo' && name !== 'useCallback') {
+                  iconNames.push(name);
+                }
+              });
+            }
+          });
+
+          // Robustly remove all import lines regardless of format or multiline syntax
+          let cleaned = rawJsxFallback
+            .split('\n')
+            .filter(line => !line.trim().startsWith('import ') && !line.trim().startsWith('import{'))
+            .join('\n')
+            .replace(/export\s+default\s+function\s+([A-Za-z0-9_]+)/g, 'function $1')
+            .replace(/export\s+default\s+function\b/g, 'function GeneratedScreen')
+            .replace(/export\s+default\s+([A-Za-z0-9_]+);?/g, '')
+            .replace(/export\s+default\s+/g, 'const GeneratedScreen = ')
+            .trim();
+
+          const transResult = Babel.transform(cleaned, {
+            presets: ['react'],
+            filename: 'FallbackScreen.jsx'
+          });
+
+          // Polyfill missing icon components using inline SVG or standard spans so undefined icons never crash evaluation
+          const iconPolyfill = iconNames.map(n => `
+            var ${n} = (typeof ${n} !== 'undefined' ? ${n} : function(props) {
+              return React.createElement('span', { className: 'inline-flex items-center justify-center ' + (props.className || '') },
+                React.createElement('svg', { width: props.size || 18, height: props.size || 18, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' },
+                  React.createElement('circle', { cx: 12, cy: 12, r: 8 }),
+                  React.createElement('path', { d: 'M12 8v4M12 16h.01' })
+                )
+              );
+            });
+          `).join('\n');
+
+          const browserScript = `
+            var { useState, useEffect, useRef, useMemo, useCallback } = React;
+            ${iconPolyfill}
+            ${transResult.code}
+            window.__LatestGeneratedComponent = (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : (typeof ${detectedName} !== 'undefined' ? ${detectedName} : null));
+          `;
+          window.eval(browserScript);
+          Comp = window.__LatestGeneratedComponent || window[detectedName] || window.GeneratedScreen;
+        } catch (babelErr) {
+          console.error('Browser Babel fallback also failed:', babelErr);
+          const errorMsg = babelErr.message || String(babelErr);
+          mountEl.innerHTML = '<div class="p-4 bg-rose-900/30 border border-rose-500/50 rounded-xl text-rose-300 text-xs font-mono"><p class="font-bold mb-1">Transpiler Error:</p><p>' + errorMsg + '</p></div>';
+          return;
+        }
+      }
+
+      // ATTEMPT 3: Mount Component
+      if (Comp) {
+        try {
+          reactMountRoot = ReactDOM.createRoot(mountEl);
+          reactMountRoot.render(React.createElement(Comp));
+          // Apply auto-fit scaling after render cycle across frames
+          requestAnimationFrame(() => {
+            applyCanvasScaling();
+            setTimeout(applyCanvasScaling, 50);
+            setTimeout(applyCanvasScaling, 150);
+          });
+        } catch (renderErr) {
+          mountEl.innerHTML = `
+            <div class="p-6 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs font-mono">
+              <p class="font-bold mb-1">Canvas Render Intercepted:</p>
+              <p>\${renderErr.message}</p>
+            </div>`;
+        }
+      } else {
+        mountEl.innerHTML = `
+          <div class="p-6 bg-amber-500/10 border border-amber-500/30 rounded-xl text-amber-300 text-xs font-mono">
+            <p class="font-bold mb-1">⚠️ Component Definition Not Resolved</p>
+            <p class="text-slate-400">The JSX was created, but the component could not be instantiated. Check the "Production JSX" tab to inspect the source code.</p>
+          </div>`;
+      }
+      setTimeout(() => applyCanvasScaling(), 100);
+    }
+
+    copyBtn.addEventListener('click', () => {
+      if (!latestJsx) return;
+      navigator.clipboard.writeText(latestJsx);
+      copyBtnText.innerText = 'Copied!';
+      setTimeout(() => copyBtnText.innerText = 'Copy JSX', 2000);
+    });
+
+    // 1-Click Save as Native Siemens SimaticML XML
+    const saveXmlBtn = document.getElementById('saveXmlBtn');
+    const saveXmlBtnText = document.getElementById('saveXmlBtnText');
+    if (saveXmlBtn) {
+      saveXmlBtn.addEventListener('click', () => {
+        if (!latestXmlContent) {
+          alert('Please select or convert a Siemens screen first to download its original SimaticML XML.');
+          return;
+        }
+        const blob = new Blob([latestXmlContent], { type: 'application/xml;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${currentScreenName}.xml`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+
+        if (saveXmlBtnText) {
+          saveXmlBtnText.innerText = 'Saved!';
+          setTimeout(() => { saveXmlBtnText.innerText = 'Save XML'; }, 2000);
+        }
+      });
+    }
+
+    // 1-Click Export Project ZIP
+    const exportZipBtn = document.getElementById('exportZipBtn');
+    exportZipBtn.addEventListener('click', async () => {
+      if (!latestJsx) {
+        alert('Please convert a screen before exporting.');
+        return;
+      }
+      try {
+        exportZipBtn.disabled = true;
+        const res = await fetch('/api/export-zip', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ jsxCode: latestJsx, projectName: 'visioncraft-screen' })
+        });
+        if (!res.ok) throw new Error('Failed to generate ZIP project');
+        const blob = await res.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'visioncraft-react-project.zip';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+      } catch (err) {
+        alert('Export error: ' + err.message);
+      } finally {
+        exportZipBtn.disabled = false;
+      }
+    });
+
+    // Theme Inverter (Dark/Light mode class replacer)
+    let isDarkMode = true;
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    themeToggleBtn.addEventListener('click', () => {
+      if (!latestJsx) return;
+      isDarkMode = !isDarkMode;
+      themeIcon.innerText = isDarkMode ? '🌙' : '☀️';
+
+      let toggled = latestJsx;
+      if (!isDarkMode) {
+        // Invert to light mode
+        toggled = toggled
+          .replace(/bg-slate-950/g, 'bg-slate-50')
+          .replace(/bg-slate-900/g, 'bg-white')
+          .replace(/bg-gray-900/g, 'bg-gray-50')
+          .replace(/bg-black/g, 'bg-white')
+          .replace(/text-white/g, 'text-slate-900')
+          .replace(/text-slate-200/g, 'text-slate-800')
+          .replace(/text-gray-200/g, 'text-gray-800')
+          .replace(/border-slate-800/g, 'border-slate-200')
+          .replace(/border-white\/10/g, 'border-slate-200');
+      } else {
+        // Invert back to dark mode
+        toggled = toggled
+          .replace(/bg-slate-50/g, 'bg-slate-950')
+          .replace(/bg-white/g, 'bg-slate-900')
+          .replace(/text-slate-900/g, 'text-white')
+          .replace(/text-slate-800/g, 'text-slate-200')
+          .replace(/border-slate-200/g, 'border-white/10');
+      }
+
+      latestJsx = toggled;
+      jsxCodeOutput.innerText = latestJsx;
+
+      // Retranspile in-browser with Babel Standalone
+      try {
+        const transResult = Babel.transform(toggled, {
+          presets: ['react'],
+          filename: 'GeneratedScreen.jsx'
+        });
+        const compiled = `
+          const { useState, useEffect, useRef, useMemo, useCallback } = React;
+          ${transResult.code}
+          window.__LatestGeneratedComponent = typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null;
+        `;
+        renderLiveFromCompiled(compiled, 'GeneratedScreen');
+      } catch (e) {
+        console.warn('Theme transpile error:', e);
+      }
+    });
+
+    // Chat-to-Modify Prompt Bar
+    const promptEditInput = document.getElementById('promptEditInput');
+    const sendModifyBtn = document.getElementById('sendModifyBtn');
+    const sendModifyText = document.getElementById('sendModifyText');
+    const modifySpinner = document.getElementById('modifySpinner');
+
+    async function submitModification() {
+      const instruction = promptEditInput.value.trim();
+      if (!instruction) return;
+      if (!latestJsx) {
+        alert('Please convert a screen first before requesting edits.');
+        return;
+      }
+
+      sendModifyBtn.disabled = true;
+      sendModifyText.innerText = 'Applying...';
+      modifySpinner.classList.remove('hidden');
+
+      try {
+        const userKey = document.getElementById('apiKeyInput').value.trim();
+        const res = await fetch('/api/modify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ existingJsx: latestJsx, instruction, userKey })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Modification failed');
+
+        latestJsx = data.jsxCode;
+        jsxCodeOutput.innerText = latestJsx;
+
+        if (data.previewUrl) {
+          const openShareUrlBtn = document.getElementById('openShareUrlBtn');
+          openShareUrlBtn.href = data.previewUrl;
+          openShareUrlBtn.classList.remove('hidden');
+        }
+
+        if (data.compiledJs || data.jsxCode) {
+          renderLiveFromCompiled(data.compiledJs, data.compName, data.jsxCode);
+        }
+        promptEditInput.value = '';
+      } catch (err) {
+        console.error('Modification error:', err);
+        const msg = err.message === 'Failed to fetch'
+          ? 'Network timeout or server busy while tweaking component. Please retry clicking Apply Tweak.'
+          : err.message;
+        alert('Modification Error: ' + msg);
+      } finally {
+        sendModifyBtn.disabled = false;
+        sendModifyText.innerText = 'Apply Tweak 🪄';
+        modifySpinner.classList.add('hidden');
+      }
+    }
+
+    sendModifyBtn.addEventListener('click', submitModification);
+
+    // Push directly to JSW Repository (Modern Interactive Modal)
+    const pushToJswBtn = document.getElementById('pushToJswBtn');
+    const pushJswText = document.getElementById('pushJswText');
+    const pushModalOverlay = document.getElementById('pushModalOverlay');
+    const closePushModalBtn = document.getElementById('closePushModalBtn');
+    const cancelPushModalBtn = document.getElementById('cancelPushModalBtn');
+    const submitPushModalBtn = document.getElementById('submitPushModalBtn');
+    const modalTargetPage = document.getElementById('modalTargetPage');
+    const modalCompName = document.getElementById('modalCompName');
+    const modalTabLabel = document.getElementById('modalTabLabel');
+    const pushResultBox = document.getElementById('pushResultBox');
+    const pushResultDetails = document.getElementById('pushResultDetails');
+    const pushResultLink = document.getElementById('pushResultLink');
+
+    const openPushModal = () => {
+      if (!latestJsx) {
+        alert('Please convert a screen before pushing to JSW repo.');
+        return;
+      }
+      pushResultBox.classList.add('hidden');
+      submitPushModalBtn.disabled = false;
+      submitPushModalBtn.innerHTML = '<span>🚀 Deploy to JSW</span>';
+
+      // Auto-populate from AI detection schema if available
+      const detectedName = (latestPipelineResult && latestPipelineResult.compName) || 'GeneratedScreen';
+      modalCompName.value = detectedName;
+      modalTabLabel.value = detectedName.replace(/([A-Z])/g, ' $1').trim();
+
+      const suggestedTarget = (latestPipelineResult && latestPipelineResult.schema && latestPipelineResult.schema.jswPageTarget) || 'global-widget';
+      if (['robot-monitoring', 'oee', 'maintenance', 'standalone', 'global-widget'].includes(suggestedTarget)) {
+        modalTargetPage.value = suggestedTarget;
+      } else {
+        modalTargetPage.value = 'global-widget';
+      }
+
+      pushModalOverlay.classList.remove('hidden');
+    };
+
+    const closePushModal = () => {
+      pushModalOverlay.classList.add('hidden');
+    };
+
+    pushToJswBtn.addEventListener('click', openPushModal);
+    closePushModalBtn.addEventListener('click', closePushModal);
+    cancelPushModalBtn.addEventListener('click', closePushModal);
+
+    submitPushModalBtn.addEventListener('click', async () => {
+      const compName = modalCompName.value.trim() || 'GeneratedScreen';
+      const targetPage = modalTargetPage.value;
+      const tabLabel = modalTabLabel.value.trim() || compName;
+      const routePath = compName.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      const generateBackend = document.getElementById('generateBackendCheck')?.checked ?? true;
+      const backendRequirement = document.getElementById('backendRequirementInput')?.value?.trim() || '';
+
+      submitPushModalBtn.disabled = true;
+      submitPushModalBtn.innerHTML = '<span class="animate-pulse">Synthesizing Full-Stack...</span>';
+
+      try {
+        const res = await fetch('/api/push-to-jsw', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            jsxCode: latestJsx,
+            pageName: compName,
+            tabLabel,
+            routePath,
+            targetPage,
+            generateBackend,
+            backendRequirement
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to push to JSW UI');
+
+        let detailsHtml = '<strong>Target:</strong> ' + data.destinationInfo + '<br/>' +
+          '<strong>Component:</strong> ' + data.componentName + '<br/>' +
+          '<strong>File:</strong> ' + data.savedPath;
+
+        if (data.backend) {
+          detailsHtml += '<br/><span class="text-indigo-400 font-semibold">⚡ Auto-Generated Backend Endpoint:</span> ' + data.backend.endpoint +
+            '<br/><span class="text-slate-400">SQL: ' + (data.backend.featureSummary || 'Aggregated T-SQL logic') + '</span>';
+        }
+
+        pushResultDetails.innerHTML = detailsHtml;
+        pushResultLink.href = data.jswUrl;
+        pushResultBox.classList.remove('hidden');
+
+        submitPushModalBtn.innerHTML = '<span>✅ Deployed</span>';
+        pushJswText.innerText = '✅ Pushed to JSW';
+        setTimeout(() => { pushJswText.innerText = '🚀 Push to JSW'; }, 4000);
+      } catch (err) {
+        alert('JSW Push Error: ' + err.message);
+        submitPushModalBtn.disabled = false;
+        submitPushModalBtn.innerHTML = '<span>🚀 Retry Deploy</span>';
+      }
+    });
+
+    promptEditInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitModification();
+    });
+
+    // Tag Explorer Logic
+    const openTagExplorerBtn = document.getElementById('openTagExplorerBtn');
+    const closeTagModalBtn = document.getElementById('closeTagModalBtn');
+    const tagExplorerModal = document.getElementById('tagExplorerModal');
+    const tagSearchInput = document.getElementById('tagSearchInput');
+    const searchTagsBtn = document.getElementById('searchTagsBtn');
+    const tagTableBody = document.getElementById('tagTableBody');
+    const tagPaginationInfo = document.getElementById('tagPaginationInfo');
+    const prevTagPage = document.getElementById('prevTagPage');
+    const nextTagPage = document.getElementById('nextTagPage');
+    const generateMockPlcBtn = document.getElementById('generateMockPlcBtn');
+    const copyAllTagsBtn = document.getElementById('copyAllTagsBtn');
+
+    let currentTagOffset = 0;
+    const tagPageLimit = 30;
+
+    async function fetchTags(search = '', offset = 0) {
+      if (!tagTableBody) return;
+      tagTableBody.innerHTML = '<tr><td colspan="5" class="py-6 text-center text-slate-500 animate-pulse">Reading PLC tags from TIA Portal...</td></tr>';
+      try {
+        const res = await fetch(`/api/hmi/tags?search=${encodeURIComponent(search)}&offset=${offset}&limit=${tagPageLimit}`);
+        const data = await res.json();
+        if (!data.success) throw new Error(data.error);
+
+        tagPaginationInfo.innerText = `Showing ${offset + 1}-${Math.min(offset + tagPageLimit, data.filteredCount)} of ${data.filteredCount} tags (Total: ${data.totalTags})`;
+        
+        if (!data.tags || data.tags.length === 0) {
+          tagTableBody.innerHTML = '<tr><td colspan="5" class="py-6 text-center text-slate-500">No tags found matching query.</td></tr>';
+          return;
+        }
+
+        tagTableBody.innerHTML = data.tags.map(t => `
+          <tr class="hover:bg-white/5 transition">
+            <td class="py-2 text-cyan-300 font-semibold break-all">${t.name}</td>
+            <td class="py-2 text-slate-400 break-all">${t.plcTag || '-'}</td>
+            <td class="py-2"><span class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 text-[10px]">${t.dataType || 'Bool'}</span></td>
+            <td class="py-2 text-slate-400 text-[10px]">${t.acquisitionCycle || 'T1s'}</td>
+            <td class="py-2 text-right flex items-center justify-end gap-1">
+              <button onclick="injectTagToLiveComponent('${t.name}', '${t.dataType}')" class="px-2 py-0.5 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] transition font-bold shadow-xs">➕ Add to Screen</button>
+              <button onclick="navigator.clipboard.writeText('${t.name}'); alert('Copied ${t.name}');" class="px-2 py-0.5 rounded bg-cyan-600/30 hover:bg-cyan-600 text-cyan-200 text-[10px] transition">Copy</button>
+            </td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        tagTableBody.innerHTML = `<tr><td colspan="5" class="py-4 text-center text-rose-400">Error: ${err.message}</td></tr>`;
+      }
+    }
+
+    window.filterSubsystem = function(subsystem) {
+      tagSearchInput.value = subsystem;
+      currentTagOffset = 0;
+      fetchTags(subsystem, 0);
+    };
+
+    if (openTagExplorerBtn) {
+      openTagExplorerBtn.addEventListener('click', () => {
+        tagExplorerModal.classList.remove('hidden');
+        fetchTags(tagSearchInput.value.trim(), currentTagOffset);
+      });
+    }
+
+    if (closeTagModalBtn) {
+      closeTagModalBtn.addEventListener('click', () => tagExplorerModal.classList.add('hidden'));
+    }
+
+    if (searchTagsBtn) {
+      searchTagsBtn.addEventListener('click', () => {
+        currentTagOffset = 0;
+        fetchTags(tagSearchInput.value.trim(), 0);
+      });
+    }
+
+    if (tagSearchInput) {
+      tagSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          currentTagOffset = 0;
+          fetchTags(tagSearchInput.value.trim(), 0);
+        }
+      });
+    }
+
+    if (prevTagPage) {
+      prevTagPage.addEventListener('click', () => {
+        if (currentTagOffset >= tagPageLimit) {
+          currentTagOffset -= tagPageLimit;
+          fetchTags(tagSearchInput.value.trim(), currentTagOffset);
+        }
+      });
+    }
+
+    if (nextTagPage) {
+      nextTagPage.addEventListener('click', () => {
+        currentTagOffset += tagPageLimit;
+        fetchTags(tagSearchInput.value.trim(), currentTagOffset);
+      });
+    }
+
+    const autoMapScreenTagsBtn = document.getElementById('autoMapScreenTagsBtn');
+    if (autoMapScreenTagsBtn) {
+      autoMapScreenTagsBtn.addEventListener('click', async () => {
+        autoMapScreenTagsBtn.innerHTML = '<span>⚡ Auto-Mapping...</span>';
+        autoMapScreenTagsBtn.disabled = true;
+
+        try {
+          // If no screen is on canvas, auto-load Station 1 overview
+          if (!latestJsx) {
+            tagExplorerModal.classList.add('hidden');
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-5 right-5 z-50 bg-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-cyan-400 animate-pulse';
+            toast.innerHTML = '<span>⚡ Loading Station HMI and Auto-Mapping relevant tags...</span>';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4500);
+
+            await loadPreset('/mockups/image1.png', 'Siemens_Station_Overview.png');
+            const genBtn = document.getElementById('generateBtn');
+            if (genBtn) genBtn.click();
+            return;
+          }
+
+          // Fetch relevant tags for the active screen context
+          const res = await fetch('/api/hmi/tags?limit=100');
+          const data = await res.json();
+          const allTags = data.tags || [];
+
+          // Group relevant tags: Operating modes, Alarms, Station 140/110, Robots
+          const relevantTags = allTags.filter(t => 
+            t.name.includes('OpmodePanel') || 
+            t.name.includes('140APC') || 
+            t.name.includes('Alarm') || 
+            t.name.includes('Roller_Bed')
+          ).slice(0, 8);
+
+          const tagSummary = relevantTags.map(t => `- ${t.name} (${t.dataType || 'Bool'}): ${t.plcTag || 'Symbolic'}`).join('\n');
+          const autoMapPrompt = `Auto-map and bind these relevant PLC tags to the screen components:\n${tagSummary}\nEnsure: 1. Mode tags map to the top control ribbon. 2. Station tags map to live numeric meters. 3. Alarms map to the header alert banner.`;
+
+          const promptEditInput = document.getElementById('promptEditInput');
+          if (promptEditInput) {
+            promptEditInput.value = autoMapPrompt;
+          }
+
+          tagExplorerModal.classList.add('hidden');
+          const toast = document.createElement('div');
+          toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-cyan-400 animate-pulse';
+          toast.innerHTML = `<span>⚡ Auto-mapping ${relevantTags.length} relevant tags directly to screen components...</span>`;
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 4000);
+
+          submitModification();
+        } catch (e) {
+          alert('Auto-map failed: ' + e.message);
+        } finally {
+          autoMapScreenTagsBtn.innerHTML = '<span>⚡ Auto-Map Tags to Screen</span>';
+          autoMapScreenTagsBtn.disabled = false;
+        }
+      });
+    }
+
+    if (generateMockPlcBtn) {
+      generateMockPlcBtn.addEventListener('click', async () => {
+        generateMockPlcBtn.innerHTML = '<span>⚡ Synthesizing JSON...</span>';
+        try {
+          const res = await fetch('/api/hmi/tags?limit=100');
+          const data = await res.json();
+          const mockPlcState = {};
+          (data.tags || []).forEach(t => {
+            if (t.dataType === 'Bool') mockPlcState[t.name] = Math.random() > 0.5;
+            else if (t.dataType === 'Int' || t.dataType === 'USInt') mockPlcState[t.name] = Math.floor(Math.random() * 100);
+            else mockPlcState[t.name] = 0;
+          });
+          const jsonStr = JSON.stringify(mockPlcState, null, 2);
+          navigator.clipboard.writeText(jsonStr);
+          alert('Generated 100 PLC Tag mock state and copied JSON to clipboard!');
+        } catch (e) {
+          alert('Failed to generate mock PLC: ' + e.message);
+        } finally {
+          generateMockPlcBtn.innerHTML = '<span>⚡ Generate Mock PLC JSON</span>';
+        }
+      });
+    }
+
+    if (copyAllTagsBtn) {
+      copyAllTagsBtn.addEventListener('click', async () => {
+        try {
+          const res = await fetch('/api/hmi/tags?limit=500');
+          const data = await res.json();
+          const tagNames = (data.tags || []).map(t => `${t.name} (${t.dataType}) -> ${t.plcTag || 'Symbolic'}`).join('\n');
+          navigator.clipboard.writeText(tagNames);
+          alert('Copied 500 PLC Tag definitions to clipboard!');
+        } catch (e) {
+          alert('Error: ' + e.message);
+        }
+      });
+    }
+
+    // Siemens XML Screen Conversion Handler
+    window.executeXmlConversion = async function() {
+      const xml = window.__currentXmlContent;
+      if (!xml) {
+        alert('Please choose or drop a Siemens XML screen file first.');
+        return;
+      }
+
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-cyan-400 animate-pulse';
+      toast.innerHTML = '<span>⚡ Synthesizing React JSX from Siemens SimaticML XML...</span>';
+      document.body.appendChild(toast);
+
+      try {
+        const res = await fetch('/api/convert-xml', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/xml' },
+          body: xml
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.error || 'XML conversion failed');
+
+        latestJsx = data.jsxCode;
+        jsxCodeOutput.innerText = latestJsx;
+
+        // Render in-browser using server precompiled JS directly!
+        renderLiveFromCompiled(data.compiledJs, data.compName || 'GeneratedScreen', data.jsxCode);
+
+        toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-emerald-400';
+        toast.innerHTML = '<span>✅ Converted Siemens XML Screen to Live React JSX!</span>';
+        setTimeout(() => toast.remove(), 4000);
+      } catch (err) {
+        toast.remove();
+        alert('XML Conversion Error: ' + err.message);
+      }
+    };
+
+    // Direct Live Tag Injection into Component Canvas
+    window.injectTagToLiveComponent = async function(tagName, dataType) {
+      // Auto-bootstrap Siemens Station 1 HMI if canvas is empty
+      if (!latestJsx) {
+        tagExplorerModal.classList.add('hidden');
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-5 right-5 z-50 bg-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-cyan-400 animate-bounce';
+        toast.innerHTML = '<span>⚡ Auto-loading Station 1 HMI to bind tag: <b>' + tagName + '</b>...</span>';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4500);
+
+        await loadPreset('/mockups/image1.png', 'Siemens_Station_Overview.png');
+        const genBtn = document.getElementById('generateBtn');
+        if (genBtn) genBtn.click();
+
+        const pollTimer = setInterval(() => {
+          if (latestJsx) {
+            clearInterval(pollTimer);
+            setTimeout(() => {
+              window.injectTagToLiveComponent(tagName, dataType);
+            }, 600);
+          }
+        }, 1000);
+        return;
+      }
+      
+      const prompt = `Add live PLC tag "${tagName}" (${dataType || 'Bool'}) to the screen with a visual telemetry tile/indicator showing its active status and value.`;
+      
+      const promptEditInput = document.getElementById('promptEditInput');
+      if (promptEditInput) {
+        promptEditInput.value = prompt;
+      }
+      
+      // Close modal and trigger modification
+      tagExplorerModal.classList.add('hidden');
+          // Non-blocking sleek toast notification
+    const injectToast = document.createElement('div');
+    injectToast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-emerald-400 animate-pulse';
+    injectToast.innerHTML = `<span>⚡ Live Tag <b>${tagName}</b> injected into HMI screen!</span>`;
+    document.body.appendChild(injectToast);
+    setTimeout(() => injectToast.remove(), 3500);
+      submitModification();
+    };
+
+    // Auto-populate and handle 211+ TIA XML Screens Dropdown
+    let activeHmiMode = 'react'; // 'react' or 'webrh'
+    let currentWebRhHost = '127.0.0.1:443';
+
+    const modeReactBtn = document.getElementById('modeReactBtn');
+    const modeWebRhBtn = document.getElementById('modeWebRhBtn');
+    const webRhSettingsBar = document.getElementById('webRhSettingsBar');
+    const webrhHostInput = document.getElementById('webrhHostInput');
+    const saveWebrhBtn = document.getElementById('saveWebrhBtn');
+
+    if (modeReactBtn && modeWebRhBtn) {
+      modeReactBtn.addEventListener('click', () => {
+        activeHmiMode = 'react';
+        modeReactBtn.className = 'px-1.5 py-0.5 rounded bg-cyan-600 text-white text-[9px] font-bold transition';
+        modeWebRhBtn.className = 'px-1.5 py-0.5 rounded text-slate-400 hover:text-cyan-300 text-[9px] font-bold transition';
+        webRhSettingsBar.classList.add('hidden');
+        // If a screen is selected, re-render in React mode
+        const select = document.getElementById('tiaScreenSelector');
+        if (select && select.value) select.dispatchEvent(new Event('change'));
+      });
+
+      modeWebRhBtn.addEventListener('click', () => {
+        activeHmiMode = 'webrh';
+        modeWebRhBtn.className = 'px-1.5 py-0.5 rounded bg-emerald-600 text-white text-[9px] font-bold transition';
+        modeReactBtn.className = 'px-1.5 py-0.5 rounded text-slate-400 hover:text-cyan-300 text-[9px] font-bold transition';
+        webRhSettingsBar.classList.remove('hidden');
+        // If a screen is selected, load in WebRH mode
+        const select = document.getElementById('tiaScreenSelector');
+        if (select && select.value) select.dispatchEvent(new Event('change'));
+      });
+    }
+
+    if (saveWebrhBtn && webrhHostInput) {
+      saveWebrhBtn.addEventListener('click', async () => {
+        currentWebRhHost = webrhHostInput.value.trim() || '127.0.0.1:443';
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-5 right-5 z-50 bg-emerald-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-emerald-400 animate-pulse';
+        toast.innerHTML = `<span>🌐 Siemens WebRH Host set to: <b>${currentWebRhHost}</b></span>`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3500);
+
+        const select = document.getElementById('tiaScreenSelector');
+        if (select && select.value) select.dispatchEvent(new Event('change'));
+      });
+    }
+
+    async function initTiaScreensDropdown() {
+      const select = document.getElementById('tiaScreenSelector');
+      if (!select) return;
+      try {
+        const res = await fetch('/api/tia/xml-screens');
+        const data = await res.json();
+        if (data.success && Array.isArray(data.screens)) {
+          // Sort alphabetically with Valve8Pos and Main first
+          const sorted = data.screens.sort((a, b) => {
+            if (a.includes('Valve8Pos')) return -1;
+            if (b.includes('Valve8Pos')) return 1;
+            if (a.includes('Main')) return -1;
+            if (b.includes('Main')) return 1;
+            return a.localeCompare(b);
+          });
+          sorted.forEach(file => {
+            const opt = document.createElement('option');
+            opt.value = file;
+            opt.textContent = file.replace(/\.xml$/, '');
+            select.appendChild(opt);
+          });
+        }
+      } catch (err) {
+        console.error('Failed to load TIA screens:', err);
+      }
+
+      select.addEventListener('change', async (e) => {
+        const screenName = e.target.value;
+        if (!screenName) return;
+
+        const cleanScreen = screenName.replace(/\.xml$/, '');
+
+        // IF USER CHOSE WEBRH MODE: Directly embed Siemens WebRH Live Screen without any parsing!
+        if (activeHmiMode === 'webrh') {
+          const host = (webrhHostInput ? webrhHostInput.value.trim() : '') || currentWebRhHost;
+          const webRhUrl = `https://${host}/WebRH/?Screen=${encodeURIComponent(cleanScreen)}`;
+
+          const toast = document.createElement('div');
+          toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-emerald-400 animate-pulse';
+          toast.innerHTML = `<span>⚡ Connecting to Siemens WebRH Live HMI: <b>${cleanScreen}</b>...</span>`;
+          document.body.appendChild(toast);
+
+          const mountEl = document.getElementById('renderedComponent');
+          mountEl.innerHTML = `
+            <div class="w-full flex flex-col bg-[#0b0f17] border border-cyan-500/30 rounded-xl overflow-hidden shadow-2xl">
+              <div class="bg-slate-900 border-b border-white/10 px-4 py-2 flex items-center justify-between text-xs font-mono">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="text-white font-bold">Siemens WinCC Unified Web Client</span>
+                  <span class="text-cyan-400 text-[11px]">&bull; ${cleanScreen}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="${webRhUrl}" target="_blank" class="px-2 py-0.5 rounded bg-cyan-600/30 hover:bg-cyan-600 text-cyan-300 hover:text-white border border-cyan-500/30 text-[10px] transition">Open Direct Tab ↗</a>
+                </div>
+              </div>
+              <iframe 
+                src="${webRhUrl}" 
+                class="w-full h-[680px] border-none bg-slate-950" 
+                title="Siemens WebRH Screen ${cleanScreen}"
+                onerror="this.insertAdjacentHTML('afterend', '<div class=\\'p-4 text-center text-xs text-amber-400\\'>Panel offline or self-signed certificate required. Click Open Direct Tab to accept SSL certificate.</div>')">
+              </iframe>
+            </div>
+          `;
+          setTimeout(() => toast.remove(), 3500);
+          return;
+        }
+
+        // DEFAULT REACT 18 HIGH-PERFORMANCE ENGINE MODE:
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-cyan-400 animate-pulse';
+        toast.innerHTML = `<span>⚡ Loading native Siemens screen: <b>${screenName}</b>...</span>`;
+        document.body.appendChild(toast);
+
+        try {
+          const res = await fetch(`/api/tia/render-screen/${encodeURIComponent(screenName)}`);
+          const data = await res.json();
+          if (!data.success) throw new Error(data.error || 'Failed to render screen');
+
+          latestJsx = data.jsxCode;
+          latestXmlContent = data.xmlContent || '';
+          currentScreenName = data.screenName || 'Screen';
+          jsxCodeOutput.innerText = latestJsx;
+
+          // Render live using AST precompiled JS
+          renderLiveFromCompiled(data.compiledJs, data.compName || 'GeneratedScreen', data.jsxCode);
+
+          toast.className = 'fixed bottom-5 right-5 z-50 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-xs px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 border border-emerald-400';
+          toast.innerHTML = `<span>✅ 100% Exact Siemens Screen <b>${screenName}</b> rendered!</span>`;
+          setTimeout(() => toast.remove(), 4000);
+        } catch (err) {
+          toast.remove();
+          alert('Screen load error: ' + err.message);
+        }
+      });
+    }
+
+    initTiaScreensDropdown();
+
+    // Siemens Visual Asset Gallery Modal Logic
+    const openGraphicsModalBtn = document.getElementById('openGraphicsModalBtn');
+    const closeGraphicsModalBtn = document.getElementById('closeGraphicsModalBtn');
+    const graphicsGalleryModal = document.getElementById('graphicsGalleryModal');
+    const graphicsGrid = document.getElementById('graphicsGrid');
+    const graphicsSearchInput = document.getElementById('graphicsSearchInput');
+    const catButtons = document.querySelectorAll('.graphics-cat-btn');
+
+    let allGraphicsData = { all: [], categories: {} };
+    let currentCategory = 'all';
+
+    async function loadGraphicsCatalog() {
+      try {
+        const res = await fetch('/api/tia/graphics');
+        const data = await res.json();
+        if (data.success) {
+          allGraphicsData = data;
+          const badge = document.getElementById('assetCountBadge');
+          if (badge) badge.innerText = data.total || 476;
+          renderGraphicsGallery();
+        }
+      } catch (err) {
+        console.error('Failed to load graphics catalog:', err);
+      }
+    }
+
+    function renderGraphicsGallery(filterQuery = '') {
+      if (!graphicsGrid) return;
+      const q = (filterQuery || '').toLowerCase().trim();
+      let list = currentCategory === 'all' 
+        ? (allGraphicsData.all || []) 
+        : (allGraphicsData.categories?.[currentCategory] || []);
+
+      if (q) {
+        list = list.filter(item => item.toLowerCase().includes(q));
+      }
+
+      if (list.length === 0) {
+        graphicsGrid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-500 text-xs">No matching Siemens visual assets found.</div>';
+        return;
+      }
+
+      graphicsGrid.innerHTML = list.map(item => `
+        <div class="p-2.5 rounded-xl bg-surface-900 border border-white/5 hover:border-cyan-500/40 transition flex flex-col items-center justify-between group shadow-sm hover:shadow-cyan-500/10">
+          <div class="w-full h-24 rounded-lg bg-surface-850 p-2 flex items-center justify-center overflow-hidden mb-2">
+            <img src="/tia_graphics/${encodeURIComponent(item)}" alt="${item}" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition duration-200" onError="this.src='/tia_graphics/SICAR_Zylinder_60x112.png'" />
+          </div>
+          <p class="text-[10px] text-slate-300 font-mono truncate w-full text-center mb-1.5" title="${item}">${item}</p>
+          <button type="button" onclick="navigator.clipboard.writeText('/tia_graphics/${item}'); alert('Copied image path: /tia_graphics/${item}')" class="w-full py-1 rounded bg-surface-800 hover:bg-cyan-600 text-slate-300 hover:text-white text-[9px] font-semibold transition border border-white/5">
+            Copy Path
+          </button>
+        </div>
+      `).join('');
+    }
+
+    if (openGraphicsModalBtn && graphicsGalleryModal) {
+      openGraphicsModalBtn.addEventListener('click', () => {
+        graphicsGalleryModal.classList.remove('hidden');
+        loadGraphicsCatalog();
+      });
+      closeGraphicsModalBtn.addEventListener('click', () => {
+        graphicsGalleryModal.classList.add('hidden');
+      });
+    }
+
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.className = 'graphics-cat-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition');
+        btn.className = 'graphics-cat-btn px-2.5 py-1 rounded-lg bg-cyan-600 text-white font-semibold transition';
+        currentCategory = btn.dataset.cat || 'all';
+        renderGraphicsGallery(graphicsSearchInput?.value);
+      });
+    });
+
+    if (graphicsSearchInput) {
+      graphicsSearchInput.addEventListener('input', (e) => {
+        renderGraphicsGallery(e.target.value);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+const fs = require('fs');
+const path = require('path');
+const { parseSimaticXmlToJsx } = require('./simaticXmlParser');
+
+const xmlDir = 'C:\\Users\\SDS\\Desktop\\ALL_SCREENS_XML';
+
+if (!fs.existsSync(xmlDir)) {
+  console.error('XML folder not found:', xmlDir);
+  process.exit(1);
+}
+
+const files = fs.readdirSync(xmlDir).filter(f => f.endsWith('.xml'));
+console.log(`Starting generation of standalone HTML screens for ${files.length} XML files in ${xmlDir}...`);
+
+let successCount = 0;
+let failCount = 0;
+
+files.forEach((file) => {
+  try {
+    const xmlPath = path.join(xmlDir, file);
+    const xmlContent = fs.readFileSync(xmlPath, 'utf8');
+    const screenBase = path.basename(file, '.xml');
+    
+    // Generate raw JSX code
+    let jsxCode = parseSimaticXmlToJsx(xmlContent, screenBase);
+
+    // Adjust image paths so they reference local ./tia_graphics/ relative to the HTML file!
+    jsxCode = jsxCode.replace(/\/tia_graphics\//g, './tia_graphics/');
+
+    // Component Name
+    let cleanName = screenBase.replace(/[^a-zA-Z0-9]/g, '');
+    if (/^[0-9]/.test(cleanName)) cleanName = 'Screen_' + cleanName;
+    const compName = (cleanName || 'SimaticHmiScreen') + 'Component';
+
+    // Generate standalone self-contained HTML
+    const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - ${screenBase}</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          ${screenBase}
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    ${jsxCode}
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<${compName} />);
+  </script>
+</body>
+</html>`;
+
+    const htmlPath = path.join(xmlDir, `${screenBase}.html`);
+    fs.writeFileSync(htmlPath, htmlContent, 'utf8');
+    successCount++;
+  } catch (err) {
+    console.error(`Error generating HTML for ${file}:`, err.message);
+    failCount++;
+  }
+});
+
+console.log(`========================================`);
+console.log(`STANDALONE HTML GENERATION COMPLETE!`);
+console.log(`Successfully generated: ${successCount}/${files.length} HTML files`);
+console.log(`Failures: ${failCount}`);
+console.log(`Files saved to: ${xmlDir}\\*.html`);
+console.log(`========================================`);

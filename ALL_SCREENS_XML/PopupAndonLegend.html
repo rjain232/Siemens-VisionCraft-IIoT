@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - PopupAndonLegend</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          PopupAndonLegend
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function PopupAndonLegendComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '306px', height: '436px', minHeight: '436px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Label: Text box_30 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '4px', top: '20px', width: '188px', height: '24px' }}>
+        <span className="truncate">Text box 30</span>
+      </div>
+      {/* Action Button: Textfeld_Legende */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '13px', top: '-1px', width: '170px', height: '25px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Action Button: Cancel Mode */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[11px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '195px', top: '3px', width: '71px', height: '42px' }}>
+        <span className="truncate w-full text-center">Cancel Mode</span>
+      </button>
+      {/* Header Label: Text box_32 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '4px', top: '45px', width: '188px', height: '24px' }}>
+        <span className="truncate">Text box 32</span>
+      </div>
+      {/* Diagnostic Row: Text box_33 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '70px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 33</span>
+      </div>
+      {/* Diagnostic Row: Text box_34 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '95px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 34</span>
+      </div>
+      {/* Diagnostic Row: Text box_35 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '120px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 35</span>
+      </div>
+      {/* Diagnostic Row: Text box_36 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '145px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 36</span>
+      </div>
+      {/* Diagnostic Row: Text box_37 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '170px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 37</span>
+      </div>
+      {/* Diagnostic Row: Text box_38 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '196px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 38</span>
+      </div>
+      {/* Diagnostic Row: Text box_39 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '221px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 39</span>
+      </div>
+      {/* Diagnostic Row: Text box_40 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '246px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 40</span>
+      </div>
+      {/* Diagnostic Row: Text box_41 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '271px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 41</span>
+      </div>
+      {/* Diagnostic Row: Text box_42 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '296px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 42</span>
+      </div>
+      {/* Diagnostic Row: Text box_43 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '321px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 43</span>
+      </div>
+      {/* Diagnostic Row: Text box_44 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '346px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 44</span>
+      </div>
+      {/* Diagnostic Row: Text box_45 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '4px', top: '372px', width: '188px', height: '24px' }}>
+        <span className="truncate font-sans">Text box 45</span>
+      </div>
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<PopupAndonLegendComponent />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>IF_SIGNALS_BOOL</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>Select_InterfaceSignals</Name>
+          <Left>468</Left>
+          <Top>34</Top>
+          <Width>344</Width>
+          <Height>26</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>390</Left>
+          <Top>3</Top>
+          <Width>500</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field_Name1</Name>
+          <Left>104</Left>
+          <Top>92</Top>
+          <Width>490</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field_Value1</Name>
+          <Left>53</Left>
+          <Top>91</Top>
+          <Width>50</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field_Name2</Name>
+          <Left>723</Left>
+          <Top>91</Top>
+          <Width>490</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field_Value2</Name>
+          <Left>672</Left>
+          <Top>91</Top>
+          <Width>50</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>EA-Feld_Free-Description_Text_Right</Name>
+          <Left>685</Left>
+          <Top>65</Top>
+          <Width>541</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>EA-Feld_Free-Description_Text_Left</Name>
+          <Left>68</Left>
+          <Top>66</Top>
+          <Width>541</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cycle_Time_Legend</Name>
+          <Left>1184</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_16_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_31</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_32</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_15_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_30</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_31</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_14_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_29</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_30</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_13_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_28</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_29</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_12_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_27</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_28</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_11_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_26</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_27</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_10_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_25</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_26</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_9_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_24</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_25</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_8_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_23</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_24</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_7_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_22</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_23</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_6_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_21</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_22</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_5_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_20</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_21</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_4_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_19</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_20</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_3_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_18</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_19</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="55">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_2_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="56">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_17</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="57">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_18</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="58">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_1_Left</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="59">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_16</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="60">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_17</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="61">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_16_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="62">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_15</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="63">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_16</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="64">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_15_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="65">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_14</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="66">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_15</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="67">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_14_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="68">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_13</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="69">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_14</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="70">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_13_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="71">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_12</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="72">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_13</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="73">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_12_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="74">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_11</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="75">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_12</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="76">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_11_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="77">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_10</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="78">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_11</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="79">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_10_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="80">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_9</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="81">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_10</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="82">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_9_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="83">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_8</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="84">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_9</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="85">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_8_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="86">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_7</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="87">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_8</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="88">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_7_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="89">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_6</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="90">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_7</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="91">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_6_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="92">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_5</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="93">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_6</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="94">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_5_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="95">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_4</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="96">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_5</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="97">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_4_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="98">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_3</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="99">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_4</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="100">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_3_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="101">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_2</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="102">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_3</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="103">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_2_Right</Name>
+          <Left>36</Left>
+          <Top>0</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="104">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_1</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="105">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_2</Name>
+          <Left>0</Left>
+          <Top>3</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="106">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>SymbolicName_1_Right</Name>
+          <Left>723</Left>
+          <Top>118</Top>
+          <Width>490</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="107">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>False_0</Name>
+          <Left>687</Left>
+          <Top>121</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="108">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>True_1</Name>
+          <Left>687</Left>
+          <Top>121</Top>
+          <Width>21</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="109">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

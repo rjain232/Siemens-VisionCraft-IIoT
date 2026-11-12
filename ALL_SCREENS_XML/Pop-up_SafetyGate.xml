@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_SafetyGate</Name>
+      <Width>395</Width>
+      <Height>590</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG Status</Name>
+          <Left>1</Left>
+          <Top>0</Top>
+          <Width>394</Width>
+          <Height>47</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>315</Left>
+          <Top>3</Top>
+          <Width>76</Width>
+          <Height>42</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_1</Name>
+          <Left>0</Left>
+          <Top>37</Top>
+          <Width>368</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_22</Name>
+          <Left>51</Left>
+          <Top>43</Top>
+          <Width>126</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_1</Name>
+          <Left>191</Left>
+          <Top>43</Top>
+          <Width>78</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1</Name>
+          <Left>1</Left>
+          <Top>74</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_1</Name>
+          <Left>7</Left>
+          <Top>83</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_2</Name>
+          <Left>155</Left>
+          <Top>83</Top>
+          <Width>245</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_1</Name>
+          <Left>1</Left>
+          <Top>115</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_2</Name>
+          <Left>1</Left>
+          <Top>156</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_3</Name>
+          <Left>1</Left>
+          <Top>238</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_4</Name>
+          <Left>1</Left>
+          <Top>197</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_10</Name>
+          <Left>7</Left>
+          <Top>121</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_13</Name>
+          <Left>155</Left>
+          <Top>121</Top>
+          <Width>275</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_5</Name>
+          <Left>7</Left>
+          <Top>161</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_14</Name>
+          <Left>156</Left>
+          <Top>161</Top>
+          <Width>275</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_6</Name>
+          <Left>7</Left>
+          <Top>206</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_15</Name>
+          <Left>161</Left>
+          <Top>206</Top>
+          <Width>110</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_8</Name>
+          <Left>7</Left>
+          <Top>249</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_21</Name>
+          <Left>155</Left>
+          <Top>249</Top>
+          <Width>275</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_1</Name>
+          <Left>152</Left>
+          <Top>74</Top>
+          <Width>1</Width>
+          <Height>203</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_2</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>368</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_2</Name>
+          <Left>142</Left>
+          <Top>7</Top>
+          <Width>126</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_3</Name>
+          <Left>12</Left>
+          <Top>382</Top>
+          <Width>368</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_4</Name>
+          <Left>63</Left>
+          <Top>388</Top>
+          <Width>126</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_3</Name>
+          <Left>203</Left>
+          <Top>388</Top>
+          <Width>78</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_8</Name>
+          <Left>13</Left>
+          <Top>419</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_19</Name>
+          <Left>19</Left>
+          <Top>428</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_18</Name>
+          <Left>167</Left>
+          <Top>428</Top>
+          <Width>245</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_7</Name>
+          <Left>13</Left>
+          <Top>460</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_6</Name>
+          <Left>13</Left>
+          <Top>501</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_9</Name>
+          <Left>13</Left>
+          <Top>542</Top>
+          <Width>367</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_16</Name>
+          <Left>167</Left>
+          <Top>466</Top>
+          <Width>275</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_12</Name>
+          <Left>19</Left>
+          <Top>506</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_11</Name>
+          <Left>168</Left>
+          <Top>506</Top>
+          <Width>275</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_9</Name>
+          <Left>19</Left>
+          <Top>551</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_7</Name>
+          <Left>173</Left>
+          <Top>551</Top>
+          <Width>133</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_2</Name>
+          <Left>164</Left>
+          <Top>419</Top>
+          <Width>2</Width>
+          <Height>163</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background_4</Name>
+          <Left>12</Left>
+          <Top>345</Top>
+          <Width>368</Width>
+          <Height>32</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status_5</Name>
+          <Left>109</Left>
+          <Top>352</Top>
+          <Width>197</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_3</Name>
+          <Left>20</Left>
+          <Top>468</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

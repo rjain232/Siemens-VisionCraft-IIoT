@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_PN_DEV_DIAG_LEGEND_Popup</Name>
+      <Width>430</Width>
+      <Height>552</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>430</Width>
+          <Height>552</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Legend1</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>428</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_NoName</Name>
+          <Left>10</Left>
+          <Top>204</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_OK</Name>
+          <Left>10</Left>
+          <Top>29</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_Faulty</Name>
+          <Left>10</Left>
+          <Top>109</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_NotPresent</Name>
+          <Left>10</Left>
+          <Top>64</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_Deaktivated</Name>
+          <Left>10</Left>
+          <Top>86</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_NoName</Name>
+          <Left>185</Left>
+          <Top>199</Top>
+          <Width>235</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_OK</Name>
+          <Left>185</Left>
+          <Top>26</Top>
+          <Width>155</Width>
+          <Height>39</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_Faulty</Name>
+          <Left>185</Left>
+          <Top>111</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_Deaktivated</Name>
+          <Left>185</Left>
+          <Top>89</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Legend2</Name>
+          <Left>10</Left>
+          <Top>365</Top>
+          <Width>120</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>339</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_NotPresent</Name>
+          <Left>185</Left>
+          <Top>67</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_WasFaulty</Name>
+          <Left>10</Left>
+          <Top>131</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_WasFaulty</Name>
+          <Left>185</Left>
+          <Top>133</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_Problem</Name>
+          <Left>10</Left>
+          <Top>154</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_Problem</Name>
+          <Left>185</Left>
+          <Top>155</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_PN-DEV_WasProblem</Name>
+          <Left>10</Left>
+          <Top>176</Top>
+          <Width>170</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_WasProblem</Name>
+          <Left>185</Left>
+          <Top>177</Top>
+          <Width>235</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Symbol_DevNo</Name>
+          <Left>10</Left>
+          <Top>236</Top>
+          <Width>34</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DevNo</Name>
+          <Left>49</Left>
+          <Top>236</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SubordinateMoldulError</Name>
+          <Left>49</Left>
+          <Top>258</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Symbol_Tec-Unit_Type</Name>
+          <Left>185</Left>
+          <Top>239</Top>
+          <Width>74</Width>
+          <Height>16</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Symbol_MLFB</Name>
+          <Left>8</Left>
+          <Top>327</Top>
+          <Width>62</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MLFB</Name>
+          <Left>75</Left>
+          <Top>327</Top>
+          <Width>350</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_Reset</Name>
+          <Left>10</Left>
+          <Top>387</Top>
+          <Width>60</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_ResetText</Name>
+          <Left>75</Left>
+          <Top>379</Top>
+          <Width>347</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_ReadNew</Name>
+          <Left>10</Left>
+          <Top>440</Top>
+          <Width>60</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_ResetText_1</Name>
+          <Left>75</Left>
+          <Top>435</Top>
+          <Width>347</Width>
+          <Height>55</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_ReadNew_1</Name>
+          <Left>10</Left>
+          <Top>493</Top>
+          <Width>60</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Button_ResetText_2</Name>
+          <Left>75</Left>
+          <Top>490</Top>
+          <Width>347</Width>
+          <Height>55</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Grafikanzeige_1</Name>
+          <Left>10</Left>
+          <Top>261</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>PN-Line_Vertical</Name>
+          <Left>182</Left>
+          <Top>266</Top>
+          <Width>100</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SubordinateMoldulError_1</Name>
+          <Left>49</Left>
+          <Top>280</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SubordinateMoldulError_2</Name>
+          <Left>49</Left>
+          <Top>302</Top>
+          <Width>140</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_NoName_1</Name>
+          <Left>303</Left>
+          <Top>287</Top>
+          <Width>74</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Grafikanzeige_4</Name>
+          <Left>10</Left>
+          <Top>283</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Grafikanzeige_2</Name>
+          <Left>10</Left>
+          <Top>305</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_PN-DEV_NoName_2</Name>
+          <Left>303</Left>
+          <Top>258</Top>
+          <Width>108</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>PN-Line_Vertical_1</Name>
+          <Left>182</Left>
+          <Top>297</Top>
+          <Width>100</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

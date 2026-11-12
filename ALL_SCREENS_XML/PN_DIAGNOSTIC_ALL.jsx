@@ -1,0 +1,349 @@
+import React, { useState } from 'react';
+
+function PNDIAGNOSTICALLComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1316px', height: '678px', minHeight: '678px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Header Label: Title_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '390px', top: '2px', width: '500px', height: '30px' }}>
+        <span className="truncate">PN DIAGNOSTIC ALL</span>
+      </div>
+      {/* Process Value IOField: EA-Field_PN_IO_SYSTEM */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '725px', top: '35px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Header Label: PNIO-System */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '495px', top: '35px', width: '230px', height: '25px' }}>
+        <span className="truncate">PNIO-System</span>
+      </div>
+      {/* Action Button: PN-Diag_Reset */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '93px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">PN-Diag Reset</span>
+      </button>
+      {/* Action Button: PN-Diag_ReadNew */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '184px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">PN-Diag ReadNew</span>
+      </button>
+      {/* Header Label: Textfeld_1 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '292px', top: '8px', width: '95px', height: '22px' }}>
+        <span className="truncate">Textfeld 1</span>
+      </div>
+      {/* Siemens Status LED: LED_1_Left_2 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '0px', top: '0px', width: '100px', height: '30px' }} />
+      {/* Siemens Status LED: LED_1_Left_1 */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '0px', top: '0px', width: '100px', height: '30px' }} />
+      {/* Header Label: Textfeld_4 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '292px', top: '35px', width: '95px', height: '22px' }}>
+        <span className="truncate">Textfeld 4</span>
+      </div>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Action Button: PN-Diag_Counters */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1093px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">PN-Diag Counters</span>
+      </button>
+      {/* Action Button: PN-Diag_LegendᆉY2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1184px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Group Container Rectangle: Rectangle_1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '16px', top: '69px', width: '427px', height: '123px' }} />
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_7 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '46px', top: '200px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #7</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #7]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_8 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '679px', top: '328px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #8</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #8]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_9 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '46px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #9</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #9]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_2 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '46px', top: '328px', width: '171px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #2</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #2]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_4 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '46px', top: '78px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #4</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #4]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_11 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '258px', top: '78px', width: '170px', height: '105px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #11</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #11]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_3 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '679px', top: '200px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #3</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #3]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_5 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '471px', top: '328px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #5</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #5]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_10 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '471px', top: '78px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #10</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #10]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_12 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '470px', top: '200px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #12</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #12]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_1 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '234px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #1</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #1]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_6 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '423px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #6</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #6]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_14 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '611px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #14</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #14]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_15 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '800px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #15</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #15]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_16 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '989px', top: '519px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #16</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #16]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: Faceplate container_1 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '679px', top: '78px', width: '170px', height: '100px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #1</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #1]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: LSicar_DeviceDiag_13 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '890px', top: '200px', width: '170px', height: '97px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #13</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #13]</span>
+        </div>
+      </div>
+      {/* Schematic Trace: 线_18 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '410px', top: '638px', width: '120px' }} />
+      {/* Vertical Bus Line: 线_19 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '530px', top: '602px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_43 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '410px', top: '153px', height: '485px' }} />
+      {/* Schematic Trace: 线_44 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '541px', top: '637px', width: '178px' }} />
+      {/* Vertical Bus Line: 线_45 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '540px', top: '601px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_46 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '719px', top: '602px', height: '35px' }} />
+      {/* Schematic Trace: 线_47 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '730px', top: '637px', width: '178px' }} />
+      {/* Vertical Bus Line: 线_48 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '729px', top: '601px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_49 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '908px', top: '602px', height: '35px' }} />
+      {/* Schematic Trace: 线_50 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '919px', top: '638px', width: '178px' }} />
+      {/* Vertical Bus Line: 线_51 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '918px', top: '602px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_52 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '1097px', top: '603px', height: '35px' }} />
+      {/* Schematic Trace: 线_12 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '163px', top: '636px', width: '178px' }} />
+      {/* Vertical Bus Line: 线_13 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '162px', top: '601px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_14 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '341px', top: '602px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_7 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '245px', top: '152px', height: '332px' }} />
+      {/* Schematic Trace: 线_10 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '24px', top: '484px', width: '220px' }} />
+      {/* Schematic Trace: 线_11 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '246px', top: '153px', width: '101px' }} />
+      {/* Schematic Trace: 线_15 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '25px', top: '636px', width: '126px' }} />
+      {/* Vertical Bus Line: 线_16 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '153px', top: '601px', height: '35px' }} />
+      {/* Vertical Bus Line: 线_17 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '23px', top: '487px', height: '150px' }} />
+      {/* Vertical Bus Line: 线_8 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '234px', top: '139px', height: '306px' }} />
+      {/* Schematic Trace: 线_9 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '166px', top: '446px', width: '67px' }} />
+      {/* Vertical Bus Line: 线_25 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '165px', top: '411px', height: '34px' }} />
+      {/* Schematic Trace: 线_35 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '235px', top: '142px', width: '113px' }} />
+      {/* Vertical Bus Line: 线_5 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '144px', top: '283px', height: '27px' }} />
+      {/* Schematic Trace: 线_27 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '227px', top: '127px', width: '121px' }} />
+      {/* Vertical Bus Line: 线_28 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '225px', top: '128px', height: '183px' }} />
+      {/* Schematic Trace: 线_29 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '145px', top: '312px', width: '79px' }} />
+      {/* Schematic Trace: 线_4 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '155px', top: '139px', width: '60px' }} />
+      {/* Vertical Bus Line: 线_6 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '218px', top: '120px', height: '19px' }} />
+      {/* Schematic Trace: 线_26 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '219px', top: '119px', width: '129px' }} />
+      {/* Vertical Bus Line: 线_3 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '459px', top: '129px', height: '182px' }} />
+      {/* Schematic Trace: 线_20 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '412px', top: '129px', width: '45px' }} />
+      {/* Schematic Trace: 线_21 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '461px', top: '312px', width: '126px' }} />
+      {/* Vertical Bus Line: 线_22 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '589px', top: '279px', height: '33px' }} />
+      {/* Vertical Bus Line: 线_23 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '600px', top: '279px', height: '33px' }} />
+      {/* Schematic Trace: 线_30 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '601px', top: '312px', width: '197px' }} />
+      {/* Vertical Bus Line: 线_31 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '798px', top: '279px', height: '33px' }} />
+      {/* Vertical Bus Line: 线_32 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '809px', top: '279px', height: '32px' }} />
+      {/* Schematic Trace: 线_33 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '809px', top: '312px', width: '200px' }} />
+      {/* Vertical Bus Line: 线_34 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '1009px', top: '280px', height: '32px' }} />
+      {/* Schematic Trace: 线_40 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '601px', top: '442px', width: '197px' }} />
+      {/* Vertical Bus Line: 线_41 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '600px', top: '409px', height: '33px' }} />
+      {/* Vertical Bus Line: 线_42 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '798px', top: '408px', height: '33px' }} />
+      {/* Schematic Trace: 线_36 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '412px', top: '139px', width: '37px' }} />
+      {/* Vertical Bus Line: 线_37 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '450px', top: '140px', height: '300px' }} />
+      {/* Schematic Trace: 线_38 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '450px', top: '442px', width: '138px' }} />
+      {/* Vertical Bus Line: 线_39 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '589px', top: '409px', height: '33px' }} />
+      {/* Schematic Trace: 线_53 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '583px', top: '183px', width: '210px' }} />
+      {/* Vertical Bus Line: 线_54 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '582px', top: '152px', height: '30px' }} />
+      {/* Vertical Bus Line: 线_55 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '795px', top: '158px', height: '24px' }} />
+      {/* Schematic Trace: 线_24 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '411px', top: '117px', width: '55px' }} />
+      {/* Vertical Bus Line: 线_1 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '466px', top: '119px', height: '62px' }} />
+      {/* Schematic Trace: 线_2 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '466px', top: '182px', width: '101px' }} />
+      {/* Vertical Bus Line: 线_62 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '570px', top: '134px', height: '47px' }} />
+      {/* Schematic Trace: 线_63 */}
+      <div className="absolute border-t border-[#838C5F]/80 z-10 pointer-events-none" style={{ left: '570px', top: '135px', width: '5px' }} />
+    </div>
+  );
+}
+
+export default PNDIAGNOSTICALLComponent;

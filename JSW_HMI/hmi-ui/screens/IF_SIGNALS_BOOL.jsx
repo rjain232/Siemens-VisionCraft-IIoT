@@ -1,0 +1,444 @@
+import React, { useState } from 'react';
+
+function IFSIGNALSBOOLComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1316px', height: '673px', minHeight: '673px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Selector: Select_InterfaceSignals */}
+      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white font-medium text-[10px] rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '468px', top: '34px', width: '344px', height: '26px' }}>
+        <span className="truncate tracking-wide">Select InterfaceSignals</span>
+        <span className="text-[9px] text-white/90 ml-1">▼</span>
+      </div>
+      {/* Header Label: Title_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '390px', top: '3px', width: '500px', height: '30px' }}>
+        <span className="truncate">IF SIGNALS BOOL</span>
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Diagnostic Row: Text Field_Name1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '104px', top: '92px', width: '490px', height: '30px' }}>
+        <span className="truncate font-sans">Text Field Name1</span>
+      </div>
+      {/* Diagnostic Row: Text Field_Value1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '53px', top: '91px', width: '50px', height: '30px' }}>
+        <span className="truncate font-sans">Text Field Value1</span>
+      </div>
+      {/* Diagnostic Row: Text Field_Name2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '723px', top: '91px', width: '490px', height: '30px' }}>
+        <span className="truncate font-sans">Text Field Name2</span>
+      </div>
+      {/* Diagnostic Row: Text Field_Value2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[11px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '672px', top: '91px', width: '50px', height: '30px' }}>
+        <span className="truncate font-sans">Text Field Value2</span>
+      </div>
+      {/* Process Value IOField: EA-Feld_Free-Description_Text_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '685px', top: '65px', width: '541px', height: '30px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: EA-Feld_Free-Description_Text_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '68px', top: '66px', width: '541px', height: '30px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Action Button: Cycle_Time_Legend */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1184px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Process Value IOField: SymbolicName_16_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_31 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_31" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_32 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_32" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_15_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_30 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_30" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_31 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_31" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_14_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_29 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_29" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_30 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_30" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_13_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_28 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_28" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_29 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_29" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_12_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_27 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_27" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_28 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_28" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_11_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_26 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_26" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_27 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_27" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_10_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_25 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_25" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_26 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_26" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_9_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_24 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_24" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_25 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_25" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_8_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_23 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_23" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_24 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_24" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_7_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_22 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_22" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_23 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_23" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_6_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_21 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_21" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_22 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_22" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_5_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_20 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_20" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_21 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_21" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_4_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_19 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_19" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_20 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_20" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_3_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_18 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_18" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_19 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_19" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_2_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_17 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_17" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_18 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_18" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_1_Left */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_16 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_16" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_17 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_17" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_16_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_15 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_15" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_16 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_16" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_15_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_14 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_14" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_15 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_15" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_14_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_13 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_13" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_14 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_14" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_13_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_12 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_12" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_13 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_13" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_12_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_11 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_11" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_12 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_12" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_11_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_10 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_10" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_11 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_11" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_10_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_9 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_9" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_10 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_10" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_9_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_8 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_8" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_9 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_9" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_8_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_7 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_7" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_8 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_8" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_7_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_6 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_6" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_7 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_7" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_6_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_5 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_5" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_6 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_6" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_5_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_4 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_4" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_5 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_5" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_4_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_3 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_3" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_4 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_4" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_3_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_2 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_2" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_3 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_3" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_2_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '36px', top: '0px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_1 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="False_1" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_2 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '0px', top: '3px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="True_2" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Process Value IOField: SymbolicName_1_Right */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '723px', top: '118px', width: '490px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Siemens Graphic View: False_0 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '687px', top: '121px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_False_0.png" alt="False_0" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Siemens Graphic View: True_1 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '687px', top: '121px', width: '21px', height: '20px' }}>
+        <img src="/tia_graphics/SICAR_True_1.png" alt="True_1" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+    </div>
+  );
+}
+
+export default IFSIGNALSBOOLComponent;

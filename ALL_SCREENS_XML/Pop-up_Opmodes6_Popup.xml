@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_Opmodes6_Popup</Name>
+      <Width>645</Width>
+      <Height>267</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>645</Width>
+          <Height>267</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Descr_HmiPanel</Name>
+          <Left>1</Left>
+          <Top>208</Top>
+          <Width>56</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie1_LightGrey</Name>
+          <Left>10</Left>
+          <Top>207</Top>
+          <Width>520</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie1_DarkGrey</Name>
+          <Left>10</Left>
+          <Top>207</Top>
+          <Width>520</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie1_LightGrey_1</Name>
+          <Left>10</Left>
+          <Top>249</Top>
+          <Width>520</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie1_DarkGrey_1</Name>
+          <Left>10</Left>
+          <Top>248</Top>
+          <Width>520</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_OPMode</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>643</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Descr_OPMode</Name>
+          <Left>1</Left>
+          <Top>26</Top>
+          <Width>550</Width>
+          <Height>40</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode1_small</Name>
+          <Left>13</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode2_small</Name>
+          <Left>120</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode3_small</Name>
+          <Left>226</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode5_small</Name>
+          <Left>439</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode4_small</Name>
+          <Left>333</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode6_small</Name>
+          <Left>545</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode1_wide</Name>
+          <Left>8</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode2_wide</Name>
+          <Left>115</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode3_wide</Name>
+          <Left>221</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode4_wide</Name>
+          <Left>327</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode5_wide</Name>
+          <Left>434</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>OPMode6_wide</Name>
+          <Left>540</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_HMI-OP</Name>
+          <Left>554</Left>
+          <Top>207</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>554</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode1_Foreground_Blocked</Name>
+          <Left>7</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode2_Foreground_Blocked</Name>
+          <Left>112</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode3_Foreground_Blocked</Name>
+          <Left>219</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode4_Foreground_Blocked</Name>
+          <Left>327</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode5_Foreground_Blocked</Name>
+          <Left>434</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode6_Foreground_Blocked</Name>
+          <Left>540</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode1_Blocked</Name>
+          <Left>93</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode2_Blocked</Name>
+          <Left>200</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode3_Blocked</Name>
+          <Left>305</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode4_Blocked</Name>
+          <Left>411</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode5_Blocked</Name>
+          <Left>518</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>OPMode6_Blocked</Name>
+          <Left>625</Left>
+          <Top>106</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

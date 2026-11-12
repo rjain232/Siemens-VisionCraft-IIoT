@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_ATDC</Name>
+      <Width>395</Width>
+      <Height>500</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Robot Name</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>393</Width>
+          <Height>48</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>-1</Left>
+          <Top>49</Top>
+          <Width>395</Width>
+          <Height>450</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>315</Left>
+          <Top>4</Top>
+          <Width>76</Width>
+          <Height>42</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_4</Name>
+          <Left>29</Left>
+          <Top>63</Top>
+          <Width>324</Width>
+          <Height>402</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed E- Stop_17</Name>
+          <Left>41</Left>
+          <Top>339</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field In Auto On_9</Name>
+          <Left>41</Left>
+          <Top>99</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Home Position_17</Name>
+          <Left>41</Left>
+          <Top>123</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field Robot Status_5</Name>
+          <Left>31</Left>
+          <Top>64</Top>
+          <Width>324</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Manual_17</Name>
+          <Left>41</Left>
+          <Top>267</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field System Ready_9</Name>
+          <Left>41</Left>
+          <Top>147</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Motor On_9</Name>
+          <Left>41</Left>
+          <Top>171</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field In Cycle_9</Name>
+          <Left>41</Left>
+          <Top>195</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Cycle On_17</Name>
+          <Left>41</Left>
+          <Top>219</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field On Path_17</Name>
+          <Left>41</Left>
+          <Top>243</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Tryout Mode_17</Name>
+          <Left>41</Left>
+          <Top>291</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Stop_17</Name>
+          <Left>41</Left>
+          <Top>315</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed Error_9</Name>
+          <Left>41</Left>
+          <Top>363</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed Process Fault_9</Name>
+          <Left>41</Left>
+          <Top>387</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed Process Fault_1</Name>
+          <Left>41</Left>
+          <Top>411</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed Process Fault_2</Name>
+          <Left>41</Left>
+          <Top>434</Top>
+          <Width>298</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

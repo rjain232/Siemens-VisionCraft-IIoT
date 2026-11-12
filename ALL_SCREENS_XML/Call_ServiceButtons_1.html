@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - Call_ServiceButtons_1</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          Call_ServiceButtons_1
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function CallServiceButtons1Component() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1310px', height: '715px', minHeight: '715px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Label: Title_OPMode1_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '7px', width: '1262px', height: '30px' }}>
+        <span className="truncate">Title OPMode1 ScreenOverview X390 Y2</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_5 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '0px', top: '33px', width: '622px', height: '206px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #5</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Header Label: Text box_5 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '0px', top: '0px', width: '622px', height: '30px' }}>
+        <span className="truncate">Text box 5</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_7 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '0px', top: '33px', width: '622px', height: '206px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #7</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Header Label: Text box_7 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '0px', top: '0px', width: '622px', height: '30px' }}>
+        <span className="truncate">Text box 7</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_8 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '0px', top: '33px', width: '622px', height: '206px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #8</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Header Label: Text box_8 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '0px', top: '0px', width: '622px', height: '30px' }}>
+        <span className="truncate">Text box 8</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_3 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '646px', top: '286px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #3</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Diagnostic Row: Text box_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '645px', top: '255px', width: '622px', height: '30px' }}>
+        <span className="truncate font-sans">Text box 3</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_4 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '646px', top: '496px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #4</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Diagnostic Row: Text box_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '645px', top: '466px', width: '622px', height: '30px' }}>
+        <span className="truncate font-sans">Text box 4</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_6 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '14px', top: '74px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #6</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Header Label: Text box_6 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '13px', top: '41px', width: '622px', height: '30px' }}>
+        <span className="truncate">Text box 6</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_9 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '646px', top: '74px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #9</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Header Label: Text box_9 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '648px', top: '41px', width: '622px', height: '30px' }}>
+        <span className="truncate">Text box 9</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_1 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '14px', top: '285px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #1</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Diagnostic Row: Text box_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '13px', top: '254px', width: '622px', height: '30px' }}>
+        <span className="truncate font-sans">Text box 1</span>
+      </div>
+      {/* Siemens Enclosing Station Cell Container: Faceplate container_2 */}
+      <div className="absolute bg-[#ECEFF1]/50 border border-[#B0BEC5] rounded-md shadow-sm flex flex-col p-2 pointer-events-none z-10" style={{ left: '14px', top: '496px', width: '619px', height: '179px' }}>
+        <div className="flex items-center justify-between border-b border-[#CFD8DC] pb-1 mb-1 pointer-events-auto">
+          <span className="text-[11px] font-bold text-[#37474F] tracking-wide uppercase">Station Device #2</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm" title="Online"></span>
+        </div>
+      </div>
+      {/* Diagnostic Row: Text box_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '13px', top: '466px', width: '622px', height: '30px' }}>
+        <span className="truncate font-sans">Text box 2</span>
+      </div>
+      {/* Action Button: Button_15 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1170px', top: '8px', width: '98px', height: '31px' }}>
+        <span className="truncate w-full text-center">15</span>
+      </button>
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<CallServiceButtons1Component />);
+  </script>
+</body>
+</html>

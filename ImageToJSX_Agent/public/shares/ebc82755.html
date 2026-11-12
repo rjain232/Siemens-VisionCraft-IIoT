@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview (Modified)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _2 => _2.state, 'access', _3 => _3.error, 'optionalAccess', _4 => _4.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [isOpen, setIsOpen] = useState(true);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isRetrying, setIsRetrying] = useState(false);
+  const [errorCode, setErrorCode] = useState('0x8007000E');
+  const [errorMessage, setErrorMessage] = useState('Port 8090 is already in use by another application (PID 14202: node.exe). Out of memory or socket conflict detected.');
+
+  const handleAction = (actionName) => {
+    setIsRetrying(true);
+    setStatusMessage(`Executing ${actionName}...`);
+    
+    setTimeout(() => {
+      setIsRetrying(false);
+      if (actionName === 'Kill PID') {
+        setErrorCode('0x00000000');
+        setErrorMessage('Process 14202 successfully terminated. Port 8090 has been released.');
+        setStatusMessage('System stabilized.');
+      } else {
+        setErrorCode('0x8007000E');
+        setErrorMessage('Port 8090 remains locked. Access is denied or resource is busy.');
+        setStatusMessage('Retry failed.');
+      }
+    }, 1200);
+  };
+
+  const handleCancel = () => {
+    setIsOpen(false);
+  };
+
+  if (!isOpen) {
+    return (
+      React.createElement('div', { className: "w-screen h-screen bg-black flex items-center justify-center font-mono"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 54}}
+        , React.createElement('div', { className: "text-center", __self: this, __source: {fileName: _jsxFileName, lineNumber: 55}}
+          , React.createElement('p', { className: "text-zinc-600 mb-4 text-sm"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 56}}, "System Powered Off"  )
+          , React.createElement('button', { 
+            onClick: () => { setIsOpen(true); setStatusMessage(''); setErrorCode('0x8007000E'); setErrorMessage('Port 8090 is already in use by another application (PID 14202: node.exe). Out of memory or socket conflict detected.'); },
+            className: "px-5 py-2 bg-blue-900 text-blue-200 border border-blue-700 rounded hover:bg-blue-800 text-xs transition-all shadow-lg"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 57}}
+, "Restart System"
+
+          )
+        )
+      )
+    );
+  }
+
+  return (
+    React.createElement('div', { className: "w-screen h-screen bg-[#0078d7] flex items-center justify-center font-sans select-none overflow-hidden relative p-6"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 69}}
+
+      /* Windows Blue Screen of Death (BSOD) Container */
+      , React.createElement('div', { className: "max-w-[720px] w-full text-white flex flex-col justify-start"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 72}}
+
+        /* Sad Emoji */
+        , React.createElement('div', { className: "text-8xl font-light mb-8"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 75}}
+          , isRetrying ? "..." : ":("
+        )
+
+        /* Main Error Heading */
+        , React.createElement('h1', { className: "text-2xl md:text-3xl font-light leading-snug mb-6"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 80}}
+          , isRetrying 
+            ? "Attempting to resolve system exception..." 
+            : "Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you."
+          
+        )
+
+        /* Progress Percentage */
+        , React.createElement('div', { className: "text-xl md:text-2xl font-light mb-12"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 88}}
+          , isRetrying ? "Processing..." : "100% complete"
+        )
+
+        /* Technical Details Grid */
+        , React.createElement('div', { className: "flex items-start space-x-6"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 93}}
+          /* Mock QR Code */
+          , React.createElement('div', { className: "bg-white p-2 w-28 h-28 flex-shrink-0 flex flex-col justify-between"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 95}}
+            , React.createElement('div', { className: "grid grid-cols-6 gap-1 w-full h-full bg-black p-1"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 96}}
+              , Array.from({ length: 36 }).map((_, i) => (
+                React.createElement('div', { key: i, className: `${i % 2 === 0 || i % 5 === 0 ? 'bg-white' : 'bg-black'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 98}})
+              ))
+            )
+          )
+
+          /* Error Information */
+          , React.createElement('div', { className: "text-sm font-mono space-y-2 text-blue-100"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 104}}
+            , React.createElement('p', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 105}}, "For more information about this issue and possible fixes, visit https://windows.com/stopcode"          )
+            , React.createElement('p', { className: "pt-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}, "If you call a support person, give them this info:"         )
+            , React.createElement('p', { className: "font-bold text-white" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 107}}, "Stop code: PORT_ALREADY_IN_USE"  )
+            , React.createElement('p', { className: "font-bold text-white" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}, "What failed: node.exe (PID 14202)"    )
+            , React.createElement('p', { className: "text-xs text-blue-200/80 pt-1"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}, errorMessage)
+          )
+        )
+
+        /* Action Toolbar */
+        , React.createElement('div', { className: "mt-12 flex space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}}
+          , React.createElement('button', { 
+            onClick: () => handleAction('Kill PID'),
+            disabled: isRetrying,
+            className: "px-6 py-2.5 bg-white text-[#0078d7] hover:bg-blue-50 active:bg-blue-100 font-medium text-sm rounded shadow transition-all disabled:opacity-50"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 115}}
+, "Kill PID 14202"
+
+          )
+          , React.createElement('button', { 
+            onClick: () => handleAction('Retry check'),
+            disabled: isRetrying,
+            className: "px-6 py-2.5 bg-transparent border border-white text-white hover:bg-white/10 active:bg-white/20 font-medium text-sm rounded transition-all disabled:opacity-50"            , __self: this, __source: {fileName: _jsxFileName, lineNumber: 122}}
+, "Retry Diagnostics"
+
+          )
+          , React.createElement('button', { 
+            onClick: handleCancel,
+            disabled: isRetrying,
+            className: "px-6 py-2.5 bg-transparent border border-transparent text-white/70 hover:text-white font-medium text-sm transition-all"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}
+, "Shut Down"
+
+          )
+        )
+
+        /* Status bar */
+        , statusMessage && (
+          React.createElement('div', { className: "mt-6 text-xs font-mono text-blue-200 animate-pulse"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 140}}, "> "
+             , statusMessage
+          )
+        )
+
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

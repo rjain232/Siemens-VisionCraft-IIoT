@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>RobotCollision</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>438</Left>
+          <Top>5</Top>
+          <Width>510</Width>
+          <Height>57</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1274</Width>
+          <Height>1</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_6</Name>
+          <Left>6</Left>
+          <Top>69</Top>
+          <Width>1262</Width>
+          <Height>597</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_1</Name>
+          <Left>225</Left>
+          <Top>-96</Top>
+          <Width>744</Width>
+          <Height>865</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_4</Name>
+          <Left>596</Left>
+          <Top>199</Top>
+          <Width>147</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_2</Name>
+          <Left>595</Left>
+          <Top>149</Top>
+          <Width>153</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_1</Name>
+          <Left>637</Left>
+          <Top>107</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_2</Name>
+          <Left>884</Left>
+          <Top>183</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_3</Name>
+          <Left>884</Left>
+          <Top>532</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_4</Name>
+          <Left>334</Left>
+          <Top>532</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_5</Name>
+          <Left>334</Left>
+          <Top>184</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_6</Name>
+          <Left>637</Left>
+          <Top>246</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_3</Name>
+          <Left>595</Left>
+          <Top>510</Top>
+          <Width>153</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic view_5</Name>
+          <Left>596</Left>
+          <Top>560</Top>
+          <Width>147</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_7</Name>
+          <Left>637</Left>
+          <Top>468</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_8</Name>
+          <Left>637</Left>
+          <Top>607</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_2</Name>
+          <Left>8</Left>
+          <Top>5</Top>
+          <Width>164</Width>
+          <Height>111</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_13</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>174</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_14</Name>
+          <Left>31</Left>
+          <Top>26</Top>
+          <Width>123</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_15</Name>
+          <Left>44</Left>
+          <Top>54</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_16</Name>
+          <Left>37</Left>
+          <Top>82</Top>
+          <Width>136</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_7</Name>
+          <Left>21</Left>
+          <Top>89</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_5</Name>
+          <Left>21</Left>
+          <Top>62</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_4</Name>
+          <Left>21</Left>
+          <Top>35</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_7</Name>
+          <Left>8</Left>
+          <Top>5</Top>
+          <Width>161</Width>
+          <Height>111</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_33</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>171</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_34</Name>
+          <Left>32</Left>
+          <Top>26</Top>
+          <Width>121</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_35</Name>
+          <Left>45</Left>
+          <Top>54</Top>
+          <Width>87</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_36</Name>
+          <Left>38</Left>
+          <Top>82</Top>
+          <Width>134</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_20</Name>
+          <Left>18</Left>
+          <Top>35</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_21</Name>
+          <Left>18</Left>
+          <Top>62</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_22</Name>
+          <Left>18</Left>
+          <Top>89</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_1</Name>
+          <Left>8</Left>
+          <Top>5</Top>
+          <Width>164</Width>
+          <Height>111</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_9</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>174</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_10</Name>
+          <Left>31</Left>
+          <Top>26</Top>
+          <Width>123</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_11</Name>
+          <Left>44</Left>
+          <Top>54</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_12</Name>
+          <Left>37</Left>
+          <Top>82</Top>
+          <Width>136</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_10</Name>
+          <Left>20</Left>
+          <Top>89</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_9</Name>
+          <Left>20</Left>
+          <Top>62</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_8</Name>
+          <Left>20</Left>
+          <Top>35</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_6</Name>
+          <Left>8</Left>
+          <Top>5</Top>
+          <Width>164</Width>
+          <Height>111</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_29</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>174</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_30</Name>
+          <Left>31</Left>
+          <Top>26</Top>
+          <Width>123</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_31</Name>
+          <Left>44</Left>
+          <Top>54</Top>
+          <Width>88</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_32</Name>
+          <Left>37</Left>
+          <Top>82</Top>
+          <Width>136</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_1</Name>
+          <Left>20</Left>
+          <Top>35</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_2</Name>
+          <Left>20</Left>
+          <Top>62</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>矩形_3</Name>
+          <Left>20</Left>
+          <Top>89</Top>
+          <Width>17</Width>
+          <Height>17</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

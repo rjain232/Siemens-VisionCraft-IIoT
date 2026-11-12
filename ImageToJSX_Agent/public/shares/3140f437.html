@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [activeTab, setActiveTab] = useState('Results');
+  const [zoomLevel, setZoomLevel] = useState('100 %');
+
+  const mockQueryCode = [
+    { line: 58, text: '' },
+    { line: 59, text: '' },
+    { line: 60, text: 'SELECT', highlighted: true, keyword: true, collapsible: true },
+    { line: 61, text: '    name,', highlighted: true, column: true },
+    { line: 62, text: '    type_desc,', highlighted: true, column: true },
+    { line: 63, text: '    is_disabled', highlighted: true, column: true },
+    { line: 64, text: 'FROM sys.sql_logins', highlighted: true },
+    { line: 65, text: "WHERE name = 'rjain';", highlighted: true }
+  ];
+
+  const tableData = [
+    { id: 1, name: 'rjain', type_desc: 'SQL_LOGIN', is_disabled: 0 }
+  ];
+
+  const messagesData = [
+    { id: 1, text: 'Command completed successfully.', type: 'info', time: '10:42:15 AM' },
+    { id: 2, text: '(1 row affected)', type: 'stats', time: '10:42:15 AM' }
+  ];
+
+  return (
+    React.createElement('div', { className: "flex flex-col h-screen w-screen bg-white text-black font-mono select-none overflow-hidden"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 48}}
+
+      /* Top Bar / Navigation */
+      , React.createElement('header', { className: "flex items-center justify-between px-4 py-2 bg-[#f3f3f3] border-b border-gray-300 text-xs"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 51}}
+        , React.createElement('div', { className: "flex items-center space-x-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 52}}
+          , React.createElement('span', { className: "font-bold text-[#0078d4] text-sm"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 53}}, "SQL Query Editor"  )
+        )
+        , React.createElement('div', { className: "flex items-center space-x-2 text-gray-600"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 55}}
+          , React.createElement('span', { className: "flex items-center text-[#107c10] font-semibold"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 56}}
+            , React.createElement('svg', { className: "w-4 h-4 mr-1 fill-current"   , viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 57}}
+              , React.createElement('path', { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"                   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 58}})
+            ), "No issues found"
+
+          )
+        )
+      )
+
+      /* Editor Layout Container */
+      , React.createElement('div', { className: "flex flex-col flex-1 overflow-hidden bg-white"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 66}}
+
+        /* Code Editor Section */
+        , React.createElement('div', { className: "flex flex-col border-b border-gray-300 bg-white"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 69}}
+          , React.createElement('div', { className: "flex bg-white text-xs leading-6"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 70}}
+
+            /* Line Numbers */
+            , React.createElement('div', { className: "flex flex-col select-none text-gray-400 bg-[#f9f9f9] pr-3 pl-2 py-1 text-right border-r border-gray-200"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 73}}
+              , mockQueryCode.map((item) => (
+                React.createElement('div', { key: item.line, className: "relative flex items-center justify-end space-x-1"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 75}}
+                  , item.line === 60 && (
+                    React.createElement('span', { className: "absolute -left-2 text-gray-700 cursor-pointer text-[10px]"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 77}}, "v")
+                  )
+                  , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 79}}, item.line)
+                )
+              ))
+            )
+
+            /* Line Marker Indicator Border */
+            , React.createElement('div', { className: "w-1 bg-[#c9ab35] opacity-80"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 85}} )
+
+            /* Code Content */
+            , React.createElement('div', { className: "flex flex-col flex-1 py-1 pl-4 overflow-x-auto"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 88}}
+              , mockQueryCode.map((item) => (
+                React.createElement('div', { key: item.line, className: "flex items-center h-6"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 90}}
+                  , item.highlighted ? (
+                    React.createElement('span', { className: "bg-[#b4d8fd] px-1 py-0.5 rounded-sm whitespace-pre"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 92}}
+                      , item.line === 60 && React.createElement('span', { className: "text-blue-700 font-bold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 93}}, "SELECT")
+                      , item.line === 61 && React.createElement('span', { className: "text-blue-700 pl-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 94}}, "name,")
+                      , item.line === 62 && React.createElement('span', { className: "text-blue-700 pl-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 95}}, "type_desc,")
+                      , item.line === 63 && React.createElement('span', { className: "text-black font-bold pl-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 96}}, "is_disabled")
+                      , item.line === 64 && React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 97}}, React.createElement('span', { className: "text-blue-700 font-bold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 97}}, "FROM"), " " , React.createElement('span', { className: "text-green-700 font-semibold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 97}}, "sys.sql_logins"))
+                      , item.line === 65 && React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 98}}, React.createElement('span', { className: "text-blue-700 font-bold" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 98}}, "WHERE"), " " , React.createElement('span', { className: "text-black", __self: this, __source: {fileName: _jsxFileName, lineNumber: 98}}, "name = "  ), React.createElement('span', { className: "text-red-600", __self: this, __source: {fileName: _jsxFileName, lineNumber: 98}}, "'rjain'"), ";")
+                    )
+                  ) : (
+                    React.createElement('span', { className: "text-gray-400", __self: this, __source: {fileName: _jsxFileName, lineNumber: 101}}, item.text)
+                  )
+                )
+              ))
+            )
+          )
+
+          /* Status Bar inside Editor */
+          , React.createElement('div', { className: "flex items-center justify-between px-3 py-1 bg-[#f3f3f3] border-t border-gray-200 text-xs text-gray-700"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}
+            , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}
+              , React.createElement('select', { 
+                value: zoomLevel, 
+                onChange: (e) => setZoomLevel(e.target.value),
+                className: "bg-white border border-gray-300 rounded px-1 py-0.5 text-xs outline-none focus:border-[#0078d4]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 111}}
+
+                , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 116}}, "100 %" )
+                , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 117}}, "125 %" )
+                , React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}, "150 %" )
+              )
+            )
+          )
+        )
+
+        /* Results Tab Control & Output Section */
+        , React.createElement('div', { className: "flex flex-col flex-1 bg-white overflow-hidden"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 125}}
+
+          /* Tabs Header */
+          , React.createElement('div', { className: "flex border-b border-gray-300 bg-[#fbfbfb]"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 128}}
+            , React.createElement('button', {
+              onClick: () => setActiveTab('Results'),
+              className: `flex items-center space-x-1 px-4 py-1.5 text-xs border-r border-gray-300 transition-colors ${
+                activeTab === 'Results' 
+                  ? 'bg-white font-bold border-t-2 border-t-[#0078d4] text-[#0078d4]' 
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}
+
+              , React.createElement('svg', { className: "w-3.5 h-3.5 text-gray-500"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 137}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"                 , __self: this, __source: {fileName: _jsxFileName, lineNumber: 138}} )
+              )
+              , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 140}}, "Results")
+            )
+
+            , React.createElement('button', {
+              onClick: () => setActiveTab('Messages'),
+              className: `flex items-center space-x-1 px-4 py-1.5 text-xs border-r border-gray-300 transition-colors ${
+                activeTab === 'Messages' 
+                  ? 'bg-white font-bold border-t-2 border-t-[#0078d4] text-[#0078d4]' 
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 143}}
+
+              , React.createElement('svg', { className: "w-3.5 h-3.5 text-gray-500"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 151}}
+                , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"                   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 152}} )
+              )
+              , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 154}}, "Messages")
+            )
+          )
+
+          /* Tab Content Area */
+          , React.createElement('div', { className: "flex-1 overflow-auto bg-white"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 159}}
+            , activeTab === 'Results' ? (
+              React.createElement('div', { className: "inline-block min-w-full align-middle"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 161}}
+                , React.createElement('table', { className: "min-w-full border-collapse text-xs text-left"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 162}}
+                  , React.createElement('thead', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 163}}
+                    , React.createElement('tr', { className: "bg-[#f0f0f0] text-gray-700 border-b border-gray-300"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 164}}
+                      , React.createElement('th', { className: "w-12 px-2 py-1 font-normal border-r border-gray-300 text-center bg-[#e5e5e5]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 165}})
+                      , React.createElement('th', { className: "px-3 py-1 font-normal border-r border-gray-300"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 166}}, "name")
+                      , React.createElement('th', { className: "px-3 py-1 font-normal border-r border-gray-300"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 167}}, "type_desc")
+                      , React.createElement('th', { className: "px-3 py-1 font-normal border-r border-gray-300"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 168}}, "is_disabled")
+                    )
+                  )
+                  , React.createElement('tbody', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 171}}
+                    , tableData.map((row, idx) => (
+                      React.createElement('tr', { key: row.id, className: "border-b border-gray-200 hover:bg-blue-50"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 173}}
+                        , React.createElement('td', { className: "px-2 py-1 bg-[#f9f9f9] border-r border-gray-300 text-center text-gray-500"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 174}}, idx + 1)
+                        , React.createElement('td', { className: "px-3 py-1 border-r border-gray-300"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 175}}
+                          , React.createElement('span', { className: "border border-dotted border-black px-1 bg-white"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 176}}, row.name)
+                        )
+                        , React.createElement('td', { className: "px-3 py-1 border-r border-gray-300"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 178}}, row.type_desc)
+                        , React.createElement('td', { className: "px-3 py-1 border-r border-gray-300"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 179}}, row.is_disabled)
+                      )
+                    ))
+                  )
+                )
+              )
+            ) : (
+              React.createElement('div', { className: "p-3 space-y-1 text-xs"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 186}}
+                , messagesData.map((msg) => (
+                  React.createElement('div', { key: msg.id, className: "flex space-x-4 text-gray-700"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 188}}
+                    , React.createElement('span', { className: "text-gray-400", __self: this, __source: {fileName: _jsxFileName, lineNumber: 189}}, msg.time)
+                    , React.createElement('span', { className: msg.type === 'info' ? 'text-green-700 font-semibold' : 'text-gray-600', __self: this, __source: {fileName: _jsxFileName, lineNumber: 190}}
+                      , msg.text
+                    )
+                  )
+                ))
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

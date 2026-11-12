@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup</Name>
+      <Width>330</Width>
+      <Height>313</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Background</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>330</Width>
+          <Height>313</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Legend</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>328</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DeviceInOperation</Name>
+          <Left>35</Left>
+          <Top>38</Top>
+          <Width>200</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Cancel Mode</Name>
+          <Left>239</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>61</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_DeviceInOperation</Name>
+          <Left>10</Left>
+          <Top>38</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_DeviceCannotBeAccessed</Name>
+          <Left>10</Left>
+          <Top>61</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DeviceCannotBeAccessed</Name>
+          <Left>35</Left>
+          <Top>61</Top>
+          <Width>200</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_ErrorsInDevice</Name>
+          <Left>10</Left>
+          <Top>85</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_ErrorsInDevice</Name>
+          <Left>35</Left>
+          <Top>85</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_DeviceDeactivated</Name>
+          <Left>10</Left>
+          <Top>107</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_DeviceDeactivated</Name>
+          <Left>35</Left>
+          <Top>107</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_InputOutputDataNotAvailable</Name>
+          <Left>10</Left>
+          <Top>130</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_InputOutputDataNotAvailable</Name>
+          <Left>35</Left>
+          <Top>130</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_MaintenanceRequired</Name>
+          <Left>10</Left>
+          <Top>153</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaintenanceRequired</Name>
+          <Left>35</Left>
+          <Top>153</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_MaintenanceRecommended</Name>
+          <Left>10</Left>
+          <Top>176</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_MaintenanceRecommended</Name>
+          <Left>35</Left>
+          <Top>176</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_SuperimposedSymbol</Name>
+          <Left>35</Left>
+          <Top>268</Top>
+          <Width>285</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_CurrentConfiguration</Name>
+          <Left>35</Left>
+          <Top>199</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_CurrentConfiguration</Name>
+          <Left>10</Left>
+          <Top>199</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_SuperimposedSymbol</Name>
+          <Left>10</Left>
+          <Top>268</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_StopEgUpdateBootOwnInitialization</Name>
+          <Left>35</Left>
+          <Top>222</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text_Stop</Name>
+          <Left>35</Left>
+          <Top>245</Top>
+          <Width>285</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_StopEgUpdateBootOwnInitialization</Name>
+          <Left>10</Left>
+          <Top>222</Top>
+          <Width>20</Width>
+          <Height>20</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Graphic_Stop</Name>
+          <Left>10</Left>
+          <Top>246</Top>
+          <Width>20</Width>
+          <Height>18</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

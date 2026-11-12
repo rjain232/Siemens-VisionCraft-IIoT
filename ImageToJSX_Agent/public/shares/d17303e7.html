@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview (Modified)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [tags, setTags] = useState({
+    lineRunning: true,
+    mode: 'AUTO',
+    alarmActive: true,
+    alarmText: 'LineHighAlarm.Astop.Astop_140LHLC1 : 140LHLoadLC1_Grating fault',
+    timestamp: new Date().toLocaleString('en-GB'),
+    stationData: [
+      { id: 'MB110', seq: 124, vin: 'JSW-9982', state: 'Normal/Ok' },
+      { id: 'MB120', seq: 123, vin: 'JSW-9981', state: 'Normal/Ok' },
+      { id: 'MB130', seq: 122, vin: 'JSW-9980', state: 'Warning' },
+      { id: '140APCLH1', seq: 121, vin: 'JSW-9979', state: 'Normal/Ok' },
+      { id: 'MB140RB03', seq: 120, vin: 'JSW-9978', state: 'Normal/Ok' }
+    ]
+  });
+
+  const [activeTab, setActiveTab] = useState('ProdData');
+  const navItems = ['Type', 'Robot', 'SEW-Drives', 'Alarm', 'ProdData', 'Diagnostic', 'System', 'Style.View', 'Style.Write', 'RFID', 'Order Control', 'Zone1Type Overview', 'Zone2Type Overview'];
+
+  useEffect(() => {
+    const timer = setInterval(() => setTags(prev => ({ ...prev, timestamp: new Date().toLocaleString('en-GB') })), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    React.createElement('div', { className: "min-h-screen bg-[#C0C0C0] text-black font-sans flex flex-col"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 75}}
+      /* Top Header Bar */
+      , React.createElement('header', { className: "bg-[#008299] text-white p-2 flex items-center gap-2 border-b-4 border-[#005A70]"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 77}}
+        , React.createElement('div', { className: "flex gap-1" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 78}}
+          , ['ON/OFF', 'START', 'AUTO', 'MANUAL'].map(btn => (
+            React.createElement('button', { key: btn, className: "bg-[#005A70] hover:bg-[#004050] px-4 py-2 font-bold border border-white shadow-md"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 80}}, btn)
+          ))
+        )
+        , React.createElement('div', { className: "flex-1 text-center font-bold text-xl"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 83}}, "MB110-140 Control Bar"  )
+        , React.createElement('div', { className: "text-sm font-mono" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 84}}, tags.timestamp)
+        , React.createElement('button', { className: "bg-[#E35E5E] px-4 py-2 font-bold border border-white"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 85}}, "Alarm Mute" )
+        , React.createElement('button', { className: "bg-[#E35E5E] px-4 py-2 font-bold border border-white"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 86}}, "RESET All" )
+        , React.createElement('button', { className: "bg-[#005A70] px-4 py-2 font-bold border border-white"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 87}}, "Special")
+      )
+
+      /* Alarm Banner */
+      , tags.alarmActive && (
+        React.createElement('div', { className: "bg-[#FFFF00] p-2 font-bold border-b border-black text-sm flex items-center"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 92}}
+          , React.createElement('span', { className: "mr-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 93}}, "⚠️"), " " , tags.alarmText
+        )
+      )
+
+      , React.createElement('div', { className: "flex flex-1" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 97}}
+        /* Main Content Area */
+        , React.createElement('main', { className: "flex-1 p-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 99}}
+          , React.createElement('div', { className: "bg-[#008299] text-white text-center py-2 mb-4 font-bold"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 100}}, "Station data overview"  )
+
+          , React.createElement('div', { className: "grid grid-cols-5 gap-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 102}}
+            , tags.stationData.map((station) => (
+              React.createElement('div', { key: station.id, className: "bg-white border-2 border-[#008299] shadow-lg"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 104}}
+                , React.createElement('div', { className: "bg-[#008299] text-white text-center font-bold p-1"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 105}}, station.id)
+                , React.createElement('div', { className: "p-2 text-xs space-y-1"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 106}}
+                  , React.createElement('div', { className: "flex justify-between border-b"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 107}}, React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 107}}, "Seq No." ), React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 107}}, station.seq))
+                  , React.createElement('div', { className: "flex justify-between border-b"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}, React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}, "VIN No." ), React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}, station.vin))
+                  , React.createElement('div', { className: "flex justify-between border-b"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}, React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}, "Body State" ), React.createElement('span', { className: station.state === 'Warning' ? 'text-red-600' : '', __self: this, __source: {fileName: _jsxFileName, lineNumber: 109}}, station.state))
+                  , React.createElement('div', { className: "mt-2", __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}
+                    , React.createElement('select', { className: "w-full border text-[10px]"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 111}}, React.createElement('option', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 111}}, "Select Variant" ))
+                  )
+                )
+              )
+            ))
+          )
+        )
+
+        /* Right Sidebar Navigation */
+        , React.createElement('aside', { className: "w-48 bg-[#008299] p-2 flex flex-col gap-1"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}
+          , navItems.map(item => (
+            React.createElement('button', { 
+              key: item, 
+              onClick: () => setActiveTab(item),
+              className: `w-full py-3 text-white font-bold border border-[#005A70] ${activeTab === item ? 'bg-[#005A70]' : 'hover:bg-[#005A70]'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 122}}
+
+              , item
+            )
+          ))
+        )
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

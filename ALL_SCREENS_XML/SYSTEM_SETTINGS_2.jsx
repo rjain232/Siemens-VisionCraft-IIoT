@@ -1,0 +1,289 @@
+import React, { useState } from 'react';
+
+function SYSTEMSETTINGS2Component() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1316px', height: '673px', minHeight: '673px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Label: Title_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-transparent text-[#027AAC] font-bold text-sm tracking-wide flex items-center justify-center px-1.5 z-20" style={{ left: '390px', top: '2px', width: '510px', height: '57px' }}>
+        <span className="truncate">SYSTEM SETTINGS 2</span>
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Group Container Rectangle: Frame_PLC_Diag */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '105px', top: '70px', width: '1070px', height: '225px' }} />
+      {/* Diagnostic Row: Title_PLC-Diag */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '72px', width: '442px', height: '25px' }}>
+        <span className="truncate font-sans">Title PLC-Diag</span>
+      </div>
+      {/* Diagnostic Row: Text_MAC */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '237px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text MAC</span>
+      </div>
+      {/* Diagnostic Row: Text_IP */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '237px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text IP</span>
+      </div>
+      {/* Diagnostic Row: Text_Subnet */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '264px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text Subnet</span>
+      </div>
+      {/* Diagnostic Row: Text_Point */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '639px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '681px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 1</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '723px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 2</span>
+      </div>
+      {/* Diagnostic Row: Text_Minus */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '268px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Minus</span>
+      </div>
+      {/* Diagnostic Row: Text_Minus_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '299px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Minus 1</span>
+      </div>
+      {/* Diagnostic Row: Text_Minus_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '330px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Minus 2</span>
+      </div>
+      {/* Diagnostic Row: Text_Minus_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '361px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Minus 3</span>
+      </div>
+      {/* Diagnostic Row: Text_Minus_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '392px', top: '237px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Minus 4</span>
+      </div>
+      {/* Diagnostic Row: Text_MLFB */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '129px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text MLFB</span>
+      </div>
+      {/* Diagnostic Row: Text_Firmware */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '210px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text Firmware</span>
+      </div>
+      {/* Diagnostic Row: Text_Hardware */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '183px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text Hardware</span>
+      </div>
+      {/* Diagnostic Row: Text_SerialNo */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '156px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text SerialNo</span>
+      </div>
+      {/* Diagnostic Row: Text_InstallationDate */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '827px', top: '209px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text InstallationDate</span>
+      </div>
+      {/* Diagnostic Row: Text_AddInfo */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '827px', top: '236px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text AddInfo</span>
+      </div>
+      {/* Diagnostic Row: Text_PlantDesignation */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '827px', top: '102px', width: '160px', height: '25px' }}>
+        <span className="truncate font-sans">Text PlantDesignation</span>
+      </div>
+      {/* Diagnostic Row: Text_ManufacturerID */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '107px', top: '102px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text ManufacturerID</span>
+      </div>
+      {/* Diagnostic Row: Text_RevisionCount */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '102px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text RevisionCount</span>
+      </div>
+      {/* Diagnostic Row: Text_ProfileID */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '129px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text ProfileID</span>
+      </div>
+      {/* Diagnostic Row: Text_ProfileSpec */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '156px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text ProfileSpec</span>
+      </div>
+      {/* Diagnostic Row: Text_IMVersion */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '183px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text IMVersion</span>
+      </div>
+      {/* Diagnostic Row: Text_IMSupported */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '467px', top: '210px', width: '135px', height: '25px' }}>
+        <span className="truncate font-sans">Text IMSupported</span>
+      </div>
+      {/* Process Value IOField: ManufacturerID */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '102px', width: '65px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: MLFB */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '129px', width: '220px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: MLFB_1 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '156px', width: '220px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Hardware */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '183px', width: '65px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: FirmwareType */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '210px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: FirmwareFunctional */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '274px', top: '210px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '299px', top: '210px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 3</span>
+      </div>
+      {/* Process Value IOField: FirmwareBugfix */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '305px', top: '210px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '330px', top: '210px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 7</span>
+      </div>
+      {/* Process Value IOField: FirmwareInternal */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '336px', top: '210px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac1 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '243px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac2 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '274px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac3 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '305px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac4 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '336px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac5 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '367px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Mac6 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '398px', top: '237px', width: '24px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: RevisionCount */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '102px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: ProfileID */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '129px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: ProfileSpec */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '156px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IMVersion */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '183px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IMSupported */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '210px', width: '60px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IP1 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '237px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IP2 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '645px', top: '237px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IP3 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '687px', top: '237px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: IP4 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '729px', top: '237px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: PlantDesignation */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '827px', top: '129px', width: '342px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: InstallationDate */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '963px', top: '209px', width: '206px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: AddInfo */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '827px', top: '262px', width: '342px', height: '27px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '639px', top: '264px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 4</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '681px', top: '264px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 5</span>
+      </div>
+      {/* Diagnostic Row: Text_Point_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '723px', top: '264px', width: '5px', height: '25px' }}>
+        <span className="truncate font-sans">Text Point 6</span>
+      </div>
+      {/* Process Value IOField: Subnet1 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '603px', top: '264px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Subnet2 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '645px', top: '264px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Subnet3 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '687px', top: '264px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Process Value IOField: Subnet4 */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '729px', top: '264px', width: '35px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Diagnostic Row: Text_LocationIdentifier */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '827px', top: '154px', width: '160px', height: '25px' }}>
+        <span className="truncate font-sans">Text LocationIdentifier</span>
+      </div>
+      {/* Process Value IOField: LocationIdentifier */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '827px', top: '181px', width: '342px', height: '25px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Action Button: Button_UpdateIuM */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1px', top: '70px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">UpdateIuM</span>
+      </button>
+      {/* Action Button: Button_SystemSettings */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '95px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">SystemSettings</span>
+      </button>
+      {/* Action Button: Button_SICARHelp */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1183px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">SICARHelp</span>
+      </button>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+    </div>
+  );
+}
+
+export default SYSTEMSETTINGS2Component;

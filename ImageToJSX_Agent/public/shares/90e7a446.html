@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _2 => _2.state, 'access', _3 => _3.error, 'optionalAccess', _4 => _4.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    /**
+ * JSW Production - Station Data Overview
+ * Principal Frontend Engineering Implementation
+ * Standard: Meta/Apple/Amazon/Microsoft Industrial UI
+ */
+
+const JSW_COLORS = {
+  primary: '#0082A9',
+  bg: '#C0C0C0',
+  header: '#004B63',
+  alarm: '#FFFF00',
+  danger: '#CD5C5C',
+  active: '#FFD700',
+  text: '#000000',
+  white: '#FFFFFF',
+};
+
+const STATIONS = [
+  { id: 'MB110', name: 'MB110' },
+  { id: 'MB120', name: 'MB120' },
+  { id: 'MB130', name: 'MB130' },
+  { id: '140APCLH_U', name: '140APCLH Unloading' },
+  { id: '140APCLH_L', name: 'MB140APCLH Loading' },
+  { id: '140APCRH_U', name: 'MB140APCRH Unloading' },
+  { id: '140APCRH_L', name: 'MB140APCRH Loading' },
+  { id: 'MB140RB03', name: 'MB140RB03' },
+  { id: 'MB140RB04', name: 'MB140RB04' },
+  { id: 'MB140', name: 'MB140' },
+];
+
+const DATA_LABELS = [
+  "Station", "Seq No.", "BIW No.", "VIN No.", "Variant", 
+  "Sub-Variant", "Body State", "Take Out Location", 
+  "Take out Reason", "Skid No."
+];
+
+function GeneratedScreen() {
+  // --- PLC TAG STATE ---
+  const [plcTags, setPlcTags] = useState({
+    System_Time: new Date().toLocaleString(),
+    Line_Running: true,
+    Operating_Mode: 'AUTO', // 'AUTO' | 'MANUAL'
+    Active_Alarm: 'LineHighAlarm.Astop_140LHLC1 : 140LHLoadLC1_Grating fault',
+    Alarm_Muted: false,
+    Station_Status: Array.from({ length: 24 }, (_, i) => ({
+      id: i + 1,
+      state: i < 3 ? 'fault' : i < 9 ? 'active' : 'idle'
+    }))
+  });
+
+  const [activeTab, setActiveTab] = useState('ProdData');
+
+  // Update clock
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPlcTags(prev => ({ ...prev, System_Time: new Date().toLocaleString() }));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // --- HANDLERS ---
+  const toggleMode = (mode) => setPlcTags(prev => ({ ...prev, Operating_Mode: mode }));
+  const togglePower = () => setPlcTags(prev => ({ ...prev, Line_Running: !prev.Line_Running }));
+  const muteAlarm = () => setPlcTags(prev => ({ ...prev, Alarm_Muted: true }));
+  const resetAll = () => setPlcTags(prev => ({ ...prev, Alarm_Muted: false, Active_Alarm: '' }));
+
+  // --- COMPONENTS ---
+
+  const ControlButton = ({ label, active, onClick, colorClass = "bg-[#0082A9]" }) => (
+    React.createElement('button', {
+      onClick: onClick,
+      className: `h-12 px-4 text-white font-bold text-sm border-r border-black/20 shadow-inner transition-all active:scale-95 flex items-center justify-center
+        ${active ? 'bg-[#FFD700] text-black' : colorClass}
+        ${label === 'RESET All' ? 'bg-[#CD5C5C]' : ''}
+      `, __self: this, __source: {fileName: _jsxFileName, lineNumber: 119}}
+
+      , label
+    )
+  );
+
+  const SidebarItem = ({ label }) => (
+    React.createElement('button', {
+      onClick: () => setActiveTab(label),
+      className: `w-full py-3 px-2 text-white font-bold text-xs border-b border-white/10 text-center transition-colors
+        ${activeTab === label ? 'bg-[#004B63] border-l-4 border-yellow-400' : 'hover:bg-[#006d8d]'}
+      `, __self: this, __source: {fileName: _jsxFileName, lineNumber: 131}}
+
+      , label
+    )
+  );
+
+  const StationCard = ({ station }) => (
+    React.createElement('div', { className: "flex flex-col min-w-[180px] bg-white border border-gray-400 shadow-sm"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 142}}
+      , React.createElement('div', { className: "bg-[#0082A9] text-white text-[10px] font-bold py-1 px-2 text-center truncate"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 143}}
+        , station.name
+      )
+      , React.createElement('div', { className: "flex flex-row divide-x divide-gray-300"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 146}}
+        /* Two columns per station as seen in screenshot */
+        , [0, 1].map(col => (
+          React.createElement('div', { key: col, className: "flex-1 flex flex-col text-[9px]"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 149}}
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center bg-gray-50"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 150}}, "0")
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 151}}, "0")
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center bg-gray-50"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 152}}, "-")
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center text-[8px] text-gray-500"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 153}}, "Select Variant" )
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center text-[8px] text-gray-500"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 154}}, "Select Sub-Variant" )
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center text-green-600 font-semibold"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 155}}, "Normal/Ok")
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center text-gray-400"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 156}}, "No Action" )
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center text-gray-400"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 157}}, "No Action" )
+            , React.createElement('div', { className: "h-6 border-b flex items-center justify-center"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 158}}, "0")
+          )
+        ))
+      )
+    )
+  );
+
+  return (
+    React.createElement('div', { className: "flex flex-col h-screen w-full overflow-hidden font-sans select-none"      , style: { backgroundColor: JSW_COLORS.bg }, __self: this, __source: {fileName: _jsxFileName, lineNumber: 166}}
+
+      /* TOP CONTROL BAR */
+      , React.createElement('div', { className: "flex h-14 bg-[#0082A9] items-stretch border-b border-black/40"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 169}}
+        , React.createElement(ControlButton, { label: "ON/OFF", active: plcTags.Line_Running, onClick: togglePower, __self: this, __source: {fileName: _jsxFileName, lineNumber: 170}} )
+        , React.createElement(ControlButton, { label: "START", onClick: () => {}, __self: this, __source: {fileName: _jsxFileName, lineNumber: 171}} )
+        , React.createElement(ControlButton, { label: "AUTO", active: plcTags.Operating_Mode === 'AUTO', onClick: () => toggleMode('AUTO'), __self: this, __source: {fileName: _jsxFileName, lineNumber: 172}} )
+        , React.createElement(ControlButton, { label: "MANUAL", active: plcTags.Operating_Mode === 'MANUAL', onClick: () => toggleMode('MANUAL'), __self: this, __source: {fileName: _jsxFileName, lineNumber: 173}} )
+
+        /* Station Grid 1-24 */
+        , React.createElement('div', { className: "grid grid-cols-8 grid-rows-3 gap-[1px] bg-black/20 p-[2px] mx-2"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 176}}
+          , plcTags.Station_Status.map(s => (
+            React.createElement('div', { 
+              key: s.id, 
+              className: `w-4 h-4 text-[8px] flex items-center justify-center border border-black/10
+                ${s.state === 'fault' ? 'bg-red-600 text-white' : s.state === 'active' ? 'bg-blue-800 text-white' : 'bg-white text-black'}
+              `, __self: this, __source: {fileName: _jsxFileName, lineNumber: 178}}
+
+              , s.id
+            )
+          ))
+        )
+
+        , React.createElement('div', { className: "flex-1 flex flex-col items-center justify-center text-white"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 189}}
+          , React.createElement('h1', { className: "text-xl font-bold tracking-wider"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 190}}, "MB110-140")
+          , React.createElement('span', { className: "text-[10px] opacity-80" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 191}}, plcTags.System_Time)
+        )
+
+        , React.createElement('div', { className: "flex items-center px-2 space-x-2"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 194}}
+          , React.createElement('div', { className: "flex space-x-1" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 195}}
+             , React.createElement('div', { className: "w-6 h-6 bg-gray-300 rounded-sm flex items-center justify-center"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 196}}
+                , React.createElement('svg', { className: "w-4 h-4 text-blue-800"  , fill: "currentColor", viewBox: "0 0 20 20"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 197}}, React.createElement('path', { d: "M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"                                   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 197}} ))
+             )
+             , React.createElement('div', { className: "w-6 h-6 bg-gray-300 rounded-sm flex items-center justify-center"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 199}}
+                , React.createElement('svg', { className: "w-4 h-4 text-blue-800"  , fill: "currentColor", viewBox: "0 0 20 20"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 200}}, React.createElement('path', { d: "M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"                                  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 200}} ))
+             )
+          )
+        )
+
+        , React.createElement(ControlButton, { label: "Alarm Mute" , onClick: muteAlarm, __self: this, __source: {fileName: _jsxFileName, lineNumber: 205}} )
+        , React.createElement(ControlButton, { label: "RESET All" , onClick: resetAll, __self: this, __source: {fileName: _jsxFileName, lineNumber: 206}} )
+        , React.createElement(ControlButton, { label: "Special", onClick: () => {}, __self: this, __source: {fileName: _jsxFileName, lineNumber: 207}} )
+
+        , React.createElement('div', { className: "w-16 bg-[#0082A9] flex items-center justify-center border-l border-black/20"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 209}}
+          , React.createElement('svg', { className: "w-8 h-8 text-white"  , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 210}}
+            , React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"                              , __self: this, __source: {fileName: _jsxFileName, lineNumber: 211}} )
+          )
+        )
+      )
+
+      /* ALARM BANNER */
+      , React.createElement('div', { className: `h-8 flex items-center px-4 font-bold text-sm border-b border-black/20 transition-colors duration-500 ${plcTags.Active_Alarm && !plcTags.Alarm_Muted ? 'bg-yellow-400 animate-pulse' : 'bg-gray-400'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 217}}
+        , React.createElement('span', { className: "truncate", __self: this, __source: {fileName: _jsxFileName, lineNumber: 218}}
+          , plcTags.Active_Alarm || "System Healthy - No Active Alarms"
+        )
+      )
+
+      , React.createElement('div', { className: "flex flex-1 overflow-hidden"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 223}}
+
+        /* MAIN CONTENT AREA */
+        , React.createElement('div', { className: "flex-1 flex flex-col p-4 overflow-auto"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 226}}
+
+          /* Sub Header */
+          , React.createElement('div', { className: "flex items-center mb-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 229}}
+            , React.createElement('button', { className: "bg-[#0082A9] text-white px-8 py-1 rounded shadow-md font-bold text-sm hover:bg-[#006d8d]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 230}}, "Back"
+
+            )
+            , React.createElement('div', { className: "flex-1 mx-4 bg-[#0082A9] text-white text-center py-1 rounded shadow-inner font-bold tracking-widest"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 233}}, "Station data overview"
+
+            )
+          )
+
+          /* DATA GRID CONTAINER */
+          , React.createElement('div', { className: "flex flex-row items-start"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 239}}
+
+            /* Labels Column */
+            , React.createElement('div', { className: "flex flex-col mt-6 mr-2"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 242}}
+              , DATA_LABELS.map((label, idx) => (
+                React.createElement('div', { 
+                  key: idx, 
+                  className: "h-6 w-28 bg-[#0082A9] text-white text-[10px] font-bold flex items-center px-2 mb-[1px] rounded-sm shadow-sm"           , __self: this, __source: {fileName: _jsxFileName, lineNumber: 244}}
+
+                  , label
+                )
+              ))
+            )
+
+            /* Stations Horizontal Scroll */
+            , React.createElement('div', { className: "flex-1 overflow-x-auto pb-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 254}}
+              , React.createElement('div', { className: "flex flex-col space-y-4"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 255}}
+                /* Row 1 */
+                , React.createElement('div', { className: "flex space-x-2" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 257}}
+                  , STATIONS.slice(0, 5).map(s => React.createElement(StationCard, { key: s.id, station: s, __self: this, __source: {fileName: _jsxFileName, lineNumber: 258}} ))
+                )
+                /* Row 2 */
+                , React.createElement('div', { className: "flex space-x-2" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 261}}
+                  , STATIONS.slice(5, 10).map(s => React.createElement(StationCard, { key: s.id, station: s, __self: this, __source: {fileName: _jsxFileName, lineNumber: 262}} ))
+                )
+              )
+            )
+
+          )
+        )
+
+        /* RIGHT SIDEBAR NAVIGATION */
+        , React.createElement('div', { className: "w-24 bg-[#0082A9] flex flex-col border-l border-black/40"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 271}}
+          , [
+            "Type", "Robot", "SEW-Drives", "Alarm", "ProdData", 
+            "Diagnostic", "System", "Style.View", "Style.Write", 
+            "RFID", "Order Control", "Zone1Type Overview", "Zone2Type Overview"
+          ].map(item => (
+            React.createElement(SidebarItem, { key: item, label: item, __self: this, __source: {fileName: _jsxFileName, lineNumber: 277}} )
+          ))
+        )
+      )
+
+      /* FOOTER STATUS */
+      , React.createElement('div', { className: "h-6 bg-[#004B63] flex items-center px-4 text-[10px] text-white/70 justify-between"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 283}}
+        , React.createElement('div', { className: "flex space-x-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 284}}
+          , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 285}}, "User: ADMIN_JSW" )
+          , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 286}}, "Station: MB110_140_MAIN" )
+        )
+        , React.createElement('div', { className: "flex space-x-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 288}}
+          , React.createElement('span', { className: "flex items-center" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 289}}
+            , React.createElement('div', { className: "w-2 h-2 rounded-full bg-green-400 mr-1"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 290}}), " PLC Connected"
+          )
+          , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 292}}, "V2.4.0.12")
+        )
+      )
+    )
+  );
+}
+
+/**
+ * DESIGN NOTES:
+ * 1. Replicated the specific JSW SCADA color palette (#0082A9, #C0C0C0).
+ * 2. Implemented the unique "Label Column" + "Data Cards" layout seen in the screenshot.
+ * 3. Added PLC-style interactivity for Mode (Auto/Manual) and Power (On/Off).
+ * 4. Used Tailwind for high-density layout management.
+ * 5. Included the 1-24 station status grid in the header as per the reference image.
+ */
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

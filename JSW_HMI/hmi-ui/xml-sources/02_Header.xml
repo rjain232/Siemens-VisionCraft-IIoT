@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>02_Header</Name>
+      <Width>1366</Width>
+      <Height>65</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Dummy_ClockPulse</Name>
+          <Left>550</Left>
+          <Top>6</Top>
+          <Width>32</Width>
+          <Height>24</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Dummy_Coordination</Name>
+          <Left>590</Left>
+          <Top>6</Top>
+          <Width>32</Width>
+          <Height>24</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Backgroud_PermanentArea</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>1366</Width>
+          <Height>64</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Manual</Name>
+          <Left>274</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_ControlOnOff</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Start</Name>
+          <Left>92</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Automatic</Name>
+          <Left>183</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_AlarmHistory</Name>
+          <Left>1589</Left>
+          <Top>314</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Special</Name>
+          <Left>1185</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_1</Name>
+          <Left>91</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_2</Name>
+          <Left>182</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_3</Name>
+          <Left>273</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_Left</Name>
+          <Left>0</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_Right</Name>
+          <Left>1275</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>auto_Blocked</Name>
+          <Left>184</Left>
+          <Top>4</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>start_Foreground_Blocked</Name>
+          <Left>93</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>61</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>start_Blocked</Name>
+          <Left>93</Left>
+          <Top>4</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>auto_Foreground_Blocked</Name>
+          <Left>184</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>61</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>manual_Foreground_Blocked</Name>
+          <Left>275</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>62</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>manual_Blocked</Name>
+          <Left>275</Left>
+          <Top>4</Top>
+          <Width>14</Width>
+          <Height>14</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Silence button</Name>
+          <Left>1005</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Fusszeile_Button_Nav1</Name>
+          <Left>1275</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_AlarmHistory_1</Name>
+          <Left>1394</Left>
+          <Top>314</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiText</Type>
+          <Name>Text_1</Name>
+          <Left>1394</Left>
+          <Top>103</Top>
+          <Width>75</Width>
+          <Height>28</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>DateTime</Name>
+          <Left>838</Left>
+          <Top>33</Top>
+          <Width>162</Width>
+          <Height>24</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>IOField_ProjectName</Name>
+          <Left>538</Left>
+          <Top>0</Top>
+          <Width>460</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>RF1060R_PMLOGON</Name>
+          <Left>594</Left>
+          <Top>35</Top>
+          <Width>34</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>HMI_No</Name>
+          <Left>544</Left>
+          <Top>35</Top>
+          <Width>28</Width>
+          <Height>25</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>SMC_Diag</Name>
+          <Left>574</Left>
+          <Top>35</Top>
+          <Width>18</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>DeviceDiag_Summary</Name>
+          <Left>669</Left>
+          <Top>35</Top>
+          <Width>32</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>PLC_Checksum</Name>
+          <Left>630</Left>
+          <Top>35</Top>
+          <Width>28</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_SystemSettings</Name>
+          <Left>544</Left>
+          <Top>28</Top>
+          <Width>114</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_DemoSlide</Name>
+          <Left>544</Left>
+          <Top>-4</Top>
+          <Width>461</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_OPModeSelect</Name>
+          <Left>365</Left>
+          <Top>3</Top>
+          <Width>173</Width>
+          <Height>59</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_PN-Diag</Name>
+          <Left>667</Left>
+          <Top>30</Top>
+          <Width>36</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_4</Name>
+          <Left>364</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_5</Name>
+          <Left>539</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Opmode_24</Name>
+          <Left>365</Left>
+          <Top>0</Top>
+          <Width>173</Width>
+          <Height>63</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_1</Name>
+          <Left>703</Left>
+          <Top>26</Top>
+          <Width>100</Width>
+          <Height>35</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_GoTo_AlarmHistory_2</Name>
+          <Left>677</Left>
+          <Top>38</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Ack_BackgroundAnimation</Name>
+          <Left>1094</Left>
+          <Top>1</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>OPmodeArea_Selected</Name>
+          <Left>1120</Left>
+          <Top>38</Top>
+          <Width>38</Width>
+          <Height>24</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_6</Name>
+          <Left>1093</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Linie_7</Name>
+          <Left>1184</Left>
+          <Top>1</Top>
+          <Width>0</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Ack</Name>
+          <Left>1095</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

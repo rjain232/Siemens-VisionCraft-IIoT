@@ -1,0 +1,3005 @@
+{
+  "negativeCoords": [
+    {
+      "screen": "150FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "150J5",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "150RobotCollision",
+      "count": 3,
+      "items": [
+        "Graphic view_6(746,-206)",
+        "Graphic view_7(746,-594)",
+        "Graphic view_8(746,-982)"
+      ]
+    },
+    {
+      "screen": "150V23",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "160J5",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "160RobotCollision",
+      "count": 3,
+      "items": [
+        "Graphic view_6(746,-206)",
+        "Graphic view_7(746,-594)",
+        "Graphic view_8(746,-982)"
+      ]
+    },
+    {
+      "screen": "160V23",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "170FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "180FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderFixtureLayout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderLayout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderFixtureLayout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderLayout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190J5",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190J5RoofGeo",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190J5RoofHandling",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190Passing stand",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190RobotCollision",
+      "count": 34,
+      "items": [
+        "Graphic view_6(746,-206)",
+        "Graphic view_7(746,-594)",
+        "Graphic view_8(746,-982)",
+        "Rectangle_4(-427,725)",
+        "Text_14(-435,720)",
+        "Text_15(-404,746)",
+        "Text_16(-390,774)",
+        "Text_17(-398,802)",
+        "矩形_4(-414,809)",
+        "矩形_5(-414,782)",
+        "矩形_7(-414,755)",
+        "Rectangle_7(-1087,1044)",
+        "Text_36(-1095,1039)",
+        "Text_37(-1064,1065)",
+        "Text_38(-1050,1093)",
+        "Text_39(-1058,1121)",
+        "矩形_17(-1074,1128)",
+        "矩形_18(-1074,1101)",
+        "矩形_19(-1074,1074)",
+        "Rectangle_8(-1747,1363)",
+        "Text_40(-1724,1384)",
+        "Text_41(-1710,1412)",
+        "Text_42(-1718,1440)",
+        "矩形_20(-1734,1447)",
+        "矩形_21(-1734,1420)",
+        "矩形_22(-1734,1393)",
+        "Rectangle_9(-2407,1682)",
+        "Text_43(-2415,1677)",
+        "Text_44(-2384,1703)",
+        "Text_45(-2370,1731)",
+        "Text_46(-2378,1759)",
+        "矩形_23(-2394,1766)",
+        "矩形_24(-2394,1739)",
+        "矩形_25(-2394,1712)"
+      ]
+    },
+    {
+      "screen": "190V23",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190V23RoofGeo",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "190V23RoofHandling",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "20023Fkt_Bkt",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 3,
+      "items": [
+        "文本域_8(1172,-248)",
+        "文本域_9(1741,-563)",
+        "文本域_10(2310,-878)"
+      ]
+    },
+    {
+      "screen": "200J5",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "200J5Fkt_Bkt",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "200RobotCollision",
+      "count": 3,
+      "items": [
+        "Graphic view_6(746,-206)",
+        "Graphic view_7(746,-594)",
+        "Graphic view_8(746,-982)"
+      ]
+    },
+    {
+      "screen": "200V23",
+      "count": 1,
+      "items": [
+        "文本域_14(936,-172)"
+      ]
+    },
+    {
+      "screen": "CycleTime",
+      "count": 1,
+      "items": [
+        "Casella di testo_1(-34,295)"
+      ]
+    },
+    {
+      "screen": "Grinding",
+      "count": 1,
+      "items": [
+        "Background(-24,46)"
+      ]
+    },
+    {
+      "screen": "Hemming Process",
+      "count": 1,
+      "items": [
+        "Background(-24,46)"
+      ]
+    },
+    {
+      "screen": "Pop-up_Hmi_Opmodes12_h_Popup",
+      "count": 1,
+      "items": [
+        "Text_OPModeArea(-84,288)"
+      ]
+    },
+    {
+      "screen": "Pop-up_Hmi_Opmodes18_h_Popup",
+      "count": 1,
+      "items": [
+        "Text_OPModeArea(-84,288)"
+      ]
+    },
+    {
+      "screen": "Pop-up_Hmi_Opmodes24_h_Popup",
+      "count": 1,
+      "items": [
+        "Text_OPModeArea(-84,288)"
+      ]
+    },
+    {
+      "screen": "Pop-up_Hmi_Opmodes6_h_Popup",
+      "count": 1,
+      "items": [
+        "Text_OPModeArea(-84,288)"
+      ]
+    },
+    {
+      "screen": "RobotCollision",
+      "count": 1,
+      "items": [
+        "Graphic view_1(225,-96)"
+      ]
+    },
+    {
+      "screen": "SafetyZone03Overview",
+      "count": 3,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_14(-59,212)",
+        "Rectangle_15(-65,503)"
+      ]
+    },
+    {
+      "screen": "SafetyZone04Overview",
+      "count": 3,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_4(-37,204)",
+        "Rectangle_6(-38,481)"
+      ]
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 3,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_14(-60,152)",
+        "Rectangle_1(-116,492)"
+      ]
+    },
+    {
+      "screen": "SafetyZone06Overview",
+      "count": 1,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)"
+      ]
+    },
+    {
+      "screen": "Sew_APC",
+      "count": 1,
+      "items": [
+        "Graphic view_1(698,-47)"
+      ]
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 3,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_14(-59,212)",
+        "Rectangle_15(-65,503)"
+      ]
+    },
+    {
+      "screen": "Zone04Overview",
+      "count": 2,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_4(-192,352)"
+      ]
+    },
+    {
+      "screen": "Zone05Overview",
+      "count": 3,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)",
+        "Rectangle_14(-60,152)",
+        "Rectangle_1(-116,492)"
+      ]
+    },
+    {
+      "screen": "Zone06Overview",
+      "count": 1,
+      "items": [
+        "Line_Header_X0_Y64(-11,64)"
+      ]
+    }
+  ],
+  "zeroClusters": [
+    {
+      "screen": "190J5RoofGeo",
+      "count": 12,
+      "names": [
+        "Rectangle_1",
+        "文本域_11",
+        "圆_1",
+        "圆_2",
+        "Rectangle_2"
+      ]
+    },
+    {
+      "screen": "190J5RoofHandling",
+      "count": 28,
+      "names": [
+        "Rectangle_1",
+        "文本域_11",
+        "圆_1",
+        "圆_2",
+        "Rectangle_2"
+      ]
+    },
+    {
+      "screen": "190RB02_J5",
+      "count": 12,
+      "names": [
+        "Rectangle_13",
+        "文本域_19",
+        "圆_5",
+        "圆_6",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_J5",
+      "count": 8,
+      "names": [
+        "Rectangle_13",
+        "文本域_19",
+        "圆_5",
+        "圆_6",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_V23",
+      "count": 8,
+      "names": [
+        "Rectangle_1",
+        "文本域_2",
+        "圆_1",
+        "圆_2",
+        "Rectangle_13"
+      ]
+    },
+    {
+      "screen": "190RB02_V23",
+      "count": 8,
+      "names": [
+        "Rectangle_1",
+        "文本域_15",
+        "圆_1",
+        "圆_2",
+        "Rectangle_2"
+      ]
+    },
+    {
+      "screen": "190RB06_J5",
+      "count": 16,
+      "names": [
+        "Rectangle_13",
+        "文本域_20",
+        "圆_5",
+        "圆_6",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_J5",
+      "count": 8,
+      "names": [
+        "Rectangle_1",
+        "文本域_1",
+        "圆_1",
+        "圆_2",
+        "Rectangle_13"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_V23",
+      "count": 8,
+      "names": [
+        "Rectangle_1",
+        "文本域_1",
+        "圆_1",
+        "圆_2",
+        "Rectangle_13"
+      ]
+    },
+    {
+      "screen": "190RB06_V23",
+      "count": 24,
+      "names": [
+        "Rectangle_1",
+        "文本域_15",
+        "圆_1",
+        "圆_2",
+        "Rectangle_13"
+      ]
+    },
+    {
+      "screen": "190V23RoofGeo",
+      "count": 8,
+      "names": [
+        "Rectangle_1",
+        "文本域_11",
+        "圆_1",
+        "圆_2",
+        "Rectangle_2"
+      ]
+    },
+    {
+      "screen": "190V23RoofHandling",
+      "count": 24,
+      "names": [
+        "Rectangle_1",
+        "文本域_11",
+        "圆_1",
+        "圆_2",
+        "Rectangle_2"
+      ]
+    },
+    {
+      "screen": "20023Fkt_Bkt",
+      "count": 16,
+      "names": [
+        "Rectangle_2",
+        "文本域_2",
+        "圆_3",
+        "圆_4",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "200APC1ayout",
+      "count": 6,
+      "names": [
+        "LED_1_Left_33",
+        "LED_1_Left_1",
+        "圆_9",
+        "圆_1",
+        "圆_3"
+      ]
+    },
+    {
+      "screen": "200J5Fkt_Bkt",
+      "count": 16,
+      "names": [
+        "Rectangle_2",
+        "文本域_2",
+        "圆_3",
+        "圆_4",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "200RB04_J5",
+      "count": 26,
+      "names": [
+        "Rectangle_2",
+        "文本域_2",
+        "圆_1",
+        "圆_2",
+        "Rectangle_3"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_J5",
+      "count": 8,
+      "names": [
+        "Rectangle_3",
+        "文本域_3",
+        "圆_3",
+        "圆_4",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_V23",
+      "count": 8,
+      "names": [
+        "Rectangle_3",
+        "文本域_3",
+        "圆_3",
+        "圆_4",
+        "Rectangle_1"
+      ]
+    },
+    {
+      "screen": "200RB04_V23",
+      "count": 18,
+      "names": [
+        "Rectangle_3",
+        "文本域_3",
+        "圆_3",
+        "圆_4",
+        "Rectangle_5"
+      ]
+    },
+    {
+      "screen": "Andon",
+      "count": 9,
+      "names": [
+        "Title_ScreenOverview_X390_Y2_2",
+        "Title_ScreenOverview_X390_Y2_67",
+        "Title_ScreenOverview_X390_Y2_47",
+        "Title_ScreenOverview_X390_Y2_57",
+        "Title_ScreenOverview_X390_Y2_77"
+      ]
+    },
+    {
+      "screen": "Main",
+      "count": 6,
+      "names": [
+        "Overview_1",
+        "Overview_2",
+        "Overview_01_Button_2",
+        "Overview_4",
+        "Overview_01_Button_8"
+      ]
+    },
+    {
+      "screen": "Marriage_MB190_MB190R02",
+      "count": 9,
+      "names": [
+        "Circle_2",
+        "Circle_7",
+        "Circle_8",
+        "Circle_1",
+        "Circle_9"
+      ]
+    },
+    {
+      "screen": "Marriage_MB200_MB200R04",
+      "count": 10,
+      "names": [
+        "Circle_2",
+        "Circle_7",
+        "Circle_8",
+        "Circle_1",
+        "Circle_9"
+      ]
+    },
+    {
+      "screen": "Pop-up_EEM_LEGEND_Popup",
+      "count": 7,
+      "names": [
+        "Background",
+        "Text_Legend1",
+        "Symbol_Meas1",
+        "Symbol_RefMeas1",
+        "Symbol1_RefMeas1"
+      ]
+    },
+    {
+      "screen": "Pop-up_EUCHNER_MGB_LEGEND_Popup",
+      "count": 8,
+      "names": [
+        "Background",
+        "Textfeld_Legende",
+        "Pushbutton_Left_ON",
+        "Pushbutton_Right_ON",
+        "Pushbutton_Middle_ON"
+      ]
+    },
+    {
+      "screen": "PopupCycleTimeLegend",
+      "count": 4,
+      "names": [
+        "Textfeld_5",
+        "Textfeld_4",
+        "Textfeld_6",
+        "Textfeld_1"
+      ]
+    },
+    {
+      "screen": "RobotCollision",
+      "count": 4,
+      "names": [
+        "Text_13",
+        "Text_33",
+        "Text_9",
+        "Text_29"
+      ]
+    },
+    {
+      "screen": "Robot_Kuka",
+      "count": 7,
+      "names": [
+        "140RB03",
+        "140RB01_5",
+        "140RB01_1",
+        "140RB01_2",
+        "140RB01_3"
+      ]
+    },
+    {
+      "screen": "Robot_NBG_Kuka",
+      "count": 35,
+      "names": [
+        "Rectangle NBG Status",
+        "Text field NBG Status",
+        "Rectangle TGA",
+        "TGAA Delivery Pos Interlock",
+        "TGAA Storage Pos Interlock"
+      ]
+    },
+    {
+      "screen": "Robot_PLP_Kuka",
+      "count": 19,
+      "names": [
+        "Clear Style Interlock",
+        "Select Style Interlock1",
+        "Select Style Interlock2",
+        "Select Style Interlock3",
+        "Select Style Interlock4"
+      ]
+    },
+    {
+      "screen": "Sew_APC",
+      "count": 32,
+      "names": [
+        "LED_1_Left_23",
+        "LED_1_Left_22",
+        "LED_1_Left_21",
+        "LED_1_Left_20",
+        "LED_1_Left_19"
+      ]
+    },
+    {
+      "screen": "Sew_TurnTable",
+      "count": 32,
+      "names": [
+        "LED_1_Left_33",
+        "LED_1_Left_23",
+        "LED_1_Left_24",
+        "LED_1_Left_25",
+        "LED_1_Left_26"
+      ]
+    },
+    {
+      "screen": "StyleOverview",
+      "count": 4,
+      "names": [
+        "Button_26",
+        "Button_17",
+        "Button_40",
+        "Button_20"
+      ]
+    }
+  ],
+  "clippedRight": [
+    {
+      "screen": "02_Header",
+      "count": 3,
+      "screenW": 1366,
+      "items": [
+        "Button_GoTo_AlarmHistory(x:1589, w:100, right:1689)",
+        "Button_GoTo_AlarmHistory_1(x:1394, w:100, right:1494)",
+        "Text_1(x:1394, w:75, right:1469)"
+      ]
+    },
+    {
+      "screen": "11_SubMenus_Type",
+      "count": 1,
+      "screenW": 100,
+      "items": [
+        "txtOverview_3(x:394, w:100, right:494)"
+      ]
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "150Pop-up_Device",
+      "count": 6,
+      "screenW": 395,
+      "items": [
+        "Textfeld_2(x:191, w:245, right:436)",
+        "Textfeld_13(x:191, w:275, right:466)",
+        "Textfeld_14(x:191, w:275, right:466)",
+        "Textfeld_21(x:191, w:275, right:466)",
+        "Textfeld_20(x:191, w:275, right:466)",
+        "Textfeld_22(x:191, w:275, right:466)"
+      ]
+    },
+    {
+      "screen": "150PRBCompleteDisplay_3",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "Line_Header_X0_Y64(x:82, w:1276, right:1358)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "文本域_9(x:1741, w:100, right:1841)"
+      ]
+    },
+    {
+      "screen": "Barcode_Scanner",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1366, right:1366)"
+      ]
+    },
+    {
+      "screen": "CENTRAL LOADING FIFO",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1362, right:1362)"
+      ]
+    },
+    {
+      "screen": "MB150 first station LOADING STAND FIFO",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1362, right:1362)"
+      ]
+    },
+    {
+      "screen": "MB190RB06 LOADING STAND FIFO",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1362, right:1362)"
+      ]
+    },
+    {
+      "screen": "MB200APCRH1 LOADING STAND FIFO",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1362, right:1362)"
+      ]
+    },
+    {
+      "screen": "OP010Pop-up_PRBHome",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_9(x:47, w:275, right:322)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP010Pop-up_PRBWork",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_7(x:50, w:245, right:295)",
+        "Textfeld_14(x:50, w:275, right:325)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_9(x:52, w:275, right:327)"
+      ]
+    },
+    {
+      "screen": "OP01Pop-up_PRBHome",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_9(x:47, w:275, right:322)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP01Pop-up_PRBWork",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_7(x:50, w:245, right:295)",
+        "Textfeld_14(x:50, w:275, right:325)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_9(x:52, w:275, right:327)"
+      ]
+    },
+    {
+      "screen": "OP02Pop-up_PRBHome",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_9(x:50, w:275, right:325)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP02Pop-up_PRBWork",
+      "count": 7,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_7(x:50, w:245, right:295)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP03Pop-up_PRBHome",
+      "count": 4,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_9(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP03Pop-up_PRBWork",
+      "count": 4,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_13(x:50, w:275, right:325)",
+        "Textfeld_6(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP04Pop-up_PRBHome",
+      "count": 4,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_9(x:47, w:275, right:322)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "OP04Pop-up_PRBWork",
+      "count": 3,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:52, w:245, right:297)",
+        "Textfeld_3(x:52, w:245, right:297)",
+        "Textfeld_11(x:52, w:275, right:327)"
+      ]
+    },
+    {
+      "screen": "OrderManagement",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1363, right:1363)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P1P2P3",
+      "count": 11,
+      "screenW": 1276,
+      "items": [
+        "LSicar_DeviceDiag_2(x:1579, w:171, right:1750)",
+        "LSicar_DeviceDiag_3(x:1942, w:170, right:2112)",
+        "LSicar_DeviceDiag_10(x:1604, w:170, right:1774)",
+        "LSicar_DeviceDiag_12(x:1603, w:170, right:1773)",
+        "LSicar_DeviceDiag_16(x:1375, w:170, right:1545)",
+        "LSicar_DeviceDiag_19(x:1579, w:170, right:1749)",
+        "LSicar_DeviceDiag_20(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_21(x:1941, w:170, right:2111)",
+        "LSicar_DeviceDiag_24(x:1579, w:170, right:1749)",
+        "LSicar_DeviceDiag_25(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_26(x:1802, w:171, right:1973)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P4P5P6",
+      "count": 9,
+      "screenW": 1276,
+      "items": [
+        "LSicar_DeviceDiag_2(x:1579, w:171, right:1750)",
+        "LSicar_DeviceDiag_3(x:1942, w:170, right:2112)",
+        "LSicar_DeviceDiag_10(x:1604, w:170, right:1774)",
+        "LSicar_DeviceDiag_16(x:1375, w:170, right:1545)",
+        "LSicar_DeviceDiag_20(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_21(x:1941, w:170, right:2111)",
+        "LSicar_DeviceDiag_24(x:1579, w:170, right:1749)",
+        "LSicar_DeviceDiag_25(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_26(x:1802, w:171, right:1973)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P7P8",
+      "count": 9,
+      "screenW": 1276,
+      "items": [
+        "LSicar_DeviceDiag_2(x:1579, w:171, right:1750)",
+        "LSicar_DeviceDiag_3(x:1942, w:170, right:2112)",
+        "LSicar_DeviceDiag_10(x:1604, w:170, right:1774)",
+        "LSicar_DeviceDiag_16(x:1375, w:170, right:1545)",
+        "LSicar_DeviceDiag_20(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_21(x:1941, w:170, right:2111)",
+        "LSicar_DeviceDiag_24(x:1579, w:170, right:1749)",
+        "LSicar_DeviceDiag_25(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_26(x:1802, w:171, right:1973)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P9P10",
+      "count": 8,
+      "screenW": 1276,
+      "items": [
+        "LSicar_DeviceDiag_3(x:1942, w:170, right:2112)",
+        "LSicar_DeviceDiag_10(x:1604, w:170, right:1774)",
+        "LSicar_DeviceDiag_16(x:1375, w:170, right:1545)",
+        "LSicar_DeviceDiag_20(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_21(x:1941, w:170, right:2111)",
+        "LSicar_DeviceDiag_24(x:1579, w:170, right:1749)",
+        "LSicar_DeviceDiag_25(x:1760, w:170, right:1930)",
+        "LSicar_DeviceDiag_26(x:1802, w:171, right:1973)"
+      ]
+    },
+    {
+      "screen": "Pop-up_Device",
+      "count": 7,
+      "screenW": 395,
+      "items": [
+        "Textfeld_2(x:191, w:245, right:436)",
+        "Textfeld_13(x:191, w:275, right:466)",
+        "Textfeld_14(x:191, w:275, right:466)",
+        "Textfeld_21(x:191, w:275, right:466)",
+        "Textfeld_20(x:191, w:275, right:466)",
+        "Textfeld_22(x:191, w:275, right:466)",
+        "Textfeld_19(x:183, w:245, right:428)"
+      ]
+    },
+    {
+      "screen": "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "count": 23,
+      "screenW": 290,
+      "items": [
+        "Background_2(x:402, w:290, right:692)",
+        "Text_ReadedDEVNumbers_2(x:410, w:276, right:686)",
+        "Text_Configured_2(x:412, w:130, right:542)",
+        "Counter_Configured_2(x:547, w:44, right:591)",
+        "Text_Faulty_2(x:412, w:130, right:542)",
+        "Counter_Faulty_2(x:547, w:44, right:591)",
+        "Text_Deaktivated_2(x:412, w:130, right:542)",
+        "Counter_Deaktivated_2(x:547, w:44, right:591)",
+        "Text_Present_2(x:412, w:130, right:542)",
+        "Counter_Present_2(x:547, w:44, right:591)",
+        "Text_Problem_2(x:412, w:130, right:542)",
+        "Counter_Problem_2(x:547, w:44, right:591)",
+        "Text_MaxDevices_2(x:412, w:130, right:542)",
+        "Text_MaxModules_2(x:412, w:130, right:542)",
+        "Counter_MaxDevices_2(x:547, w:44, right:591)",
+        "Counter_Max_Modules_2(x:547, w:44, right:591)",
+        "Text_PNDEVCounter_2(x:403, w:288, right:691)",
+        "Text_PLCSettings_2(x:412, w:276, right:688)",
+        "Text_Lowest_2(x:412, w:130, right:542)",
+        "Text_Highest_2(x:412, w:130, right:542)",
+        "Counter_LowDevice_2(x:547, w:44, right:591)",
+        "Counter_HighDevice_2(x:547, w:44, right:591)",
+        "Cancel Mode_3(x:608, w:82, right:690)"
+      ]
+    },
+    {
+      "screen": "Pop-up_PRBHome",
+      "count": 9,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_7(x:50, w:245, right:295)",
+        "Textfeld_14(x:50, w:275, right:325)",
+        "Textfeld_9(x:50, w:275, right:325)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "Pop-up_PRBWork",
+      "count": 8,
+      "screenW": 274,
+      "items": [
+        "Textfeld_2(x:50, w:245, right:295)",
+        "Textfeld_3(x:50, w:245, right:295)",
+        "Textfeld_4(x:50, w:245, right:295)",
+        "Textfeld_7(x:50, w:245, right:295)",
+        "Textfeld_14(x:50, w:275, right:325)",
+        "Textfeld_11(x:50, w:275, right:325)",
+        "Textfeld_12(x:50, w:275, right:325)",
+        "Textfeld_13(x:50, w:275, right:325)"
+      ]
+    },
+    {
+      "screen": "Pop-up_SafetyGate",
+      "count": 6,
+      "screenW": 395,
+      "items": [
+        "Textfeld_13(x:155, w:275, right:430)",
+        "Textfeld_14(x:156, w:275, right:431)",
+        "Textfeld_21(x:155, w:275, right:430)",
+        "Textfeld_18(x:167, w:245, right:412)",
+        "Textfeld_16(x:167, w:275, right:442)",
+        "Textfeld_11(x:168, w:275, right:443)"
+      ]
+    },
+    {
+      "screen": "RFIDWrite",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1363, right:1363)"
+      ]
+    },
+    {
+      "screen": "Robot_Kuka",
+      "count": 2,
+      "screenW": 1276,
+      "items": [
+        "Button_Collision_3(x:1253, w:90, right:1343)",
+        "Button_Collision_6(x:1253, w:90, right:1343)"
+      ]
+    },
+    {
+      "screen": "SafetyZone03Overview",
+      "count": 2,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_7(x:1175, w:160, right:1335)",
+        "Rectangle_11(x:1169, w:173, right:1342)"
+      ]
+    },
+    {
+      "screen": "SafetyZone04Overview",
+      "count": 2,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_11(x:1176, w:148, right:1324)",
+        "Rectangle_5(x:1176, w:148, right:1324)"
+      ]
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 2,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_7(x:1174, w:160, right:1334)",
+        "Rectangle_11(x:1112, w:284, right:1396)"
+      ]
+    },
+    {
+      "screen": "StyleWrite",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "线_1(x:0, w:1360, right:1360)"
+      ]
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 3,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_7(x:1175, w:160, right:1335)",
+        "Rectangle_11(x:1169, w:173, right:1342)",
+        "文本域_16(x:1367, w:50, right:1417)"
+      ]
+    },
+    {
+      "screen": "Zone04Overview",
+      "count": 1,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_11(x:1027, w:446, right:1473)"
+      ]
+    },
+    {
+      "screen": "Zone05Overview",
+      "count": 2,
+      "screenW": 1276,
+      "items": [
+        "Rectangle_7(x:1174, w:160, right:1334)",
+        "Rectangle_11(x:1112, w:284, right:1396)"
+      ]
+    }
+  ],
+  "clippedBottom": [
+    {
+      "screen": "02_Header",
+      "count": 3,
+      "screenH": 65,
+      "items": [
+        "Button_GoTo_AlarmHistory(y:314, h:30, bottom:344)",
+        "Button_GoTo_AlarmHistory_1(y:314, h:30, bottom:344)",
+        "Text_1(y:103, h:28, bottom:131)"
+      ]
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "150PRBCompleteDisplay_3",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "Line_Header_X0_Y64(y:780, h:0, bottom:780)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "190CompleteDisplay",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "sequenceControlFaceplate_Lite_1(y:664, h:64, bottom:728)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "190RobotCollision",
+      "count": 31,
+      "screenH": 673,
+      "items": [
+        "Rectangle_4(y:725, h:112, bottom:837)",
+        "Text_14(y:720, h:35, bottom:755)",
+        "Text_15(y:746, h:35, bottom:781)",
+        "Text_16(y:774, h:35, bottom:809)",
+        "Text_17(y:802, h:35, bottom:837)",
+        "矩形_4(y:809, h:17, bottom:826)",
+        "矩形_5(y:782, h:17, bottom:799)",
+        "矩形_7(y:755, h:17, bottom:772)",
+        "Rectangle_7(y:1044, h:112, bottom:1156)",
+        "Text_36(y:1039, h:35, bottom:1074)",
+        "Text_37(y:1065, h:35, bottom:1100)",
+        "Text_38(y:1093, h:35, bottom:1128)",
+        "Text_39(y:1121, h:35, bottom:1156)",
+        "矩形_17(y:1128, h:17, bottom:1145)",
+        "矩形_18(y:1101, h:17, bottom:1118)",
+        "矩形_19(y:1074, h:17, bottom:1091)",
+        "Rectangle_8(y:1363, h:112, bottom:1475)",
+        "Text_40(y:1384, h:35, bottom:1419)",
+        "Text_41(y:1412, h:35, bottom:1447)",
+        "Text_42(y:1440, h:35, bottom:1475)",
+        "矩形_20(y:1447, h:17, bottom:1464)",
+        "矩形_21(y:1420, h:17, bottom:1437)",
+        "矩形_22(y:1393, h:17, bottom:1410)",
+        "Rectangle_9(y:1682, h:112, bottom:1794)",
+        "Text_43(y:1677, h:35, bottom:1712)",
+        "Text_44(y:1703, h:35, bottom:1738)",
+        "Text_45(y:1731, h:35, bottom:1766)",
+        "Text_46(y:1759, h:35, bottom:1794)",
+        "矩形_23(y:1766, h:17, bottom:1783)",
+        "矩形_24(y:1739, h:17, bottom:1756)",
+        "矩形_25(y:1712, h:17, bottom:1729)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "文本域_12(y:1215, h:20, bottom:1235)"
+      ]
+    },
+    {
+      "screen": "CycleTime",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "Line_2(y:566, h:122, bottom:688)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P1P2P3",
+      "count": 5,
+      "screenH": 673,
+      "items": [
+        "LSicar_DeviceDiag_8(y:628, h:97, bottom:725)",
+        "LSicar_DeviceDiag_2(y:619, h:97, bottom:716)",
+        "LSicar_DeviceDiag_5(y:628, h:97, bottom:725)",
+        "LSicar_DeviceDiag_16(y:728, h:97, bottom:825)",
+        "LSicar_DeviceDiag_26(y:607, h:97, bottom:704)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P4P5P6",
+      "count": 5,
+      "screenH": 673,
+      "items": [
+        "LSicar_DeviceDiag_8(y:628, h:97, bottom:725)",
+        "LSicar_DeviceDiag_2(y:619, h:97, bottom:716)",
+        "LSicar_DeviceDiag_5(y:628, h:97, bottom:725)",
+        "LSicar_DeviceDiag_16(y:728, h:97, bottom:825)",
+        "LSicar_DeviceDiag_26(y:607, h:97, bottom:704)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P7P8",
+      "count": 3,
+      "screenH": 673,
+      "items": [
+        "LSicar_DeviceDiag_2(y:619, h:97, bottom:716)",
+        "LSicar_DeviceDiag_16(y:728, h:97, bottom:825)",
+        "LSicar_DeviceDiag_26(y:607, h:97, bottom:704)"
+      ]
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P9P10",
+      "count": 2,
+      "screenH": 673,
+      "items": [
+        "LSicar_DeviceDiag_16(y:728, h:97, bottom:825)",
+        "LSicar_DeviceDiag_26(y:607, h:97, bottom:704)"
+      ]
+    },
+    {
+      "screen": "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "count": 1,
+      "screenH": 322,
+      "items": [
+        "Background_2(y:11, h:322, bottom:333)"
+      ]
+    },
+    {
+      "screen": "RobotCollision",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "Graphic view_1(y:-96, h:865, bottom:769)"
+      ]
+    },
+    {
+      "screen": "Robot_Kuka",
+      "count": 4,
+      "screenH": 673,
+      "items": [
+        "Title_ScreenOverview_X390_Y2_3(y:816, h:59, bottom:875)",
+        "Robot Name(y:816, h:52, bottom:868)",
+        "Button_Collision_3(y:802, h:60, bottom:862)",
+        "Button_Collision_6(y:802, h:60, bottom:862)"
+      ]
+    },
+    {
+      "screen": "Robot_PLP_Kuka",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "Zone01(y:47, h:643, bottom:690)"
+      ]
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 2,
+      "screenH": 673,
+      "items": [
+        "文本域_16(y:683, h:20, bottom:703)",
+        "Emerg_4(y:696, h:56, bottom:752)"
+      ]
+    },
+    {
+      "screen": "SafetyZone06Overview",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "图形 IO 域_16(y:578, h:119, bottom:697)"
+      ]
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "Rectangle_6(y:865, h:8, bottom:873)"
+      ]
+    },
+    {
+      "screen": "Zone06Overview",
+      "count": 1,
+      "screenH": 673,
+      "items": [
+        "图形 IO 域_16(y:578, h:119, bottom:697)"
+      ]
+    }
+  ],
+  "diagonalLines": [
+    {
+      "screen": "150FX1Layout",
+      "count": 14,
+      "lines": [
+        "Line_9(94x182)",
+        "Line_2(20x91)",
+        "Line_5(77x136)",
+        "Line_17(171x117)",
+        "Line_6(180x43)",
+        "Line_10(165x104)",
+        "Line_1(219x135)",
+        "Line_18(62x96)",
+        "Line_16(85x136)",
+        "Line_11(48x109)",
+        "Line_4(193x129)",
+        "Line_12(143x93)",
+        "Line_19(119x62)",
+        "Line_3(114x159)"
+      ]
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 4,
+      "lines": [
+        "Line_6(125x77)",
+        "Line_7(118x22)",
+        "Line_1(115x90)",
+        "Line_2(109x157)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout",
+      "count": 15,
+      "lines": [
+        "Line_9(94x182)",
+        "Line_2(20x91)",
+        "Line_5(92x151)",
+        "Line_17(171x117)",
+        "Line_6(177x7)",
+        "Line_10(202x102)",
+        "Line_13(83x147)",
+        "Line_1(288x138)",
+        "Line_18(62x96)",
+        "Line_16(76x150)",
+        "Line_11(75x122)",
+        "Line_4(228x146)",
+        "Line_12(144x115)",
+        "Line_19(186x161)",
+        "Line_3(37x112)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 4,
+      "lines": [
+        "Line_6(125x77)",
+        "Line_7(134x5)",
+        "Line_1(115x90)",
+        "Line_2(109x157)"
+      ]
+    },
+    {
+      "screen": "170FX1Layout",
+      "count": 10,
+      "lines": [
+        "Line_2(134x113)",
+        "Line_19(32x137)",
+        "Line_1(106x106)",
+        "Line_3(75x157)",
+        "Line_4(106x107)",
+        "Line_5(112x60)",
+        "Line_6(12x107)",
+        "Line_7(89x165)",
+        "Line_8(185x23)",
+        "Line_9(225x134)"
+      ]
+    },
+    {
+      "screen": "180FX1Layout",
+      "count": 9,
+      "lines": [
+        "Line_2(40x96)",
+        "Line_12(82x77)",
+        "Line_14(43x179)",
+        "Line_15(47x197)",
+        "Line_19(82x54)",
+        "Line_1(103x201)",
+        "Line_3(97x122)",
+        "Line_4(69x137)",
+        "Line_5(71x139)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout",
+      "count": 17,
+      "lines": [
+        "Line_9(94x182)",
+        "Line_2(20x91)",
+        "Line_5(73x168)",
+        "Line_17(189x81)",
+        "Line_6(173x47)",
+        "Line_10(84x81)",
+        "Line_13(25x80)",
+        "Line_1(127x111)",
+        "Line_18(17x71)",
+        "Line_16(33x138)",
+        "Line_11(45x115)",
+        "Line_4(179x140)",
+        "Line_12(144x103)",
+        "Line_19(136x24)",
+        "Line_3(148x112)",
+        "Line_7(156x74)",
+        "Line_8(81x78)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 2,
+      "lines": [
+        "Line_4(146x156)",
+        "Line_5(5x185)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 4,
+      "lines": [
+        "Line_6(125x77)",
+        "Line_7(134x5)",
+        "Line_1(115x90)",
+        "Line_2(109x157)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderFixtureLayout",
+      "count": 9,
+      "lines": [
+        "Line_4(239x36)",
+        "Line_1(116x84)",
+        "Line_2(193x80)",
+        "Line_3(138x105)",
+        "Line_5(194x108)",
+        "Line_6(50x180)",
+        "Line_7(252x98)",
+        "Line_9(9x110)",
+        "Line_10(89x176)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderLayout",
+      "count": 7,
+      "lines": [
+        "Line_4(115x131)",
+        "Line_1(78x207)",
+        "Line_2(197x112)",
+        "Line_3(78x43)",
+        "Line_5(239x144)",
+        "Line_6(82x52)",
+        "Line_7(62x82)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderFixtureLayout",
+      "count": 9,
+      "lines": [
+        "Line_4(255x25)",
+        "Line_1(150x98)",
+        "Line_2(194x50)",
+        "Line_3(128x81)",
+        "Line_5(241x66)",
+        "Line_6(22x172)",
+        "Line_7(258x90)",
+        "Line_9(10x128)",
+        "Line_10(33x171)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderLayout",
+      "count": 6,
+      "lines": [
+        "Line_4(32x116)",
+        "Line_1(226x198)",
+        "Line_2(199x78)",
+        "Line_3(33x7)",
+        "Line_5(126x87)",
+        "Line_7(95x98)"
+      ]
+    },
+    {
+      "screen": "190Passing stand",
+      "count": 5,
+      "lines": [
+        "Line_4(70x160)",
+        "Line_1(63x183)",
+        "Line_2(130x206)",
+        "Line_3(66x71)",
+        "Line_5(121x132)"
+      ]
+    },
+    {
+      "screen": "190RB02_J5",
+      "count": 18,
+      "lines": [
+        "Line_4(56x114)",
+        "Line_3(76x144)",
+        "Line_10(91x71)",
+        "Line_12(206x68)",
+        "Line_13(186x31)",
+        "Line_14(185x41)",
+        "Line_15(241x117)",
+        "Line_1(221x196)",
+        "Line_2(71x97)",
+        "Line_5(15x107)",
+        "Line_6(53x151)",
+        "Line_7(148x124)",
+        "Line_8(73x13)",
+        "Line_9(123x56)",
+        "Line_16(54x103)",
+        "Line_17(73x63)",
+        "Line_18(148x188)",
+        "Line_19(91x142)"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_J5",
+      "count": 3,
+      "lines": [
+        "Line_10(156x19)",
+        "Line_4(72x17)",
+        "Line_1(122x16)"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_V23",
+      "count": 3,
+      "lines": [
+        "Line_10(156x19)",
+        "Line_4(72x17)",
+        "Line_1(122x16)"
+      ]
+    },
+    {
+      "screen": "190RB02_V23",
+      "count": 14,
+      "lines": [
+        "Line_4(56x114)",
+        "Line_10(105x69)",
+        "Line_1(81x29)",
+        "Line_3(154x97)",
+        "Line_5(172x149)",
+        "Line_6(73x74)",
+        "Line_7(186x145)",
+        "Line_8(23x91)",
+        "Line_9(130x67)",
+        "Line_11(113x52)",
+        "Line_12(124x7)",
+        "Line_13(121x209)",
+        "Line_14(96x148)",
+        "Line_15(36x83)"
+      ]
+    },
+    {
+      "screen": "190RB06_J5",
+      "count": 17,
+      "lines": [
+        "Line_16(24x110)",
+        "Line_4(41x13)",
+        "Line_2(130x24)",
+        "Line_3(142x12)",
+        "Line_5(115x56)",
+        "Line_6(177x14)",
+        "Line_7(13x20)",
+        "Line_8(14x45)",
+        "Line_9(77x8)",
+        "Line_10(140x63)",
+        "Line_11(156x16)",
+        "Line_13(201x77)",
+        "Line_14(16x101)",
+        "Line_15(127x27)",
+        "Line_1(30x24)",
+        "Line_18(35x38)",
+        "Line_19(68x20)"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_J5",
+      "count": 3,
+      "lines": [
+        "Line_10(156x19)",
+        "Line_4(72x17)",
+        "Line_1(122x16)"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_V23",
+      "count": 3,
+      "lines": [
+        "Line_10(156x19)",
+        "Line_4(72x17)",
+        "Line_1(122x16)"
+      ]
+    },
+    {
+      "screen": "190RB06_V23",
+      "count": 17,
+      "lines": [
+        "Line_19(68x20)",
+        "Line_5(160x47)",
+        "Line_3(142x12)",
+        "Line_6(104x13)",
+        "Line_11(27x87)",
+        "Line_7(33x36)",
+        "Line_1(15x26)",
+        "Line_4(22x35)",
+        "Line_8(73x27)",
+        "Line_9(74x19)",
+        "Line_10(90x38)",
+        "Line_12(81x98)",
+        "Line_15(92x25)",
+        "Line_17(41x91)",
+        "Line_20(99x140)",
+        "Line_13(26x30)",
+        "Line_14(10x48)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout",
+      "count": 18,
+      "lines": [
+        "Line_9(94x182)",
+        "Line_2(20x91)",
+        "Line_5(92x151)",
+        "Line_3(62x132)",
+        "Line_17(171x117)",
+        "Line_6(177x7)",
+        "Line_10(165x104)",
+        "Line_13(127x171)",
+        "Line_1(219x135)",
+        "Line_8(248x99)",
+        "Line_18(62x96)",
+        "Line_16(85x136)",
+        "Line_11(68x134)",
+        "Line_4(221x158)",
+        "Line_12(133x129)",
+        "Line_14(161x75)",
+        "Line_15(166x74)",
+        "Line_19(132x186)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 4,
+      "lines": [
+        "Line_4(166x11)",
+        "Line_5(125x31)",
+        "Line_6(237x17)",
+        "Line_7(234x64)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 4,
+      "lines": [
+        "Line_6(125x77)",
+        "Line_7(134x5)",
+        "Line_1(115x90)",
+        "Line_2(109x157)"
+      ]
+    },
+    {
+      "screen": "200RB04_J5",
+      "count": 9,
+      "lines": [
+        "Line_4(140x120)",
+        "Line_8(244x129)",
+        "Line_9(124x70)",
+        "Line_1(84x100)",
+        "Line_3(136x150)",
+        "Line_5(54x50)",
+        "Line_6(197x117)",
+        "Line_10(276x88)",
+        "Line_11(167x18)"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_J5",
+      "count": 2,
+      "lines": [
+        "Line_1(148x55)",
+        "Line_2(112x52)"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_V23",
+      "count": 2,
+      "lines": [
+        "Line_1(136x59)",
+        "Line_2(112x60)"
+      ]
+    },
+    {
+      "screen": "200RB04_V23",
+      "count": 9,
+      "lines": [
+        "Line_7(18x141)",
+        "Line_2(305x144)",
+        "Line_3(153x141)",
+        "Line_4(130x116)",
+        "Line_5(145x68)",
+        "Line_6(63x96)",
+        "Line_9(209x102)",
+        "Line_10(109x70)",
+        "Line_11(174x108)"
+      ]
+    },
+    {
+      "screen": "SafetyZone03Overview",
+      "count": 2,
+      "lines": [
+        "线_1(47x13)",
+        "线_2(47x13)"
+      ]
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 2,
+      "lines": [
+        "线_1(47x13)",
+        "线_2(47x13)"
+      ]
+    },
+    {
+      "screen": "SafetyZone06Overview",
+      "count": 2,
+      "lines": [
+        "线_1(47x13)",
+        "线_2(47x13)"
+      ]
+    },
+    {
+      "screen": "Sew_TurnTable",
+      "count": 4,
+      "lines": [
+        "Line_1V1_4(9x149)",
+        "Line_1V1_1(139x71)",
+        "Line_1V1_3(55x25)",
+        "Line_1V1_5(72x87)"
+      ]
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 2,
+      "lines": [
+        "线_2(47x13)",
+        "线_1(47x13)"
+      ]
+    },
+    {
+      "screen": "Zone05Overview",
+      "count": 3,
+      "lines": [
+        "Line_1(96x48)",
+        "线_2(47x13)",
+        "线_1(47x13)"
+      ]
+    },
+    {
+      "screen": "Zone06Overview",
+      "count": 2,
+      "lines": [
+        "线_1(47x13)",
+        "线_7(47x13)"
+      ]
+    }
+  ],
+  "overlappingText": [],
+  "genericGraphics": [
+    {
+      "screen": "150FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(860x259)"
+      ]
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 2,
+      "items": [
+        "Graphic view_1(287x375)",
+        "Graphic view_2(267x375)"
+      ]
+    },
+    {
+      "screen": "150J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(960x408)"
+      ]
+    },
+    {
+      "screen": "150RobotCollision",
+      "count": 8,
+      "items": [
+        "Graphic view_13(634x531)",
+        "Graphic view_6(60x30)",
+        "Graphic view_7(60x30)",
+        "Graphic view_8(60x30)",
+        "Graphic view_2(122x30)",
+        "Graphic view_4(122x30)",
+        "Graphic view_1(122x30)",
+        "Graphic view_3(122x30)"
+      ]
+    },
+    {
+      "screen": "150V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(1002x408)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(860x259)"
+      ]
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 2,
+      "items": [
+        "Graphic view_1(287x375)",
+        "Graphic view_2(267x375)"
+      ]
+    },
+    {
+      "screen": "160J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(1008x405)"
+      ]
+    },
+    {
+      "screen": "160RobotCollision",
+      "count": 6,
+      "items": [
+        "Graphic view_13(634x531)",
+        "Graphic view_11(410x35)",
+        "Graphic view_12(410x35)",
+        "Graphic view_6(60x30)",
+        "Graphic view_7(60x30)",
+        "Graphic view_8(60x30)"
+      ]
+    },
+    {
+      "screen": "160V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(1069x445)"
+      ]
+    },
+    {
+      "screen": "170FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(858x332)"
+      ]
+    },
+    {
+      "screen": "180FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(756x259)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(860x259)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 1,
+      "items": [
+        "Graphic view_1(766x527)"
+      ]
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 2,
+      "items": [
+        "Graphic view_1(287x375)",
+        "Graphic view_2(267x375)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderFixtureLayout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(560x296)"
+      ]
+    },
+    {
+      "screen": "190FX2RhSliderLayout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(651x296)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderFixtureLayout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(560x296)"
+      ]
+    },
+    {
+      "screen": "190FX3LhSliderLayout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(651x296)"
+      ]
+    },
+    {
+      "screen": "190J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "190J5RoofGeo",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "190J5RoofHandling",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "190Passing stand",
+      "count": 1,
+      "items": [
+        "Graphic view_1(651x296)"
+      ]
+    },
+    {
+      "screen": "190RB02_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(801x526)"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "190RB02_Stand_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "190RB02_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_2(741x526)"
+      ]
+    },
+    {
+      "screen": "190RB06_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_2(704x526)"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "190RB06_Stand_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "190RB06_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(790x526)"
+      ]
+    },
+    {
+      "screen": "190RobotCollision",
+      "count": 14,
+      "items": [
+        "Graphic view_13(634x531)",
+        "Graphic view_5(472x35)",
+        "Graphic view_9(472x35)",
+        "Graphic view_6(60x30)",
+        "Graphic view_7(60x30)",
+        "Graphic view_8(60x30)",
+        "Graphic view_2(60x28)",
+        "Graphic view_4(60x33)",
+        "Graphic view_11(410x35)",
+        "Graphic view_12(410x35)",
+        "Graphic view_1(472x35)",
+        "Graphic view_3(472x35)",
+        "Graphic view_10(247x25)",
+        "Graphic view_14(247x25)"
+      ]
+    },
+    {
+      "screen": "190V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "190V23RoofGeo",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "190V23RoofHandling",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "20023Fkt_Bkt",
+      "count": 3,
+      "items": [
+        "Graphic view_1(568x387)",
+        "Graphic view_2(197x201)",
+        "Graphic view_3(222x201)"
+      ]
+    },
+    {
+      "screen": "200APC1ayout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(1170x343)"
+      ]
+    },
+    {
+      "screen": "200APC1FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(964x520)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout",
+      "count": 1,
+      "items": [
+        "Graphic view_1(860x259)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 1,
+      "items": [
+        "Graphic view_1(766x527)"
+      ]
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 2,
+      "items": [
+        "Graphic view_1(287x375)",
+        "Graphic view_2(267x375)"
+      ]
+    },
+    {
+      "screen": "200J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "200J5Fkt_Bkt",
+      "count": 3,
+      "items": [
+        "Graphic view_1(568x387)",
+        "Graphic view_2(197x201)",
+        "Graphic view_3(222x201)"
+      ]
+    },
+    {
+      "screen": "200RB04_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_2(878x526)"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_J5",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "200RB04_Stand_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(358x495)"
+      ]
+    },
+    {
+      "screen": "200RB04_V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(878x526)"
+      ]
+    },
+    {
+      "screen": "200RobotCollision",
+      "count": 10,
+      "items": [
+        "Graphic view_13(634x531)",
+        "Graphic view_6(60x30)",
+        "Graphic view_7(60x30)",
+        "Graphic view_8(60x30)",
+        "Graphic view_2(60x30)",
+        "Graphic view_4(60x30)",
+        "Graphic view_11(410x35)",
+        "Graphic view_12(410x35)",
+        "Graphic view_1(472x35)",
+        "Graphic view_3(472x35)"
+      ]
+    },
+    {
+      "screen": "200V23",
+      "count": 1,
+      "items": [
+        "Graphic view_1(864x387)"
+      ]
+    },
+    {
+      "screen": "RobotCollision",
+      "count": 5,
+      "items": [
+        "Graphic view_1(744x865)",
+        "Graphic view_4(147x35)",
+        "Graphic view_2(153x35)",
+        "Graphic view_3(153x35)",
+        "Graphic view_5(147x35)"
+      ]
+    },
+    {
+      "screen": "SafetyZone03Overview",
+      "count": 2,
+      "items": [
+        "Graphic view_15(42x35)",
+        "Graphic view_1(42x35)"
+      ]
+    },
+    {
+      "screen": "SafetyZone04Overview",
+      "count": 4,
+      "items": [
+        "Graphic view_15(42x35)",
+        "Graphic view_1(42x35)",
+        "Graphic view_2(79x51)",
+        "Graphic view_3(79x51)"
+      ]
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 4,
+      "items": [
+        "Graphic view_15(46x35)",
+        "Graphic view_19(46x35)",
+        "Graphic view_4(46x35)",
+        "Graphic view_3(46x35)"
+      ]
+    },
+    {
+      "screen": "SafetyZone06Overview",
+      "count": 3,
+      "items": [
+        "Graphic view_19(46x35)",
+        "Graphic view_2(77x60)",
+        "Graphic view_4(46x35)"
+      ]
+    },
+    {
+      "screen": "Sew_APC",
+      "count": 1,
+      "items": [
+        "Graphic view_1(128x565)"
+      ]
+    },
+    {
+      "screen": "Sew_TurnTable",
+      "count": 4,
+      "items": [
+        "Graphic view_1(61x38)",
+        "Graphic view_2(61x38)",
+        "Graphic view_3(61x38)",
+        "Graphic view_4(61x38)"
+      ]
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 2,
+      "items": [
+        "Graphic view_15(42x35)",
+        "Graphic view_1(42x35)"
+      ]
+    },
+    {
+      "screen": "Zone04Overview",
+      "count": 4,
+      "items": [
+        "Graphic view_15(42x35)",
+        "Graphic view_1(42x35)",
+        "Graphic view_2(79x51)",
+        "Graphic view_3(79x51)"
+      ]
+    },
+    {
+      "screen": "Zone05Overview",
+      "count": 4,
+      "items": [
+        "Graphic view_15(46x35)",
+        "Graphic view_19(46x35)",
+        "Graphic view_4(46x35)",
+        "Graphic view_3(46x35)"
+      ]
+    },
+    {
+      "screen": "Zone06Overview",
+      "count": 3,
+      "items": [
+        "Graphic view_19(46x35)",
+        "Graphic view_2(77x60)",
+        "Graphic view_4(46x35)"
+      ]
+    }
+  ],
+  "chineseRemnants": [
+    {
+      "screen": "10_SubMenus",
+      "count": 1
+    },
+    {
+      "screen": "11_SubMenus_Type",
+      "count": 1
+    },
+    {
+      "screen": "12_SubMenus_Robot",
+      "count": 1
+    },
+    {
+      "screen": "13_SubMenus_SEW",
+      "count": 1
+    },
+    {
+      "screen": "14_SubMenus_Alarm",
+      "count": 1
+    },
+    {
+      "screen": "150FX1Layout",
+      "count": 35
+    },
+    {
+      "screen": "150FX1Layout_Lifter",
+      "count": 13
+    },
+    {
+      "screen": "150J5",
+      "count": 2
+    },
+    {
+      "screen": "150PRBCompleteDisplay_1",
+      "count": 6
+    },
+    {
+      "screen": "150PRBCompleteDisplay_2",
+      "count": 7
+    },
+    {
+      "screen": "150PRBCompleteDisplay_3",
+      "count": 7
+    },
+    {
+      "screen": "150RobotCollision",
+      "count": 13
+    },
+    {
+      "screen": "150Rollerup Lifter",
+      "count": 1
+    },
+    {
+      "screen": "150V23",
+      "count": 2
+    },
+    {
+      "screen": "15_SubMenus_ProductionData",
+      "count": 1
+    },
+    {
+      "screen": "160FX1Layout",
+      "count": 35
+    },
+    {
+      "screen": "160FX1Layout_Lifter",
+      "count": 13
+    },
+    {
+      "screen": "160J5",
+      "count": 2
+    },
+    {
+      "screen": "160PRBCompleteDisplay_1",
+      "count": 6
+    },
+    {
+      "screen": "160PRBCompleteDisplay_2",
+      "count": 7
+    },
+    {
+      "screen": "160RobotCollision",
+      "count": 19
+    },
+    {
+      "screen": "160Rollerup Lifter",
+      "count": 1
+    },
+    {
+      "screen": "160V23",
+      "count": 2
+    },
+    {
+      "screen": "16_SubMenus_Diagnostic",
+      "count": 1
+    },
+    {
+      "screen": "170FX1Layout",
+      "count": 29
+    },
+    {
+      "screen": "170PRBCompleteDisplay",
+      "count": 3
+    },
+    {
+      "screen": "170Rollerup",
+      "count": 2
+    },
+    {
+      "screen": "17_SubMenus_SystemSettings",
+      "count": 1
+    },
+    {
+      "screen": "180FX1Layout",
+      "count": 27
+    },
+    {
+      "screen": "180PRBCompleteDisplay",
+      "count": 3
+    },
+    {
+      "screen": "180Rollerup",
+      "count": 1
+    },
+    {
+      "screen": "190CompleteDisplay",
+      "count": 1
+    },
+    {
+      "screen": "190FX1Layout",
+      "count": 38
+    },
+    {
+      "screen": "190FX1Layout_Docking",
+      "count": 18
+    },
+    {
+      "screen": "190FX1Layout_Lifter",
+      "count": 15
+    },
+    {
+      "screen": "190FX2RhSliderFixtureLayout",
+      "count": 22
+    },
+    {
+      "screen": "190FX2RhSliderLayout",
+      "count": 19
+    },
+    {
+      "screen": "190FX3LhSliderFixtureLayout",
+      "count": 22
+    },
+    {
+      "screen": "190FX3LhSliderLayout",
+      "count": 19
+    },
+    {
+      "screen": "190J5",
+      "count": 2
+    },
+    {
+      "screen": "190J5RoofGeo",
+      "count": 11
+    },
+    {
+      "screen": "190J5RoofHandling",
+      "count": 23
+    },
+    {
+      "screen": "190Passing stand",
+      "count": 14
+    },
+    {
+      "screen": "190PRBCompleteDisplay",
+      "count": 7
+    },
+    {
+      "screen": "190PRBCompleteDisplay_1",
+      "count": 10
+    },
+    {
+      "screen": "190PSCompleteDisplay",
+      "count": 6
+    },
+    {
+      "screen": "190RB02CompleteDisplay",
+      "count": 6
+    },
+    {
+      "screen": "190RB02_J5",
+      "count": 25
+    },
+    {
+      "screen": "190RB02_Stand_J5",
+      "count": 7
+    },
+    {
+      "screen": "190RB02_Stand_V23",
+      "count": 7
+    },
+    {
+      "screen": "190RB02_V23",
+      "count": 19
+    },
+    {
+      "screen": "190RB06CompleteDisplay",
+      "count": 6
+    },
+    {
+      "screen": "190RB06_J5",
+      "count": 27
+    },
+    {
+      "screen": "190RB06_Stand_J5",
+      "count": 7
+    },
+    {
+      "screen": "190RB06_Stand_V23",
+      "count": 7
+    },
+    {
+      "screen": "190RB06_V23",
+      "count": 30
+    },
+    {
+      "screen": "190RobotCollision",
+      "count": 40
+    },
+    {
+      "screen": "190Rollerup Lifter",
+      "count": 1
+    },
+    {
+      "screen": "190V23",
+      "count": 2
+    },
+    {
+      "screen": "190V23RoofGeo",
+      "count": 8
+    },
+    {
+      "screen": "190V23RoofHandling",
+      "count": 20
+    },
+    {
+      "screen": "20023Fkt_Bkt",
+      "count": 14
+    },
+    {
+      "screen": "200APC1ayout",
+      "count": 46
+    },
+    {
+      "screen": "200APC1CompleteDisplay",
+      "count": 7
+    },
+    {
+      "screen": "200APC1FX1Layout",
+      "count": 10
+    },
+    {
+      "screen": "200FX1Layout",
+      "count": 45
+    },
+    {
+      "screen": "200FX1Layout_Docking",
+      "count": 18
+    },
+    {
+      "screen": "200FX1Layout_Lifter",
+      "count": 15
+    },
+    {
+      "screen": "200J5",
+      "count": 2
+    },
+    {
+      "screen": "200J5Fkt_Bkt",
+      "count": 14
+    },
+    {
+      "screen": "200PRBCompleteDisplay",
+      "count": 15
+    },
+    {
+      "screen": "200PRBCompleteDisplay_1",
+      "count": 4
+    },
+    {
+      "screen": "200RB04CompleteDisplay",
+      "count": 5
+    },
+    {
+      "screen": "200RB04_J5",
+      "count": 18
+    },
+    {
+      "screen": "200RB04_Stand_J5",
+      "count": 7
+    },
+    {
+      "screen": "200RB04_Stand_V23",
+      "count": 7
+    },
+    {
+      "screen": "200RB04_V23",
+      "count": 19
+    },
+    {
+      "screen": "200RobotCollision",
+      "count": 19
+    },
+    {
+      "screen": "200Rollerup Lifter",
+      "count": 1
+    },
+    {
+      "screen": "200V23",
+      "count": 2
+    },
+    {
+      "screen": "ALARM_HISTORY",
+      "count": 1
+    },
+    {
+      "screen": "Andon",
+      "count": 82
+    },
+    {
+      "screen": "Barcode_Scanner",
+      "count": 2
+    },
+    {
+      "screen": "CENTRAL LOADING FIFO",
+      "count": 2
+    },
+    {
+      "screen": "Grinding",
+      "count": 1
+    },
+    {
+      "screen": "Hemming Process",
+      "count": 1
+    },
+    {
+      "screen": "HTML_VIEW",
+      "count": 1
+    },
+    {
+      "screen": "Marriage_MB190_MB190R02",
+      "count": 2
+    },
+    {
+      "screen": "Marriage_MB200_MB200R04",
+      "count": 2
+    },
+    {
+      "screen": "MB150 first station LOADING STAND FIFO",
+      "count": 1
+    },
+    {
+      "screen": "MB190RB06 LOADING STAND FIFO",
+      "count": 2
+    },
+    {
+      "screen": "MB200APCRH1 LOADING STAND FIFO",
+      "count": 2
+    },
+    {
+      "screen": "OrderManagement",
+      "count": 1
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P1P2P3",
+      "count": 34
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P4P5P6",
+      "count": 35
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P7P8",
+      "count": 36
+    },
+    {
+      "screen": "PN_DIAGNOSTIC ETH P9P10",
+      "count": 21
+    },
+    {
+      "screen": "PN_DIAGNOSTIC_ALL",
+      "count": 57
+    },
+    {
+      "screen": "Pop-up_ATDC",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_CURVE_F-CYCLETIMES_Popup",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_ISRA VISION",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_Mig Weld",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_NutRunner",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_Sealer_1",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_Sealer_2",
+      "count": 1
+    },
+    {
+      "screen": "Pop-up_VISION OFFSET VALUES",
+      "count": 1
+    },
+    {
+      "screen": "ProductionCount",
+      "count": 126
+    },
+    {
+      "screen": "ProductionCountSummary",
+      "count": 48
+    },
+    {
+      "screen": "RFIDWrite",
+      "count": 2
+    },
+    {
+      "screen": "RobotCollision",
+      "count": 13
+    },
+    {
+      "screen": "Robot_Kuka",
+      "count": 100
+    },
+    {
+      "screen": "SafetyZone03Overview",
+      "count": 13
+    },
+    {
+      "screen": "SafetyZone04Overview",
+      "count": 6
+    },
+    {
+      "screen": "SafetyZone05Overview",
+      "count": 13
+    },
+    {
+      "screen": "SafetyZone06Overview",
+      "count": 16
+    },
+    {
+      "screen": "Sew_APC",
+      "count": 2
+    },
+    {
+      "screen": "SEW_FIFO",
+      "count": 1
+    },
+    {
+      "screen": "Sew_Lifter-Tp",
+      "count": 1
+    },
+    {
+      "screen": "Sew_TurnTable",
+      "count": 38
+    },
+    {
+      "screen": "StyleOverview",
+      "count": 14
+    },
+    {
+      "screen": "StyleWrite",
+      "count": 2
+    },
+    {
+      "screen": "SWEServoHelp",
+      "count": 7
+    },
+    {
+      "screen": "SYSTEM_DIAGNOSTIC_DEVICE-VIEW",
+      "count": 1
+    },
+    {
+      "screen": "Tool Stand Bit",
+      "count": 1
+    },
+    {
+      "screen": "Zone03Overview",
+      "count": 19
+    },
+    {
+      "screen": "Zone04Overview",
+      "count": 8
+    },
+    {
+      "screen": "Zone05Overview",
+      "count": 28
+    },
+    {
+      "screen": "Zone06Overview",
+      "count": 26
+    }
+  ]
+}

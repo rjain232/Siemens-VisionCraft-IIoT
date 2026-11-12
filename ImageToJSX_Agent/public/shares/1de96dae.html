@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [isOpen, setIsOpen] = useState(true);
+  const [status, setStatus] = useState('idle');
+
+  if (!isOpen) {
+    return (
+      React.createElement('div', { className: "flex h-screen w-screen items-center justify-center bg-[#f3f4f6]"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 29}}
+        , React.createElement('button', {
+          onClick: () => { setIsOpen(true); setStatus('idle'); },
+          className: "px-4 py-2 bg-[#d97706] text-white rounded shadow hover:bg-[#b45309] transition-colors"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 30}}
+, "Open Warning Dialog"
+
+        )
+      )
+    );
+  }
+
+  return (
+    React.createElement('div', { className: "flex h-screen w-screen items-center justify-center bg-[#f3f4f6]"     , style: { fontFamily: 'Segoe UI, sans-serif' }, __self: this, __source: {fileName: _jsxFileName, lineNumber: 41}}
+      /* Modal Dialog Window */
+      , React.createElement('div', { className: "w-[580px] bg-white border border-gray-400 shadow-xl rounded-sm flex flex-col overflow-hidden"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 43}}
+
+        /* Window Header */
+        , React.createElement('div', { className: "bg-[#111827] text-white px-3 py-1.5 flex items-center justify-between select-none"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 46}}
+          , React.createElement('span', { className: "text-xs font-normal tracking-wide"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 47}}, "Warning")
+          , React.createElement('div', { className: "flex items-center space-x-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 48}}
+            /* Minimize / Maximize placeholder */
+            , React.createElement('button', { 'aria-label': "Maximize", className: "w-3.5 h-3.5 border border-gray-400 hover:bg-gray-700 flex items-center justify-center text-[10px]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 50}} )
+            /* Close Button */
+            , React.createElement('button', { 
+              onClick: () => setIsOpen(false),
+              'aria-label': "Close", 
+              className: "w-4 h-4 hover:bg-red-600 flex items-center justify-center text-xs transition-colors"       , __self: this, __source: {fileName: _jsxFileName, lineNumber: 52}}
+, "✕"
+
+            )
+          )
+        )
+
+        /* Content Body */
+        , React.createElement('div', { className: "p-6 flex items-start space-x-5"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 63}}
+          /* Warning Icon */
+          , React.createElement('div', { className: "flex-shrink-0 pt-0.5" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 65}}
+            , React.createElement('svg', { 
+              className: "w-12 h-12 text-[#d97706]"  , 
+              viewBox: "0 0 24 24"   , 
+              fill: "none", 
+              stroke: "currentColor", 
+              strokeWidth: "1.5", 
+              strokeLinecap: "round", 
+              strokeLinejoin: "round", __self: this, __source: {fileName: _jsxFileName, lineNumber: 66}}
+
+              , React.createElement('path', { d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"                   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 75}} )
+              , React.createElement('line', { x1: "12", y1: "9", x2: "12", y2: "13", __self: this, __source: {fileName: _jsxFileName, lineNumber: 76}} )
+              , React.createElement('line', { x1: "12", y1: "17", x2: "12.01", y2: "17", __self: this, __source: {fileName: _jsxFileName, lineNumber: 77}} )
+            )
+          )
+
+          /* Message Text */
+          , React.createElement('div', { className: "flex-1", __self: this, __source: {fileName: _jsxFileName, lineNumber: 82}}
+            , React.createElement('p', { className: "text-sm text-[#111827] leading-relaxed"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 83}}, "It appears that port 8090 is already in use. Please exit the application that uses that port, or change the port number for this application in the Server tab of the App Settings dialog."
+
+            )
+            , status === 'retrying' && (
+              React.createElement('p', { className: "text-xs text-[#d97706] mt-3 animate-pulse"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 87}}, "Checking port 8090 availability..."
+
+              )
+            )
+          )
+        )
+
+        /* Button Group */
+        , React.createElement('div', { className: "px-6 py-4 bg-gray-50 flex items-center justify-end space-x-3 border-t border-[#e5e7eb]"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 95}}
+          /* Retry Button with Win32 style focus outline ring */
+          , React.createElement('button', {
+            onClick: () => {
+              setStatus('retrying');
+              setTimeout(() => setStatus('idle'), 1500);
+            },
+            className: "px-6 py-1.5 text-xs font-normal text-[#111827] bg-[#e5e7eb] border border-gray-400 rounded-sm hover:bg-gray-200 active:bg-gray-300 focus:outline-none focus:ring-1 focus:ring-dotted focus:ring-[#111827] shadow-sm transition-all"                , __self: this, __source: {fileName: _jsxFileName, lineNumber: 97}}
+, "Retry"
+
+          )
+
+          /* Cancel Button */
+          , React.createElement('button', {
+            onClick: () => setIsOpen(false),
+            className: "px-6 py-1.5 text-xs font-normal text-[#111827] bg-[#e5e7eb] border border-gray-400 rounded-sm hover:bg-gray-200 active:bg-gray-300 focus:outline-none shadow-sm transition-all"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 108}}
+, "Cancel"
+
+          )
+        )
+
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

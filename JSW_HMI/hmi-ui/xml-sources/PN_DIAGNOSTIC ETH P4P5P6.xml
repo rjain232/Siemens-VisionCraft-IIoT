@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>PN_DIAGNOSTIC ETH P4P5P6</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Title_ScreenOverview_X390_Y2</Name>
+          <Left>390</Left>
+          <Top>2</Top>
+          <Width>500</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PN-Diag_Reset</Name>
+          <Left>93</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PN-Diag_ReadNew</Name>
+          <Left>184</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_1</Name>
+          <Left>292</Left>
+          <Top>8</Top>
+          <Width>95</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>LED_1_Left_2</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>LED_1_Left_1</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Textfeld_4</Name>
+          <Left>292</Left>
+          <Top>35</Top>
+          <Width>95</Width>
+          <Height>22</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PN-Diag_Counters</Name>
+          <Left>1093</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>PN-Diag_LegendᆉY2</Name>
+          <Left>1184</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle_1</Name>
+          <Left>51</Left>
+          <Top>92</Top>
+          <Width>203</Width>
+          <Height>123</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_7</Name>
+          <Left>485</Left>
+          <Top>101</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_8</Name>
+          <Left>2294</Left>
+          <Top>628</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_9</Name>
+          <Left>293</Left>
+          <Top>277</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_2</Name>
+          <Left>1579</Left>
+          <Top>619</Top>
+          <Width>171</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_4</Name>
+          <Left>81</Left>
+          <Top>101</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_11</Name>
+          <Left>293</Left>
+          <Top>101</Top>
+          <Width>170</Width>
+          <Height>105</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_3</Name>
+          <Left>1942</Left>
+          <Top>495</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_5</Name>
+          <Left>2086</Left>
+          <Top>628</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_10</Name>
+          <Left>1604</Left>
+          <Top>81</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_12</Name>
+          <Left>680</Left>
+          <Top>446</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_1</Name>
+          <Left>485</Left>
+          <Top>277</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_6</Name>
+          <Left>2123</Left>
+          <Top>495</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_16</Name>
+          <Left>1375</Left>
+          <Top>728</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_1</Name>
+          <Left>880</Left>
+          <Top>104</Top>
+          <Width>170</Width>
+          <Height>100</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_13</Name>
+          <Left>2023</Left>
+          <Top>203</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_4</Name>
+          <Left>190</Left>
+          <Top>162</Top>
+          <Width>60</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_6</Name>
+          <Left>253</Left>
+          <Top>143</Top>
+          <Width>0</Width>
+          <Height>19</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_26</Name>
+          <Left>254</Left>
+          <Top>142</Top>
+          <Width>129</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_17</Name>
+          <Left>61</Left>
+          <Top>269</Top>
+          <Width>170</Width>
+          <Height>105</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_18</Name>
+          <Left>680</Left>
+          <Top>101</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_1</Name>
+          <Left>156</Left>
+          <Top>162</Top>
+          <Width>0</Width>
+          <Height>145</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_3</Name>
+          <Left>363</Left>
+          <Top>152</Top>
+          <Width>23</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_5</Name>
+          <Left>156</Left>
+          <Top>162</Top>
+          <Width>20</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_7</Name>
+          <Left>363</Left>
+          <Top>153</Top>
+          <Width>0</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_8</Name>
+          <Left>363</Left>
+          <Top>207</Top>
+          <Width>220</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_9</Name>
+          <Left>583</Left>
+          <Top>179</Top>
+          <Width>0</Width>
+          <Height>27</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_10</Name>
+          <Left>376</Left>
+          <Top>163</Top>
+          <Width>14</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_11</Name>
+          <Left>376</Left>
+          <Top>163</Top>
+          <Width>0</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_12</Name>
+          <Left>376</Left>
+          <Top>217</Top>
+          <Width>402</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_13</Name>
+          <Left>778</Left>
+          <Top>179</Top>
+          <Width>0</Width>
+          <Height>37</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_19</Name>
+          <Left>293</Left>
+          <Top>446</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_20</Name>
+          <Left>1760</Left>
+          <Top>371</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_21</Name>
+          <Left>1941</Left>
+          <Top>371</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_22</Name>
+          <Left>2123</Left>
+          <Top>371</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_23</Name>
+          <Left>2309</Left>
+          <Top>371</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_24</Name>
+          <Left>1579</Left>
+          <Top>495</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_25</Name>
+          <Left>1760</Left>
+          <Top>495</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_26</Name>
+          <Left>1802</Left>
+          <Top>607</Top>
+          <Width>171</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>Faceplate container_2</Name>
+          <Left>2309</Left>
+          <Top>495</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_2</Name>
+          <Left>136</Left>
+          <Top>310</Top>
+          <Width>37</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="55">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_14</Name>
+          <Left>136</Left>
+          <Top>310</Top>
+          <Width>0</Width>
+          <Height>79</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="56">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_15</Name>
+          <Left>399</Left>
+          <Top>354</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="57">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_16</Name>
+          <Left>411</Left>
+          <Top>354</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="58">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_17</Name>
+          <Left>591</Left>
+          <Top>354</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="59">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_24</Name>
+          <Left>136</Left>
+          <Top>390</Top>
+          <Width>262</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="60">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_25</Name>
+          <Left>411</Left>
+          <Top>390</Top>
+          <Width>180</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="61">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_29</Name>
+          <Left>120</Left>
+          <Top>320</Top>
+          <Width>52</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="62">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_30</Name>
+          <Left>120</Left>
+          <Top>320</Top>
+          <Width>0</Width>
+          <Height>184</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="63">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_31</Name>
+          <Left>375</Left>
+          <Top>514</Top>
+          <Width>0</Width>
+          <Height>43</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="64">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_35</Name>
+          <Left>375</Left>
+          <Top>559</Top>
+          <Width>180</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="65">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_36</Name>
+          <Left>120</Left>
+          <Top>503</Top>
+          <Width>282</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="66">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_18</Name>
+          <Left>375</Left>
+          <Top>514</Top>
+          <Width>28</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="67">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_14</Name>
+          <Left>485</Left>
+          <Top>446</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="68">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_33</Name>
+          <Left>566</Left>
+          <Top>516</Top>
+          <Width>0</Width>
+          <Height>43</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="69">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_19</Name>
+          <Left>555</Left>
+          <Top>503</Top>
+          <Width>0</Width>
+          <Height>55</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="70">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_20</Name>
+          <Left>555</Left>
+          <Top>503</Top>
+          <Width>39</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="71">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_21</Name>
+          <Left>566</Left>
+          <Top>514</Top>
+          <Width>28</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="72">
+        <AttributeList>
+          <Type>HmiFaceplateContainer</Type>
+          <Name>LSicar_DeviceDiag_15</Name>
+          <Left>880</Left>
+          <Top>446</Top>
+          <Width>170</Width>
+          <Height>97</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="73">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_22</Name>
+          <Left>566</Left>
+          <Top>559</Top>
+          <Width>233</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="74">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_27</Name>
+          <Left>799</Left>
+          <Top>524</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="75">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_28</Name>
+          <Left>811</Left>
+          <Top>523</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="76">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_32</Name>
+          <Left>811</Left>
+          <Top>559</Top>
+          <Width>188</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="77">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_34</Name>
+          <Left>999</Left>
+          <Top>523</Top>
+          <Width>0</Width>
+          <Height>36</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

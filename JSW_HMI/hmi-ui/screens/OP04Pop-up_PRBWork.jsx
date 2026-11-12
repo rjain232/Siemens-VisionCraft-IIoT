@@ -1,0 +1,57 @@
+import React, { useState } from 'react';
+
+function OP04PopupPRBWorkComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '367px', height: '196px', minHeight: '196px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Label: Text field TG Status */}
+      <div className="absolute bg-transparent text-[#262221] font-bold text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '3px', top: '5px', width: '273px', height: '47px' }}>
+        <span className="truncate">Text field TG Status</span>
+      </div>
+      {/* Action Button: Cancel Mode */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[11px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '197px', top: '8px', width: '76px', height: '42px' }}>
+        <span className="truncate w-full text-center">Cancel Mode</span>
+      </button>
+      {/* Group Container Rectangle: Rectangle TG1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '6px', top: '57px', width: '265px', height: '29px' }} />
+      {/* Header Label: Textfeld_1 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '11px', top: '62px', width: '21px', height: '20px' }}>
+        <span className="truncate">Textfeld 1</span>
+      </div>
+      {/* Header Label: Textfeld_2 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '52px', top: '61px', width: '245px', height: '20px' }}>
+        <span className="truncate">Textfeld 2</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TG1_1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '6px', top: '89px', width: '265px', height: '29px' }} />
+      {/* Diagnostic Row: Textfeld_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '11px', top: '93px', width: '21px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 5</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TG1_5 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '6px', top: '122px', width: '265px', height: '29px' }} />
+      {/* Diagnostic Row: Textfeld_3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '52px', top: '93px', width: '245px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 3</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_11 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '52px', top: '125px', width: '275px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 11</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_16 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '11px', top: '129px', width: '21px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 16</span>
+      </div>
+      {/* Vertical Bus Line: Line_1 */}
+      <div className="absolute border-l-2 border-[#838C5F]/70 z-10 pointer-events-none" style={{ left: '39px', top: '55px', height: '101px' }} />
+    </div>
+  );
+}
+
+export default OP04PopupPRBWorkComponent;

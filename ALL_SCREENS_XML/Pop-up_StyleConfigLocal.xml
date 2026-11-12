@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Pop-up_StyleConfigLocal</Name>
+      <Width>653</Width>
+      <Height>462</Height>
+    </AttributeList>
+    <ObjectList>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

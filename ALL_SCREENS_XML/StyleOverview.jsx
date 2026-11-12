@@ -1,0 +1,325 @@
+import React, { useState } from 'react';
+
+function StyleOverviewComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1299px', height: '702px', minHeight: '702px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Header Label: Title_OPMode1_ScreenOverview_X390_Y2 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '493px', top: '7px', width: '500px', height: '30px' }}>
+        <span className="truncate">Title OPMode1 ScreenOverview X390 Y2</span>
+      </div>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '11px', top: '0px', width: '117px', height: '42px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Action Button: Button_26 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '100px', top: '100px', width: '126px', height: '22px' }}>
+        <span className="truncate w-full text-center">26</span>
+      </button>
+      {/* Action Button: Button_7 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '22px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">7</span>
+      </button>
+      {/* Action Button: Button_2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '41px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">2</span>
+      </button>
+      {/* Action Button: Button_1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '60px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">1</span>
+      </button>
+      {/* Action Button: Button_4 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '79px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">4</span>
+      </button>
+      {/* Action Button: Button_6 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '118px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">6</span>
+      </button>
+      {/* Action Button: Button_8 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '136px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">8</span>
+      </button>
+      {/* Action Button: Button_9 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '159px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">9</span>
+      </button>
+      {/* Action Button: Button_24 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '98px', width: '126px', height: '20px' }}>
+        <span className="truncate w-full text-center">24</span>
+      </button>
+      {/* Action Button: Button_31 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '176px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">31</span>
+      </button>
+      {/* Action Button: Button_17 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '220px', top: '100px', width: '126px', height: '22px' }}>
+        <span className="truncate w-full text-center">17</span>
+      </button>
+      {/* Action Button: Button_16 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '22px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">16</span>
+      </button>
+      {/* Action Button: Button_15 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '41px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">15</span>
+      </button>
+      {/* Action Button: Button_14 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '60px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">14</span>
+      </button>
+      {/* Action Button: Button_13 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '79px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">13</span>
+      </button>
+      {/* Action Button: Button_11 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '118px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">11</span>
+      </button>
+      {/* Action Button: Button_10 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '136px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">10</span>
+      </button>
+      {/* Action Button: Button_5 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '159px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">5</span>
+      </button>
+      {/* Action Button: Button_12 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '98px', width: '126px', height: '20px' }}>
+        <span className="truncate w-full text-center">12</span>
+      </button>
+      {/* Action Button: Button_3 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '176px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">3</span>
+      </button>
+      {/* Action Button: Button_40 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '340px', top: '100px', width: '126px', height: '22px' }}>
+        <span className="truncate w-full text-center">40</span>
+      </button>
+      {/* Action Button: Button_39 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '22px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">39</span>
+      </button>
+      {/* Action Button: Button_38 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '41px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">38</span>
+      </button>
+      {/* Action Button: Button_37 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '60px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">37</span>
+      </button>
+      {/* Action Button: Button_36 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '79px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">36</span>
+      </button>
+      {/* Action Button: Button_34 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '118px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">34</span>
+      </button>
+      {/* Action Button: Button_33 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '136px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">33</span>
+      </button>
+      {/* Action Button: Button_32 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '159px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">32</span>
+      </button>
+      {/* Action Button: Button_35 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '98px', width: '126px', height: '20px' }}>
+        <span className="truncate w-full text-center">35</span>
+      </button>
+      {/* Action Button: Button_30 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '176px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">30</span>
+      </button>
+      {/* Siemens Faceplate Modular Container: 面板容器_8 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '151px', top: '40px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #8</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #8]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_9 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '377px', top: '40px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #9</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #9]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_3 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '603px', top: '40px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #3</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #3]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_16 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '829px', top: '40px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #16</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #16]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_5 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '1055px', top: '40px', width: '204px', height: '216px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #5</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #5]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_1 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '151px', top: '246px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #1</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #1]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_2 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '377px', top: '246px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #2</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #2]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_6 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '603px', top: '246px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #6</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #6]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_7 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '829px', top: '246px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #7</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #7]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_10 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '1055px', top: '246px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #10</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #10]</span>
+        </div>
+      </div>
+      {/* Action Button: Button_20 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '460px', top: '100px', width: '126px', height: '22px' }}>
+        <span className="truncate w-full text-center">20</span>
+      </button>
+      {/* Action Button: Button_18 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '22px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">18</span>
+      </button>
+      {/* Action Button: Button_19 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '41px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">19</span>
+      </button>
+      {/* Action Button: Button_28 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '60px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">28</span>
+      </button>
+      {/* Action Button: Button_21 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '79px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">21</span>
+      </button>
+      {/* Action Button: Button_23 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '118px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">23</span>
+      </button>
+      {/* Action Button: Button_25 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '136px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">25</span>
+      </button>
+      {/* Action Button: Button_27 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '159px', width: '126px', height: '19px' }}>
+        <span className="truncate w-full text-center">27</span>
+      </button>
+      {/* Action Button: Button_22 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[9px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '98px', width: '126px', height: '20px' }}>
+        <span className="truncate w-full text-center">22</span>
+      </button>
+      {/* Action Button: Button_29 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '0px', top: '176px', width: '126px', height: '23px' }}>
+        <span className="truncate w-full text-center">29</span>
+      </button>
+      {/* Siemens Faceplate Modular Container: 面板容器_4 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '151px', top: '452px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #4</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #4]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_11 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '377px', top: '452px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #11</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #11]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_12 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '603px', top: '452px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #12</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #12]</span>
+        </div>
+      </div>
+      {/* Siemens Faceplate Modular Container: 面板容器_13 */}
+      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '829px', top: '452px', width: '204px', height: '210px' }}>
+        <div className="flex items-center justify-between border-b border-[#C3C3C3] pb-0.5 mb-0.5">
+          <span className="text-[10px] font-bold text-[#027AAC] truncate">Station Device #13</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 ml-0.5"></span>
+        </div>
+        <div className="flex-1 flex items-center justify-center text-[9px] text-slate-600 font-mono bg-white/40 rounded-sm px-0.5 text-center leading-tight">
+          <span className="truncate">[FP: Station Device #13]</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default StyleOverviewComponent;

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>14_SubMenus_Alarm</Name>
+      <Width>100</Width>
+      <Height>768</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_15</Name>
+          <Left>-1</Left>
+          <Top>713</Top>
+          <Width>100</Width>
+          <Height>53</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_1</Name>
+          <Left>-1</Left>
+          <Top>653</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_2</Name>
+          <Left>-1</Left>
+          <Top>593</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_3</Name>
+          <Left>-1</Left>
+          <Top>533</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_4</Name>
+          <Left>-1</Left>
+          <Top>473</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_5</Name>
+          <Left>-1</Left>
+          <Top>413</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_6</Name>
+          <Left>-1</Left>
+          <Top>353</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_7</Name>
+          <Left>-1</Left>
+          <Top>293</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_8</Name>
+          <Left>-1</Left>
+          <Top>233</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_9</Name>
+          <Left>-1</Left>
+          <Top>173</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_10</Name>
+          <Left>-1</Left>
+          <Top>113</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_11</Name>
+          <Left>-1</Left>
+          <Top>53</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>txtOverview_12</Name>
+          <Left>-1</Left>
+          <Top>-7</Top>
+          <Width>100</Width>
+          <Height>52</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>线_1</Name>
+          <Left>1</Left>
+          <Top>409</Top>
+          <Width>97</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

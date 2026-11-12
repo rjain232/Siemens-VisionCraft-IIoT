@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionCraft Live Preview (Modified)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; min-height: 100vh; background-color: #0b0f17; font-family: ui-sans-serif, system-ui, sans-serif; }
+    #root { min-height: 100vh; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    try {
+      "use strict";const _jsxFileName = ""; function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+    const { useState, useEffect, useRef, useMemo, useCallback } = React;
+    
+    // Lucide Icon Helper Proxy (Prevents runtime crashes if any Lucide icon is called)
+    const LucideIcons = (typeof lucide !== 'undefined' && lucide.icons) ? lucide.icons : {};
+    const createLucideIcon = (name) => function IconProxy(props) {
+      return React.createElement('span', { className: props.className || 'inline-block w-4 h-4 text-brand-400' },
+        React.createElement('svg', {
+          className: 'w-full h-full inline-block',
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          viewBox: '0 0 24 24'
+        }, React.createElement('circle', { cx: '12', cy: '12', r: '10' }))
+      );
+    };
+
+    const Activity = LucideIcons.Activity || createLucideIcon('Activity');
+    const AlertTriangle = LucideIcons.AlertTriangle || createLucideIcon('AlertTriangle');
+    const CheckCircle2 = LucideIcons.CheckCircle2 || createLucideIcon('CheckCircle2');
+    const RefreshCw = LucideIcons.RefreshCw || createLucideIcon('RefreshCw');
+    const Database = LucideIcons.Database || createLucideIcon('Database');
+    const Search = LucideIcons.Search || createLucideIcon('Search');
+    const Settings = LucideIcons.Settings || createLucideIcon('Settings');
+    const Bell = LucideIcons.Bell || createLucideIcon('Bell');
+    const ChevronRight = LucideIcons.ChevronRight || createLucideIcon('ChevronRight');
+    const ArrowUpRight = LucideIcons.ArrowUpRight || createLucideIcon('ArrowUpRight');
+    
+    class SafeErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null };
+      }
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
+      render() {
+        if (this.state.hasError) {
+          return React.createElement('div', { className: 'p-6 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl' },
+            React.createElement('p', { className: 'font-bold' }, 'Component Render Intercepted:'),
+            React.createElement('p', { className: 'font-mono mt-1' }, _optionalChain([this, 'access', _ => _.state, 'access', _2 => _2.error, 'optionalAccess', _3 => _3.message]) || 'Unknown render fault')
+          );
+        }
+        return this.props.children;
+      }
+    }
+
+    function GeneratedScreen() {
+  const [activeNav, setActiveNav] = useState('Dashboard');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterStage, setFilterStage] = useState('ALL');
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const metrics = [
+    { id: 'm1', title: 'Coil Output', value: '1,248 Tons', delta: '+12.4%', status: 'positive', subtext: 'vs 1,110T target', sparkline: [40, 55, 60, 75, 82, 94] },
+    { id: 'm2', title: 'Line Speed', value: '450 m/min', delta: 'Optimal', status: 'positive', subtext: 'Max capacity 500 m/min', sparkline: [88, 92, 90, 94, 96, 95] },
+    { id: 'm3', title: 'Tension Reel Stability', value: '98.5%', delta: '-0.3%', status: 'warning', subtext: 'Minor flutter detected', sparkline: [99, 99, 98, 98, 97, 98.5] },
+    { id: 'm4', title: 'Critical Alerts', value: '0 Active', delta: '-2 Resolved', status: 'positive', subtext: 'All PLCs responding', sparkline: [3, 2, 2, 1, 0, 0] }
+  ];
+
+  const plcNodes = [
+    { id: 'PLC_LINE4_ENTRY', ip: '192.168.1.101', vendor: 'Siemens S7-1500', cycle: '4.2ms', status: 'ONLINE', tags: 1420 },
+    { id: 'PLC_MILL_STAND_1', ip: '192.168.1.102', vendor: 'Rockwell ControlLogix', cycle: '2.8ms', status: 'ONLINE', tags: 2840 },
+    { id: 'PLC_MILL_STAND_2', ip: '192.168.1.103', vendor: 'Rockwell ControlLogix', cycle: '2.9ms', status: 'ONLINE', tags: 2790 },
+    { id: 'PLC_TENSION_EXIT', ip: '192.168.1.104', vendor: 'Siemens S7-1500', cycle: '3.6ms', status: 'ONLINE', tags: 1680 },
+    { id: 'PLC_COIL_CAR_AUTO', ip: '192.168.1.105', vendor: 'Schneider Modicon', cycle: '8.1ms', status: 'STANDBY', tags: 640 },
+    { id: 'PLC_SAFETY_INTERLOCK', ip: '192.168.1.106', vendor: 'Pilz PNOZmulti', cycle: '1.2ms', status: 'ONLINE', tags: 320 }
+  ];
+
+  const analyticsKpis = [
+    { label: 'Overall Equipment Effectiveness (OEE)', current: '89.4%', target: '85.0%' },
+    { label: 'Mean Time Between Failures (MTBF)', current: '142 hrs', target: '120 hrs' },
+    { label: 'Specific Energy Consumption', current: '74 kWh/T', target: '< 80 kWh/T' },
+    { label: 'Surface Defect Rate (PPM)', current: '42 PPM', target: '< 50 PPM' }
+  ];
+
+  const safetyLogs = [
+    { code: 'FLT-092', level: 'INFO', desc: 'Hydraulic Looper pressure auto-calibrated', ts: '11:42:10 AM' },
+    { code: 'WRN-041', level: 'WARN', desc: 'Roll temperature sensor drift Stand 2 (+1.4°C)', ts: '10:15:22 AM' },
+    { code: 'CLR-019', level: 'RESOLVED', desc: 'Exit guide interlock test cleared successfully', ts: '08:30:00 AM' }
+  ];
+
+  const initialBatches = [
+    { id: 'COIL-78921', grade: '0.8mm CR Steel', stage: 'PROCESSING', progress: 94, speed: '448 m/min', operator: 'Shift A' },
+    { id: 'COIL-78922', grade: '1.2mm Galvanized', stage: 'QUEUED', progress: 0, speed: '0 m/min', operator: 'Shift A' },
+    { id: 'COIL-78923', grade: '0.5mm Tinplate', stage: 'INSPECTION', progress: 100, speed: '0 m/min', operator: 'QC Lab' },
+    { id: 'COIL-78924', grade: '2.0mm Hot-Rolled', stage: 'PROCESSING', progress: 42, speed: '420 m/min', operator: 'Shift B' },
+    { id: 'COIL-78925', grade: '1.0mm Dual-Phase', stage: 'QUEUED', progress: 0, speed: '0 m/min', operator: 'Shift B' }
+  ];
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+    setTimeout(() => setIsRefreshing(false), 600);
+  };
+
+  const filteredBatches = useMemo(() => {
+    return (initialBatches || []).filter(b => {
+      const q = (searchQuery || '').toLowerCase().trim();
+      const idStr = String(b.id || '').toLowerCase();
+      const gradeStr = String(b.grade || '').toLowerCase();
+      const matchesSearch = !q || idStr.includes(q) || gradeStr.includes(q);
+      const matchesStage = filterStage === 'ALL' || b.stage === filterStage;
+      return matchesSearch && matchesStage;
+    });
+  }, [searchQuery, filterStage]);
+
+  return (
+    React.createElement('div', { className: "min-h-screen bg-[#0b0f17] text-slate-100 flex flex-col lg:flex-row font-sans antialiased w-full"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 110}}
+      , React.createElement('aside', { className: "w-full lg:w-60 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#0f172a]/95 flex flex-col shrink-0"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 111}}
+        , React.createElement('div', { className: "p-4 lg:p-5 border-b border-white/10 flex items-center justify-between lg:justify-start gap-3"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 112}}
+          , React.createElement('div', { className: "flex items-center gap-3"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 113}}
+            , React.createElement('div', { className: "w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20 text-xs"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 114}}, "JSW"
+
+            )
+            , React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 117}}
+              , React.createElement('h2', { className: "text-xs font-bold tracking-wider uppercase text-white"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 118}}, "Steel Monitor" )
+              , React.createElement('p', { className: "text-[10px] text-cyan-400 font-mono"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 119}}, "PLANT-LINE-04")
+            )
+          )
+          , React.createElement('div', { className: "lg:hidden text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"         , __self: this, __source: {fileName: _jsxFileName, lineNumber: 122}}, "ONLINE"
+
+          )
+        )
+
+        , React.createElement('nav', { className: "p-2 lg:p-3 flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 127}}
+          , ['Dashboard', 'Analytics', 'PLC Network', 'Safety & Faults', 'Reports'].map(tab => (
+            React.createElement('button', {
+              key: tab,
+              onClick: () => setActiveNav(tab),
+              className: `whitespace-nowrap lg:whitespace-normal px-3 py-2 rounded-xl text-xs font-medium transition flex items-center justify-between gap-3 shrink-0 ${
+                activeNav === tab ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5'
+              }`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 129}}
+
+              , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 136}}, tab)
+              , tab === 'PLC Network' && React.createElement('span', { className: "w-2 h-2 rounded-full bg-emerald-400 animate-pulse"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 137}})
+            )
+          ))
+        )
+
+        , React.createElement('div', { className: "hidden lg:flex p-4 border-t border-white/10 bg-black/20 text-[11px] text-slate-400 items-center justify-between mt-auto"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 142}}
+          , React.createElement('div', { className: "flex items-center gap-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 143}}
+            , React.createElement('span', { className: "w-2 h-2 rounded-full bg-emerald-400"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 144}})
+            , React.createElement('span', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 145}}, "OPC-UA Live" )
+          )
+          , React.createElement('span', { className: "font-mono text-[10px] text-slate-500"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 147}}, "v2.4.1")
+        )
+      )
+
+      , React.createElement('main', { className: "flex-1 flex flex-col min-w-0 overflow-y-auto"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 151}}
+        , React.createElement('header', { className: "border-b border-white/10 px-5 lg:px-7 py-3.5 bg-[#111827]/60 backdrop-blur flex flex-col sm:flex-row sm:items-center justify-between gap-3 sticky top-0 z-20"               , __self: this, __source: {fileName: _jsxFileName, lineNumber: 152}}
+          , React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 153}}
+            , React.createElement('div', { className: "flex items-center gap-2"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 154}}
+              , React.createElement('h1', { className: "text-sm lg:text-base font-bold text-white tracking-tight"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 155}}, "Cold Rolling Mill • Line 4 Overview"      )
+              , React.createElement('span', { className: "hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 156}}, "ONLINE")
+            )
+            , React.createElement('p', { className: "text-[11px] text-slate-400 mt-0.5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 158}}, "Autonomous SCADA Telemetry & Batch Quality Feed"      )
+          )
+
+          , React.createElement('div', { className: "flex items-center gap-2 sm:gap-3"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 161}}
+            , React.createElement('button', { onClick: handleRefresh, className: `p-2 rounded-lg border border-white/10 text-slate-300 hover:text-white hover:bg-white/5 transition text-xs ${isRefreshing ? 'animate-spin' : ''}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 162}}
+              , React.createElement('svg', { className: "w-3.5 h-3.5" , fill: "none", stroke: "currentColor", viewBox: "0 0 24 24"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 163}}, React.createElement('path', { 'stroke-linecap': "round", 'stroke-linejoin': "round", 'stroke-width': "2", d: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"             , __self: this, __source: {fileName: _jsxFileName, lineNumber: 163}}))
+            )
+            , React.createElement('button', { className: "px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl text-xs font-semibold shadow-lg shadow-blue-500/20"          , __self: this, __source: {fileName: _jsxFileName, lineNumber: 165}}, "Export MES Telemetry"
+
+            )
+          )
+        )
+
+        , React.createElement('div', { className: "p-4 lg:p-6 space-y-5"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 171}}
+          , activeNav === 'Dashboard' && (
+            React.createElement(React.Fragment, null
+              , React.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 174}}
+                , metrics.map(m => (
+                  React.createElement('div', { key: m.id, className: "bg-[#1e293b]/70 border border-white/10 p-4 rounded-xl shadow-lg"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 176}}
+                    , React.createElement('div', { className: "flex items-center justify-between text-xs text-slate-400"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 177}}
+                      , React.createElement('span', { className: "font-medium tracking-wide uppercase text-[10px]"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 178}}, m.title)
+                      , React.createElement('span', { className: `px-2 py-0.5 rounded-full text-[9px] font-bold font-mono ${m.status === 'positive' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 179}}
+                        , m.delta
+                      )
+                    )
+                    , React.createElement('div', { className: "mt-2.5 flex items-baseline justify-between"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 183}}
+                      , React.createElement('span', { className: "text-xl lg:text-2xl font-black text-white"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 184}}, m.value)
+                      , React.createElement('span', { className: "text-[10px] text-slate-400" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 185}}, m.subtext)
+                    )
+                  )
+                ))
+              )
+
+              , React.createElement('div', { className: "bg-[#1e293b]/70 border border-white/10 rounded-xl shadow-lg overflow-hidden"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 191}}
+                , React.createElement('div', { className: "p-4 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-3"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 192}}
+                  , React.createElement('h3', { className: "text-xs lg:text-sm font-bold text-white"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 193}}, "Active Production Batches"  )
+                  , React.createElement('div', { className: "flex flex-wrap items-center gap-2.5"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 194}}
+                    , React.createElement('input', {
+                      type: "text",
+                      placeholder: "Search Coil..." ,
+                      value: searchQuery,
+                      onChange: (e) => setSearchQuery(e.target.value),
+                      className: "pl-3 pr-3 py-1 bg-[#0b0f17] border border-white/10 rounded-lg text-xs text-slate-200"        , __self: this, __source: {fileName: _jsxFileName, lineNumber: 195}}
+                    )
+                    , React.createElement('div', { className: "flex bg-[#0b0f17] p-0.5 rounded-lg border border-white/10 text-xs"      , __self: this, __source: {fileName: _jsxFileName, lineNumber: 202}}
+                      , ['ALL', 'PROCESSING', 'QUEUED'].map(stage => (
+                        React.createElement('button', { key: stage, onClick: () => setFilterStage(stage), className: `px-2 py-0.5 rounded text-[10px] ${filterStage === stage ? 'bg-blue-600 text-white' : 'text-slate-400'}`, __self: this, __source: {fileName: _jsxFileName, lineNumber: 204}}
+                          , stage
+                        )
+                      ))
+                    )
+                  )
+                )
+
+                , React.createElement('div', { className: "overflow-x-auto", __self: this, __source: {fileName: _jsxFileName, lineNumber: 212}}
+                  , React.createElement('table', { className: "w-full text-left text-xs text-slate-300 min-w-[600px]"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 213}}
+                    , React.createElement('tbody', { className: "divide-y divide-white/5 font-mono"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 214}}
+                      , filteredBatches.map(b => (
+                        React.createElement('tr', { key: b.id, className: "hover:bg-white/[0.03]", __self: this, __source: {fileName: _jsxFileName, lineNumber: 216}}
+                          , React.createElement('td', { className: "py-3 px-4 font-bold text-white"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 217}}, b.id)
+                          , React.createElement('td', { className: "py-3 px-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 218}}, b.grade)
+                          , React.createElement('td', { className: "py-3 px-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 219}}, React.createElement('span', { className: "px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400"     , __self: this, __source: {fileName: _jsxFileName, lineNumber: 219}}, b.stage))
+                          , React.createElement('td', { className: "py-3 px-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 220}}, b.progress, "%")
+                          , React.createElement('td', { className: "py-3 px-4" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 221}}, b.speed)
+                        )
+                      ))
+                    )
+                  )
+                )
+              )
+            )
+          )
+
+          , activeNav === 'PLC Network' && (
+            React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 232}}
+              , plcNodes.map(plc => (
+                React.createElement('div', { key: plc.id, className: "bg-[#1e293b]/70 border border-white/10 p-4 rounded-xl"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 234}}
+                  , React.createElement('span', { className: "font-mono text-xs font-bold text-white"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 235}}, plc.id)
+                  , React.createElement('p', { className: "text-xs text-slate-400 mt-1"  , __self: this, __source: {fileName: _jsxFileName, lineNumber: 236}}, plc.vendor)
+                  , React.createElement('p', { className: "text-[11px] font-mono text-cyan-400 mt-2"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 237}}, "Cycle: " , plc.cycle, " • "  , plc.status)
+                )
+              ))
+            )
+          )
+
+          , activeNav === 'Analytics' && (
+            React.createElement('div', { className: "grid grid-cols-1 sm:grid-cols-2 gap-4"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 244}}
+              , analyticsKpis.map((kpi, idx) => (
+                React.createElement('div', { key: idx, className: "bg-[#1e293b]/70 border border-white/10 p-4 rounded-xl"    , __self: this, __source: {fileName: _jsxFileName, lineNumber: 246}}
+                  , React.createElement('span', { className: "text-xs text-slate-400" , __self: this, __source: {fileName: _jsxFileName, lineNumber: 247}}, kpi.label)
+                  , React.createElement('p', { className: "text-2xl font-black text-white mt-1"   , __self: this, __source: {fileName: _jsxFileName, lineNumber: 248}}, kpi.current)
+                )
+              ))
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+    window.__LatestGeneratedComponent = function SafeWrappedScreen() {
+      const Comp = (typeof GeneratedScreen !== 'undefined') ? GeneratedScreen : (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (!Comp) {
+        return React.createElement('div', { className: 'p-4 text-amber-500 text-xs font-mono' }, 'Component definition not found.');
+      }
+      return React.createElement(SafeErrorBoundary, null, React.createElement(Comp));
+    };
+  
+      const Comp = window.__LatestGeneratedComponent || (typeof GeneratedScreen !== 'undefined' ? GeneratedScreen : null);
+      if (Comp) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(Comp));
+      } else {
+        document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Error: Component failed to mount.</div>';
+      }
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#f87171;padding:24px;font-family:monospace;font-size:14px;">Render Error: ' + err.message + '</div>';
+    }
+  </script>
+</body>
+</html>

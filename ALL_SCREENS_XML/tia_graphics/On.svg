@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Icon/Power/On</title>
+  <desc>Created with Sketch.</desc>
+  <defs>
+    <circle id="path-1" cx="20.5" cy="20.5" r="17.5" />
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-3">
+      <rect id="Rectangle" x="0" y="0" width="40" height="40" />
+      <g id="Oval" fill-rule="nonzero">
+        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1" />
+        <use fill="#5ED1AD" xlink:href="#path-1" />
+      </g>
+      <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="21.3529311 11.75 19.4323449 11.75 19.4323449 21.3529311 21.3529311 21.3529311" />
+      <path d="M25.9911468,13.8338361 L24.6275306,15.1974523 C26.1447937,16.4170245 27.1146898,18.2895961 27.1146898,20.392638 C27.1146898,24.1089723 24.1089723,27.1146898 20.392638,27.1146898 C16.6763037,27.1146898 13.6705862,24.1089723 13.6705862,20.392638 C13.6705862,18.2895961 14.6404823,16.4170245 16.1481424,15.1878493 L14.7941292,13.8338361 C12.9311605,15.4183197 11.75,17.7614349 11.75,20.392638 C11.75,25.1652948 15.6199812,29.035276 20.392638,29.035276 C25.1652948,29.035276 29.035276,25.1652948 29.035276,20.392638 C29.035276,17.7614349 27.8541155,15.4183197 25.9911468,13.8338361 Z" fill="#FFFFFF" fill-rule="nonzero" />
+      <g id="Group-4" transform="translate(11.750000, 13.750000)" />
+    </g>
+  </g>
+</svg>

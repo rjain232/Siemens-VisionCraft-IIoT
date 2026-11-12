@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siemens TIA V20 - Robot_NBG_Kuka</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 & Babel Standalone for Instant Local Execution -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body>
+  <!-- Header Bar -->
+  <div class="w-full max-w-[1300px] mb-4 flex items-center justify-between bg-slate-900 border border-slate-700/60 p-3 rounded-xl shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center font-bold text-white shadow-md text-sm">
+        ⚡
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white flex items-center gap-2">
+          Robot_NBG_Kuka
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">Siemens TIA Portal V20</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Standalone Native Screen Viewer &bull; SimaticML High-Fidelity</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Live Interactive React 18
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen Container Viewport -->
+  <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700/80 bg-slate-950 max-w-full overflow-x-auto">
+    <div id="root"></div>
+  </div>
+
+  <!-- Component Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function RobotNBGKukaComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '1316px', height: '711px', minHeight: '711px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Siemens Graphic View: Zone01 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '662px', top: '80px', width: '482px', height: '510px' }}>
+        <img src="./tia_graphics/Zone01.png" alt="Zone01" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Top Header Divider Line */}
+      <div className="absolute border-t-2 border-[#9CAFB7] z-10" style={{ left: '0px', top: '64px', width: '100%' }} />
+      {/* Siemens Alarm Control View: nbgMessages */}
+      <div className="absolute bg-[#F8FAFC] border-2 border-[#9CAFB7] rounded-sm shadow-md flex flex-col overflow-hidden text-xs text-[#262221] z-20" style={{ left: '10px', top: '479px', width: '428px', height: '169px' }}>
+        <div className="bg-[#DEDFE1] border-b border-[#C3C3C3] px-2 py-1 flex items-center justify-between font-bold text-[10px]">
+          <span className="flex items-center gap-1.5 text-rose-600"><span className="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>ALARM & EVENT LOG</span>
+          <span className="text-slate-500 font-mono">Siemens AlarmControl</span>
+        </div>
+        <div className="flex-1 p-2 space-y-1 font-mono text-[10px] overflow-y-auto bg-slate-50">
+          <div className="flex items-center justify-between p-1 bg-red-50 text-red-700 border-l-2 border-red-500"><span>[FAULT] 140M1 Zone Emergency Circuit Disconnected</span><span>08:42:10</span></div>
+          <div className="flex items-center justify-between p-1 bg-amber-50 text-amber-800 border-l-2 border-amber-500"><span>[WARN] Robot Gripper 190RB02 Pressure Threshold</span><span>08:41:55</span></div>
+        </div>
+      </div>
+      {/* Process Value IOField: Robot Name */}
+      <div className="absolute bg-[#F8FAFC] border border-[#94A3B8] text-[#0F172A] font-mono font-bold text-xs rounded-sm flex items-center justify-end px-2 shadow-inner z-20" style={{ left: '390px', top: '3px', width: '500px', height: '37px' }}>
+        <span>0.00</span>
+      </div>
+      {/* Action Button: Button_Back */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '2px', top: '2px', width: '90px', height: '60px' }}>
+        <span className="flex items-center gap-1.5 truncate"><img src="./tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">Back</span></span>
+      </button>
+      {/* Header Selector: Select NBG */}
+      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '390px', top: '3px', width: '500px', height: '37px' }}>
+        <span className="truncate tracking-wide">Select NBG</span>
+        <span className="text-[9px] text-white/90 ml-1">▼</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TG1 Status */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '196px', top: '0px', width: '217px', height: '132px' }} />
+      {/* Header Label: Text field TG1 Status */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-xs flex items-center justify-center px-1.5 z-20" style={{ left: '196px', top: '0px', width: '218px', height: '31px' }}>
+        <span className="truncate">Text field TG1 Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle NBG Status */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '100px', top: '100px', width: '196px', height: '178px' }} />
+      {/* Diagnostic Row: Text Field Motor On */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '5px', top: '81px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field Motor On</span>
+      </div>
+      {/* Diagnostic Row: Text Field On Path */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '5px', top: '127px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field On Path</span>
+      </div>
+      {/* Header Label: Text Filed E- Stop */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '99px', top: '35px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Filed E- Stop</span>
+      </div>
+      {/* Header Label: Text Field System Fault */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '99px', top: '58px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field System Fault</span>
+      </div>
+      {/* Diagnostic Row: Text Field Move Pause */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '99px', top: '104px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field Move Pause</span>
+      </div>
+      {/* Diagnostic Row: Text Field In Cycle */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '5px', top: '104px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field In Cycle</span>
+      </div>
+      {/* Header Label: Text Field Ready */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '58px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field Ready</span>
+      </div>
+      {/* Diagnostic Row: Text Field Fault */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '99px', top: '81px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field Fault</span>
+      </div>
+      {/* Header Label: Text Field Auto Mode */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '35px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field Auto Mode</span>
+      </div>
+      {/* Diagnostic Row: Text Field Enable Motion */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '5px', top: '150px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field Enable Motion</span>
+      </div>
+      {/* Diagnostic Row: Text field NBG Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '250px', top: '100px', width: '196px', height: '31px' }}>
+        <span className="truncate font-sans">Text field NBG Status</span>
+      </div>
+      {/* Diagnostic Row: Text Field Full Speed_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '99px', top: '127px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field Full Speed 2</span>
+      </div>
+      {/* Header Label: Text Field TG1 Moving */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '202px', top: '35px', width: '100px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 Moving</span>
+      </div>
+      {/* Header Label: Text Field TG1 Move Pause */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '202px', top: '58px', width: '100px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 Move Pause</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 Fault */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '202px', top: '81px', width: '100px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 Fault</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 With Fixture */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '202px', top: '104px', width: '100px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 With Fixture</span>
+      </div>
+      {/* Header Label: Text Field TG1 ATI Connection */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '306px', top: '35px', width: '100px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 ATI Connection</span>
+      </div>
+      {/* Header Label: Text Field TG1 ATI Deconnection */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '306px', top: '58px', width: '100px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 ATI Deconnection</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 Lock Pos */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '306px', top: '81px', width: '100px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 Lock Pos</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 Unlock Pos */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '306px', top: '104px', width: '100px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 Unlock Pos</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGA */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '400px', top: '100px', width: '102px', height: '91px' }} />
+      {/* Header Label: Text Field TGA Moving */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGA Moving</span>
+      </div>
+      {/* Header Label: Text Field TGA Move Pause */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '23px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGA Move Pause</span>
+      </div>
+      {/* Header Label: Text Field TGA Fault */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '5px', top: '43px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGA Fault</span>
+      </div>
+      {/* Diagnostic Row: Text field TGA Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '28px', top: '68px', width: '44px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGA Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGAA */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '102px', top: '0px', width: '282px', height: '91px' }} />
+      {/* Header Label: Text Field TGAA In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '198px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAA In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGAA In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '287px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAA In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGAA With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '109px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAA With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGAA Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '104px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGAA Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGAA Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '290px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGAA Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '291px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGAA Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGAA Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '550px', top: '100px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGAA Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '157px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGAA Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '158px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGAA Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGAA Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '160px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGB */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '250px', top: '160px', width: '102px', height: '91px' }} />
+      {/* Header Label: Text Field TGB Moving */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGB Moving</span>
+      </div>
+      {/* Header Label: Text Field TGB Move Pause */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '23px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGB Move Pause</span>
+      </div>
+      {/* Header Label: Text Field TGB Fault */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '43px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGB Fault</span>
+      </div>
+      {/* Diagnostic Row: Text field TGB Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '68px', width: '44px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGB Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGBA */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '102px', top: '0px', width: '282px', height: '91px' }} />
+      {/* Header Label: Text Field TGBA In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '198px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBA In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGBA In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '287px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBA In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGBA With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '109px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBA With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGBA Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '104px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGBA Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGBA Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '157px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Group Container Rectangle: Rectangle TGBA Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '290px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGBA Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '158px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGBA Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGBA Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '160px', width: '100px', height: '30px' }} />
+      {/* Action Button: Button TGBA Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '291px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGBA Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGBA Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '550px', top: '160px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGAB */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '100px', top: '220px', width: '281px', height: '91px' }} />
+      {/* Header Label: Text Field TGAB In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '95px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAB In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGAB In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAB In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGAB With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '184px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGAB With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGAB Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '233px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGAB Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGAB Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '9px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGAB Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '10px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGAB Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGAB Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '250px', top: '220px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGAB Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '142px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGAB Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '143px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGAB Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGAB Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '220px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGBB */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '550px', top: '220px', width: '281px', height: '91px' }} />
+      {/* Header Label: Text Field TGBB In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '95px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBB In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGBB In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBB In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGBB With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '184px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGBB With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGBB Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '233px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGBB Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGBB Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '142px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Group Container Rectangle: Rectangle TGBB Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '9px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGBB Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '143px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGBB Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGBB Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '280px', width: '100px', height: '30px' }} />
+      {/* Action Button: Button TGBB Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '10px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGBB Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGBB Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '250px', top: '280px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGCB */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '400px', top: '280px', width: '281px', height: '91px' }} />
+      {/* Header Label: Text Field TGCB In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '95px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCB In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGCB In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCB In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGCB With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '184px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCB With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGCB Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '233px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGCB Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGCB Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '142px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Group Container Rectangle: Rectangle TGCB Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '9px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGCB Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '143px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGCB Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGCB Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '550px', top: '280px', width: '100px', height: '30px' }} />
+      {/* Action Button: Button TGCB Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '10px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGCB Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGCB Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '340px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text Field TG1 In Load Pos1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '250px', top: '340px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Load Pos1</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle Load Pos1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '2px', top: '25px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Load Pos1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '3px', top: '26px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Load Pos1</span>
+      </button>
+      {/* Siemens Status LED: TG1 Load Pos1 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '340px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text Field TG1 In Storage Pos1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '550px', top: '340px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Storage Pos1</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle Storage Pos1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '2px', top: '26px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Storage Pos1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '3px', top: '27px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Storage Pos1</span>
+      </button>
+      {/* Siemens Status LED: TG1 Storage Pos1 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '400px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text Field TG1 In Storage Pos2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '250px', top: '400px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Storage Pos2</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle Storage Pos2 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '2px', top: '26px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Storage Pos2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '3px', top: '27px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Storage Pos2</span>
+      </button>
+      {/* Siemens Status LED: TG1 Storage Pos2 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '400px', width: '100px', height: '30px' }} />
+      {/* Diagnostic Row: Text Field TG1 In Storage Pos3 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '550px', top: '400px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Storage Pos3</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle Storage Pos3 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '2px', top: '26px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Storage Pos3 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '3px', top: '27px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Storage Pos3</span>
+      </button>
+      {/* Siemens Status LED: TG1 Storage Pos3 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '100px', top: '460px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TG1_2 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '250px', top: '460px', width: '281px', height: '187px' }} />
+      {/* Header Label: Text Field TG1 In Work Pos1 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '4px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 In Work Pos1</span>
+      </div>
+      {/* Header Label: Text Field TG1 In Work Pos2 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '96px', top: '4px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 In Work Pos2</span>
+      </div>
+      {/* Header Label: Text Field TG1 In Work Pos3 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '186px', top: '4px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TG1 In Work Pos3</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 In Work Pos4 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '5px', top: '99px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Work Pos4</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 In Work Pos5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '95px', top: '99px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Work Pos5</span>
+      </div>
+      {/* Diagnostic Row: Text Field TG1 In Work Pos6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '187px', top: '99px', width: '90px', height: '21px' }}>
+        <span className="truncate font-sans">Text Field TG1 In Work Pos6</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle Work Pos2 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '98px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos2 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '99px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos2</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos2 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '400px', top: '460px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle Work Pos3 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '188px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos3 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '189px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos3</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos3 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '550px', top: '460px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle Work Pos4 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '7px', top: '124px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos4 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '8px', top: '125px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos4</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos4 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '100px', top: '520px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle Work Pos5 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '97px', top: '124px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos5 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '98px', top: '125px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos5</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos5 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '250px', top: '520px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle Work Pos6 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '187px', top: '124px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos6 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '188px', top: '125px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos6</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos6 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '400px', top: '520px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle Work Pos1 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '8px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button Go Work Pos1 */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '9px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button Go Work Pos1</span>
+      </button>
+      {/* Siemens Status LED: TG1 Work Pos1 Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#16A34A] border-[#166534] border flex items-center justify-center z-20" style={{ left: '550px', top: '520px', width: '100px', height: '30px' }} />
+      {/* Group Container Rectangle: Rectangle TGC */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '100px', top: '580px', width: '102px', height: '91px' }} />
+      {/* Header Label: Text Field TGC Moving */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGC Moving</span>
+      </div>
+      {/* Header Label: Text Field TGC Move Pause */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '23px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGC Move Pause</span>
+      </div>
+      {/* Header Label: Text Field TGC Fault */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '6px', top: '43px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGC Fault</span>
+      </div>
+      {/* Diagnostic Row: Text field TGC Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '29px', top: '68px', width: '44px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGC Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGCA */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '102px', top: '0px', width: '282px', height: '91px' }} />
+      {/* Header Label: Text Field TGCA In Storage Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '198px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCA In Storage Pos</span>
+      </div>
+      {/* Header Label: Text Field TGCA In Delivery Pos */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '287px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCA In Delivery Pos</span>
+      </div>
+      {/* Header Label: Text Field TGCA With Fixture */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[10px] flex items-center justify-center px-1.5 z-20" style={{ left: '109px', top: '3px', width: '90px', height: '21px' }}>
+        <span className="truncate">Text Field TGCA With Fixture</span>
+      </div>
+      {/* Diagnostic Row: Text field TGCA Status */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[10px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '104px', top: '68px', width: '47px', height: '21px' }}>
+        <span className="truncate font-sans">Text field TGCA Status</span>
+      </div>
+      {/* Group Container Rectangle: Rectangle TGCA Storage Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '157px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Group Container Rectangle: Rectangle TGCA Delivery Pos */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '290px', top: '29px', width: '85px', height: '56px' }} />
+      {/* Action Button: Button TGCA Go Storage Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '158px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGCA Go Storage Pos</span>
+      </button>
+      {/* Siemens Status LED: TGCA Storage Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '250px', top: '580px', width: '100px', height: '30px' }} />
+      {/* Action Button: Button TGCA Go Delivery Pos */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '291px', top: '30px', width: '83px', height: '54px' }}>
+        <span className="truncate w-full text-center">Button TGCA Go Delivery Pos</span>
+      </button>
+      {/* Siemens Status LED: TGCA Delivery Pos Interlock */}
+      <div className="absolute rounded-full shadow-inner bg-[#94A3B8] border-[#64748B] border flex items-center justify-center z-20" style={{ left: '400px', top: '580px', width: '100px', height: '30px' }} />
+    </div>
+  );
+}
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<RobotNBGKukaComponent />);
+  </script>
+</body>
+</html>

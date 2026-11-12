@@ -1,0 +1,143 @@
+import React, { useState } from 'react';
+
+function PopupTECUNITLEGENDPopupComponent() {
+  const [activeTab, setActiveTab] = useState('main');
+  const [activeActuator, setActiveActuator] = useState(1);
+
+  return (
+    <div className="relative bg-[#CED3D7] text-[#262221] font-sans border border-[#9CAFB7] shadow-2xl overflow-hidden select-none" style={{ width: '440px', height: '527px', minHeight: '527px' }}>
+      {/* Siemens TIA Portal Engineering Background */}
+      <div className="absolute inset-0 bg-[#CED3D7]" />
+      <div className="absolute inset-0 bg-[radial-gradient(#9CAFB7_1.2px,transparent_1.2px)] bg-[size:16px_16px] opacity-70 pointer-events-none" />
+
+      {/* Group Container Rectangle: Background */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '0px', top: '0px', width: '400px', height: '487px' }} />
+      {/* Action Button: Textfeld_Legende */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-[10px] rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '1px', top: '1px', width: '398px', height: '25px' }}>
+        <span className="truncate w-full text-center">Legend</span>
+      </button>
+      {/* Siemens Polygon Shape: Arrow_ADV_Left_Fast */}
+      <div className="absolute bg-[#027AAC] opacity-80 rounded-sm z-10" style={{ left: '10px', top: '207px', width: '15px', height: '30px' }} />
+      {/* Siemens Polygon Shape: Arrow_RTN_Right_Fast */}
+      <div className="absolute bg-[#027AAC] opacity-80 rounded-sm z-10" style={{ left: '40px', top: '207px', width: '15px', height: '30px' }} />
+      {/* Siemens Polygon Shape: Arrow_RTN_Up_Fast */}
+      <div className="absolute bg-[#027AAC] opacity-80 rounded-sm z-10" style={{ left: '10px', top: '256px', width: '30px', height: '15px' }} />
+      {/* Siemens Polygon Shape: Arrow_ADV_Down_Fast */}
+      <div className="absolute bg-[#027AAC] opacity-80 rounded-sm z-10" style={{ left: '40px', top: '256px', width: '30px', height: '15px' }} />
+      {/* Diagnostic Row: Textfeld_2 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '138px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 2</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_1 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '160px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 1</span>
+      </div>
+      {/* Header Label: Textfeld_3 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '10px', top: '33px', width: '165px', height: '20px' }}>
+        <span className="truncate">Textfeld 3</span>
+      </div>
+      {/* Header Label: Textfeld_4 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '10px', top: '55px', width: '165px', height: '20px' }}>
+        <span className="truncate">Textfeld 4</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_5 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '85px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 5</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_6 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '117px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 6</span>
+      </div>
+      {/* Group Container Rectangle: Rechteck_2 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '10px', top: '292px', width: '20px', height: '20px' }} />
+      {/* Group Container Rectangle: Rechteck_5 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '10px', top: '328px', width: '40px', height: '10px' }} />
+      {/* Siemens Graphic View: Grafikanzeige_1 */}
+      <div className="absolute flex flex-col items-center justify-center pointer-events-auto cursor-pointer group z-10" style={{ left: '10px', top: '371px', width: '16px', height: '16px' }}>
+        <img src="/tia_graphics/SICAR_FlexibleProcessLine.png" alt="Grafikanzeige_1" className="w-full h-full object-contain filter drop-shadow group-hover:brightness-110 transition" onError={(e)=>{e.target.style.display='none';}} />
+      </div>
+      {/* Diagnostic Row: Textfeld_7 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '412px', width: '20px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 7</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_8 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '452px', width: '20px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 8</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_9 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '180px', top: '138px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 9</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_10 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '180px', top: '160px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 10</span>
+      </div>
+      {/* Header Label: Textfeld_11 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '180px', top: '33px', width: '117px', height: '20px' }}>
+        <span className="truncate">Textfeld 11</span>
+      </div>
+      {/* Header Label: Textfeld_12 */}
+      <div className="absolute bg-transparent text-[#262221] font-medium text-[9px] flex items-center justify-center px-1.5 z-20" style={{ left: '180px', top: '55px', width: '120px', height: '20px' }}>
+        <span className="truncate">Textfeld 12</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_13 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '180px', top: '77px', width: '215px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 13</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_14 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '180px', top: '117px', width: '165px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 14</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_15 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '10px', top: '185px', width: '100px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 15</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_16 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '204px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 16</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_17 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '244px', width: '315px', height: '40px' }}>
+        <span className="truncate font-sans">Textfeld 17</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_18 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '283px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 18</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_19 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '324px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 19</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_20 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '363px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 20</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_21 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '403px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 21</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_22 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-bold text-xs flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '75px', top: '443px', width: '315px', height: '37px' }}>
+        <span className="truncate font-sans">Textfeld 22</span>
+      </div>
+      {/* Action Button: Cancel Mode */}
+      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white font-bold text-xs rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '309px', top: '1px', width: '90px', height: '60px' }}>
+        <span className="truncate w-full text-center">Cancel Mode</span>
+      </button>
+      {/* Group Container Rectangle: Rechteck_3 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '40px', top: '292px', width: '20px', height: '20px' }} />
+      {/* Group Container Rectangle: Rechteck_4 */}
+      <div className="absolute bg-[#DEDFE1]/60 border border-[#C3C3C3] rounded-sm pointer-events-none z-0" style={{ left: '10px', top: '348px', width: '40px', height: '10px' }} />
+      {/* Diagnostic Row: Textfeld_23 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '40px', top: '412px', width: '20px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 23</span>
+      </div>
+      {/* Diagnostic Row: Textfeld_24 */}
+      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] font-medium text-[9px] flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '40px', top: '452px', width: '20px', height: '20px' }}>
+        <span className="truncate font-sans">Textfeld 24</span>
+      </div>
+    </div>
+  );
+}
+
+export default PopupTECUNITLEGENDPopupComponent;

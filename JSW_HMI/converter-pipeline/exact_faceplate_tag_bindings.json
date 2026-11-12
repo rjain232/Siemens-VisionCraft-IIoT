@@ -1,0 +1,439 @@
+[
+  {
+    "screenElement": "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1..5",
+    "type": "Pneumatic 8-Position Valve Faceplate",
+    "screensFound": [
+      "150FX1Layout",
+      "160FX1Layout",
+      "170FX1Layout",
+      "180FX1Layout",
+      "190FX1Layout",
+      "190FX1Layout_Docking",
+      "190FX2RhSliderFixtureLayout",
+      "190FX2RhSliderLayout",
+      "190FX3LhSliderFixtureLayout",
+      "190FX3LhSliderLayout",
+      "200APC1FX1Layout",
+      "200FX1Layout",
+      "200FX1Layout_Docking",
+      "USER_OPERATION"
+    ],
+    "boundTagsInExcel": [
+      {
+        "hmiTag": "Valve1To8_Alarm",
+        "plcAddress": "<No Value>",
+        "dataType": "UInt"
+      },
+      {
+        "hmiTag": "Valve1To8_State",
+        "plcAddress": "<No Value>",
+        "dataType": "UDInt"
+      },
+      {
+        "hmiTag": "Valve1To8_Pos",
+        "plcAddress": "<No Value>",
+        "dataType": "UDInt"
+      },
+      {
+        "hmiTag": "Index_ Valve1To8",
+        "plcAddress": "<No Value>",
+        "dataType": "Int"
+      },
+      {
+        "hmiTag": "Index_ Valve1To8Diag",
+        "plcAddress": "<No Value>",
+        "dataType": "Int"
+      },
+      {
+        "hmiTag": "Index_ Valve",
+        "plcAddress": "<No Value>",
+        "dataType": "Int"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[0]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{1}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[1]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{2}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[2]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{3}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[3]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{4}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[4]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{5}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[5]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{6}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[6]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{7}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[7]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{8}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[8]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{9}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[9]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{10}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[10]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{11}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[11]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{12}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[12]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{13}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[13]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{14}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[14]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{15}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[15]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{16}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[16]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{17}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[17]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{18}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[18]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{19}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[19]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{20}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[20]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{0}",
+        "plcAddress": "GlobalLSicar_Valve8PosHmiInterface.InterfaceHmi[0]",
+        "dataType": "LSicar_typeValveInterfaceHmi"
+      },
+      {
+        "hmiTag": "SelectValve9-16",
+        "plcAddress": "<No Value>",
+        "dataType": "Bool"
+      }
+    ]
+  },
+  {
+    "screenElement": "Fusszeile_Button_ManualOPMode1_1..5",
+    "type": "Operational Mode Selector Buttons",
+    "screensFound": [
+      "150FX1Layout",
+      "150FX1Layout_Lifter",
+      "150J5",
+      "150Rollerup Lifter",
+      "150V23",
+      "160FX1Layout",
+      "160FX1Layout_Lifter",
+      "160J5",
+      "160Rollerup Lifter",
+      "160V23",
+      "170FX1Layout",
+      "170Rollerup",
+      "180FX1Layout",
+      "180Rollerup",
+      "190FX1Layout",
+      "190FX1Layout_Docking",
+      "190FX1Layout_Lifter",
+      "190FX2RhSliderFixtureLayout",
+      "190FX2RhSliderLayout",
+      "190FX3LhSliderFixtureLayout",
+      "190FX3LhSliderLayout",
+      "190J5",
+      "190J5RoofGeo",
+      "190J5RoofHandling",
+      "190Passing stand",
+      "190RB02_J5",
+      "190RB02_Stand_J5",
+      "190RB02_Stand_V23",
+      "190RB02_V23",
+      "190RB06_J5",
+      "190RB06_Stand_J5",
+      "190RB06_Stand_V23",
+      "190RB06_V23",
+      "190Rollerup Lifter",
+      "190V23",
+      "190V23RoofGeo",
+      "190V23RoofHandling",
+      "20023Fkt_Bkt",
+      "200APC1ayout",
+      "200APC1FX1Layout",
+      "200FX1Layout",
+      "200FX1Layout_Docking",
+      "200FX1Layout_Lifter",
+      "200J5",
+      "200J5Fkt_Bkt",
+      "200RB04_J5",
+      "200RB04_V23",
+      "200Rollerup Lifter",
+      "200V23",
+      "Marriage_MB190_MB190R02",
+      "Marriage_MB200_MB200R04",
+      "Rollerup Lifter",
+      "SafetyZone06Overview",
+      "Zone06Overview"
+    ],
+    "boundTagsInExcel": [
+      {
+        "hmiTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi",
+        "plcAddress": "OpmodePanel.opmode[1].userInterfaceOut.controlNoHmi",
+        "dataType": "Int"
+      },
+      {
+        "hmiTag": "OpmodePanel_opmode{2}_userInterfaceOut_opmodeArea",
+        "plcAddress": "OpmodePanel.opmode[2].userInterfaceOut.opmodeArea",
+        "dataType": "USInt"
+      },
+      {
+        "hmiTag": "OpmodePanel_opmode{2}_userInterfaceOut_controlNoHmi",
+        "plcAddress": "OpmodePanel.opmode[2].userInterfaceOut.controlNoHmi",
+        "dataType": "Int"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{1}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[1].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{2}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[2].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{3}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[3].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{4}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[4].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{5}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[5].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{6}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[6].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      },
+      {
+        "hmiTag": "OpmodePanelopmode{7}userInterfaceOut",
+        "plcAddress": "OpmodePanel.opmode[7].userInterfaceOut",
+        "dataType": "LSicar_typeOpmodeOut"
+      }
+    ]
+  },
+  {
+    "screenElement": "Button_Back / Button_Back_1..3",
+    "type": "Station Navigation Return Buttons",
+    "screensFound": [
+      "150FX1Layout",
+      "150FX1Layout_Lifter",
+      "150J5",
+      "150PRBCompleteDisplay_1",
+      "150PRBCompleteDisplay_2",
+      "150PRBCompleteDisplay_3",
+      "150RobotCollision",
+      "150Rollerup Lifter",
+      "150V23",
+      "160FX1Layout",
+      "160FX1Layout_Lifter",
+      "160J5",
+      "160PRBCompleteDisplay_1",
+      "160PRBCompleteDisplay_2",
+      "160RobotCollision",
+      "160Rollerup Lifter",
+      "160V23",
+      "170FX1Layout",
+      "170PRBCompleteDisplay",
+      "170Rollerup",
+      "180FX1Layout",
+      "180PRBCompleteDisplay",
+      "180Rollerup",
+      "190CompleteDisplay",
+      "190FX1Layout",
+      "190FX1Layout_Docking",
+      "190FX1Layout_Lifter",
+      "190FX2RhSliderFixtureLayout",
+      "190FX2RhSliderLayout",
+      "190FX3LhSliderFixtureLayout",
+      "190FX3LhSliderLayout",
+      "190J5",
+      "190J5RoofGeo",
+      "190J5RoofHandling",
+      "190Passing stand",
+      "190PRBCompleteDisplay",
+      "190PRBCompleteDisplay_1",
+      "190PSCompleteDisplay",
+      "190RB02CompleteDisplay",
+      "190RB02_J5",
+      "190RB02_Stand_J5",
+      "190RB02_Stand_V23",
+      "190RB02_V23",
+      "190RB06CompleteDisplay",
+      "190RB06_J5",
+      "190RB06_Stand_J5",
+      "190RB06_Stand_V23",
+      "190RB06_V23",
+      "190RobotCollision",
+      "190Rollerup Lifter",
+      "190V23",
+      "190V23RoofGeo",
+      "190V23RoofHandling",
+      "20023Fkt_Bkt",
+      "200APC1ayout",
+      "200APC1CompleteDisplay",
+      "200APC1FIFO",
+      "200APC1FX1Layout",
+      "200FX1Layout",
+      "200FX1Layout_Docking",
+      "200FX1Layout_Lifter",
+      "200J5",
+      "200J5Fkt_Bkt",
+      "200PRBCompleteDisplay",
+      "200PRBCompleteDisplay_1",
+      "200RB04CompleteDisplay",
+      "200RB04_J5",
+      "200RB04_Stand_J5",
+      "200RB04_Stand_V23",
+      "200RB04_V23",
+      "200RobotCollision",
+      "200Rollerup Lifter",
+      "200V23",
+      "ALARM",
+      "ALARM_HISTORY",
+      "Barcode_Scanner",
+      "CENTRAL LOADING FIFO",
+      "HTML_VIEW",
+      "IF_SIGNALS_BOOL",
+      "MB150 first station LOADING STAND FIFO",
+      "MB190RB06 LOADING STAND FIFO",
+      "MB200APCRH1 LOADING STAND FIFO",
+      "OrderManagement",
+      "PN_DIAGNOSTIC ETH P1P2P3",
+      "PN_DIAGNOSTIC ETH P4P5P6",
+      "PN_DIAGNOSTIC ETH P7P8",
+      "PN_DIAGNOSTIC ETH P9P10",
+      "PN_DIAGNOSTIC_ALL",
+      "Pop-up_Hmi_Opmodes12_h_Popup",
+      "Pop-up_Hmi_Opmodes18_h_Popup",
+      "Pop-up_Hmi_Opmodes24_h_Popup",
+      "Pop-up_Hmi_Opmodes6_h_Popup",
+      "RFIDWrite",
+      "RobotCollision",
+      "RobotService_Zone01_2",
+      "RobotService_Zone01_mig weld",
+      "RobotService_Zone02",
+      "RobotService_Zone03",
+      "RobotService_Zone04",
+      "RobotService_Zone05",
+      "RobotService_Zone05_1",
+      "RobotService_Zone06",
+      "Robot_Kuka",
+      "Robot_NBG_Kuka",
+      "Robot_PLP_Kuka",
+      "Rollerup Lifter",
+      "SafetyZone03Overview",
+      "SafetyZone04Overview",
+      "SafetyZone05Overview",
+      "SafetyZone06Overview",
+      "Sew_APC",
+      "SEW_FIFO",
+      "Sew_Lifter-Tp",
+      "Sew_TurnTable",
+      "StyleOverview",
+      "StyleWrite",
+      "SWEServoHelp",
+      "SYSTEM_SETTINGS_1",
+      "SYSTEM_SETTINGS_2",
+      "USER_OPERATION",
+      "Valve8Pos",
+      "Zone03Overview",
+      "Zone04Overview",
+      "Zone05Overview",
+      "Zone06Overview"
+    ],
+    "boundTagsInExcel": [
+      {
+        "hmiTag": "interfaceHmipushButtonBitCoded",
+        "plcAddress": "OpmodePanel.panelHmi[1].interfaceHmi.pushButtonBitCoded",
+        "dataType": "Word"
+      },
+      {
+        "hmiTag": "GlobalHmiButton_buttonDeaction{2}",
+        "plcAddress": "GlobalHmiButton.buttonDeaction[2]",
+        "dataType": "Bool"
+      },
+      {
+        "hmiTag": "GlobalHmiButton_buttonDeaction{4}",
+        "plcAddress": "GlobalHmiButton.buttonDeaction[4]",
+        "dataType": "Bool"
+      },
+      {
+        "hmiTag": "GlobalHmiButton_buttonAction{2}",
+        "plcAddress": "GlobalHmiButton.buttonAction[2]",
+        "dataType": "Bool"
+      },
+      {
+        "hmiTag": "GlobalHmiButton_buttonAction{4}",
+        "plcAddress": "GlobalHmiButton.buttonAction[4]",
+        "dataType": "Bool"
+      }
+    ]
+  }
+]

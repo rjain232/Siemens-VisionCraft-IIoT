@@ -1,0 +1,946 @@
+{
+  "totalXmlScreens": 211,
+  "screenCategories": {
+    "stationLayouts": [
+      "01_ScreenLayout",
+      "150FX1Layout",
+      "160FX1Layout",
+      "170FX1Layout",
+      "180FX1Layout",
+      "190FX1Layout",
+      "190FX2RhSliderFixtureLayout",
+      "190FX2RhSliderLayout",
+      "190FX3LhSliderFixtureLayout",
+      "190FX3LhSliderLayout",
+      "200APC1FX1Layout",
+      "200FX1Layout"
+    ],
+    "submenus": [
+      "10_SubMenus",
+      "11_SubMenus_Type",
+      "12_SubMenus_Robot",
+      "13_SubMenus_SEW",
+      "14_SubMenus_Alarm",
+      "15_SubMenus_ProductionData",
+      "16_SubMenus_Diagnostic",
+      "17_SubMenus_SystemSettings"
+    ],
+    "popups": [
+      "Pop-up_AI_ENERGYMETER_Popup",
+      "Pop-up_ALARM_HISTORY_LEGEND_Popup",
+      "Pop-up_ControlOnOff_Popup",
+      "Pop-up_CURVE_F-CYCLETIMES_Popup",
+      "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+      "Pop-up_EEM_LEGEND_Popup",
+      "Pop-up_EUCHNER_MGB_LEGEND_Popup",
+      "Pop-up_Hmi_Opmodes12_h_Popup",
+      "Pop-up_Hmi_Opmodes18_h_Popup",
+      "Pop-up_Hmi_Opmodes24_h_Popup",
+      "Pop-up_Hmi_Opmodes6_h_Popup",
+      "Pop-up_IF_SIGNALS_LEGEND_Popup",
+      "Pop-up_MOVE_LEGEND_Popup",
+      "Pop-up_Opmodes12_Popup",
+      "Pop-up_Opmodes18_Popup",
+      "Pop-up_Opmodes24_Popup",
+      "Pop-up_Opmodes6_Popup",
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_PANEL_INITIALIZED_Popup",
+      "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "Pop-up_PN_DEV_DIAG_LEGEND_Popup",
+      "Pop-up_PRODDATA_CT_LEGEND_Popup",
+      "Pop-up_PRODDATA_LV_LEGEND_Popup",
+      "Pop-up_PRODDATA_PC_LEGEND_Popup",
+      "Pop-up_PRODDATA_SC_LEGEND_Popup",
+      "Pop-up_SPEC_FUNCTIONS_Popup",
+      "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup",
+      "Pop-up_SYSTEM_RTSTOP_Popup",
+      "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup",
+      "Pop-up_TEC_UNIT_LEGEND_Popup",
+      "Pop-up_USER_OPERATION_LEGEND_Popup",
+      "PopupAndonLegend",
+      "PopupCycleTimeLegend"
+    ],
+    "overviews": [
+      "Main",
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "SafetyZone03Overview",
+      "SafetyZone04Overview",
+      "SafetyZone05Overview",
+      "SafetyZone06Overview",
+      "StyleOverview",
+      "Zone03Overview",
+      "Zone04Overview",
+      "Zone05Overview",
+      "Zone06Overview"
+    ],
+    "diagnostics": [
+      "16_SubMenus_Diagnostic",
+      "PN_DIAGNOSTIC ETH P1P2P3",
+      "PN_DIAGNOSTIC ETH P4P5P6",
+      "PN_DIAGNOSTIC ETH P7P8",
+      "PN_DIAGNOSTIC ETH P9P10",
+      "PN_DIAGNOSTIC_ALL",
+      "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "Pop-up_PN_DEV_DIAG_LEGEND_Popup",
+      "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup",
+      "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup",
+      "SYSTEM_DIAGNOSTIC_DEVICE-VIEW"
+    ]
+  },
+  "sharedNavigationControls": [
+    [
+      "Button_Back",
+      {
+        "type": "HmiButton",
+        "count": 124,
+        "screens": [
+          "150FX1Layout",
+          "150FX1Layout_Lifter",
+          "150J5",
+          "150PRBCompleteDisplay_1",
+          "150PRBCompleteDisplay_2",
+          "150PRBCompleteDisplay_3",
+          "150RobotCollision",
+          "150Rollerup Lifter",
+          "150V23",
+          "160FX1Layout",
+          "160FX1Layout_Lifter",
+          "160J5",
+          "160PRBCompleteDisplay_1",
+          "160PRBCompleteDisplay_2",
+          "160RobotCollision",
+          "160Rollerup Lifter",
+          "160V23",
+          "170FX1Layout",
+          "170PRBCompleteDisplay",
+          "170Rollerup",
+          "180FX1Layout",
+          "180PRBCompleteDisplay",
+          "180Rollerup",
+          "190CompleteDisplay",
+          "190FX1Layout",
+          "190FX1Layout_Docking",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190Passing stand",
+          "190PRBCompleteDisplay",
+          "190PRBCompleteDisplay_1",
+          "190PSCompleteDisplay",
+          "190RB02CompleteDisplay",
+          "190RB02_J5",
+          "190RB02_Stand_J5",
+          "190RB02_Stand_V23",
+          "190RB02_V23",
+          "190RB06CompleteDisplay",
+          "190RB06_J5",
+          "190RB06_Stand_J5",
+          "190RB06_Stand_V23",
+          "190RB06_V23",
+          "190RobotCollision",
+          "190Rollerup Lifter",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1ayout",
+          "200APC1CompleteDisplay",
+          "200APC1FIFO",
+          "200APC1FX1Layout",
+          "200FX1Layout",
+          "200FX1Layout_Docking",
+          "200FX1Layout_Lifter",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200PRBCompleteDisplay",
+          "200PRBCompleteDisplay_1",
+          "200RB04CompleteDisplay",
+          "200RB04_J5",
+          "200RB04_Stand_J5",
+          "200RB04_Stand_V23",
+          "200RB04_V23",
+          "200RobotCollision",
+          "200Rollerup Lifter",
+          "200V23",
+          "ALARM",
+          "ALARM_HISTORY",
+          "Barcode_Scanner",
+          "CENTRAL LOADING FIFO",
+          "HTML_VIEW",
+          "IF_SIGNALS_BOOL",
+          "MB150 first station LOADING STAND FIFO",
+          "MB190RB06 LOADING STAND FIFO",
+          "MB200APCRH1 LOADING STAND FIFO",
+          "OrderManagement",
+          "PN_DIAGNOSTIC ETH P1P2P3",
+          "PN_DIAGNOSTIC ETH P4P5P6",
+          "PN_DIAGNOSTIC ETH P7P8",
+          "PN_DIAGNOSTIC ETH P9P10",
+          "PN_DIAGNOSTIC_ALL",
+          "Pop-up_Hmi_Opmodes12_h_Popup",
+          "Pop-up_Hmi_Opmodes18_h_Popup",
+          "Pop-up_Hmi_Opmodes24_h_Popup",
+          "Pop-up_Hmi_Opmodes6_h_Popup",
+          "RFIDWrite",
+          "RobotCollision",
+          "RobotService_Zone01_2",
+          "RobotService_Zone01_mig weld",
+          "RobotService_Zone02",
+          "RobotService_Zone03",
+          "RobotService_Zone04",
+          "RobotService_Zone05_1",
+          "RobotService_Zone06",
+          "Robot_Kuka",
+          "Robot_NBG_Kuka",
+          "Robot_PLP_Kuka",
+          "Rollerup Lifter",
+          "SafetyZone03Overview",
+          "SafetyZone04Overview",
+          "SafetyZone05Overview",
+          "SafetyZone06Overview",
+          "Sew_APC",
+          "SEW_FIFO",
+          "Sew_Lifter-Tp",
+          "Sew_TurnTable",
+          "StyleOverview",
+          "StyleWrite",
+          "SWEServoHelp",
+          "SYSTEM_SETTINGS_1",
+          "SYSTEM_SETTINGS_2",
+          "USER_OPERATION",
+          "Valve8Pos",
+          "Zone03Overview",
+          "Zone04Overview",
+          "Zone05Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Fusszeile_Button_ManualOPMode1_1",
+      {
+        "type": "HmiButton",
+        "count": 50,
+        "screens": [
+          "150FX1Layout",
+          "150FX1Layout_Lifter",
+          "150J5",
+          "150Rollerup Lifter",
+          "150V23",
+          "160FX1Layout",
+          "160FX1Layout_Lifter",
+          "160J5",
+          "160Rollerup Lifter",
+          "160V23",
+          "170FX1Layout",
+          "170Rollerup",
+          "180FX1Layout",
+          "180Rollerup",
+          "190FX1Layout",
+          "190FX1Layout_Docking",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190RB02_J5",
+          "190RB02_Stand_J5",
+          "190RB02_Stand_V23",
+          "190RB02_V23",
+          "190RB06_J5",
+          "190RB06_Stand_J5",
+          "190RB06_Stand_V23",
+          "190Rollerup Lifter",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1ayout",
+          "200APC1FX1Layout",
+          "200FX1Layout",
+          "200FX1Layout_Docking",
+          "200FX1Layout_Lifter",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200RB04_J5",
+          "200RB04_V23",
+          "200Rollerup Lifter",
+          "200V23",
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "Rollerup Lifter"
+        ]
+      }
+    ],
+    [
+      "Move_Legend",
+      {
+        "type": "HmiButton",
+        "count": 48,
+        "screens": [
+          "150FX1Layout",
+          "150FX1Layout_Lifter",
+          "150J5",
+          "150PRBCompleteDisplay_1",
+          "150PRBCompleteDisplay_2",
+          "150PRBCompleteDisplay_3",
+          "150Rollerup Lifter",
+          "150V23",
+          "160FX1Layout",
+          "160FX1Layout_Lifter",
+          "160J5",
+          "160PRBCompleteDisplay_1",
+          "160PRBCompleteDisplay_2",
+          "160Rollerup Lifter",
+          "160V23",
+          "170FX1Layout",
+          "170Rollerup",
+          "180FX1Layout",
+          "180Rollerup",
+          "190FX1Layout",
+          "190FX1Layout_Docking",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190Passing stand",
+          "190Rollerup Lifter",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1FX1Layout",
+          "200FX1Layout",
+          "200FX1Layout_Docking",
+          "200FX1Layout_Lifter",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200Rollerup Lifter",
+          "200V23",
+          "Andon",
+          "CycleTime",
+          "Pop-up_PLP",
+          "Rollerup Lifter",
+          "USER_OPERATION"
+        ]
+      }
+    ],
+    [
+      "Button_Back_1",
+      {
+        "type": "HmiButton",
+        "count": 43,
+        "screens": [
+          "150FX1Layout",
+          "150J5",
+          "150PRBCompleteDisplay_1",
+          "150PRBCompleteDisplay_2",
+          "150PRBCompleteDisplay_3",
+          "160FX1Layout",
+          "160J5",
+          "160PRBCompleteDisplay_1",
+          "160PRBCompleteDisplay_2",
+          "170PRBCompleteDisplay",
+          "180PRBCompleteDisplay",
+          "190CompleteDisplay",
+          "190FX1Layout",
+          "190FX1Layout_Docking",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190PRBCompleteDisplay",
+          "190PRBCompleteDisplay_1",
+          "190PSCompleteDisplay",
+          "190RB02CompleteDisplay",
+          "190RB06CompleteDisplay",
+          "190V23",
+          "190V23RoofGeo",
+          "20023Fkt_Bkt",
+          "200APC1CompleteDisplay",
+          "200FX1Layout",
+          "200FX1Layout_Docking",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200PRBCompleteDisplay",
+          "200PRBCompleteDisplay_1",
+          "200RB04CompleteDisplay",
+          "200V23",
+          "ALARM",
+          "RobotService_Zone03",
+          "RobotService_Zone05",
+          "Zone03Overview",
+          "Zone05Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Background",
+      {
+        "type": "HmiRectangle",
+        "count": 43,
+        "screens": [
+          "Dry_runFunction Select",
+          "Grinding",
+          "Hemming Process",
+          "Pop-up_AI_ENERGYMETER_Popup",
+          "Pop-up_ALARM_HISTORY_LEGEND_Popup",
+          "Pop-up_ATDC",
+          "Pop-up_ControlOnOff_Popup",
+          "Pop-up_CURVE_F-CYCLETIMES_Popup",
+          "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+          "Pop-up_EEM_LEGEND_Popup",
+          "Pop-up_EUCHNER_MGB_LEGEND_Popup",
+          "Pop-up_Hmi_Opmodes12_h_Popup",
+          "Pop-up_Hmi_Opmodes18_h_Popup",
+          "Pop-up_Hmi_Opmodes24_h_Popup",
+          "Pop-up_Hmi_Opmodes6_h_Popup",
+          "Pop-up_IF_SIGNALS_LEGEND_Popup",
+          "Pop-up_ISRA VISION",
+          "Pop-up_Mig Weld",
+          "Pop-up_NutRunner",
+          "Pop-up_OPMode",
+          "Pop-up_Opmodes12_Popup",
+          "Pop-up_Opmodes18_Popup",
+          "Pop-up_Opmodes24_Popup",
+          "Pop-up_Opmodes6_Popup",
+          "Pop-up_OVERVIEW_LEGEND_Popup",
+          "Pop-up_PANEL_INITIALIZED_Popup",
+          "Pop-up_PLP",
+          "Pop-up_PN_DEV_DIAG_Counter_Popup",
+          "Pop-up_PN_DEV_DIAG_LEGEND_Popup",
+          "Pop-up_PRODDATA_CT_LEGEND_Popup",
+          "Pop-up_PRODDATA_LV_LEGEND_Popup",
+          "Pop-up_PRODDATA_PC_LEGEND_Popup",
+          "Pop-up_PRODDATA_SC_LEGEND_Popup",
+          "Pop-up_Sealer_1",
+          "Pop-up_Sealer_2",
+          "Pop-up_SPEC_FUNCTIONS_Popup",
+          "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup",
+          "Pop-up_SYSTEM_RTSTOP_Popup",
+          "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup",
+          "Pop-up_TEC_UNIT_LEGEND_Popup",
+          "Pop-up_USER_OPERATION_LEGEND_Popup",
+          "Pop-up_VISION OFFSET VALUES",
+          "Tool Stand Bit"
+        ]
+      }
+    ],
+    [
+      "Fusszeile_Button_ManualOPMode1_2",
+      {
+        "type": "HmiButton",
+        "count": 42,
+        "screens": [
+          "150FX1Layout",
+          "150FX1Layout_Lifter",
+          "150J5",
+          "150Rollerup Lifter",
+          "150V23",
+          "160FX1Layout",
+          "160FX1Layout_Lifter",
+          "160J5",
+          "160Rollerup Lifter",
+          "160V23",
+          "170FX1Layout",
+          "170Rollerup",
+          "180FX1Layout",
+          "180Rollerup",
+          "190FX1Layout",
+          "190FX1Layout_Docking",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190Passing stand",
+          "190Rollerup Lifter",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1ayout",
+          "200APC1FX1Layout",
+          "200FX1Layout",
+          "200FX1Layout_Docking",
+          "200FX1Layout_Lifter",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200Rollerup Lifter",
+          "200V23",
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "Rollerup Lifter"
+        ]
+      }
+    ],
+    [
+      "Fusszeile_Button_ManualOPMode1_3",
+      {
+        "type": "HmiButton",
+        "count": 37,
+        "screens": [
+          "150FX1Layout",
+          "150J5",
+          "150Rollerup Lifter",
+          "150V23",
+          "160FX1Layout",
+          "160J5",
+          "160Rollerup Lifter",
+          "160V23",
+          "170FX1Layout",
+          "170Rollerup",
+          "180FX1Layout",
+          "180Rollerup",
+          "190FX1Layout",
+          "190FX1Layout_Lifter",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190Rollerup Lifter",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1ayout",
+          "200FX1Layout",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200Rollerup Lifter",
+          "200V23",
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "Rollerup Lifter",
+          "SafetyZone06Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Fusszeile_Button_ManualOPMode1_4",
+      {
+        "type": "HmiButton",
+        "count": 35,
+        "screens": [
+          "150FX1Layout",
+          "150J5",
+          "150V23",
+          "160FX1Layout",
+          "160J5",
+          "160V23",
+          "190FX1Layout",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190RB02_J5",
+          "190RB02_Stand_J5",
+          "190RB02_Stand_V23",
+          "190RB02_V23",
+          "190RB06_J5",
+          "190RB06_Stand_J5",
+          "190RB06_Stand_V23",
+          "190RB06_V23",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200APC1ayout",
+          "200FX1Layout",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200V23",
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "SafetyZone06Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Fusszeile_Button_ManualOPMode1_5",
+      {
+        "type": "HmiButton",
+        "count": 22,
+        "screens": [
+          "150FX1Layout",
+          "150J5",
+          "150V23",
+          "160FX1Layout",
+          "160J5",
+          "160V23",
+          "190FX1Layout",
+          "190FX2RhSliderFixtureLayout",
+          "190FX2RhSliderLayout",
+          "190FX3LhSliderFixtureLayout",
+          "190FX3LhSliderLayout",
+          "190J5",
+          "190J5RoofGeo",
+          "190J5RoofHandling",
+          "190V23",
+          "190V23RoofGeo",
+          "190V23RoofHandling",
+          "20023Fkt_Bkt",
+          "200FX1Layout",
+          "200J5",
+          "200J5Fkt_Bkt",
+          "200V23"
+        ]
+      }
+    ],
+    [
+      "Button_Back_2",
+      {
+        "type": "HmiButton",
+        "count": 12,
+        "screens": [
+          "150FX1Layout",
+          "150PRBCompleteDisplay_1",
+          "150PRBCompleteDisplay_2",
+          "160FX1Layout",
+          "160PRBCompleteDisplay_1",
+          "190FX1Layout",
+          "190FX2RhSliderLayout",
+          "190PRBCompleteDisplay",
+          "200FX1Layout",
+          "200PRBCompleteDisplay",
+          "RobotService_Zone05",
+          "Zone05Overview"
+        ]
+      }
+    ],
+    [
+      "Button_Overview_LegendᆉY2",
+      {
+        "type": "HmiButton",
+        "count": 8,
+        "screens": [
+          "SafetyZone03Overview",
+          "SafetyZone04Overview",
+          "SafetyZone05Overview",
+          "SafetyZone06Overview",
+          "Zone03Overview",
+          "Zone04Overview",
+          "Zone05Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Button_Overview_LegendᆉY2_1",
+      {
+        "type": "HmiButton",
+        "count": 8,
+        "screens": [
+          "SafetyZone03Overview",
+          "SafetyZone04Overview",
+          "SafetyZone05Overview",
+          "SafetyZone06Overview",
+          "Zone03Overview",
+          "Zone04Overview",
+          "Zone05Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Button_Back_3",
+      {
+        "type": "HmiButton",
+        "count": 7,
+        "screens": [
+          "150FX1Layout",
+          "160FX1Layout",
+          "190FX1Layout",
+          "200FX1Layout",
+          "Zone03Overview",
+          "Zone05Overview",
+          "Zone06Overview"
+        ]
+      }
+    ],
+    [
+      "Button_15",
+      {
+        "type": "HmiButton",
+        "count": 6,
+        "screens": [
+          "Call_ServiceButtons",
+          "Call_ServiceButtons_1",
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "ProductionCount",
+          "StyleOverview"
+        ]
+      }
+    ],
+    [
+      "Button_Close",
+      {
+        "type": "HmiButton",
+        "count": 5,
+        "screens": [
+          "Pop-up_ControlOnOff_Popup",
+          "Pop-up_Hmi_Opmodes12_h_Popup",
+          "Pop-up_Hmi_Opmodes18_h_Popup",
+          "Pop-up_Hmi_Opmodes24_h_Popup",
+          "Pop-up_Hmi_Opmodes6_h_Popup"
+        ]
+      }
+    ],
+    [
+      "Button_Overview_LegendᆉY2_2",
+      {
+        "type": "HmiButton",
+        "count": 5,
+        "screens": [
+          "SafetyZone03Overview",
+          "SafetyZone04Overview",
+          "SafetyZone06Overview",
+          "Zone03Overview",
+          "Zone04Overview"
+        ]
+      }
+    ],
+    [
+      "Button_Overview_LegendᆉY2_3",
+      {
+        "type": "HmiButton",
+        "count": 5,
+        "screens": [
+          "SafetyZone03Overview",
+          "SafetyZone04Overview",
+          "SafetyZone06Overview",
+          "Zone03Overview",
+          "Zone04Overview"
+        ]
+      }
+    ],
+    [
+      "Background_1",
+      {
+        "type": "HmiRectangle",
+        "count": 4,
+        "screens": [
+          "150Pop-up_Device",
+          "Pop-up_Device",
+          "Pop-up_PN_DEV_DIAG_Counter_Popup",
+          "Pop-up_SafetyGate"
+        ]
+      }
+    ],
+    [
+      "Background_2",
+      {
+        "type": "HmiRectangle",
+        "count": 4,
+        "screens": [
+          "150Pop-up_Device",
+          "Pop-up_Device",
+          "Pop-up_PN_DEV_DIAG_Counter_Popup",
+          "Pop-up_SafetyGate"
+        ]
+      }
+    ],
+    [
+      "Button_1",
+      {
+        "type": "HmiButton",
+        "count": 4,
+        "screens": [
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "Pop-up_SPEC_FUNCTIONS_Popup",
+          "StyleOverview"
+        ]
+      }
+    ],
+    [
+      "Button_Language",
+      {
+        "type": "HmiButton",
+        "count": 3,
+        "screens": [
+          "ALARM",
+          "ALARM_HISTORY",
+          "SYSTEM_SETTINGS_1"
+        ]
+      }
+    ],
+    [
+      "Button_14",
+      {
+        "type": "HmiButton",
+        "count": 3,
+        "screens": [
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "StyleOverview"
+        ]
+      }
+    ],
+    [
+      "Button_26",
+      {
+        "type": "HmiButton",
+        "count": 3,
+        "screens": [
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "StyleOverview"
+        ]
+      }
+    ],
+    [
+      "Button_7",
+      {
+        "type": "HmiButton",
+        "count": 3,
+        "screens": [
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "StyleOverview"
+        ]
+      }
+    ],
+    [
+      "Button_2",
+      {
+        "type": "HmiButton",
+        "count": 3,
+        "screens": [
+          "Marriage_MB190_MB190R02",
+          "Marriage_MB200_MB200R04",
+          "StyleOverview"
+        ]
+      }
+    ]
+  ],
+  "sharedFaceplates": [
+    [
+      "面板容器_2",
+      63
+    ],
+    [
+      "Faceplate container_1",
+      52
+    ],
+    [
+      "Faceplate container_2",
+      37
+    ],
+    [
+      "面板容器_1",
+      35
+    ],
+    [
+      "面板容器_4",
+      32
+    ],
+    [
+      "面板容器_5",
+      26
+    ],
+    [
+      "面板容器_3",
+      26
+    ],
+    [
+      "Faceplate container_4",
+      18
+    ],
+    [
+      "面板容器_6",
+      17
+    ],
+    [
+      "Faceplate container_3",
+      17
+    ],
+    [
+      "Faceplate container_5",
+      17
+    ],
+    [
+      "sequenceControlFaceplate_Lite_1",
+      17
+    ],
+    [
+      "Faceplate container_6",
+      16
+    ],
+    [
+      "面板容器_7",
+      14
+    ],
+    [
+      "面板容器_8",
+      14
+    ],
+    [
+      "面板容器_23",
+      14
+    ],
+    [
+      "面板容器_22",
+      14
+    ],
+    [
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5",
+      11
+    ],
+    [
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1",
+      11
+    ],
+    [
+      "Faceplate container_7",
+      11
+    ],
+    [
+      "面板容器_10",
+      10
+    ],
+    [
+      "面板容器_9",
+      10
+    ],
+    [
+      "面板容器_11",
+      10
+    ],
+    [
+      "Faceplate container_8",
+      10
+    ],
+    [
+      "面板容器_15",
+      9
+    ]
+  ]
+}

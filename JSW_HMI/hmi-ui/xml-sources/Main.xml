@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Main</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_01_Shadow_3</Name>
+          <Left>5</Left>
+          <Top>6</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_1</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>PosDev_Lifter_3</Name>
+          <Left>5</Left>
+          <Top>73</Top>
+          <Width>207</Width>
+          <Height>125</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_Text_3</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>212</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_TextTyp_3</Name>
+          <Left>2</Left>
+          <Top>38</Top>
+          <Width>180</Width>
+          <Height>26</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_1</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_6</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_01_Shadow_1</Name>
+          <Left>5</Left>
+          <Top>6</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_2</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>PosDev_Lifter_1</Name>
+          <Left>5</Left>
+          <Top>73</Top>
+          <Width>207</Width>
+          <Height>125</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_Text_1</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>212</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_TextTyp_1</Name>
+          <Left>2</Left>
+          <Top>38</Top>
+          <Width>180</Width>
+          <Height>26</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_2</Name>
+          <Left>1</Left>
+          <Top>1</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_3</Name>
+          <Left>1</Left>
+          <Top>3</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_01_Shadow_4</Name>
+          <Left>5</Left>
+          <Top>6</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_4</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>PosDev_Lifter_4</Name>
+          <Left>5</Left>
+          <Top>73</Top>
+          <Width>207</Width>
+          <Height>125</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_Text_4</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>212</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_TextTyp_4</Name>
+          <Left>2</Left>
+          <Top>38</Top>
+          <Width>180</Width>
+          <Height>26</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_7</Name>
+          <Left>1</Left>
+          <Top>3</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_8</Name>
+          <Left>1</Left>
+          <Top>2</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_01_Shadow_2</Name>
+          <Left>5</Left>
+          <Top>6</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Overview_3</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>PosDev_Lifter_2</Name>
+          <Left>5</Left>
+          <Top>73</Top>
+          <Width>207</Width>
+          <Height>125</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_Text_2</Name>
+          <Left>2</Left>
+          <Top>4</Top>
+          <Width>212</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Overview_01_TextTyp_2</Name>
+          <Left>2</Left>
+          <Top>38</Top>
+          <Width>180</Width>
+          <Height>26</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_4</Name>
+          <Left>2</Left>
+          <Top>3</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Overview_01_Button_5</Name>
+          <Left>2</Left>
+          <Top>3</Top>
+          <Width>217</Width>
+          <Height>208</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

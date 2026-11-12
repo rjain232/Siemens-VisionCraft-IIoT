@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>Robot_NBG_Kuka</Name>
+      <Width>1276</Width>
+      <Height>673</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiGraphicView</Type>
+          <Name>Zone01</Name>
+          <Left>662</Left>
+          <Top>80</Top>
+          <Width>482</Width>
+          <Height>510</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>permanentareaborderrectangle</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>0</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="4">
+        <AttributeList>
+          <Type>HmiLine</Type>
+          <Name>Line_Header_X0_Y64</Name>
+          <Left>0</Left>
+          <Top>64</Top>
+          <Width>1276</Width>
+          <Height>0</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="5">
+        <AttributeList>
+          <Type>HmiAlarmControl</Type>
+          <Name>nbgMessages</Name>
+          <Left>10</Left>
+          <Top>479</Top>
+          <Width>428</Width>
+          <Height>169</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="6">
+        <AttributeList>
+          <Type>HmiIOField</Type>
+          <Name>Robot Name</Name>
+          <Left>390</Left>
+          <Top>3</Top>
+          <Width>500</Width>
+          <Height>37</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="7">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button_Back</Name>
+          <Left>2</Left>
+          <Top>2</Top>
+          <Width>90</Width>
+          <Height>60</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="8">
+        <AttributeList>
+          <Type>HmiSymbolicIOField</Type>
+          <Name>Select NBG</Name>
+          <Left>390</Left>
+          <Top>3</Top>
+          <Width>500</Width>
+          <Height>37</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="9">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1 Status</Name>
+          <Left>196</Left>
+          <Top>0</Top>
+          <Width>217</Width>
+          <Height>132</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="10">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TG1 Status</Name>
+          <Left>196</Left>
+          <Top>0</Top>
+          <Width>218</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="11">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle NBG Status</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>196</Width>
+          <Height>178</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="12">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Motor On</Name>
+          <Left>5</Left>
+          <Top>81</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="13">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field On Path</Name>
+          <Left>5</Left>
+          <Top>127</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="14">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Filed E- Stop</Name>
+          <Left>99</Left>
+          <Top>35</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="15">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field System Fault</Name>
+          <Left>99</Left>
+          <Top>58</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="16">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Move Pause</Name>
+          <Left>99</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="17">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field In Cycle</Name>
+          <Left>5</Left>
+          <Top>104</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="18">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Ready</Name>
+          <Left>5</Left>
+          <Top>58</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="19">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Fault</Name>
+          <Left>99</Left>
+          <Top>81</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="20">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Auto Mode</Name>
+          <Left>5</Left>
+          <Top>35</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="21">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Enable Motion</Name>
+          <Left>5</Left>
+          <Top>150</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="22">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field NBG Status</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>196</Width>
+          <Height>31</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="23">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field Full Speed_2</Name>
+          <Left>99</Left>
+          <Top>127</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="24">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 Moving</Name>
+          <Left>202</Left>
+          <Top>35</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="25">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 Move Pause</Name>
+          <Left>202</Left>
+          <Top>58</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="26">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 Fault</Name>
+          <Left>202</Left>
+          <Top>81</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="27">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 With Fixture</Name>
+          <Left>202</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="28">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 ATI Connection</Name>
+          <Left>306</Left>
+          <Top>35</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="29">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 ATI Deconnection</Name>
+          <Left>306</Left>
+          <Top>58</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="30">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 Lock Pos</Name>
+          <Left>306</Left>
+          <Top>81</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="31">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 Unlock Pos</Name>
+          <Left>306</Left>
+          <Top>104</Top>
+          <Width>100</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="32">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGA</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>102</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="33">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGA Moving</Name>
+          <Left>5</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="34">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGA Move Pause</Name>
+          <Left>5</Left>
+          <Top>23</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="35">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGA Fault</Name>
+          <Left>5</Left>
+          <Top>43</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="36">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGA Status</Name>
+          <Left>28</Left>
+          <Top>68</Top>
+          <Width>44</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="37">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAA</Name>
+          <Left>102</Left>
+          <Top>0</Top>
+          <Width>282</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="38">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAA In Storage Pos</Name>
+          <Left>198</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="39">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAA In Delivery Pos</Name>
+          <Left>287</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="40">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAA With Fixture</Name>
+          <Left>109</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="41">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGAA Status</Name>
+          <Left>104</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="42">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAA Delivery Pos</Name>
+          <Left>290</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="43">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGAA Go Delivery Pos</Name>
+          <Left>291</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="44">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGAA Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="45">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAA Storage Pos</Name>
+          <Left>157</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="46">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGAA Go Storage Pos</Name>
+          <Left>158</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="47">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGAA Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="48">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGB</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>102</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="49">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGB Moving</Name>
+          <Left>6</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="50">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGB Move Pause</Name>
+          <Left>6</Left>
+          <Top>23</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="51">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGB Fault</Name>
+          <Left>6</Left>
+          <Top>43</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="52">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGB Status</Name>
+          <Left>29</Left>
+          <Top>68</Top>
+          <Width>44</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="53">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBA</Name>
+          <Left>102</Left>
+          <Top>0</Top>
+          <Width>282</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="54">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBA In Storage Pos</Name>
+          <Left>198</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="55">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBA In Delivery Pos</Name>
+          <Left>287</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="56">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBA With Fixture</Name>
+          <Left>109</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="57">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGBA Status</Name>
+          <Left>104</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="58">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBA Storage Pos</Name>
+          <Left>157</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="59">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBA Delivery Pos</Name>
+          <Left>290</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="60">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGBA Go Storage Pos</Name>
+          <Left>158</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="61">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGBA Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="62">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGBA Go Delivery Pos</Name>
+          <Left>291</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="63">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGBA Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="64">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAB</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>281</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="65">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAB In Storage Pos</Name>
+          <Left>95</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="66">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAB In Delivery Pos</Name>
+          <Left>6</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="67">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGAB With Fixture</Name>
+          <Left>184</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="68">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGAB Status</Name>
+          <Left>233</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="69">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAB Delivery Pos</Name>
+          <Left>9</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="70">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGAB Go Delivery Pos</Name>
+          <Left>10</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="71">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGAB Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="72">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGAB Storage Pos</Name>
+          <Left>142</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="73">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGAB Go Storage Pos</Name>
+          <Left>143</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="74">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGAB Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="75">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBB</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>281</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="76">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBB In Storage Pos</Name>
+          <Left>95</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="77">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBB In Delivery Pos</Name>
+          <Left>6</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="78">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGBB With Fixture</Name>
+          <Left>184</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="79">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGBB Status</Name>
+          <Left>233</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="80">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBB Storage Pos</Name>
+          <Left>142</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="81">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGBB Delivery Pos</Name>
+          <Left>9</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="82">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGBB Go Storage Pos</Name>
+          <Left>143</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="83">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGBB Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="84">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGBB Go Delivery Pos</Name>
+          <Left>10</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="85">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGBB Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="86">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCB</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>281</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="87">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCB In Storage Pos</Name>
+          <Left>95</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="88">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCB In Delivery Pos</Name>
+          <Left>6</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="89">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCB With Fixture</Name>
+          <Left>184</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="90">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGCB Status</Name>
+          <Left>233</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="91">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCB Storage Pos</Name>
+          <Left>142</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="92">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCB Delivery Pos</Name>
+          <Left>9</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="93">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGCB Go Storage Pos</Name>
+          <Left>143</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="94">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGCB Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="95">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGCB Go Delivery Pos</Name>
+          <Left>10</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="96">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGCB Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="97">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Load Pos1</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="98">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Load Pos1</Name>
+          <Left>2</Left>
+          <Top>25</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="99">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Load Pos1</Name>
+          <Left>3</Left>
+          <Top>26</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="100">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Load Pos1 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="101">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Storage Pos1</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="102">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Storage Pos1</Name>
+          <Left>2</Left>
+          <Top>26</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="103">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Storage Pos1</Name>
+          <Left>3</Left>
+          <Top>27</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="104">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Storage Pos1 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="105">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Storage Pos2</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="106">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Storage Pos2</Name>
+          <Left>2</Left>
+          <Top>26</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="107">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Storage Pos2</Name>
+          <Left>3</Left>
+          <Top>27</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="108">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Storage Pos2 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="109">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Storage Pos3</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="110">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Storage Pos3</Name>
+          <Left>2</Left>
+          <Top>26</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="111">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Storage Pos3</Name>
+          <Left>3</Left>
+          <Top>27</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="112">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Storage Pos3 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="113">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TG1_2</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>281</Width>
+          <Height>187</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="114">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos1</Name>
+          <Left>6</Left>
+          <Top>4</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="115">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos2</Name>
+          <Left>96</Left>
+          <Top>4</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="116">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos3</Name>
+          <Left>186</Left>
+          <Top>4</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="117">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos4</Name>
+          <Left>5</Left>
+          <Top>99</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="118">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos5</Name>
+          <Left>95</Left>
+          <Top>99</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="119">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TG1 In Work Pos6</Name>
+          <Left>187</Left>
+          <Top>99</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="120">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos2</Name>
+          <Left>98</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="121">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos2</Name>
+          <Left>99</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="122">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos2 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="123">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos3</Name>
+          <Left>188</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="124">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos3</Name>
+          <Left>189</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="125">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos3 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="126">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos4</Name>
+          <Left>7</Left>
+          <Top>124</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="127">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos4</Name>
+          <Left>8</Left>
+          <Top>125</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="128">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos4 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="129">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos5</Name>
+          <Left>97</Left>
+          <Top>124</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="130">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos5</Name>
+          <Left>98</Left>
+          <Top>125</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="131">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos5 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="132">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos6</Name>
+          <Left>187</Left>
+          <Top>124</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="133">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos6</Name>
+          <Left>188</Left>
+          <Top>125</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="134">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos6 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="135">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle Work Pos1</Name>
+          <Left>8</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="136">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button Go Work Pos1</Name>
+          <Left>9</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="137">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TG1 Work Pos1 Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="138">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGC</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>102</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="139">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGC Moving</Name>
+          <Left>6</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="140">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGC Move Pause</Name>
+          <Left>6</Left>
+          <Top>23</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="141">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGC Fault</Name>
+          <Left>6</Left>
+          <Top>43</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="142">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGC Status</Name>
+          <Left>29</Left>
+          <Top>68</Top>
+          <Width>44</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="143">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCA</Name>
+          <Left>102</Left>
+          <Top>0</Top>
+          <Width>282</Width>
+          <Height>91</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="144">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCA In Storage Pos</Name>
+          <Left>198</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="145">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCA In Delivery Pos</Name>
+          <Left>287</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="146">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text Field TGCA With Fixture</Name>
+          <Left>109</Left>
+          <Top>3</Top>
+          <Width>90</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="147">
+        <AttributeList>
+          <Type>HmiTextBox</Type>
+          <Name>Text field TGCA Status</Name>
+          <Left>104</Left>
+          <Top>68</Top>
+          <Width>47</Width>
+          <Height>21</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="148">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCA Storage Pos</Name>
+          <Left>157</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="149">
+        <AttributeList>
+          <Type>HmiRectangle</Type>
+          <Name>Rectangle TGCA Delivery Pos</Name>
+          <Left>290</Left>
+          <Top>29</Top>
+          <Width>85</Width>
+          <Height>56</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="150">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGCA Go Storage Pos</Name>
+          <Left>158</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="151">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGCA Storage Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="152">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>Button TGCA Go Delivery Pos</Name>
+          <Left>291</Left>
+          <Top>30</Top>
+          <Width>83</Width>
+          <Height>54</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="153">
+        <AttributeList>
+          <Type>HmiCircle</Type>
+          <Name>TGCA Delivery Pos Interlock</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>100</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="40px" height="40px" viewBox="0 0 40 40" version="1.1" id="svg28">
+  <title id="title2">Icon/Power/On</title>
+  <desc id="desc4">Created with Sketch.</desc>
+  <defs id="defs14">
+    <circle id="path-1" cx="20.5" cy="20.5" r="17.5" />
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-3">
+      <rect id="Rectangle" x="0.51749754" y="0.51749754" width="40" height="40" />
+      <g id="Oval" fill-rule="nonzero">
+        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1" id="use17" />
+        <use xlink:href="#path-1" id="use19" fill="#de3858" fill-opacity="1" transform="translate(0.01749754,0.01749754)" x="0" y="0" width="100%" height="100%" />
+      </g>
+      <g id="Group-4" transform="translate(11.750000, 13.750000)" />
+      <circle opacity="1" fill="#ffffff" fill-opacity="1" stroke="none" stroke-width="0.21359774" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1" id="path4510" cx="20.517498" cy="20.517498" r="8.5" />
+      <ellipse opacity="1" fill="#de3858" fill-opacity="1" stroke="none" stroke-width="0.20324892" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1" id="path4512" cx="20.517498" cy="20.517498" rx="6.737288" ry="6.7375002" />
+      <polygon id="Path-3" points="19.432345,21.352931 21.352931,21.352931 21.352931,11.75 19.432345,11.75 " transform="translate(0.12485954,3.966032)" fill="#ffffff" fill-rule="nonzero" />
+    </g>
+  </g>
+</svg>

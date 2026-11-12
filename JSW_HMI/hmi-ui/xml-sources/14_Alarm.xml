@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <Hmi.Screen ID="0">
+    <AttributeList>
+      <Name>14_Alarm</Name>
+      <Width>1319</Width>
+      <Height>30</Height>
+    </AttributeList>
+    <ObjectList>
+      <Hmi.ScreenItem ID="2">
+        <AttributeList>
+          <Type>HmiAlarmControl</Type>
+          <Name>ctlAlarmView</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>1319</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+      <Hmi.ScreenItem ID="3">
+        <AttributeList>
+          <Type>HmiButton</Type>
+          <Name>btnAlarmScreen</Name>
+          <Left>0</Left>
+          <Top>0</Top>
+          <Width>1319</Width>
+          <Height>30</Height>
+        </AttributeList>
+      </Hmi.ScreenItem>
+    </ObjectList>
+  </Hmi.Screen>
+</Document>
