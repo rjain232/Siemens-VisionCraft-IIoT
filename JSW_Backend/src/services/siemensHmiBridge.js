@@ -66,6 +66,67 @@ class SiemensHmiBridge {
     this.clients = new Set();
     this.startSimulationLoop();
     this.initHardwareConnection();
+    this.startHardwarePollingLoop();
+  }
+
+  startHardwarePollingLoop() {
+    // Poll physical Siemens PLC tags periodically when online
+    setInterval(async () => {
+      if (this.isPlcOnline && this.token) {
+        await this.pollPlcHardwareTags();
+      } else if (!this.isPlcOnline) {
+        // Attempt periodic re-login if disconnected
+        await this.initHardwareConnection();
+      }
+    }, 1000);
+  }
+
+  async pollPlcHardwareTags() {
+    const tagsToRead = [
+      'BSL015_R01_Status',
+      'BSL010_DK01_Status',
+      'SEW_MB220_XM1_ActPos',
+      'SEW_MB220_YM1_ActPos',
+      'Line_Auto_Running',
+      'TotalCycles'
+    ];
+
+    const deltas = {};
+    for (const tagName of tagsToRead) {
+      try {
+        const res = await fetch(this.plcUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': this.token
+          },
+          body: JSON.stringify({
+            jsonrpc: '2.0',
+            id: Date.now(),
+            method: 'PlcProgram.Read',
+            params: { var: tagName }
+          }),
+          agent: this.agent,
+          signal: AbortSignal.timeout(1500)
+        });
+
+        if (res.ok) {
+          const body = await res.json();
+          if (body.result !== undefined && body.result !== this.tags[tagName]) {
+            this.tags[tagName] = body.result;
+            deltas[tagName] = body.result;
+          }
+        }
+      } catch (err) {
+        // Mark offline on persistent network failure
+        this.isPlcOnline = false;
+        break;
+      }
+    }
+
+    if (Object.keys(deltas).length > 0) {
+      this.broadcast(deltas);
+    }
   }
 
   async initHardwareConnection() {
