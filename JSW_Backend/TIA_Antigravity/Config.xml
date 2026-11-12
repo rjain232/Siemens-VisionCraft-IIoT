@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkflowConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AddInPackage>
+    <Assembly>TIA_Antigravity_AddIn.dll</Assembly>
+    <Actions>
+      <Action ID="Antigravity_GenerateSCL">
+        <DisplayName>Generate SCL with Gemini</DisplayName>
+      </Action>
+      <Action ID="Antigravity_AnalyzeBlock">
+        <DisplayName>Analyze Block with Gemini</DisplayName>
+      </Action>
+    </Actions>
+  </AddInPackage>
+</WorkflowConfig>

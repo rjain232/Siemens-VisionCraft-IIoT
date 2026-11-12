@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes highlightPulse {
+    0% {
+      background-color: rgb(191, 219, 254);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+      background-color: rgb(191, 219, 254);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+    }
+    100% {
+      background-color: transparent;
+      box-shadow: 0 0 0 0px rgba(59, 130, 246, 0);
+    }
+  }
+
+  .animate-highlight-pulse {
+    animation: highlightPulse 0.6s ease-out;
+  }
+
+  /* KUKA-style 3-joint welding arm */
+  @keyframes robotLower {
+    0% {
+      transform: rotate(-6deg);
+    }
+    40% {
+      transform: rotate(9deg);
+    }
+    70% {
+      transform: rotate(-3deg);
+    }
+    100% {
+      transform: rotate(-6deg);
+    }
+  }
+
+  @keyframes robotUpper {
+    0% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(18deg);
+    }
+    70% {
+      transform: rotate(-6deg);
+    }
+    100% {
+      transform: rotate(-10deg);
+    }
+  }
+
+  @keyframes robotTool {
+    0% {
+      transform: rotate(8deg);
+    }
+    35% {
+      transform: rotate(-12deg);
+    }
+    65% {
+      transform: rotate(6deg);
+    }
+    100% {
+      transform: rotate(8deg);
+    }
+  }
+
+  @keyframes robotSpark {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.9;
+    }
+    35% {
+      opacity: 0.2;
+    }
+    55% {
+      opacity: 0.8;
+    }
+    75% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes robotSparkInner {
+    0% {
+      opacity: 0.2;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    75% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  .animate-robot-lower {
+    animation: robotLower 2.4s ease-in-out infinite;
+    will-change: transform;
+  }
+  .animate-robot-upper {
+    animation: robotUpper 2.4s ease-in-out infinite;
+    will-change: transform;
+  }
+  .animate-robot-tool {
+    animation: robotTool 2.4s ease-in-out infinite;
+    will-change: transform;
+  }
+  .animate-robot-spark {
+    animation: robotSpark 0.5s linear infinite;
+    will-change: opacity;
+  }
+  .animate-robot-spark-inner {
+    animation: robotSparkInner 0.5s linear infinite 0.12s;
+    will-change: opacity;
+  }
+}
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Custom scrollbar styling - Global */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Sidebar Navigation scrollbar - WebKit (Chrome, Safari, Edge) */
+.sidebar-nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* Firefox scrollbar */
+.sidebar-nav {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}

@@ -1,0 +1,35 @@
+﻿# Dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+package-lock.json
+
+# Environment & Secrets
+.env
+*.env
+*.key
+*.pem
+
+# Build outputs
+dist/
+build/
+bin/
+obj/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+.pytest_cache/
+
+# Testing
+playwright-report/
+test-results/
+
+# Large binaries & installers
+*.iso
+*.rar
+*.zip
+*.7z

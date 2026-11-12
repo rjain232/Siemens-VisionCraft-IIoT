@@ -1,0 +1,133 @@
+// ==============================================================================
+// SOLVYN-GRADE POWER PLANT CONTROLLER (PPC) & BESS CONTROLLER FOR SIEMENS S7-1500
+// Standard: IEC 61850 / IEC 61131-3 SCL (Compatible with TIA Portal V20)
+// Designed for: Solar PV + Wind + BESS Hybrid Renewable Microgrid
+// ==============================================================================
+
+TYPE "UDT_GridMeasurement"
+VERSION : 0.1
+   STRUCT
+      V_L1_N : Real;        // Phase 1 to Neutral Voltage [V]
+      V_L2_N : Real;        // Phase 2 to Neutral Voltage [V]
+      V_L3_N : Real;        // Phase 3 to Neutral Voltage [V]
+      Grid_Frequency : Real; // Grid Frequency [Hz] (Nominal 50.0 Hz)
+      ActivePower_MW : Real; // Total Active Power import/export [MW]
+      ReactivePower_MVAr : Real; // Total Reactive Power [MVAr]
+      PowerFactor : Real;    // Current Grid Power Factor (-1.0 to +1.0)
+   END_STRUCT;
+END_TYPE
+
+TYPE "UDT_BESS_Pack_Telemetry"
+VERSION : 0.1
+   STRUCT
+      StateOfCharge_Pct : Real; // BESS Battery SoC (0.0 to 100.0 %)
+      StateOfHealth_Pct : Real; // BESS Battery SoH (0.0 to 100.0 %)
+      MaxCellTemp_C : Real;     // Highest Battery Cell Temperature [°C]
+      DC_BusVoltage_V : Real;   // Inverter DC Bus Voltage [V]
+      ChargeCurrent_A : Real;   // Charging (+) or Discharging (-) Current [A]
+      BMS_FaultStatus : DWord;  // BMS Bitfield Fault Register
+   END_STRUCT;
+END_TYPE
+
+FUNCTION_BLOCK "FB_Solvyn_PowerPlantController"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      bEnablePPC : Bool;                // Enable Power Plant Controller Master Loop
+      rGrid_Freq_Nominal : Real := 50.0; // Nominal Grid Frequency (50.0 Hz)
+      rDroop_Coeff_Pct : Real := 4.0;    // Standard Primary Frequency Droop (4%)
+      rP_Curtailment_Setpt_MW : Real;   // Grid Dispatch Target from Cloud / SCADA
+      bTimeOfDay_PeakTariff : Bool;     // Flag: Peak Tariff Active (True = Discharge BESS)
+      stGrid : "UDT_GridMeasurement";   // Telemetry from SENTRON PAC / Substation
+      stBESS : "UDT_BESS_Pack_Telemetry"; // Telemetry from Battery Inverter
+   END_VAR
+
+   VAR_OUTPUT 
+      rSolar_Inverter_P_Setpt_MW : Real; // Dispatched Target to Solar PV Inverters
+      rBESS_Inverter_P_Setpt_MW : Real;  // Dispatched Target to BESS Inverter
+      rReactive_Q_Command_MVAr : Real;   // Dispatched Reactive Power to Inverters
+      bEmergencyCurtailment : Bool;      // Active if Grid Overfrequency detected
+      nBESS_OperatingMode : Int;         // 0: Standby, 1: Charging, 2: Discharging, 99: Trip
+   END_VAR
+
+   VAR 
+      rDelta_Freq : Real;
+      rFreq_Response_MW : Real;
+      rMax_BESS_Capacity_MW : Real := 2.5; // 2.5 MW / 5 MWh BESS Container
+   END_VAR
+
+BEGIN
+   // ---------------------------------------------------------------------------
+   // 1. SAFETY & THERMAL CHECK
+   // ---------------------------------------------------------------------------
+   IF #stBESS.MaxCellTemp_C > 48.0 OR #stBESS.BMS_FaultStatus <> 0 THEN
+      #nBESS_OperatingMode := 99; // EMERGENCY THERMAL SHUTDOWN
+      #rBESS_Inverter_P_Setpt_MW := 0.0;
+   ELSIF NOT #bEnablePPC THEN
+      #nBESS_OperatingMode := 0; // STANDBY
+      #rBESS_Inverter_P_Setpt_MW := 0.0;
+      #rSolar_Inverter_P_Setpt_MW := #rP_Curtailment_Setpt_MW;
+      RETURN;
+   END_IF;
+
+   // ---------------------------------------------------------------------------
+   // 2. PRIMARY FREQUENCY RESPONSE (DROOP CONTROL - IEC 61400 / IEEE 2800)
+   // ---------------------------------------------------------------------------
+   #rDelta_Freq := #stGrid.Grid_Frequency - #rGrid_Freq_Nominal;
+
+   // If frequency is above deadband (+0.05 Hz), curtail active power immediately
+   IF #rDelta_Freq > 0.05 THEN
+      #rFreq_Response_MW := -1.0 * (#rDelta_Freq / (#rGrid_Freq_Nominal * (#rDroop_Coeff_Pct / 100.0))) * 10.0;
+      #bEmergencyCurtailment := TRUE;
+   ELSIF #rDelta_Freq < -0.05 THEN
+      // Underfrequency event: Inject power from BESS
+      #rFreq_Response_MW := ABS(#rDelta_Freq / (#rGrid_Freq_Nominal * (#rDroop_Coeff_Pct / 100.0))) * 5.0;
+      #bEmergencyCurtailment := FALSE;
+   ELSE
+      #rFreq_Response_MW := 0.0;
+      #bEmergencyCurtailment := FALSE;
+   END_IF;
+
+   // ---------------------------------------------------------------------------
+   // 3. BESS ENERGY MANAGEMENT SYSTEM (EMS) ARBITRAGE DISPATCH
+   // ---------------------------------------------------------------------------
+   IF #nBESS_OperatingMode <> 99 THEN
+      IF #bTimeOfDay_PeakTariff AND #stBESS.StateOfCharge_Pct > 15.0 THEN
+         // PEAK TARIFF: Discharge battery to maximum safe limit
+         #nBESS_OperatingMode := 2; // DISCHARGING
+         #rBESS_Inverter_P_Setpt_MW := #rMax_BESS_Capacity_MW + #rFreq_Response_MW;
+         IF #rBESS_Inverter_P_Setpt_MW > #rMax_BESS_Capacity_MW THEN
+            #rBESS_Inverter_P_Setpt_MW := #rMax_BESS_Capacity_MW;
+         END_IF;
+      ELSIF (NOT #bTimeOfDay_PeakTariff) AND #stBESS.StateOfCharge_Pct < 95.0 THEN
+         // OFF-PEAK / EXCESS SOLAR: Absorb energy from grid or local solar
+         #nBESS_OperatingMode := 1; // CHARGING
+         #rBESS_Inverter_P_Setpt_MW := -1.0 * #rMax_BESS_Capacity_MW;
+      ELSE
+         #nBESS_OperatingMode := 0; // FLOAT / STANDBY
+         #rBESS_Inverter_P_Setpt_MW := 0.0;
+      END_IF;
+   END_IF;
+
+   // ---------------------------------------------------------------------------
+   // 4. SOLAR PV INVERTER DISPATCH (TOTAL DISPATCH MINUS BESS CONTRIBUTION)
+   // ---------------------------------------------------------------------------
+   #rSolar_Inverter_P_Setpt_MW := #rP_Curtailment_Setpt_MW - #rBESS_Inverter_P_Setpt_MW;
+   IF #rSolar_Inverter_P_Setpt_MW < 0.0 THEN
+      #rSolar_Inverter_P_Setpt_MW := 0.0;
+   END_IF;
+
+   // ---------------------------------------------------------------------------
+   // 5. VOLTAGE & REACTIVE POWER (V-Q) DROOP CONTROLLER
+   // ---------------------------------------------------------------------------
+   IF #stGrid.V_L1_N > 240.0 THEN
+      // Overvoltage: Absorb reactive power (inductive)
+      #rReactive_Q_Command_MVAr := -0.5 * ((#stGrid.V_L1_N - 240.0) / 10.0);
+   ELSIF #stGrid.V_L1_N < 220.0 THEN
+      // Undervoltage: Inject reactive power (capacitive boost)
+      #rReactive_Q_Command_MVAr := 0.5 * ((220.0 - #stGrid.V_L1_N) / 10.0);
+   ELSE
+      #rReactive_Q_Command_MVAr := 0.0;
+   END_IF;
+
+END_FUNCTION_BLOCK

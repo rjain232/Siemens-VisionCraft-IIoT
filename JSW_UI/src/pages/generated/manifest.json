@@ -1,0 +1,18 @@
+[
+  {
+    "id": "GeneratedScreen",
+    "name": "Generated Screen",
+    "targetPage": "global-widget",
+    "tabId": "generatedscreen",
+    "routePath": "generatedscreen",
+    "pushedAt": "2026-11-01T07:39:25.061Z"
+  },
+  {
+    "id": "SiemensPlantHMIWidget",
+    "name": "Siemens Plant HMI (TIA Portal V20)",
+    "targetPage": "global-widget",
+    "tabId": "siemens_plant_hmi",
+    "routePath": "siemens-hmi",
+    "pushedAt": "2026-11-01T13:02:00.000Z"
+  }
+]
