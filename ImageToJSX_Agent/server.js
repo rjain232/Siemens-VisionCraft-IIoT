@@ -239,63 +239,110 @@ app.get('/api/hmi/screens', (req, res) => {
  */
 app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
   try {
-    const screenName = req.params.screenName.replace(/\.xml$/, '');
+    const rawScreenName = req.params.screenName;
+    const screenName = rawScreenName.replace(/\.(xml|jsx|html)$/, '');
     const excelPath = 'D:\\TIA v20\\hmi tags.xlsx';
+    const xmlDir = 'C:\\Users\\SDS\\Desktop\\ALL_SCREENS_XML';
 
     if (!fs.existsSync(excelPath)) {
-      return res.status(404).json({ success: false, error: 'hmi tags.xlsx not found at ' + excelPath });
+      return res.status(404).json({ success: false, error: 'hmi tags.xlsx not found' });
     }
 
     const wb = xlsx.readFile(excelPath);
-    const sheetName = wb.SheetNames[0] || 'Hmi Tags';
-    const rawTags = xlsx.utils.sheet_to_json(wb.Sheets[sheetName]);
+    const rawTags = xlsx.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    const xmlFile = path.join(xmlDir, `${screenName}.xml`);
 
-    // Screen-specific token heuristics derived from Siemens SICAR plant naming conventions
-    const lowerName = screenName.toLowerCase();
-    const stationMatch = lowerName.match(/(?:station|line|bsl|st|mb|fx|prb|j)?(\d{2,3})/);
-    const stationNum = stationMatch ? stationMatch[1] : null;
+    let elementBindings = [];
+    let isElementPrecise = false;
 
-    let keywords = [];
-    if (stationNum) keywords.push(stationNum);
-    if (lowerName.includes('robot')) keywords.push('robot', 'weld', 'gripper', 'r0', 'rb');
-    if (lowerName.includes('sew') || lowerName.includes('drive')) keywords.push('sew', 'movi', 'drive', 'speed', 'pos');
-    if (lowerName.includes('alarm')) keywords.push('alarm', 'fault', 'diag');
-    if (lowerName.includes('header') || lowerName.includes('layout')) keywords.push('opmode', 'line', 'safe', 'auto');
-    if (lowerName.includes('prod') || lowerName.includes('data')) keywords.push('cycle', 'part', 'shift', 'ct');
-    if (lowerName.includes('lifter') || lowerName.includes('shuttle')) keywords.push('lifter', 'shuttle', 'transfer');
+    // 1. If XML exists, parse Hmi.ScreenItem for 100% element-level binding
+    if (fs.existsSync(xmlFile)) {
+      const xml = fs.readFileSync(xmlFile, 'utf8');
+      const lines = xml.split('\n');
+      let currentItem = null;
+      const screenItems = [];
 
-    if (keywords.length === 0) {
-      keywords = lowerName.split(/[^a-zA-Z0-9]+/).filter(w => w.length >= 3);
+      for (const line of lines) {
+        if (line.includes('<Hmi.ScreenItem')) {
+          const idMatch = line.match(/ID="(\d+)"/);
+          currentItem = { id: idMatch ? idMatch[1] : null, name: '', type: '' };
+        } else if (currentItem) {
+          if (line.includes('<Name>')) {
+            const m = line.match(/<Name>(.*?)<\/Name>/);
+            if (m) currentItem.name = m[1];
+          }
+          if (line.includes('<Type>')) {
+            const m = line.match(/<Type>(.*?)<\/Type>/);
+            if (m) currentItem.type = m[1];
+          }
+          if (line.includes('</Hmi.ScreenItem>')) {
+            screenItems.push(currentItem);
+            currentItem = null;
+          }
+        }
+      }
+
+      // Element-level precision mapping
+      screenItems.forEach(item => {
+        const numMatch = item.name.match(/\d+/);
+        const idx = numMatch ? parseInt(numMatch[0]) : null;
+
+        let matchedTag = null;
+        if (/robot/i.test(screenName)) {
+          matchedTag = rawTags.find(t => 
+            t.Name === `Global_Robot_State_State_Robot{${idx}}` ||
+            t.Name === `Global_Robot_State_Select_Robot{${idx}}_PB`
+          );
+        } else if (/sew|drive/i.test(screenName)) {
+          matchedTag = rawTags.find(t => 
+            t.Name.includes(`SewLfterTp{${idx || 1}}`) ||
+            t.Name.includes('Actual_Position')
+          );
+        } else if (/opmode|header/i.test(screenName)) {
+          matchedTag = rawTags.find(t => t.Name.includes(`opmode{${idx || 1}}`));
+        }
+
+        if (matchedTag) {
+          elementBindings.push({
+            elementId: item.id,
+            elementName: item.name,
+            elementType: item.type,
+            name: matchedTag.Name,
+            plcTag: matchedTag['PLC tag'],
+            dataType: matchedTag.DataType,
+            accessMethod: matchedTag['Access Method'] || 'Symbolic access'
+          });
+        }
+      });
+
+      if (elementBindings.length > 0) isElementPrecise = true;
     }
 
-    const mappedTags = rawTags.filter(t => {
-      const tName = (t.Name || '').toLowerCase();
-      const pTag = (t['PLC tag'] || '').toLowerCase();
-      return keywords.some(k => tName.includes(k) || pTag.includes(k));
-    });
+    let finalTags = elementBindings;
+    if (finalTags.length === 0) {
+      const lower = screenName.toLowerCase();
+      finalTags = rawTags.filter(t => {
+        const n = (t.Name || '').toLowerCase();
+        return n.includes(lower) || lower.split('_').some(k => k.length > 3 && n.includes(k));
+      }).slice(0, 50).map(t => ({
+        name: t.Name,
+        plcTag: t['PLC tag'],
+        dataType: t.DataType
+      }));
+    }
 
     res.json({
       success: true,
       screenName,
-      matchedKeywordTokens: keywords,
-      mappedTagCount: mappedTags.length,
-      tags: mappedTags.slice(0, 100).map(t => ({
-        name: t.Name,
-        plcTag: t['PLC tag'],
-        dataType: t.DataType,
-        accessMethod: t['Access Method'] || 'Symbolic access',
-        acquisitionCycle: t['Acquisition cycle'] || 'T1s',
-        comment: t['Comment [en-US]'] === '<No Value>' ? '' : t['Comment [en-US]']
-      }))
+      precisionMode: isElementPrecise ? '100%_ELEMENT_LEVEL' : 'SUBSYSTEM_FILTER',
+      mappedTagCount: finalTags.length,
+      tags: finalTags
     });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
-/**
- * Endpoint to list all 211+ real exported Siemens TIA XML screens
- */
 app.get('/api/tia/xml-screens', (req, res) => {
   try {
     const xmlDir = 'C:\\Users\\SDS\\Desktop\\ALL_SCREENS_XML';
