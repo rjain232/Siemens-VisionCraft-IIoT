@@ -23,14 +23,34 @@ class SiemensHmiBridge {
     this.backoffDelayMs = 1000;
     this.maxBackoffMs = 30000;
 
-    // Real extracted tag dictionary from MB2.rar
+    // Real extracted tag dictionary from MB2.rar & Siemens SICAR Standard
     this.tags = {
-      // Station 10 (Turntable DK01, DK02 & Pusher PD01)
+      // Line Coordination & Production Metrics
+      'Line_Auto_Running': true,
+      'Operating_Mode': 'AUTO',
+      'Safety_OK': true,
+      'E_Stop_Active': false,
+      'Fault_Active': false,
+      'TotalCycles': 1420,
+      'TotalParts': 1420,
+      'TargetCycles': 1500,
+      'TargetParts': 1500,
+      'LineOEE': 94.6,
+      'CycleTimeSeconds': 42.4,
+      'Alarm_Mute': false,
+
+      // Station 10 (Turntable DK01, DK02, Clamping & Part Seating)
       'BSL010_DK01_Status': 1, // 1 = Position OK, 2 = Moving
       'BSL010_DK01Main': true,
       'BSL010_DK01Diag': 0, // 0 = No Fault
       'BSL010_DK02_Status': 1,
       'BSL010_PD01_Status': 1, // 1 = Retracted, 2 = Extended
+      'BSL010_DK01_Clamp_Adv': true,
+      'BSL010_DK01_Clamp_Ret': false,
+      'BSL010_DK02_Locator_Up': true,
+      'BSL010_Part_Seated': true,
+      'BSL010_StepNumber': 12,
+      'BSL010_CycleTime': 18.2,
 
       // Station 15 (Welding Robot Cell R01 & DK Turn-unit)
       'BSL015_R01_Status': 2, // 2 = Auto Cycle Running, 1 = Idle, 3 = Fault
@@ -38,18 +58,40 @@ class SiemensHmiBridge {
       'BSL015_R01_Diag': 0,
       'BSL015_DK01_Status': 1,
       'BSL015_DK02_Status': 1,
+      'BSL015_R01_InHome': false,
+      'BSL015_R01_Working': true,
+      'BSL015_R01_ReleasePermitted': true,
+      'BSL015_WeldHead_Clamped': true,
+      'BSL015_Gas_Flow_OK': true,
+      'BSL015_StepNumber': 24,
+      'BSL015_CycleTime': 28.5,
 
-      // Station 20 (Transfer Lifter LP)
+      // Station 20 (Transfer Lifter LP & Indexing Shuttle)
       'BSL020_LP_Status': 1, // 1 = Upper Transfer, 2 = Lower
       'BSL020_LPMain': true,
       'BSL020_LP_Diag': 0,
+      'BSL020_Lifter_UpperPos': true,
+      'BSL020_Lifter_LowerPos': false,
+      'BSL020_Shuttle_InPos': true,
+      'BSL020_SafetyGate_Closed': true,
+      'BSL020_StepNumber': 8,
+      'BSL020_CycleTime': 14.1,
 
-      // Motion Control: SEW Movi-C Servo Coordinates
+      // Motion Control: SEW Movi-C Servo Coordinates (Unified Keys)
       'SEW_MB220_XM1_ActPos': 420.5,
       'SEW_MB220_XM1_SetPos': 420.0,
       'SEW_MB220_YM1_ActPos': 185.2,
       'SEW_MB220_YM1_SetPos': 185.0,
       'SEW_MB210_U1_Speed': 1450,
+      'SEW_XM1_ActPos': 420.5,
+      'SEW_XM1_SetPos': 420.0,
+      'SEW_XM1_Speed_RPM': 1200,
+      'SEW_XM1_Torque_Nm': 24.8,
+      'SEW_YM1_ActPos': 185.2,
+      'SEW_YM1_SetPos': 185.0,
+      'SEW_YM1_Speed_RPM': 950,
+      'SEW_YM1_Torque_Nm': 18.2,
+      'SEW_U1_BeltSpeed_RPM': 1450,
       'Drive_Ready': true,
 
       // Safety & Diagnostics
@@ -59,12 +101,11 @@ class SiemensHmiBridge {
       'LSicar_TecUnits_Diag': 0,
       'HMI_Panel_Status': 1,
 
-      // Line Production Metrics
-      'Line_Auto_Running': true,
-      'TotalCycles': 1420,
-      'TargetCycles': 1500,
-      'LineOEE': 94.6,
-      'CycleTimeSeconds': 42.4
+      // Active Alarms Buffer
+      'ActiveAlarms': [
+        { id: 1042, time: '14:02:15', station: 'BSL015', text: 'Warning: Welding Wire Spool < 15% Remaining', level: 'WARN' },
+        { id: 1018, time: '13:48:30', station: 'SEW_XM1', text: 'Notice: Axis Lubrication Cycle Due in 4 Hours', level: 'INFO' }
+      ]
     };
 
     this.clients = new Set();
@@ -216,6 +257,15 @@ class SiemensHmiBridge {
 
   async writeTag(tagName, value) {
     this.tags[tagName] = value;
+
+    // Cross-key synchronization for motion & cycle counters
+    if (tagName === 'SEW_XM1_ActPos') this.tags['SEW_MB220_XM1_ActPos'] = value;
+    if (tagName === 'SEW_MB220_XM1_ActPos') this.tags['SEW_XM1_ActPos'] = value;
+    if (tagName === 'SEW_YM1_ActPos') this.tags['SEW_MB220_YM1_ActPos'] = value;
+    if (tagName === 'SEW_MB220_YM1_ActPos') this.tags['SEW_YM1_ActPos'] = value;
+    if (tagName === 'TotalParts') this.tags['TotalCycles'] = value;
+    if (tagName === 'TotalCycles') this.tags['TotalParts'] = value;
+
     this.broadcast({ [tagName]: value });
 
     if (this.isPlcOnline && this.token) {
