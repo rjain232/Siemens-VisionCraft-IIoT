@@ -1,0 +1,1485 @@
+{
+  "screensCount": 211,
+  "elementPreciseCount": 32,
+  "subsystemCount": 179,
+  "totalMappedElements": 3287,
+  "summary": [
+    {
+      "index": 1,
+      "screen": "01_ScreenLayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 2,
+      "screen": "02_Header",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 44,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 3,
+      "screen": "10_SubMenus",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 4,
+      "screen": "11_SubMenus_Type",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 27,
+      "sampleTag": "GlobalRobotHmiInterface_GripperHmi{18}_ToolType"
+    },
+    {
+      "index": 5,
+      "screen": "12_SubMenus_Robot",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "sampleTag": "Global_Robot_State_State_Robot{15}"
+    },
+    {
+      "index": 6,
+      "screen": "13_SubMenus_SEW",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 7,
+      "screen": "14_Alarm",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 8,
+      "screen": "14_SubMenus_Alarm",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 9,
+      "screen": "150FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 10,
+      "screen": "150FX1Layout_Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 18,
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 11,
+      "screen": "150J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 12,
+      "screen": "150Pop-up_Device",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "sampleTag": "Global_Dev_Line_ComstatusHMI_Device_Com_OK"
+    },
+    {
+      "index": 13,
+      "screen": "150PRBCompleteDisplay_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 14,
+      "screen": "150PRBCompleteDisplay_2",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 15,
+      "screen": "150PRBCompleteDisplay_3",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 16,
+      "screen": "150RobotCollision",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 46,
+      "sampleTag": "Global_Robot_State_State_Robot{4}"
+    },
+    {
+      "index": 17,
+      "screen": "150Rollerup Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 18,
+      "screen": "150V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 19,
+      "screen": "15_SubMenus_ProductionData",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 20,
+      "screen": "160FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 21,
+      "screen": "160FX1Layout_Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 18,
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 22,
+      "screen": "160J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 23,
+      "screen": "160PRBCompleteDisplay_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 24,
+      "screen": "160PRBCompleteDisplay_2",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 25,
+      "screen": "160RobotCollision",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 42,
+      "sampleTag": "Global_Robot_State_State_Robot{13}"
+    },
+    {
+      "index": 26,
+      "screen": "160Rollerup Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 27,
+      "screen": "160V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 28,
+      "screen": "16_SubMenus_Diagnostic",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "FilePathDiagnosticFiles"
+    },
+    {
+      "index": 29,
+      "screen": "170FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 30,
+      "screen": "170PRBCompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 31,
+      "screen": "170Rollerup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 32,
+      "screen": "17_SubMenus_SystemSettings",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 33,
+      "screen": "180FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 34,
+      "screen": "180PRBCompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 35,
+      "screen": "180Rollerup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 36,
+      "screen": "190CompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 37,
+      "screen": "190FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 38,
+      "screen": "190FX1Layout_Docking",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 39,
+      "screen": "190FX1Layout_Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 18,
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 40,
+      "screen": "190FX2RhSliderFixtureLayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 41,
+      "screen": "190FX2RhSliderLayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 42,
+      "screen": "190FX3LhSliderFixtureLayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 43,
+      "screen": "190FX3LhSliderLayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 44,
+      "screen": "190J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 45,
+      "screen": "190J5RoofGeo",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 46,
+      "screen": "190J5RoofHandling",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 47,
+      "screen": "190Passing stand",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 48,
+      "screen": "190PRBCompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 49,
+      "screen": "190PRBCompleteDisplay_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 50,
+      "screen": "190PSCompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 51,
+      "screen": "190RB02CompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 52,
+      "screen": "190RB02_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 53,
+      "screen": "190RB02_Stand_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 54,
+      "screen": "190RB02_Stand_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 55,
+      "screen": "190RB02_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 56,
+      "screen": "190RB06CompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 57,
+      "screen": "190RB06_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 58,
+      "screen": "190RB06_Stand_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 59,
+      "screen": "190RB06_Stand_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 60,
+      "screen": "190RB06_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 61,
+      "screen": "190RobotCollision",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 65,
+      "sampleTag": "Global_Robot_State_State_Robot{6}"
+    },
+    {
+      "index": 62,
+      "screen": "190Rollerup Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 63,
+      "screen": "190V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 64,
+      "screen": "190V23RoofGeo",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 65,
+      "screen": "190V23RoofHandling",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 66,
+      "screen": "20023Fkt_Bkt",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 67,
+      "screen": "200APC1ayout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 68,
+      "screen": "200APC1CompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 69,
+      "screen": "200APC1FIFO",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 70,
+      "screen": "200APC1FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 71,
+      "screen": "200FX1Layout",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 72,
+      "screen": "200FX1Layout_Docking",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 73,
+      "screen": "200FX1Layout_Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 18,
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 74,
+      "screen": "200J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 75,
+      "screen": "200J5Fkt_Bkt",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 76,
+      "screen": "200PRBCompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 77,
+      "screen": "200PRBCompleteDisplay_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 78,
+      "screen": "200RB04CompleteDisplay",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 79,
+      "screen": "200RB04_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 80,
+      "screen": "200RB04_Stand_J5",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 81,
+      "screen": "200RB04_Stand_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 82,
+      "screen": "200RB04_V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 83,
+      "screen": "200RobotCollision",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 45,
+      "sampleTag": "Global_Robot_State_State_Robot{13}"
+    },
+    {
+      "index": 84,
+      "screen": "200Rollerup Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 85,
+      "screen": "200V23",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 86,
+      "screen": "ALARM",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 87,
+      "screen": "ALARM_HISTORY",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 88,
+      "screen": "Andon",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "sampleTag": "Andon"
+    },
+    {
+      "index": 89,
+      "screen": "Barcode_Scanner",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "BARCODE"
+    },
+    {
+      "index": 90,
+      "screen": "Call_ServiceButtons",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 10,
+      "sampleTag": "MB110AndonStatus_IDB_Call_Buttons_From_HMI"
+    },
+    {
+      "index": 91,
+      "screen": "Call_ServiceButtons_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 10,
+      "sampleTag": "MB110AndonStatus_IDB_Call_Buttons_From_HMI"
+    },
+    {
+      "index": 92,
+      "screen": "Call_ServiceButtons_2",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 10,
+      "sampleTag": "MB110AndonStatus_IDB_Call_Buttons_From_HMI"
+    },
+    {
+      "index": 93,
+      "screen": "CENTRAL LOADING FIFO",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 94,
+      "screen": "CycleTime",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 18,
+      "sampleTag": "CURVE_CYCLETIMES_XPos"
+    },
+    {
+      "index": 95,
+      "screen": "Dry_runFunction Select",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 96,
+      "screen": "Grinding",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "GlobalRobotHmiInterface_Grinding{0}"
+    },
+    {
+      "index": 97,
+      "screen": "Hemming Process",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "GlobalRobotHmiInterface_Hemming Process{0}"
+    },
+    {
+      "index": 98,
+      "screen": "HTML_VIEW",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 31,
+      "sampleTag": "OVERVIEW_LEGEND_Popup_XPos"
+    },
+    {
+      "index": 99,
+      "screen": "IF_SIGNALS_BOOL",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 5,
+      "sampleTag": "Temp_bool"
+    },
+    {
+      "index": 100,
+      "screen": "Main",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "00140MainDB_HMI_Interface_MB140_M1ROLLER"
+    },
+    {
+      "index": 101,
+      "screen": "MarriageFIFO_MB190_MB190RB02",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 102,
+      "screen": "MarriageFIFO_MB200_MB200RB04",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 103,
+      "screen": "Marriage_MB190_MB190R02",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 8,
+      "sampleTag": "MB140RB03_And_MB140Marriage_i"
+    },
+    {
+      "index": 104,
+      "screen": "Marriage_MB200_MB200R04",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 8,
+      "sampleTag": "MB140RB03_And_MB140Marriage_i"
+    },
+    {
+      "index": 105,
+      "screen": "MB150 first station LOADING STAND FIFO",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 106,
+      "screen": "MB190RB06 LOADING STAND FIFO",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 107,
+      "screen": "MB200APCRH1 LOADING STAND FIFO",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 108,
+      "screen": "OP010Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 109,
+      "screen": "OP010Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 110,
+      "screen": "OP01Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 111,
+      "screen": "OP01Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 112,
+      "screen": "OP02Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 113,
+      "screen": "OP02Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 114,
+      "screen": "OP03Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 115,
+      "screen": "OP03Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 116,
+      "screen": "OP04Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 117,
+      "screen": "OP04Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 118,
+      "screen": "OrderManagement",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "Ordermanagement_Control_StationOrderHMIOP"
+    },
+    {
+      "index": 119,
+      "screen": "PN_DIAGNOSTIC ETH P1P2P3",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 120,
+      "screen": "PN_DIAGNOSTIC ETH P4P5P6",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 121,
+      "screen": "PN_DIAGNOSTIC ETH P7P8",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 122,
+      "screen": "PN_DIAGNOSTIC ETH P9P10",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 123,
+      "screen": "PN_DIAGNOSTIC_ALL",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "FilePathDiagnosticFiles"
+    },
+    {
+      "index": 124,
+      "screen": "Pop-up_AI_ENERGYMETER_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 125,
+      "screen": "Pop-up_ALARM_HISTORY_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 126,
+      "screen": "Pop-up_ATDC",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "GlobalRobotHmiInterface_ATDC HMI{0}"
+    },
+    {
+      "index": 127,
+      "screen": "Pop-up_ControlOnOff_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "InstControlOnOffstatHmi"
+    },
+    {
+      "index": 128,
+      "screen": "Pop-up_CURVE_F-CYCLETIMES_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 129,
+      "screen": "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 130,
+      "screen": "Pop-up_Device",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "sampleTag": "Global_Dev_Line_ComstatusHMI_Device_Com_OK"
+    },
+    {
+      "index": 131,
+      "screen": "Pop-up_EEM_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 132,
+      "screen": "Pop-up_EUCHNER_MGB_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 133,
+      "screen": "Pop-up_Hmi_Opmodes12_h_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 51,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 134,
+      "screen": "Pop-up_Hmi_Opmodes18_h_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 75,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 135,
+      "screen": "Pop-up_Hmi_Opmodes24_h_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 80,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 136,
+      "screen": "Pop-up_Hmi_Opmodes6_h_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 27,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 137,
+      "screen": "Pop-up_IF_SIGNALS_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "SelectSignalsHmi"
+    },
+    {
+      "index": 138,
+      "screen": "Pop-up_ISRA VISION",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "GlobalRobotHmiInterface_ISRA VISION HMI{0}"
+    },
+    {
+      "index": 139,
+      "screen": "Pop-up_Mig Weld",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 140,
+      "screen": "Pop-up_MOVE_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 141,
+      "screen": "Pop-up_NutRunner",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "sampleTag": "GlobalRobotHmiInterface_NutRunner{0}"
+    },
+    {
+      "index": 142,
+      "screen": "Pop-up_OPMode",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 51,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 143,
+      "screen": "Pop-up_Opmodes12_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 58,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 144,
+      "screen": "Pop-up_Opmodes18_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 82,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 145,
+      "screen": "Pop-up_Opmodes24_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 106,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 146,
+      "screen": "Pop-up_Opmodes6_Popup",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 34,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 147,
+      "screen": "Pop-up_OVERVIEW_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 148,
+      "screen": "Pop-up_PANEL_INITIALIZED_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 149,
+      "screen": "Pop-up_PLP",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 150,
+      "screen": "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 151,
+      "screen": "Pop-up_PN_DEV_DIAG_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 152,
+      "screen": "Pop-up_PRBHome",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 153,
+      "screen": "Pop-up_PRBWork",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 154,
+      "screen": "Pop-up_PRODDATA_CT_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 155,
+      "screen": "Pop-up_PRODDATA_LV_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 156,
+      "screen": "Pop-up_PRODDATA_PC_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 157,
+      "screen": "Pop-up_PRODDATA_SC_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 158,
+      "screen": "Pop-up_SafetyGate",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 159,
+      "screen": "Pop-up_Sealer_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "GlobalRobotHmiInterface_Sealer1 HMI{0}"
+    },
+    {
+      "index": 160,
+      "screen": "Pop-up_Sealer_2",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "GlobalRobotHmiInterface_Sealer1 HMI{0}"
+    },
+    {
+      "index": 161,
+      "screen": "Pop-up_SPEC_FUNCTIONS_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 162,
+      "screen": "Pop-up_StyleConfigLocal",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 163,
+      "screen": "Pop-up_StyleConfigMESDownload",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 164,
+      "screen": "Pop-up_StyleConfigRFIDRead",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 165,
+      "screen": "Pop-up_StyleConfigRFIDWrite",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 166,
+      "screen": "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 167,
+      "screen": "Pop-up_SYSTEM_RTSTOP_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 168,
+      "screen": "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 169,
+      "screen": "Pop-up_TEC_UNIT_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 170,
+      "screen": "Pop-up_USER_OPERATION_LEGEND_Popup",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 171,
+      "screen": "Pop-up_VISION OFFSET VALUES",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 172,
+      "screen": "PopupAndonLegend",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 173,
+      "screen": "PopupCycleTimeLegend",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 174,
+      "screen": "ProductionCount",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "sampleTag": "ProductionCountIndex"
+    },
+    {
+      "index": 175,
+      "screen": "ProductionCountSummary",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 176,
+      "screen": "RFIDWrite",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 177,
+      "screen": "RobotCollision",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 37,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 178,
+      "screen": "RobotService_Zone01_2",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 179,
+      "screen": "RobotService_Zone01_mig weld",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 180,
+      "screen": "RobotService_Zone02",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 181,
+      "screen": "RobotService_Zone03",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 3,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 182,
+      "screen": "RobotService_Zone04",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 183,
+      "screen": "RobotService_Zone05",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 4,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 184,
+      "screen": "RobotService_Zone05_1",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 185,
+      "screen": "RobotService_Zone06",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 186,
+      "screen": "Robot_Kuka",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 197,
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 187,
+      "screen": "Robot_NBG_Kuka",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 54,
+      "sampleTag": "Global_Robot_State_State_Robot{1}"
+    },
+    {
+      "index": 188,
+      "screen": "Robot_PLP_Kuka",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 66,
+      "sampleTag": "Global_Robot_State_State_Robot{1}"
+    },
+    {
+      "index": 189,
+      "screen": "Rollerup Lifter",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 190,
+      "screen": "SafetyZone03Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 191,
+      "screen": "SafetyZone04Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 192,
+      "screen": "SafetyZone05Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 193,
+      "screen": "SafetyZone06Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 194,
+      "screen": "Screen_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 8,
+      "sampleTag": "ExampleOverview_Screen1_Popup_XPos"
+    },
+    {
+      "index": 195,
+      "screen": "Sew_APC",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 86,
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 196,
+      "screen": "SEW_FIFO",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 197,
+      "screen": "Sew_Lifter-Tp",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 198,
+      "screen": "Sew_TurnTable",
+      "mode": "100%_ELEMENT_LEVEL",
+      "mappedTags": 120,
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 199,
+      "screen": "StyleOverview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 200,
+      "screen": "StyleWrite",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 201,
+      "screen": "SWEServoHelp",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 202,
+      "screen": "SYSTEM_DIAGNOSTIC_DEVICE-VIEW",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 5,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 203,
+      "screen": "SYSTEM_SETTINGS_1",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 204,
+      "screen": "SYSTEM_SETTINGS_2",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 205,
+      "screen": "Tool Stand Bit",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 206,
+      "screen": "USER_OPERATION",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 34,
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 207,
+      "screen": "Valve8Pos",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 22,
+      "sampleTag": "GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi"
+    },
+    {
+      "index": 208,
+      "screen": "Zone03Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 209,
+      "screen": "Zone04Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 210,
+      "screen": "Zone05Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    },
+    {
+      "index": 211,
+      "screen": "Zone06Overview",
+      "mode": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "sampleTag": "None"
+    }
+  ]
+}
