@@ -23,6 +23,7 @@ const OEE = lazy(() => import("./pages/production/oee"));
 const ProductionControl = lazy(() => import("./pages/production/production-control"));
 const RobotMonitoring = lazy(() => import("./pages/production/robot-monitoring"));
 const SiemensPlantHMI = lazy(() => import("./pages/SiemensPlantHMI"));
+const LineMB200HMI = lazy(() => import("./pages/production/LineMB200HMI"));
 const CleanroomHvacDashboard = lazy(() => import("./pages/hvac/CleanroomHvacDashboard"));
 const ThirdPartyData = lazy(() => import("./pages/third-party-data"));
 const SolvynSmartGrid = lazy(() => import("./pages/SolvynSmartGrid"));
@@ -62,6 +63,8 @@ function App() {
                 <Route path="oee" element={<Suspense fallback={<PageFallback />}><OEE /></Suspense>} />
                 <Route path="robot-monitoring" element={<Suspense fallback={<PageFallback />}><RobotMonitoring /></Suspense>} />
                 <Route path="siemens-hmi" element={<Suspense fallback={<PageFallback />}><SiemensPlantHMI /></Suspense>} />
+                <Route path="line-mb200" element={<Suspense fallback={<PageFallback />}><LineMB200HMI /></Suspense>} />
+                <Route path="production/line-mb200" element={<Suspense fallback={<PageFallback />}><LineMB200HMI /></Suspense>} />
                 <Route path="cleanroom-hvac" element={<Suspense fallback={<PageFallback />}><CleanroomHvacDashboard /></Suspense>} />
                 <Route path="solvyn-smartgrid" element={<Suspense fallback={<PageFallback />}><SolvynSmartGrid /></Suspense>} />
                 <Route
