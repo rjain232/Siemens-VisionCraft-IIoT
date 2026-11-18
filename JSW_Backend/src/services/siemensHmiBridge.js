@@ -195,8 +195,10 @@ class SiemensHmiBridge {
     ws.on('message', (msg) => {
       try {
         const payload = JSON.parse(msg.toString());
-        if (payload.type === 'WRITE_TAG' && payload.tag) {
-          this.writeTag(payload.tag, payload.value);
+        const tag = payload.tag || payload.variable || payload.name;
+        const val = payload.value !== undefined ? payload.value : payload.val;
+        if ((payload.type === 'WRITE_TAG' || payload.action === 'WRITE_TAG') && tag !== undefined) {
+          this.writeTag(tag, val);
         }
       } catch (e) {
         console.warn('[SiemensHmi] Bad message received:', e.message);
