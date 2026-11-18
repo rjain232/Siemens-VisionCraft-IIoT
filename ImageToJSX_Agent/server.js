@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const { runFaangAgenticPipeline, runComponentModifier, sanitizeAndCompileAST } = require('./agent');
@@ -230,6 +231,66 @@ app.get('/api/hmi/screens', (req, res) => {
     }
   ];
   res.json({ success: true, screens });
+});
+
+/**
+ * Automated Screen-to-Tag Mapping API:
+ * Matches TIA Portal Openness / Excel tags to a target screen using hierarchical semantic heuristics.
+ */
+app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
+  try {
+    const screenName = req.params.screenName.replace(/\.xml$/, '');
+    const excelPath = 'D:\\TIA v20\\hmi tags.xlsx';
+
+    if (!fs.existsSync(excelPath)) {
+      return res.status(404).json({ success: false, error: 'hmi tags.xlsx not found at ' + excelPath });
+    }
+
+    const wb = xlsx.readFile(excelPath);
+    const sheetName = wb.SheetNames[0] || 'Hmi Tags';
+    const rawTags = xlsx.utils.sheet_to_json(wb.Sheets[sheetName]);
+
+    // Screen-specific token heuristics derived from Siemens SICAR plant naming conventions
+    const lowerName = screenName.toLowerCase();
+    const stationMatch = lowerName.match(/(?:station|line|bsl|st|mb|fx|prb|j)?(\d{2,3})/);
+    const stationNum = stationMatch ? stationMatch[1] : null;
+
+    let keywords = [];
+    if (stationNum) keywords.push(stationNum);
+    if (lowerName.includes('robot')) keywords.push('robot', 'weld', 'gripper', 'r0', 'rb');
+    if (lowerName.includes('sew') || lowerName.includes('drive')) keywords.push('sew', 'movi', 'drive', 'speed', 'pos');
+    if (lowerName.includes('alarm')) keywords.push('alarm', 'fault', 'diag');
+    if (lowerName.includes('header') || lowerName.includes('layout')) keywords.push('opmode', 'line', 'safe', 'auto');
+    if (lowerName.includes('prod') || lowerName.includes('data')) keywords.push('cycle', 'part', 'shift', 'ct');
+    if (lowerName.includes('lifter') || lowerName.includes('shuttle')) keywords.push('lifter', 'shuttle', 'transfer');
+
+    if (keywords.length === 0) {
+      keywords = lowerName.split(/[^a-zA-Z0-9]+/).filter(w => w.length >= 3);
+    }
+
+    const mappedTags = rawTags.filter(t => {
+      const tName = (t.Name || '').toLowerCase();
+      const pTag = (t['PLC tag'] || '').toLowerCase();
+      return keywords.some(k => tName.includes(k) || pTag.includes(k));
+    });
+
+    res.json({
+      success: true,
+      screenName,
+      matchedKeywordTokens: keywords,
+      mappedTagCount: mappedTags.length,
+      tags: mappedTags.slice(0, 100).map(t => ({
+        name: t.Name,
+        plcTag: t['PLC tag'],
+        dataType: t.DataType,
+        accessMethod: t['Access Method'] || 'Symbolic access',
+        acquisitionCycle: t['Acquisition cycle'] || 'T1s',
+        comment: t['Comment [en-US]'] === '<No Value>' ? '' : t['Comment [en-US]']
+      }))
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 /**
