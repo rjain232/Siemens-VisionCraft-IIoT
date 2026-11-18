@@ -47,21 +47,27 @@ const start = async () => {
   const siemensBridge = getSiemensHmiBridge();
 
   server.on("upgrade", (req, socket, head) => {
-    const { pathname } = new URL(req.url, `http://${req.headers.host}`);
+    try {
+      const host = req.headers.host || "localhost";
+      const { pathname } = new URL(req.url, `http://${host}`);
 
-    if (pathname === "/ws/dashboard") {
-      wss.handleUpgrade(req, socket, head, (ws) => {
-        wss.emit("connection", ws, req);
-      });
-    } else if (pathname === "/ws/robot-health") {
-      wssRobotHealth.handleUpgrade(req, socket, head, (ws) => {
-        wssRobotHealth.emit("connection", ws, req);
-      });
-    } else if (pathname === "/ws/siemens-hmi") {
-      wssSiemensHmi.handleUpgrade(req, socket, head, (ws) => {
-        wssSiemensHmi.emit("connection", ws, req);
-      });
-    } else {
+      if (pathname === "/ws/dashboard") {
+        wss.handleUpgrade(req, socket, head, (ws) => {
+          wss.emit("connection", ws, req);
+        });
+      } else if (pathname === "/ws/robot-health") {
+        wssRobotHealth.handleUpgrade(req, socket, head, (ws) => {
+          wssRobotHealth.emit("connection", ws, req);
+        });
+      } else if (pathname === "/ws/siemens-hmi") {
+        wssSiemensHmi.handleUpgrade(req, socket, head, (ws) => {
+          wssSiemensHmi.emit("connection", ws, req);
+        });
+      } else {
+        socket.destroy();
+      }
+    } catch (err) {
+      console.warn("[WS Upgrade] Malformed upgrade request rejected:", err.message);
       socket.destroy();
     }
   });

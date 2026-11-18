@@ -21,7 +21,10 @@ class PartMarriageHandshakeValidator:
         print("[TRACEABILITY] Part Marriage & Recipe Anti-Mismatch Engine Initialized.")
 
     def _init_db(self):
-        with sqlite3.connect(self.db_path) as conn:
+        with sqlite3.connect(self.db_path, timeout=10.0) as conn:
+            conn.execute("PRAGMA journal_mode=WAL;")
+            conn.execute("PRAGMA synchronous=NORMAL;")
+            conn.execute("PRAGMA busy_timeout=5000;")
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS app_Part_Marriage (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,

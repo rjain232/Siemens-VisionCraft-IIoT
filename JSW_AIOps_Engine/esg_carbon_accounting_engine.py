@@ -27,7 +27,10 @@ class ESGCarbonAccountingEngine:
         print(f"[ESG] Carbon Accounting Engine Initialized. Emission Factor: {self.emission_factor} kg CO2/kWh")
 
     def _init_sqlite_buffer(self):
-        with sqlite3.connect(self.db_path) as conn:
+        with sqlite3.connect(self.db_path, timeout=10.0) as conn:
+            conn.execute("PRAGMA journal_mode=WAL;")
+            conn.execute("PRAGMA synchronous=NORMAL;")
+            conn.execute("PRAGMA busy_timeout=5000;")
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS energy_carbon_ledger (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
