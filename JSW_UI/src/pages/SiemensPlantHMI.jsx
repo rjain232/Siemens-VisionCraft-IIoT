@@ -30,26 +30,47 @@ export default function SiemensPlantHMI() {
 
   const wsRef = useRef(null);
 
-  // Connect to Backend WebSocket
+  // Connect to Backend WebSocket with auto-reconnection and cleanup
   useEffect(() => {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsPort = window.location.port === '5055' ? '5055' : '5055';
-    const wsUrl = `${protocol}//${window.location.hostname}:${wsPort}/ws/siemens-hmi`;
-    try {
-      const ws = new WebSocket(wsUrl);
-      wsRef.current = ws;
+    let isSubscribed = true;
+    let reconnectTimeout = null;
 
-      ws.onmessage = (event) => {
-        try {
-          const payload = JSON.parse(event.data);
-          if (payload.type === 'TAGS_UPDATE' || payload.type === 'UPDATE' || payload.type === 'SNAPSHOT') {
-            setTags(prev => ({ ...prev, ...payload.data }));
-          }
-        } catch (_) {}
-      };
-    } catch (e) {}
+    function connect() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.hostname}:5055/ws/siemens-hmi`;
+      
+      try {
+        const ws = new WebSocket(wsUrl);
+        wsRef.current = ws;
+
+        ws.onmessage = (event) => {
+          if (!isSubscribed) return;
+          try {
+            const payload = JSON.parse(event.data);
+            if (payload.type === 'TAGS_UPDATE' || payload.type === 'UPDATE' || payload.type === 'SNAPSHOT') {
+              setTags(prev => ({ ...prev, ...payload.data }));
+            }
+          } catch (_) {}
+        };
+
+        ws.onclose = () => {
+          if (!isSubscribed) return;
+          reconnectTimeout = setTimeout(connect, 3000);
+        };
+
+        ws.onerror = () => {
+          if (ws) ws.close();
+        };
+      } catch (e) {
+        if (isSubscribed) reconnectTimeout = setTimeout(connect, 3000);
+      }
+    }
+
+    connect();
 
     return () => {
+      isSubscribed = false;
+      if (reconnectTimeout) clearTimeout(reconnectTimeout);
       if (wsRef.current) wsRef.current.close();
     };
   }, []);
