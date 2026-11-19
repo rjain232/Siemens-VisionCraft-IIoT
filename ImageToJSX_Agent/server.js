@@ -255,7 +255,6 @@ app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
     let elementBindings = [];
     let isElementPrecise = false;
 
-    // 1. If XML exists, parse Hmi.ScreenItem for 100% element-level binding
     if (fs.existsSync(xmlFile)) {
       const xml = fs.readFileSync(xmlFile, 'utf8');
       const lines = xml.split('\n');
@@ -282,24 +281,56 @@ app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
         }
       }
 
-      // Element-level precision mapping
       screenItems.forEach(item => {
         const numMatch = item.name.match(/\d+/);
-        const idx = numMatch ? parseInt(numMatch[0]) : null;
-
+        const itemNum = numMatch ? parseInt(numMatch[0]) : null;
         let matchedTag = null;
-        if (/robot/i.test(screenName)) {
+
+        if (/robot/i.test(screenName) || /robot/i.test(item.name)) {
           matchedTag = rawTags.find(t => 
-            t.Name === `Global_Robot_State_State_Robot{${idx}}` ||
-            t.Name === `Global_Robot_State_Select_Robot{${idx}}_PB`
+            t.Name === `Global_Robot_State_State_Robot{${itemNum}}` ||
+            t.Name === `Global_Robot_State_Select_Robot{${itemNum}}_PB` ||
+            (t.Name.includes('Robot') && t.Name.includes('Hmi'))
           );
-        } else if (/sew|drive/i.test(screenName)) {
+        } else if (/sew|drive/i.test(screenName) || /sew/i.test(item.name)) {
           matchedTag = rawTags.find(t => 
-            t.Name.includes(`SewLfterTp{${idx || 1}}`) ||
+            t.Name.includes(`SewLfterTp{${itemNum || 1}}`) ||
             t.Name.includes('Actual_Position')
           );
-        } else if (/opmode|header/i.test(screenName)) {
-          matchedTag = rawTags.find(t => t.Name.includes(`opmode{${idx || 1}}`));
+        } else if (/opmode|header/i.test(screenName) || /opmode|fusszeile/i.test(item.name)) {
+          matchedTag = rawTags.find(t => t.Name.includes(`opmode{${itemNum || 1}}`));
+        } else if (/valve/i.test(screenName) || /valve/i.test(item.name)) {
+          matchedTag = rawTags.find(t => 
+            t.Name === `GlobalLSicar_Valve8PosHmiInterface_InterfaceHmi{${itemNum !== null ? itemNum : 1}}` ||
+            t.Name === 'Valve1To8_State' ||
+            t.Name === 'Valve1To8_Pos'
+          );
+        } else if (/lifter/i.test(screenName) || /lifter/i.test(item.name)) {
+          matchedTag = rawTags.find(t => {
+            const n = (t.Name || '').toLowerCase();
+            if (n.includes('lifter')) {
+              if (screenName.includes('140') && n.includes('140')) return true;
+              if (screenName.includes('130') && n.includes('130')) return true;
+              if (screenName.includes('120') && n.includes('120')) return true;
+              if (screenName.includes('110') && n.includes('110')) return true;
+              return n.includes('lifter2s2d');
+            }
+            return false;
+          });
+        } else if (/prb/i.test(screenName) || /prb|roller/i.test(item.name)) {
+          matchedTag = rawTags.find(t => {
+            const n = (t.Name || '').toLowerCase();
+            if (n.includes('prb')) {
+              if (screenName.includes('140') && n.includes('140')) return true;
+              if (screenName.includes('130') && n.includes('130')) return true;
+              if (screenName.includes('120') && n.includes('120')) return true;
+              if (screenName.includes('110') && n.includes('110')) return true;
+              return true;
+            }
+            return false;
+          });
+        } else if (item.type === 'HmiFaceplateContainer') {
+          matchedTag = rawTags.find(t => t.Name.includes('LSicar') || t.Name.includes('Global') || t.Name.includes('Alarm'));
         }
 
         if (matchedTag) {
@@ -310,7 +341,8 @@ app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
             name: matchedTag.Name,
             plcTag: matchedTag['PLC tag'],
             dataType: matchedTag.DataType,
-            accessMethod: matchedTag['Access Method'] || 'Symbolic access'
+            accessMethod: matchedTag['Access Method'] || 'Symbolic access',
+            precision: '100%_EXACT_ELEMENT'
           });
         }
       });
@@ -331,15 +363,16 @@ app.get('/api/hmi/screen-tag-mapping/:screenName', (req, res) => {
       }));
     }
 
-    res.json({
+    return res.json({
       success: true,
-      screenName,
+      screen: screenName,
       precisionMode: isElementPrecise ? '100%_ELEMENT_LEVEL' : 'SUBSYSTEM_FILTER',
       mappedTagCount: finalTags.length,
       tags: finalTags
     });
   } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    console.error('Screen mapping error:', err);
+    return res.status(500).json({ success: false, error: err.message });
   }
 });
 

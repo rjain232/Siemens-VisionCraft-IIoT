@@ -497,12 +497,21 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
         jsx += `        <img src="/tia_graphics/Emerg_red.png" alt="E-Stop" className="w-full h-full object-contain filter drop-shadow hover:scale-105 transition" onError={(e)=>{e.target.style.display='none';}} />\n`;
         jsx += `      </div>\n`;
       } else {
-        const label = el.name.includes('Title_ScreenOverview') ? (el.left < 600 ? 'SelectJGValve' : 'Valve1To8Pos') : (safeLabel || 'Input Field');
-        jsx += `      {/* Header Selector: ${el.name} */}\n`;
-        jsx += `      <div className="absolute bg-[#00829E] border border-[#5AB0D3] text-white ${typo.fontClass} ${typo.fontSize} rounded-sm flex items-center justify-between px-2.5 shadow-sm cursor-pointer hover:bg-[#027AAC] transition z-20" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
-        jsx += `        <span className="truncate tracking-wide">${label}</span>\n`;
-        jsx += `        <span className="text-[9px] text-white/90 ml-1">▼</span>\n`;
-        jsx += `      </div>\n`;
+        const isGroupSelector = el.left < 600;
+        const selectorName = isGroupSelector ? 'SelectJGValve' : 'Valve1To8Pos';
+        jsx += `      {/* Header Interactive Selector Dropdown: ${el.name} */}\n`;
+        jsx += `      <select onChange={(e) => window.onValveSelectorChange && window.onValveSelectorChange('${selectorName}', e.target.value)} className="absolute bg-[#00829E] hover:bg-[#027AAC] border border-[#5AB0D3] text-white ${typo.fontClass} ${typo.fontSize} rounded-sm px-2 shadow-sm cursor-pointer z-30 focus:outline-none focus:ring-1 focus:ring-cyan-300 font-bold" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
+        if (isGroupSelector) {
+          jsx += `        <option value="SelectJGValve">SelectJGValve</option>\n`;
+          jsx += `        <option value="Gripper_Valves">JG Gripper Valves</option>\n`;
+          jsx += `        <option value="Lifter_Valves">JG Lifter Valves</option>\n`;
+          jsx += `        <option value="Clamp_Valves">JG Clamping Valves</option>\n`;
+        } else {
+          jsx += `        <option value="Valve1To8Pos">Valve1To8Pos</option>\n`;
+          jsx += `        <option value="Valve9To16Pos">Valve9To16Pos</option>\n`;
+          jsx += `        <option value="Valve17To24Pos">Valve17To24Pos</option>\n`;
+        }
+        jsx += `      </select>\n`;
       }
     } else if (isButton) {
       // Check if button is an invisible/transparent overlay touch target covering a card (e.g. Overview_01_Button_1)
@@ -530,7 +539,17 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
         }
 
         jsx += `      {/* Action Button: ${el.name} */}\n`;
-        jsx += `      <button className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white ${typo.fontClass} ${typo.fontSize} rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
+        let clickHandler = '';
+        if (isLegend) {
+          clickHandler = 'onClick={() => window.openSiemensLegendPopup && window.openSiemensLegendPopup()}';
+        } else if (isBack) {
+          clickHandler = 'onClick={() => window.historyBackOrStation && window.historyBackOrStation()}';
+        } else if (el.name.includes('ManualOPMode')) {
+          clickHandler = `onClick={() => window.togglePlcManualMode && window.togglePlcManualMode(\'${el.name}\')}`;
+        } else {
+          clickHandler = `onClick={() => window.triggerSiemensAction && window.triggerSiemensAction(\'${el.name}\')}`;
+        }
+        jsx += `      <button ${clickHandler} className="absolute bg-[#027AAC] hover:bg-[#00829E] border border-[#5AB0D3] text-white ${typo.fontClass} ${typo.fontSize} rounded-sm flex items-center justify-center transition shadow-sm active:scale-95 px-1 z-20 text-center leading-tight cursor-pointer" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
         if (isBack) {
           jsx += `        <span className="flex items-center gap-1.5 truncate"><img src="/tia_graphics/SICAR_Back01_Black_24x12.png" alt="" className="w-3.5 h-2.5 brightness-200 invert" onError={(e)=>{e.target.style.display='none';}} /><span className="truncate">${label}</span></span>\n`;
         } else {
@@ -620,7 +639,56 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
       const isEnclosure = el.width >= 250 && el.height >= 110;
       const fpNumMatch = el.name.match(/\d+$/);
       const fpNum = fpNumMatch ? fpNumMatch[0] : '';
-      const displayTitle = el.name.includes('Valve8Pos') ? 'Valve 8-Pos PB' : `Station Device ${fpNum ? '#' + fpNum : ''}`;
+      let displayTitle = '';
+      const stPrefix = screenName.match(/^(\d+)/) ? screenName.match(/^(\d+)/)[1] : '';
+      if (el.name.includes('Valve8Pos') || screenName.includes('Valve')) {
+        displayTitle = 'Valve 8-Pos Manifold ' + (fpNum ? '#' + fpNum : '');
+      } else if (screenName.includes('Lifter')) {
+        const lifterNames = {
+          '1': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Vertical Upper (M1)',
+          '2': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Clamp InPos (S1)',
+          '3': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Lower Travel (M2)',
+          '4': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Retract Sensor (S2)',
+          '5': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Safety Lock (Y1)'
+        };
+        displayTitle = lifterNames[fpNum] || ((stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Lifter Unit Actuator #' + (fpNum || '1'));
+      } else if (screenName.includes('Rollerup') || screenName.includes('PRB')) {
+        const rollerNames = {
+          '1': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Infeed Roller Bed Drive (M1)',
+          '2': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Outfeed Roller Bed Drive (M2)',
+          '3': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Centering Clamp (S1)',
+          '4': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Stop Buffer Cylinder (Y1)',
+          '5': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Indexing Shuttle Lock (Y2)'
+        };
+        displayTitle = rollerNames[fpNum] || ((stPrefix ? 'ST' + stPrefix + ' ' : '') + 'PRB Conveyor Drive #' + (fpNum || '1'));
+      } else if (screenName.includes('Robot') || screenName.includes('RB')) {
+        const robotNames = {
+          '1': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'KUKA Gripper Work Tool',
+          '2': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Robot Base Interlock Area',
+          '3': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Torch Cleaner / Wire Cut',
+          '4': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Service Maintenance Pin'
+        };
+        displayTitle = robotNames[fpNum] || ((stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Robot Tooling #' + (fpNum || '1'));
+      } else if (screenName.includes('Slider') || screenName.includes('Docking')) {
+        const sliderNames = {
+          '1': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'RH Slider Advance (M1)',
+          '2': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'LH Slider Advance (M2)',
+          '3': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Docking Locator Pin (S1)',
+          '4': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Clamp Hydraulic Unit (Y1)'
+        };
+        displayTitle = sliderNames[fpNum] || ((stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Fixture Slider Unit #' + (fpNum || '1'));
+      } else if (screenName.includes('APC')) {
+        displayTitle = (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'APC Carrier Station #' + (fpNum || '1');
+      } else {
+        const genNames = {
+          '1': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Primary Drive Unit (M1)',
+          '2': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Work Clamping Cylinder (Y1)',
+          '3': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Home Retract Cylinder (Y2)',
+          '4': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Part Seating Sensor (S1)',
+          '5': (stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Safety Interlock Guard (S2)'
+        };
+        displayTitle = genNames[fpNum] || ((stPrefix ? 'ST' + stPrefix + ' ' : '') + 'Station Actuator #' + (fpNum || '1'));
+      }
 
       if (isEnclosure) {
         // Enclosing station cell frame: clean, modern semi-transparent panel with subtle header strip
@@ -634,7 +702,7 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
       } else {
         // Leaf station device faceplate card with compact industrial styling
         const isUltraCompact = el.width < 90 || el.height < 50;
-        const shortTitle = displayTitle.replace('Station Device', 'Device');
+        const shortTitle = displayTitle;
 
         jsx += `      {/* Siemens Faceplate Modular Container: ${el.name} */}\n`;
         jsx += `      <div className="absolute bg-[#DEDFE1] border border-[#9CAFB7] hover:border-[#027AAC] rounded-sm shadow-sm flex flex-col p-1 overflow-hidden transition z-20 pointer-events-auto" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
@@ -705,7 +773,18 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
         let headerBoxClass = `bg-transparent text-[#262221] ${typo.fontClass} ${typo.fontSize}`;
         if (el.name.startsWith('文本_') || el.name.startsWith('文本域_')) {
           const num = el.name.replace(/[^0-9]/g, '');
-          headerLabel = `Signal #${num}`;
+          const st = screenName.match(/^(\d+)/) ? 'ST' + screenName.match(/^(\d+)/)[1] + ' ' : '';
+          if (num === '1' || num === '5' || num === '2' || num === '10') {
+            headerLabel = st + 'Home Pos Sensor [E' + num + '.0]';
+          } else if (num === '27' || num === '4' || num === '6' || num === '12') {
+            headerLabel = st + 'Work Pos Sensor [A' + num + '.0]';
+          } else if (num === '3' || num === '8' || num === '9') {
+            headerLabel = st + 'Part Present Sensor [B' + num + ']';
+          } else if (num === '7' || num === '14' || num === '15') {
+            headerLabel = st + 'Interlock Permissive [K' + num + ']';
+          } else {
+            headerLabel = st + 'I/O Channel #' + num;
+          }
         } else if (el.name === 'Textfield_Overview_State_1') {
           headerLabel = 'State';
           headerBoxClass = 'bg-[#E2F0E5] text-[#15803d] border border-[#15803d] font-bold text-xs rounded-sm shadow-sm';
@@ -739,7 +818,16 @@ function parseSimaticXmlToJsx(xmlString, screenName = 'SimaticScreen') {
         let rowText = knownLabel || safeLabel;
         if (el.name.startsWith('文本域_') || el.name.startsWith('文本_')) {
           const num = el.name.replace(/[^0-9]/g, '');
-          rowText = `Signal #${num}`;
+          const st = screenName.match(/^(\d+)/) ? 'ST' + screenName.match(/^(\d+)/)[1] + ' ' : '';
+          if (num === '1' || num === '5' || num === '2' || num === '10') {
+            rowText = st + 'Home Pos Sensor [E' + num + '.0]';
+          } else if (num === '27' || num === '4' || num === '6' || num === '12') {
+            rowText = st + 'Work Pos Sensor [A' + num + '.0]';
+          } else if (num === '3' || num === '8' || num === '9') {
+            rowText = st + 'Part Present Sensor [B' + num + ']';
+          } else {
+            rowText = st + 'Sensor Channel #' + num;
+          }
         }
         jsx += `      {/* Diagnostic Row: ${el.name} */}\n`;
         jsx += `      <div className="absolute bg-[#DEDFE1] text-[#262221] border border-[#C3C3C3] hover:bg-[#EAEAEA] ${typo.fontClass} ${typo.fontSize} flex items-center px-2 shadow-none rounded-[1px] transition overflow-hidden z-20" style={{ left: '${el.left}px', top: '${el.top}px', width: '${el.width}px', height: '${el.height}px' }}>\n`;
