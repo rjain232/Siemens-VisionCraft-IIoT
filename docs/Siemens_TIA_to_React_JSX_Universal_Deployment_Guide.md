@@ -40,36 +40,80 @@ npm install
 
 ---
 
-## 3. Ingesting Any Siemens PLC / HMI Backup
+## 3. Ingesting Any New Siemens PLC / HMI Backup (Exact Commands & Steps)
 
-To adapt this repository to a **brand-new plant backup** (e.g., from BMW, Mercedes, Tesla, or JSW):
+To adapt this repository to a **brand-new plant backup** (e.g. from an `.ap16`..`.ap20` or `.zap16`..`.zap20` project file):
 
 ```
-Your Project Root
-├── ALL_SCREENS_XML/              <-- Drop exported SimaticML XML files here
-│   ├── Station01_Overview.xml
-│   ├── Station02_Welding.xml
-│   └── ...
-├── D:\TIA v20\hmi tags.xlsx      <-- (or local folder) Master PLC/HMI Tag Table export
-└── D:\...\Context.wrk\screens\   <-- (Optional) Compiled WinCC Unified RDF files for exact events
+New Plant Backup Files:
+├── 1. TIA Project Backup        -->  "NewPlant_Backup.zap20" or "NewPlant_Backup.ap20"
+├── 2. Screen Export Folder      -->  D:\Siemens_VisionCraft_IIoT\ALL_SCREENS_XML\
+└── 3. Tag Table Export          -->  D:\TIA v20\hmi tags.xlsx
 ```
 
-### A. Automatic Screen Export via TIA Portal Openness:
-If you have the `.apxx` project open in TIA Portal, run the pre-compiled exporter:
+### Stage 1: Export SimaticML Screens from the New Backup
+Choose either **Option A (Automated via Openness)** or **Option B (Manual inside TIA Portal)**:
+
+#### Option A: Automated Export via TIA Openness (Recommended)
+Attach headlessly to TIA Portal and dump all screens in minutes:
 ```powershell
-cd JSW_Backend
-dotnet run --project OpennessExporter.csproj
-```
-* **Output:** Dumps all screens as `.xml` into `ALL_SCREENS_XML/`.
+# 1. Navigate to backend automation engine
+cd D:\Siemens_VisionCraft_IIoT\JSW_Backend
 
-### B. Indexing Tags:
-1. In TIA Portal, right-click **HMI Tags** -> **Export to Excel / CSV**.
-2. Save the file as `hmi tags.xlsx`.
-3. Run the deterministic resolver:
-   ```powershell
-   node precise_element_resolver.js
-   ```
-   * Automatically cross-references widget IDs to S7 DB offsets (`DBxxx.DBX...`, `DBxxx.DBD...`).
+# 2. Run the Openness Exporter targeting your new backup file
+dotnet run --project OpennessDefaultsExporter.cs -- "D:\TIA v20\NewPlant_Backup.zap20" "D:\Siemens_VisionCraft_IIoT\ALL_SCREENS_XML"
+```
+*Auto-Extraction:* This dumps all HMI screens as `.xml` into `ALL_SCREENS_XML/` and automatically detects the PLC and HMI IP addresses from the network hardware configuration.
+
+#### Option B: Manual Export via TIA Portal GUI
+1. Open your project in **TIA Portal V16 - V20**.
+2. In the Project tree, expand: **HMI [Comfort / Unified]** -> **Screens**.
+3. Select all screens (`Ctrl + A`) -> Right-Click -> **"Export as XML..."**.
+4. Choose the output directory: `D:\Siemens_VisionCraft_IIoT\ALL_SCREENS_XML\`.
+
+---
+
+### Stage 2: Export HMI Tag Tables
+1. In TIA Portal, navigate to: **HMI [Comfort / Unified]** -> **HMI Tags**.
+2. Select **Show all tags** -> Click the **Export** icon on the table toolbar (or Right-Click -> **Export to Excel / XLSX**).
+3. Save the exported spreadsheet to:
+   `D:\TIA v20\hmi tags.xlsx` (or set `TAGS_FILE_PATH` in `.env`).
+
+---
+
+### Stage 3: Re-Run Deterministic Audit & Tag Resolver
+Execute the 1-click AST audit script to verify and bind the new screen elements to the new PLC tags:
+```powershell
+cd D:\Siemens_VisionCraft_IIoT\ImageToJSX_Agent
+
+# 1. Audit and resolve all XML screens against the new tag dictionary
+node audit_all_elements.js
+
+# 2. Generate updated navigation hierarchy and verification reports
+node full_audit_211.js
+```
+* **Output:** Updates `comprehensive_all_screens_report.json` and `runtime_screen_navigation_truth.json` with 100% verified element-to-DB mappings.
+
+---
+
+### Stage 4: Configure Network IP for the New PLC
+Update `.env` in `ImageToJSX_Agent/`:
+```ini
+# New PLC Target Connection
+SIEMENS_PLC_IP=192.168.0.1       # Set to new PLC hardware IP (or 127.0.0.1 for PLCSIM)
+SIEMENS_PLC_RACK=0
+SIEMENS_PLC_SLOT=1
+PORT=4080
+```
+
+---
+
+### Stage 5: Launch Web SCADA on the New Backup
+```powershell
+cd D:\Siemens_VisionCraft_IIoT\ImageToJSX_Agent
+node server.js
+```
+Open **`http://localhost:4080`** in Chrome/Edge. The dropdown will dynamically load all newly exported screens with live telemetry bindings!
 
 ---
 
