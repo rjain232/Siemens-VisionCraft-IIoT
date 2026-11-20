@@ -1,0 +1,2937 @@
+{
+  "333": {
+    "file": "screen_7728.rdf",
+    "events": [
+      "PN_Diag_Reset_OnUp",
+      "PN_Diag_ReadNew_OnUp",
+      "PN_Diag_Counters_OnTapped",
+      "PN_Diag_Legend_X1189_Y2_OnTapped",
+      "Button_Back_OnUp",
+      "PN_DIAGNOSTIC_ETH_P9P10_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "Pop-up_PN_DEV_DIAG_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "150Rollerup": {
+    "file": "screen_1016.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_50Rollerup_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "150FX1Layout",
+      "USER_OPERATION",
+      "SafetyZone03Overview"
+    ]
+  },
+  "150FX1Layout_Lifter": {
+    "file": "screen_1112.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_50FX1Layout_Lifter_OnLoaded",
+      "_50FX1Layout_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone03Overview",
+      "USER_OPERATION"
+    ]
+  },
+  "150PRBCompleteDisplay_2": {
+    "file": "screen_1130.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "_50PRBCompleteDisplay_2_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "Button_Back_2_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_50PRBCompleteDisplay_2_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "150PRBCompleteDisplay_3",
+      "ALARM"
+    ]
+  },
+  "150PRBCompleteDisplay_3": {
+    "file": "screen_1135.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "_50PRBCompleteDisplay_3_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_50PRBCompleteDisplay_3_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "150FX1Layout": {
+    "file": "screen_1140.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "_50FX1Layout_OnLoaded",
+      "_50FX1Layout_OnUnloaded",
+      "Button_Back_2_OnUp",
+      "Button_Back_3_OnUp"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone03Overview",
+      "USER_OPERATION",
+      "150FX1Layout_Lifter",
+      "150Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos",
+      "150J5",
+      "150V23"
+    ]
+  },
+  "160FX1Layout": {
+    "file": "screen_1190.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "_60FX1Layout_OnLoaded",
+      "_60FX1Layout_OnUnloaded",
+      "Button_Back_3_OnUp",
+      "Button_Back_2_OnUp"
+    ],
+    "popups": [
+      "OP02Pop-up_PRBHome",
+      "OP02Pop-up_PRBWork",
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION",
+      "160FX1Layout_Lifter",
+      "160Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos",
+      "160V23",
+      "160J5"
+    ]
+  },
+  "160FX1Layout_Lifter": {
+    "file": "screen_1198.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_60FX1Layout_Lifter_OnLoaded",
+      "_60FX1Layout_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION"
+    ]
+  },
+  "160PRBCompleteDisplay_1": {
+    "file": "screen_1202.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "_60PRBCompleteDisplay_1_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "Button_Back_2_OnUp",
+      "GraphViewControl1_3_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_3_OnAlarmViewButtonTapped",
+      "GraphViewControl1_4_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_4_OnAlarmViewButtonTapped",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped",
+      "_60PRBCompleteDisplay_1_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "160PRBCompleteDisplay_2",
+      "ALARM"
+    ]
+  },
+  "160PRBCompleteDisplay_2": {
+    "file": "screen_1206.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "_60PRBCompleteDisplay_2_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_60PRBCompleteDisplay_2_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "160Rollerup": {
+    "file": "screen_1210.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_60Rollerup_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "160FX1Layout",
+      "USER_OPERATION",
+      "Zone03Overview"
+    ]
+  },
+  "Zone03Overview": {
+    "file": "screen_1214.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "Button_Overview_Legend_X1189_Y2_2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_3_OnUp",
+      "Zone03Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Faceplate_container_9_OnPressevent",
+      "Faceplate_container_9_OnReleaseEvent",
+      "Faceplate_container_23_OnPressevent",
+      "Faceplate_container_23_OnReleaseEvent",
+      "Faceplate_container_3_OnPressevent",
+      "Faceplate_container_3_OnReleaseEvent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_1_OnReleaseEvent",
+      "Faceplate_container_2_OnPressevent",
+      "Faceplate_container_4_OnPressevent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_5_OnReleaseEvent",
+      "Faceplate_container_7_OnPressevent",
+      "Faceplate_container_7_OnReleaseEvent",
+      "Faceplate_container_24_OnPressevent",
+      "Faceplate_container_20_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_8_OnPressevent",
+      "Faceplate_container_10_OnReleaseEvent",
+      "Zone03Overview_OnUnloaded",
+      "Button_Back_1_OnTapped",
+      "Button_Back_3_OnTapped"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode",
+      "Pop-up_SafetyGate",
+      "150Pop-up_Device"
+    ],
+    "screenSwitches": [
+      "Robot_Kuka",
+      "Robot_PLP_Kuka",
+      "150PRBCompleteDisplay_1",
+      "160FX1Layout",
+      "160PRBCompleteDisplay_1",
+      "150FX1Layout",
+      "CENTRAL LOADING FIFO",
+      "MB150 first station LOADING STAND FIFO"
+    ]
+  },
+  "T500ms": {
+    "file": "screen_1304.rdf",
+    "events": [
+      "Btn_AlarmClassFilter_OnDown",
+      "Title_ScreenOverview_X390_Y2_Visible_Trigger",
+      "Btn_AlarmCodeView_BackColor_Trigger",
+      "Graphic_BlockedRed_Visible_Trigger",
+      "Button_Back_1_OnUp",
+      "Button_Language_OnDown",
+      "Button_Language_OnUp",
+      "Btn_AlarmCodeView_OnUp",
+      "Button_Back_OnUp",
+      "ALARM_OnLoaded",
+      "ALARM_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "ALARM_HISTORY": {
+    "file": "screen_1308.rdf",
+    "events": [
+      "Alarm_History_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Button_Language_OnDown",
+      "Button_Language_OnUp",
+      "txtClearHistory_OnTapped",
+      "ALARM_HISTORY_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_ALARM_HISTORY_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "USER_OPERATION": {
+    "file": "screen_1311.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "USER_OPERATION_OnLoaded",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode_OnDown",
+      "Move_Legend_1_OnDown",
+      "USER_OPERATION_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_USER_OPERATION_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "IF_SIGNALS_BOOL": {
+    "file": "screen_1417.rdf",
+    "events": [
+      "Select_InterfaceSignals_ProcessValue_OnPropertyChanged",
+      "Cycle_Time_Legend_OnTapped",
+      "IF_SIGNALS_BOOL_OnLoaded",
+      "Button_Back_OnUp",
+      "IF_SIGNALS_BOOL_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_IF_SIGNALS_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "SYSTEM_DIAGNOSTIC_DEVICE": {
+    "file": "screen_1516.rdf",
+    "events": [
+      "SysDiag_Legend_OnTapped",
+      "SYSTEM_DIAGNOSTIC_DEVICE_VIEW_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "SYSTEM_DIAGNOSTIC_IO": {
+    "file": "screen_1519.rdf",
+    "events": [
+      "SysDiag_Legend_OnTapped",
+      "SYSTEM_DIAGNOSTIC_IO_VIEW_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "HTML_VIEW": {
+    "file": "screen_1522.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "HTML_VIEW_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "SYSTEM_SETTINGS_1": {
+    "file": "screen_1524.rdf",
+    "events": [
+      "HMINumber_ProcessValue_OnPropertyChanged",
+      "PLCSafatyMinCycleTime_ProcessValue_OnPropertyChanged",
+      "PLCSafetyMaxCycleTime_ProcessValue_OnPropertyChanged",
+      "PLCSafetyCycleTime_ProcessValue_OnPropertyChanged",
+      "PLCCycleTime_ProcessValue_OnPropertyChanged",
+      "PLCMinCycleTime_ProcessValue_OnPropertyChanged",
+      "PLCMaxCycleTime_ProcessValue_OnPropertyChanged",
+      "Button_CurveFCycleTimes_OnUp",
+      "Button_CurveStdCycleTimes_OnUp",
+      "Button_UpdateSMC_OnDown",
+      "Button_UpdateSMC_OnUp",
+      "Button_DeleteBuffer_OnUp",
+      "Button_Stop_RT_OnUp",
+      "Button_ResetFMinMaxTimes_OnDown",
+      "Button_ResetFMinMaxTimes_OnUp",
+      "Button_ResetStdMinMaxTimes_OnDown",
+      "Button_ResetStdMinMaxTimes_OnUp",
+      "Button_SaveSettings_OnTapped",
+      "Button_SystemSettings_OnUp",
+      "Button_UpdateSMC_1_OnDown",
+      "Button_UpdateSMC_1_OnUp",
+      "SYSTEM_SETTINGS_1_OnUnloaded",
+      "SYSTEM_SETTINGS_1_OnLoaded",
+      "Button_Language_OnDown",
+      "Button_Language_OnUp",
+      "Button_Back_OnUp"
+    ],
+    "popups": [
+      "Pop-up_CURVE_F-CYCLETIMES_Popup",
+      "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+      "Pop-up_SYSTEM_RTSTOP_Popup"
+    ],
+    "screenSwitches": [
+      "SYSTEM_SETTINGS_2"
+    ]
+  },
+  "qec": {
+    "file": "screen_3651.rdf",
+    "events": [
+      "Button_Save_OnUp",
+      "Pop_up_PANEL_INITIALIZED_Popup_OnUnloaded",
+      "Pop_up_PANEL_INITIALIZED_Popup_OnLoaded",
+      "Button_Save_OnDown"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "T1s": {
+    "file": "screen_1571.rdf",
+    "events": [
+      "Tec_Unit_Diag_Legend_OnTapped",
+      "Screen_Back_X0_Y65_W1280_H585_OnUp",
+      "Textfield_Overview_State_1_Visible_Trigger",
+      "Button_Back_OnUp",
+      "Valve8Pos_OnUnloaded",
+      "Valve8Pos_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "RobotService_Zone02": {
+    "file": "screen_1713.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone02_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Robot_index": {
+    "file": "screen_1715.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Button_Collision_3_OnUp",
+      "Button_Collision_6_OnUp",
+      "_40RB03_OnUp",
+      "_40RB01_5_OnUp",
+      "_40RB01_1_OnUp",
+      "_40RB01_2_OnUp",
+      "_40RB01_3_OnUp",
+      "_40RB01_4_OnUp",
+      "Button_Collision_Visible_Trigger",
+      "Button_Collision_9_Visible_Trigger",
+      "Button_Back_OnUp",
+      "Button_Collision_OnUp",
+      "Button_Bypass_Weld_Count_OnDown",
+      "Button_Bypass_Weld_Count_OnUp",
+      "Button_Collision_9_OnUp"
+    ],
+    "popups": [
+      "Pop-up_Sealer_2",
+      "Pop-up_Sealer_1",
+      "Pop-up_Mig Weld",
+      "Pop-up_ATDC",
+      "Pop-up_ISRA VISION",
+      "Pop-up_NutRunner",
+      "Pop-up_VISION OFFSET VALUES"
+    ],
+    "screenSwitches": [
+      "160RobotCollision",
+      "150RobotCollision"
+    ]
+  },
+  "Robot_NBG_Kuka": {
+    "file": "screen_2078.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Button_Back_OnUp",
+      "Button_TGAA_Go_Delivery_Pos_OnDown",
+      "Button_TGAA_Go_Delivery_Pos_OnUp",
+      "Button_TGAA_Go_Storage_Pos_OnDown",
+      "Button_TGAA_Go_Storage_Pos_OnUp",
+      "Button_TGBA_Go_Storage_Pos_OnDown",
+      "Button_TGBA_Go_Storage_Pos_OnUp",
+      "Button_TGBA_Go_Delivery_Pos_OnDown",
+      "Button_TGBA_Go_Delivery_Pos_OnUp",
+      "Button_TGAB_Go_Delivery_Pos_OnDown",
+      "Button_TGAB_Go_Delivery_Pos_OnUp",
+      "Button_TGAB_Go_Storage_Pos_OnDown",
+      "Button_TGAB_Go_Storage_Pos_OnUp",
+      "Button_TGBB_Go_Storage_Pos_OnDown",
+      "Button_TGBB_Go_Storage_Pos_OnUp",
+      "Button_TGBB_Go_Delivery_Pos_OnDown",
+      "Button_TGBB_Go_Delivery_Pos_OnUp",
+      "Button_TGCB_Go_Storage_Pos_OnDown",
+      "Button_TGCB_Go_Storage_Pos_OnUp",
+      "Button_TGCB_Go_Delivery_Pos_OnDown",
+      "Button_TGCB_Go_Delivery_Pos_OnUp",
+      "Button_Go_Load_Pos1_OnDown",
+      "Button_Go_Load_Pos1_OnUp",
+      "Button_Go_Storage_Pos1_OnDown",
+      "Button_Go_Storage_Pos1_OnUp",
+      "Button_Go_Storage_Pos2_OnDown",
+      "Button_Go_Storage_Pos2_OnUp",
+      "Button_Go_Storage_Pos3_OnDown",
+      "Button_Go_Storage_Pos3_OnUp",
+      "Button_Go_Work_Pos2_OnDown",
+      "Button_Go_Work_Pos2_OnUp",
+      "Button_Go_Work_Pos3_OnDown",
+      "Button_Go_Work_Pos3_OnUp",
+      "Button_Go_Work_Pos4_OnDown",
+      "Button_Go_Work_Pos4_OnUp",
+      "Button_Go_Work_Pos5_OnDown",
+      "Button_Go_Work_Pos5_OnUp",
+      "Button_Go_Work_Pos6_OnDown",
+      "Button_Go_Work_Pos6_OnUp",
+      "Button_Go_Work_Pos1_OnDown",
+      "Button_Go_Work_Pos1_OnUp",
+      "Button_TGCA_Go_Storage_Pos_OnDown",
+      "Button_TGCA_Go_Storage_Pos_OnUp",
+      "Button_TGCA_Go_Delivery_Pos_OnDown",
+      "Button_TGCA_Go_Delivery_Pos_OnUp",
+      "Robot_NBG_Kuka_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Robot_PLP_Kuka": {
+    "file": "screen_2184.rdf",
+    "events": [
+      "Robot_PLP_Kuka_OnLoaded",
+      "Button_Back_OnUp",
+      "Button_Clear_Style_OnDown",
+      "Button_Clear_Style_OnUp",
+      "Button_Select_Style1_OnDown",
+      "Button_Select_Style1_OnUp",
+      "Button_Select_Style2_OnDown",
+      "Button_Select_Style2_OnUp",
+      "Button_Select_Style3_OnDown",
+      "Button_Select_Style3_OnUp",
+      "Button_Select_Style4_OnDown",
+      "Button_Select_Style4_OnUp",
+      "Button_Select_Style5_OnDown",
+      "Button_Select_Style5_OnUp",
+      "Button_Select_Style6_OnDown",
+      "Button_Select_Style6_OnUp",
+      "Button_Select_Style7_OnDown",
+      "Button_Select_Style7_OnUp",
+      "Button_Select_Style8_OnDown",
+      "Button_Select_Style8_OnUp",
+      "Button_Select_Style9_OnDown",
+      "Button_Select_Style9_OnUp",
+      "Button_Select_Style10_OnDown",
+      "Button_Select_Style10_OnUp",
+      "Button_Go_Home_OnDown",
+      "Button_Go_Home_OnUp",
+      "Button_Go_Work_OnDown",
+      "Button_Go_Work_OnUp",
+      "Button_Go_Pounce_OnDown",
+      "Button_Go_Pounce_OnUp",
+      "Robot_PLP_Kuka_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RobotCollision": {
+    "file": "screen_2265.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotCollision_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RobotService_Zone03": {
+    "file": "screen_2283.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone03_OnUnloaded",
+      "Button_Back_1_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "RobotService_Zone01_2"
+    ]
+  },
+  "RobotService_Zone01_2": {
+    "file": "screen_2337.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone01_2_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RobotService_Zone01_mig": {
+    "file": "screen_2339.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone01_mig_weld_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RobotService_Zone04": {
+    "file": "screen_2341.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone04_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "SWEServoHelp": {
+    "file": "screen_2343.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "SWEServoHelp_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Sew_Lifter": {
+    "file": "screen_2511.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Sew_Lifter_Tp_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Rollerup": {
+    "file": "screen_2567.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Rollerup_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "USER_OPERATION"
+    ]
+  },
+  "SEW_FIFO": {
+    "file": "screen_2571.rdf",
+    "events": [
+      "Button_Back_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "MB150": {
+    "file": "screen_2628.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "MB150_first_station_LOADING_STAND_FIFO_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Barcode_Scanner": {
+    "file": "screen_2631.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Barcode_Scanner_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "OrderManagement": {
+    "file": "screen_2635.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "OrderManagement_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RFIDWrite": {
+    "file": "screen_2639.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "txtOverview_3_OnTapped",
+      "RFIDWrite_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "Barcode_Scanner"
+    ]
+  },
+  "StyleOverview": {
+    "file": "screen_2646.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "StyleOverview_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "StyleWrite"
+    ]
+  },
+  "StyleWrite": {
+    "file": "screen_2650.rdf",
+    "events": [
+      "Button_Special_2_OnDown",
+      "Button_Special_2_OnUp",
+      "Button_Special_3_OnDown",
+      "Button_Special_3_OnUp",
+      "Button_Back_OnUp",
+      "StyleWrite_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Pop": {
+    "file": "screen_4032.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "OP01Pop": {
+    "file": "screen_2769.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "OP02Pop": {
+    "file": "screen_2787.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "150Pop": {
+    "file": "screen_2797.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "NIH": {
+    "file": "screen_3614.rdf",
+    "events": [
+      "Cancel_Mode_OnUp",
+      "Stop_Mode_OnDown",
+      "Stop_Mode_OnUp",
+      "Mode_Home_Position_OnDown",
+      "Mode_Home_Position_OnUp",
+      "Mode_End_of_Cycle_OnDown",
+      "Mode_End_of_Cycle_OnUp",
+      "Mode_Release_Enty_OnDown",
+      "Mode_Release_Enty_OnUp",
+      "Mode_Single_Step_OnDown",
+      "Mode_Single_Step_OnUp",
+      "Mode_SingleStep_plus1_OnDown",
+      "Mode_SingleStep_plus1_OnUp",
+      "Mode_Empty_Position_OnDown",
+      "Mode_Empty_Position_OnUp",
+      "Mode_WithoutPart_Dryrun_OnDown",
+      "Mode_WithoutPart_Dryrun_OnUp",
+      "Pop_up_SPEC_FUNCTIONS_Popup_OnUnloaded",
+      "Pop_up_SPEC_FUNCTIONS_Popup_OnLoaded",
+      "Button_1_OnTapped"
+    ],
+    "popups": [
+      "Dry Run Selection"
+    ],
+    "screenSwitches": []
+  },
+  "Grinding": {
+    "file": "screen_3668.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Hemming": {
+    "file": "screen_3720.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Tool": {
+    "file": "screen_4034.rdf",
+    "events": [
+      "Robot_Name_ProcessValue_OnPropertyChanged",
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "10_SubMenus": {
+    "file": "screen_4123.rdf",
+    "events": [
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "Sew_TurnTable",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "11_SubMenus_Type": {
+    "file": "screen_4125.rdf",
+    "events": [
+      "txtOverview_2_OnTapped",
+      "txtOverview_3_OnTapped",
+      "txtOverview_4_OnTapped",
+      "txtOverview_5_OnTapped",
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_13_OnTapped",
+      "txtOverview_13_OnKeyDown",
+      "txtOverview_15_OnTapped",
+      "txtOverview_16_OnTapped",
+      "txtOverview_17_OnTapped",
+      "txtOverview_17_OnKeyDown",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "OrderManagement",
+      "RFIDWrite",
+      "StyleWrite",
+      "StyleOverview",
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "11_SubMenus_Type",
+      "Zone03Overview",
+      "Zone06Overview",
+      "Zone05Overview",
+      "Zone04Overview",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "12_SubMenus_Robot": {
+    "file": "screen_4127.rdf",
+    "events": [
+      "txtOverview_2_OnTapped",
+      "txtOverview_5_OnTapped",
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_1_OnTapped",
+      "txtOverview_16_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "RobotCollision",
+      "RobotService_Zone03",
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "RobotService_Zone05",
+      "RobotService_Zone06",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "13_SubMenus_SEW": {
+    "file": "screen_4129.rdf",
+    "events": [
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_13_OnTapped",
+      "txtOverview_14_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "SEW_FIFO",
+      "Sew_Lifter-Tp",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "14_SubMenus_Alarm": {
+    "file": "screen_4131.rdf",
+    "events": [
+      "txtOverview_5_OnTapped",
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "ALARM_HISTORY",
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "15_SubMenus_ProductionData": {
+    "file": "screen_4133.rdf",
+    "events": [
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp",
+      "txtOverview_4_OnTapped",
+      "txtOverview_3_OnTapped",
+      "txtOverview_2_OnTapped",
+      "txtOverview_1_OnTapped",
+      "txtOverview_1_OnKeyUp",
+      "txtOverview_2_OnKeyUp",
+      "txtOverview_3_OnKeyUp",
+      "txtOverview_4_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "ProductionCount",
+      "15_SubMenus_ProductionData",
+      "Call_ServiceButtons",
+      "Andon",
+      "CycleTime",
+      "ProductionCountSummary"
+    ]
+  },
+  "16_SubMenus_Diagnostic": {
+    "file": "screen_4135.rdf",
+    "events": [
+      "txtOverview_2_OnTapped",
+      "txtOverview_3_OnTapped",
+      "txtOverview_4_OnTapped",
+      "txtOverview_5_OnTapped",
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "PN_DIAGNOSTIC_ALL",
+      "IF_SIGNALS_BOOL",
+      "SYSTEM_DIAGNOSTIC_DEVICE-VIEW",
+      "SYSTEM_DIAGNOSTIC_IO-VIEW",
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "17_SubMenus_SystemSettings": {
+    "file": "screen_4137.rdf",
+    "events": [
+      "txtOverview_6_OnTapped",
+      "txtOverview_7_OnTapped",
+      "txtOverview_9_OnTapped",
+      "txtOverview_10_OnTapped",
+      "txtOverview_11_OnTapped",
+      "txtOverview_12_OnTapped",
+      "txtOverview_8_OnTapped",
+      "txtOverview_8_OnKeyUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "SYSTEM_SETTINGS_1",
+      "17_SubMenus_SystemSettings",
+      "PN_DIAGNOSTIC_ALL",
+      "16_SubMenus_Diagnostic",
+      "ALARM",
+      "14_SubMenus_Alarm",
+      "13_SubMenus_SEW",
+      "Robot_Kuka",
+      "12_SubMenus_Robot",
+      "StyleOverview",
+      "11_SubMenus_Type",
+      "ProductionCount",
+      "15_SubMenus_ProductionData"
+    ]
+  },
+  "14_Alarm": {
+    "file": "screen_4139.rdf",
+    "events": [
+      "btnAlarmScreen_OnTapped"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "02_Header": {
+    "file": "screen_4141.rdf",
+    "events": [
+      "Button_Manual_OnDown",
+      "Button_Manual_OnUp",
+      "Button_ControlOnOff_OnUp",
+      "Button_Start_OnDown",
+      "Button_Start_OnUp",
+      "Button_Automatic_OnDown",
+      "Button_Automatic_OnUp",
+      "Button_GoTo_AlarmHistory_OnUp",
+      "Button_GoTo_AlarmHistory_1_OnUp",
+      "Button_GoTo_SystemSettings_OnUp",
+      "Button_GoTo_PN_Diag_OnUp",
+      "Button_GoTo_AlarmHistory_2_OnUp",
+      "DateTime_ProcessValue_Trigger",
+      "Button_Special_OnUp",
+      "Silence_button_OnTapped",
+      "Fusszeile_Button_Nav1_OnTapped",
+      "Button_GoTo_DemoSlide_OnTapped",
+      "Button_OPModeSelect_OnUp",
+      "Opmode_24_OnReleaseEvent",
+      "Button_Ack_OnDown",
+      "Button_Ack_OnUp"
+    ],
+    "popups": [
+      "Pop-up_ControlOnOff_Popup",
+      "Pop-up_SPEC_FUNCTIONS_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM_HISTORY",
+      "SYSTEM_SETTINGS_1",
+      "PN_DIAGNOSTIC_ALL",
+      "Main",
+      "10_SubMenus"
+    ]
+  },
+  "Screen_1": {
+    "file": "screen_4279.rdf",
+    "events": [],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "ReleaseEvent": {
+    "file": "screen_4861.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_70FX1Layout_OnLoaded",
+      "_70FX1Layout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP03Pop-up_PRBWork",
+      "OP03Pop-up_PRBHome"
+    ],
+    "screenSwitches": [
+      "SafetyZone04Overview",
+      "Valve8Pos",
+      "USER_OPERATION",
+      "170Rollerup"
+    ]
+  },
+  "150J5": {
+    "file": "screen_4655.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "Button_Back_1_OnUp",
+      "_50J5_OnLoaded",
+      "_50J5_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION",
+      "150Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "150V23"
+    ]
+  },
+  "150V23": {
+    "file": "screen_4661.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_50V23_OnLoaded",
+      "_50V23_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION",
+      "150Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "160J5": {
+    "file": "screen_4667.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "Button_Back_1_OnUp",
+      "_60J5_OnLoaded",
+      "_60J5_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION",
+      "160Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "160V23"
+    ]
+  },
+  "160V23": {
+    "file": "screen_4673.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_60V23_OnLoaded",
+      "_60V23_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Zone03Overview",
+      "USER_OPERATION",
+      "160Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "Dry_runFunction": {
+    "file": "screen_4706.rdf",
+    "events": [
+      "Dry_runFunction_Select_OnUnloaded",
+      "Dry_runFunction_Select_OnLoaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "170PRBCompleteDisplay": {
+    "file": "screen_4775.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_70PRBCompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "_70PRBCompleteDisplay_OnLoaded",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "170Rollerup": {
+    "file": "screen_4780.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_70Rollerup_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "170FX1Layout",
+      "USER_OPERATION",
+      "SafetyZone04Overview"
+    ]
+  },
+  "OP03Pop": {
+    "file": "screen_4859.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "SafetyZone03Overview": {
+    "file": "screen_5077.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "Button_Overview_Legend_X1189_Y2_2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_3_OnUp",
+      "SafetyZone03Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Faceplate_container_9_OnPressevent",
+      "Faceplate_container_9_OnReleaseEvent",
+      "Faceplate_container_23_OnPressevent",
+      "Faceplate_container_23_OnReleaseEvent",
+      "Faceplate_container_3_OnPressevent",
+      "Faceplate_container_3_OnReleaseEvent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_1_OnReleaseEvent",
+      "Faceplate_container_2_OnPressevent",
+      "Faceplate_container_4_OnPressevent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_5_OnReleaseEvent",
+      "Faceplate_container_7_OnPressevent",
+      "Faceplate_container_7_OnReleaseEvent",
+      "Faceplate_container_24_OnPressevent",
+      "Faceplate_container_20_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_8_OnPressevent",
+      "Faceplate_container_10_OnReleaseEvent",
+      "SafetyZone03Overview_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode",
+      "Pop-up_SafetyGate",
+      "150Pop-up_Device"
+    ],
+    "screenSwitches": [
+      "Robot_Kuka",
+      "Robot_PLP_Kuka",
+      "150PRBCompleteDisplay_1",
+      "160FX1Layout",
+      "160PRBCompleteDisplay_1",
+      "150FX1Layout"
+    ]
+  },
+  "CENTRAL": {
+    "file": "screen_5199.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "CENTRAL_LOADING_FIFO_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "150RobotCollision": {
+    "file": "screen_5623.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_50RobotCollision_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "160RobotCollision": {
+    "file": "screen_5625.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_60RobotCollision_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "190RobotCollision": {
+    "file": "screen_5627.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_90RobotCollision_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "200RobotCollision": {
+    "file": "screen_5629.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_00RobotCollision_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "190RB02_J5": {
+    "file": "screen_6018.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_90RB02_J5_OnUnloaded",
+      "_90RB02_J5_OnLoaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB02_V23",
+      "190RB02_Stand_J5"
+    ]
+  },
+  "190RB02_V23": {
+    "file": "screen_6074.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_90RB02_V23_OnLoaded",
+      "_90RB02_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB02_J5",
+      "190RB02_Stand_V23"
+    ]
+  },
+  "190RB02_Stand_J5": {
+    "file": "screen_6120.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "_90RB02_Stand_J5_OnLoaded",
+      "_90RB02_Stand_J5_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB02_Stand_V23",
+      "190RB02_V23"
+    ]
+  },
+  "190RB02_Stand_V23": {
+    "file": "screen_6129.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "_90RB02_Stand_V23_OnLoaded",
+      "_90RB02_Stand_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB02_Stand_J5",
+      "190RB02_V23"
+    ]
+  },
+  "190RB02CompleteDisplay": {
+    "file": "screen_6138.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90RB02CompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_90RB02CompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "190RB06_J5": {
+    "file": "screen_6145.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_90RB06_J5_OnUnloaded",
+      "_90RB06_J5_OnLoaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB06_V23",
+      "190RB06_Stand_J5"
+    ]
+  },
+  "190RB06_Stand_J5": {
+    "file": "screen_6190.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "_90RB06_Stand_J5_OnLoaded",
+      "_90RB06_Stand_J5_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB06_Stand_V23",
+      "190RB06_V23"
+    ]
+  },
+  "190RB06_V23": {
+    "file": "screen_6199.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "_90RB06_V23_OnLoaded",
+      "_90RB06_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB06_J5"
+    ]
+  },
+  "190RB06_Stand_V23": {
+    "file": "screen_6246.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "_90RB06_Stand_V23_OnLoaded",
+      "_90RB06_Stand_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "190RB06_Stand_J5",
+      "190RB06_V23"
+    ]
+  },
+  "190RB06CompleteDisplay": {
+    "file": "screen_6255.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90RB06CompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_90RB06CompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "190PRBCompleteDisplay": {
+    "file": "screen_6262.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90PRBCompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_3_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_3_OnAlarmViewButtonTapped",
+      "GraphViewControl1_4_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_4_OnAlarmViewButtonTapped",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "Button_Back_2_OnUp",
+      "_90PRBCompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM",
+      "190PRBCompleteDisplay_1"
+    ]
+  },
+  "190Rollerup": {
+    "file": "screen_6267.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_90Rollerup_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "190FX1Layout",
+      "USER_OPERATION",
+      "SafetyZone05Overview"
+    ]
+  },
+  "190PRBCompleteDisplay_1": {
+    "file": "screen_6272.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90PRBCompleteDisplay_1_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_2_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_2_OnAlarmViewButtonTapped",
+      "_90PRBCompleteDisplay_1_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "190FX1Layout_Docking": {
+    "file": "screen_6277.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_3_OnReleaseEvent",
+      "Button_Back_1_OnUp",
+      "_90FX1Layout_Docking_OnLoaded",
+      "_90FX1Layout_Docking_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "Pop-up_PRBHome",
+      "Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "Valve8Pos",
+      "190FX1Layout_Lifter"
+    ]
+  },
+  "190CompleteDisplay": {
+    "file": "screen_6283.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90CompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "_90CompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "190PSCompleteDisplay": {
+    "file": "screen_6290.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_90PSCompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_90PSCompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "180PRBCompleteDisplay": {
+    "file": "screen_6297.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_80PRBCompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "_80PRBCompleteDisplay_OnLoaded",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "SafetyZone05Overview": {
+    "file": "screen_6302.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "SafetyZone05Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Faceplate_container_15_OnReleaseEvent",
+      "Faceplate_container_21_OnPressevent",
+      "Faceplate_container_21_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_26_OnReleaseEvent",
+      "Faceplate_container_3_OnReleaseEvent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_1_OnReleaseEvent",
+      "Faceplate_container_4_OnPressevent",
+      "Faceplate_container_4_OnReleaseEvent",
+      "Faceplate_container_5_OnPressevent",
+      "Faceplate_container_5_OnReleaseEvent",
+      "Faceplate_container_9_OnReleaseEvent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_10_OnPressevent",
+      "Faceplate_container_2_OnPressevent",
+      "Faceplate_container_11_OnPressevent",
+      "Faceplate_container_12_OnReleaseEvent",
+      "Faceplate_container_13_OnReleaseEvent",
+      "Faceplate_container_14_OnReleaseEvent",
+      "SafetyZone05Overview_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode"
+    ],
+    "screenSwitches": [
+      "190RB02CompleteDisplay",
+      "Robot_Kuka",
+      "190PSCompleteDisplay",
+      "190FX1Layout",
+      "190RB06CompleteDisplay",
+      "190PRBCompleteDisplay",
+      "Robot_PLP_Kuka",
+      "190Passing stand",
+      "180FX1Layout",
+      "180PRBCompleteDisplay"
+    ]
+  },
+  "200APC1CompleteDisplay": {
+    "file": "screen_6360.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_00APC1CompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "_00APC1CompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "200APC1FX1Layout": {
+    "file": "screen_6366.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_3_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_4_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_6_OnReleaseEvent",
+      "_00APC1FX1Layout_OnLoaded",
+      "_00APC1FX1Layout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "Valve8Pos"
+    ]
+  },
+  "200APC1FIFO": {
+    "file": "screen_6373.rdf",
+    "events": [
+      "Button_Back_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "200PRBCompleteDisplay": {
+    "file": "screen_6375.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_00PRBCompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_1_OnAlarmViewButtonTapped",
+      "GraphViewControl1_2_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_2_OnAlarmViewButtonTapped",
+      "GraphViewControl1_3_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_3_OnAlarmViewButtonTapped",
+      "GraphViewControl1_4_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_4_OnAlarmViewButtonTapped",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped",
+      "Button_Back_2_OnUp",
+      "_00PRBCompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM",
+      "200PRBCompleteDisplay_1"
+    ]
+  },
+  "200PRBCompleteDisplay_1": {
+    "file": "screen_6381.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_00PRBCompleteDisplay_1_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "_00PRBCompleteDisplay_1_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "200RB04_J5": {
+    "file": "screen_6387.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_00RB04_J5_OnUnloaded",
+      "_00RB04_J5_OnLoaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "200RB04_Stand_J5"
+    ]
+  },
+  "200RB04_Stand_J5": {
+    "file": "screen_6414.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_00RB04_Stand_J5_OnLoaded",
+      "_00RB04_Stand_J5_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "200RB04_V23": {
+    "file": "screen_6419.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_00RB04_V23_OnLoaded",
+      "_00RB04_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "200RB04_Stand_V23"
+    ]
+  },
+  "200RB04_Stand_V23": {
+    "file": "screen_6449.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "_00RB04_Stand_V23_OnLoaded",
+      "_00RB04_Stand_V23_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "200J5Fkt_Bkt": {
+    "file": "screen_6454.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_00J5Fkt_Bkt_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "USER_OPERATION",
+      "190J5RoofGeo",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "200V23": {
+    "file": "screen_6464.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_00V23_OnUnloaded",
+      "_00V23_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "USER_OPERATION",
+      "190J5RoofGeo",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "20023Fkt_Bkt": {
+    "file": "screen_6470.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_0023Fkt_Bkt_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "USER_OPERATION",
+      "190J5RoofGeo",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "200RB04CompleteDisplay": {
+    "file": "screen_6480.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "_00RB04CompleteDisplay_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "GraphViewControl1_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_OnAlarmViewButtonTapped",
+      "_00RB04CompleteDisplay_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "ALARM"
+    ]
+  },
+  "SafetyZone06Overview": {
+    "file": "screen_6487.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "Button_Overview_Legend_X1189_Y2_2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_3_OnUp",
+      "SafetyZone06Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Faceplate_container_2_OnReleaseEvent",
+      "Faceplate_container_11_OnReleaseEvent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_17_OnReleaseEvent",
+      "Faceplate_container_18_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_22_OnPressevent",
+      "Faceplate_container_8_OnPressevent",
+      "Faceplate_container_23_OnPressevent",
+      "Faceplate_container_23_OnReleaseEvent",
+      "Faceplate_container_3_OnPressevent",
+      "Faceplate_container_4_OnPressevent",
+      "Faceplate_container_4_OnReleaseEvent",
+      "SafetyZone06Overview_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode",
+      "Pop-up_SafetyGate",
+      "Pop-up_Device"
+    ],
+    "screenSwitches": [
+      "200APC1ayout",
+      "200FX1Layout",
+      "200PRBCompleteDisplay",
+      "200RB04CompleteDisplay",
+      "200APC1CompleteDisplay",
+      "Robot_Kuka",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "OP010Pop": {
+    "file": "screen_6657.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "190FX1Layout": {
+    "file": "screen_6666.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_3_OnReleaseEvent",
+      "Button_Back_2_OnUp",
+      "Button_Back_3_OnUp",
+      "_90FX1Layout_OnLoaded",
+      "_90FX1Layout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190FX1Layout_Lifter",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos",
+      "190J5",
+      "190V23"
+    ]
+  },
+  "190FX1Layout_Lifter": {
+    "file": "screen_6673.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_90FX1Layout_Lifter_OnLoaded",
+      "_90FX1Layout_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBWork",
+      "OP01Pop-up_PRBHome"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190FX2RhSliderFixtureLayout",
+      "190Passing stand"
+    ]
+  },
+  "190FX2RhSliderLayout": {
+    "file": "screen_6680.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "Button_Back_2_OnUp",
+      "_90FX2RhSliderLayout_OnLoaded",
+      "_90FX2RhSliderLayout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190FX2RhSliderFixtureLayout",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos",
+      "190FX3LhSliderLayout"
+    ]
+  },
+  "190FX2RhSliderFixtureLayout": {
+    "file": "screen_6687.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "_90FX2RhSliderFixtureLayout_OnLoaded",
+      "_90FX2RhSliderFixtureLayout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190FX2RhSliderLayout",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos"
+    ]
+  },
+  "190FX3LhSliderLayout": {
+    "file": "screen_6694.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "_90FX3LhSliderLayout_OnLoaded",
+      "_90FX3LhSliderLayout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "190FX2RhSliderFixtureLayout",
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190FX3LhSliderFixtureLayout",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos"
+    ]
+  },
+  "190FX3LhSliderFixtureLayout": {
+    "file": "screen_6701.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "_90FX3LhSliderFixtureLayout_OnLoaded",
+      "_90FX3LhSliderFixtureLayout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "Valve8Pos"
+    ]
+  },
+  "OP04Pop": {
+    "file": "screen_6710.rdf",
+    "events": [
+      "Cancel_Mode_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "190Passing": {
+    "file": "screen_6712.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "_90Passing_stand_OnLoaded",
+      "_90Passing_stand_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP01Pop-up_PRBHome",
+      "OP01Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview"
+    ]
+  },
+  "190J5": {
+    "file": "screen_6719.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90J5_OnUnloaded",
+      "_90J5_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190J5RoofGeo",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "190J5RoofHandling": {
+    "file": "screen_6725.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90J5RoofHandling_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "190J5RoofGeo": {
+    "file": "screen_6738.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90J5RoofGeo_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190J5RoofHandling",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "190V23": {
+    "file": "screen_6747.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90V23_OnLoaded",
+      "_90V23_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190V23RoofGeo",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "190V23RoofHandling": {
+    "file": "screen_6753.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90V23RoofHandling_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "190V23RoofGeo": {
+    "file": "screen_6765.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_90V23RoofGeo_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "190V23RoofHandling",
+      "190Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "180FX1Layout": {
+    "file": "screen_6773.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "_80FX1Layout_OnLoaded",
+      "_80FX1Layout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "OP04Pop-up_PRBWork",
+      "OP04Pop-up_PRBHome"
+    ],
+    "screenSwitches": [
+      "SafetyZone05Overview",
+      "USER_OPERATION",
+      "180Rollerup",
+      "Valve8Pos"
+    ]
+  },
+  "180Rollerup": {
+    "file": "screen_6788.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_80Rollerup_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "190FX1Layout",
+      "USER_OPERATION",
+      "SafetyZone05Overview"
+    ]
+  },
+  "MB190RB06": {
+    "file": "screen_6846.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "MB190RB06_LOADING_STAND_FIFO_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "MB200APCRH1": {
+    "file": "screen_6849.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "MB200APCRH1_LOADING_STAND_FIFO_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "200FX1Layout": {
+    "file": "screen_6852.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_5_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_1_OnReleaseEvent",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_2_OnReleaseEvent",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_4_OnReleaseEvent",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "Button_Back_3_OnUp",
+      "Button_Back_2_OnUp",
+      "_00FX1Layout_OnLoaded",
+      "_00FX1Layout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "Pop-up_PRBHome",
+      "Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone06Overview",
+      "Valve8Pos",
+      "USER_OPERATION",
+      "200FX1Layout_Docking",
+      "200Rollerup Lifter",
+      "Robot_PLP_Kuka",
+      "200V23",
+      "200J5"
+    ]
+  },
+  "200FX1Layout_Docking": {
+    "file": "screen_6861.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "LSicar_Valve8Pos_LeftHomeRightWork_WithPB_3_OnReleaseEvent",
+      "Button_Back_1_OnUp",
+      "_00FX1Layout_Docking_OnLoaded",
+      "_00FX1Layout_Docking_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "Pop-up_PRBHome",
+      "Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone06Overview",
+      "USER_OPERATION",
+      "Valve8Pos",
+      "200FX1Layout_Lifter"
+    ]
+  },
+  "200Rollerup": {
+    "file": "screen_6869.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "_00Rollerup_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "200FX1Layout",
+      "USER_OPERATION",
+      "SafetyZone06Overview"
+    ]
+  },
+  "200FX1Layout_Lifter": {
+    "file": "screen_6875.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "_00FX1Layout_Lifter_OnLoaded",
+      "_00FX1Layout_Lifter_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup",
+      "Pop-up_PRBHome",
+      "Pop-up_PRBWork"
+    ],
+    "screenSwitches": [
+      "SafetyZone06Overview",
+      "USER_OPERATION"
+    ]
+  },
+  "200J5": {
+    "file": "screen_6896.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Button_Back_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Fusszeile_Button_ManualOPMode1_5_OnUp",
+      "_00J5_OnUnloaded",
+      "_00J5_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "SafetyZone06Overview",
+      "USER_OPERATION",
+      "190J5RoofGeo",
+      "200Rollerup Lifter",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "200APC1ayout": {
+    "file": "screen_6903.rdf",
+    "events": [
+      "Tec_Unit_Legend_X1189_Y2_OnTapped",
+      "Button_Back_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnTapped",
+      "_00APC1ayout_OnLoaded",
+      "_00APC1ayout_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_TEC_UNIT_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "Sew_APC",
+      "SafetyZone06Overview",
+      "USER_OPERATION",
+      "MB200APCRH1 LOADING STAND FIFO"
+    ]
+  },
+  "Zone05Overview": {
+    "file": "screen_6930.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "Zone05Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Faceplate_container_15_OnReleaseEvent",
+      "Faceplate_container_21_OnPressevent",
+      "Faceplate_container_21_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_26_OnReleaseEvent",
+      "Faceplate_container_3_OnReleaseEvent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_1_OnReleaseEvent",
+      "Faceplate_container_4_OnPressevent",
+      "Faceplate_container_4_OnReleaseEvent",
+      "Faceplate_container_5_OnPressevent",
+      "Faceplate_container_5_OnReleaseEvent",
+      "Faceplate_container_9_OnReleaseEvent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_10_OnPressevent",
+      "Faceplate_container_2_OnPressevent",
+      "Faceplate_container_11_OnPressevent",
+      "Faceplate_container_12_OnReleaseEvent",
+      "Faceplate_container_13_OnReleaseEvent",
+      "Faceplate_container_14_OnReleaseEvent",
+      "Button_Back_1_OnDown",
+      "Button_Back_2_OnDown",
+      "Button_Back_3_OnDown",
+      "Zone05Overview_OnUnloaded"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode"
+    ],
+    "screenSwitches": [
+      "190RB02CompleteDisplay",
+      "Robot_Kuka",
+      "190PSCompleteDisplay",
+      "190FX1Layout",
+      "190RB06CompleteDisplay",
+      "190PRBCompleteDisplay",
+      "Robot_PLP_Kuka",
+      "190Passing stand",
+      "180FX1Layout",
+      "180PRBCompleteDisplay",
+      "CENTRAL LOADING FIFO",
+      "MB190RB06 LOADING STAND FIFO",
+      "Marriage_MB190_MB190R02"
+    ]
+  },
+  "Zone06Overview": {
+    "file": "screen_6937.rdf",
+    "events": [
+      "Button_Overview_Legend_X1189_Y2_OnUp",
+      "Button_Overview_Legend_X1189_Y2_1_OnUp",
+      "Zone06Overview_OnLoaded",
+      "Button_Back_OnUp",
+      "Button_Back_1_OnDown",
+      "Button_Back_3_OnDown",
+      "Zone06Overview_OnUnloaded",
+      "Faceplate_container_2_OnReleaseEvent",
+      "Faceplate_container_11_OnReleaseEvent",
+      "Faceplate_container_16_OnReleaseEvent",
+      "Faceplate_container_17_OnReleaseEvent",
+      "Faceplate_container_18_OnReleaseEvent",
+      "Faceplate_container_6_OnPressevent",
+      "Faceplate_container_1_OnPressevent",
+      "Faceplate_container_22_OnPressevent",
+      "Faceplate_container_8_OnPressevent",
+      "Faceplate_container_23_OnPressevent",
+      "Faceplate_container_23_OnReleaseEvent",
+      "Faceplate_container_3_OnPressevent",
+      "Faceplate_container_5_OnPressevent",
+      "Faceplate_container_5_OnReleaseEvent"
+    ],
+    "popups": [
+      "Pop-up_OVERVIEW_LEGEND_Popup",
+      "Pop-up_OPMode"
+    ],
+    "screenSwitches": [
+      "MB200APCRH1 LOADING STAND FIFO",
+      "Marriage_MB200_MB200R04",
+      "200APC1ayout",
+      "200FX1Layout",
+      "200PRBCompleteDisplay",
+      "200RB04CompleteDisplay",
+      "200APC1CompleteDisplay",
+      "Robot_Kuka",
+      "Robot_PLP_Kuka"
+    ]
+  },
+  "MarriageFIFO_MB190_MB190RB02": {
+    "file": "screen_6995.rdf",
+    "events": [],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "MarriageFIFO_MB200_MB200RB04": {
+    "file": "screen_7013.rdf",
+    "events": [],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Marriage_MB190_MB190R02": {
+    "file": "screen_7015.rdf",
+    "events": [
+      "Button_15_OnDown",
+      "Button_14_OnDown",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Button_20_OnUp",
+      "Button_20_OnDown",
+      "Marriage_MB190_MB190R02_OnUnloaded"
+    ],
+    "popups": [
+      "Marriage ",
+      "Loading stand"
+    ],
+    "screenSwitches": [
+      "StyleWrite"
+    ]
+  },
+  "Marriage_MB200_MB200R04": {
+    "file": "screen_7049.rdf",
+    "events": [
+      "Button_15_OnDown",
+      "Button_14_OnDown",
+      "Fusszeile_Button_ManualOPMode1_3_OnUp",
+      "Fusszeile_Button_ManualOPMode1_1_OnUp",
+      "Fusszeile_Button_ManualOPMode1_2_OnUp",
+      "Fusszeile_Button_ManualOPMode1_4_OnUp",
+      "Button_20_OnUp",
+      "Button_20_OnDown",
+      "Marriage_MB200_MB200R04_OnUnloaded"
+    ],
+    "popups": [
+      "Marriage ",
+      "Loading stand"
+    ],
+    "screenSwitches": [
+      "StyleWrite"
+    ]
+  },
+  "RobotService_Zone05_1": {
+    "file": "screen_7081.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone05_1_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "RobotService_Zone05": {
+    "file": "screen_7085.rdf",
+    "events": [
+      "Button_Back_1_OnUp",
+      "Button_Back_2_OnUp",
+      "RobotService_Zone05_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "RobotService_Zone05_1",
+      "RobotService_Zone05"
+    ]
+  },
+  "RobotService_Zone06": {
+    "file": "screen_7089.rdf",
+    "events": [
+      "Button_Back_OnUp",
+      "RobotService_Zone06_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Call_ServiceButtons": {
+    "file": "screen_7139.rdf",
+    "events": [
+      "Button_15_OnTapped"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "Call_ServiceButtons_1"
+    ]
+  },
+  "Call_ServiceButtons_1": {
+    "file": "screen_7149.rdf",
+    "events": [
+      "Button_15_OnTapped"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "Call_ServiceButtons_2"
+    ]
+  },
+  "ProductionCountSummary": {
+    "file": "screen_7153.rdf",
+    "events": [
+      "ProductionCountSummary_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "ProductionCount": {
+    "file": "screen_7159.rdf",
+    "events": [
+      "Button_15_OnDown",
+      "ProductionCount_OnUnloaded"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Call_ServiceButtons_2": {
+    "file": "screen_7234.rdf",
+    "events": [],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "PopupAndonLegend": {
+    "file": "screen_7236.rdf",
+    "events": [
+      "Cancel_Mode_OnUp",
+      "Cancel_Mode_OnDown"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "PopupCycleTimeLegend": {
+    "file": "screen_7239.rdf",
+    "events": [
+      "Cancel_Mode_OnUp",
+      "Cancel_Mode_OnDown"
+    ],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "CycleTime": {
+    "file": "screen_7242.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "CycleTime_OnUnloaded",
+      "CycleTime_OnTapped",
+      "CycleTime_OnContextTapped"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "T100ms": {
+    "file": "screen_7249.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "IO_field_1_ProcessValue_Trigger"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": []
+  },
+  "01_ScreenLayout": {
+    "file": "screen_986.rdf",
+    "events": [],
+    "popups": [],
+    "screenSwitches": []
+  },
+  "Main": {
+    "file": "screen_989.rdf",
+    "events": [
+      "Main_OnLoaded",
+      "Overview_01_Button_1_OnUp",
+      "Overview_01_Button_6_OnUp",
+      "Overview_01_Button_2_OnUp",
+      "Overview_01_Button_3_OnUp",
+      "Main_OnUnloaded",
+      "Overview_01_Button_4_OnUp",
+      "Overview_01_Button_5_OnUp",
+      "Overview_01_Button_7_OnUp",
+      "Overview_01_Button_8_OnUp"
+    ],
+    "popups": [],
+    "screenSwitches": [
+      "SafetyZone03Overview",
+      "SafetyZone04Overview",
+      "SafetyZone05Overview",
+      "SafetyZone06Overview"
+    ]
+  },
+  "150PRBCompleteDisplay_1": {
+    "file": "screen_993.rdf",
+    "events": [
+      "Move_Legend_OnTapped",
+      "Move_Legend_OnKeyUp",
+      "_50PRBCompleteDisplay_1_OnUnloaded",
+      "Button_Back_1_OnUp",
+      "Button_Back_OnUp",
+      "Button_Back_2_OnUp",
+      "GraphViewControl1_3_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_3_OnAlarmViewButtonTapped",
+      "GraphViewControl1_4_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_4_OnAlarmViewButtonTapped",
+      "GraphViewControl1_5_OnPlcCodeViewerButtonTapped",
+      "GraphViewControl1_5_OnAlarmViewButtonTapped",
+      "_50PRBCompleteDisplay_1_OnLoaded"
+    ],
+    "popups": [
+      "Pop-up_MOVE_LEGEND_Popup"
+    ],
+    "screenSwitches": [
+      "150PRBCompleteDisplay_2",
+      "ALARM"
+    ]
+  }
+}

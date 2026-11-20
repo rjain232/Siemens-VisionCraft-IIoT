@@ -1,0 +1,2774 @@
+{
+  "timestamp": "2026-11-19T07:10:56.199Z",
+  "totalScreens": 211,
+  "precisionSummary": {
+    "elementLevelScreens": 157,
+    "subsystemFallbackScreens": 54,
+    "percentPrecise": "74.4%",
+    "totalBoundElements": 4984
+  },
+  "runtimeNavigationSummary": {
+    "screensWithNavTruth": 116,
+    "totalPopupsTriggered": 107,
+    "totalScreenSwitchesMapped": 390
+  },
+  "screens": [
+    {
+      "index": 1,
+      "screen": "01_ScreenLayout",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 2,
+      "screen": "02_Header",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 44,
+      "runtimeEvents": 21,
+      "popupsTriggered": [
+        "Pop-up_ControlOnOff_Popup",
+        "Pop-up_SPEC_FUNCTIONS_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM_HISTORY",
+        "SYSTEM_SETTINGS_1",
+        "PN_DIAGNOSTIC_ALL",
+        "Main",
+        "10_SubMenus"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 3,
+      "screen": "10_SubMenus",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 8,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "Sew_TurnTable",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "None"
+    },
+    {
+      "index": 4,
+      "screen": "11_SubMenus_Type",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 27,
+      "runtimeEvents": 18,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "OrderManagement",
+        "RFIDWrite",
+        "StyleWrite",
+        "StyleOverview",
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "11_SubMenus_Type",
+        "Zone03Overview",
+        "Zone06Overview",
+        "Zone05Overview",
+        "Zone04Overview",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "GlobalRobotHmiInterface_GripperHmi{18}_ToolType"
+    },
+    {
+      "index": 5,
+      "screen": "12_SubMenus_Robot",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "runtimeEvents": 12,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "RobotCollision",
+        "RobotService_Zone03",
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "RobotService_Zone05",
+        "RobotService_Zone06",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "Global_Robot_State_State_Robot{15}"
+    },
+    {
+      "index": 6,
+      "screen": "13_SubMenus_SEW",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "runtimeEvents": 10,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "SEW_FIFO",
+        "Sew_Lifter-Tp",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 7,
+      "screen": "14_Alarm",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 8,
+      "screen": "14_SubMenus_Alarm",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 9,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "ALARM_HISTORY",
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 9,
+      "screen": "150FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 28,
+      "runtimeEvents": 16,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone03Overview",
+        "USER_OPERATION",
+        "150FX1Layout_Lifter",
+        "150Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos",
+        "150J5",
+        "150V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 10,
+      "screen": "150FX1Layout_Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 28,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone03Overview",
+        "USER_OPERATION"
+      ],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 11,
+      "screen": "150J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION",
+        "150Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "150V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 12,
+      "screen": "150Pop-up_Device",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Dev_Line_ComstatusHMI_Device_Com_OK"
+    },
+    {
+      "index": 13,
+      "screen": "150PRBCompleteDisplay_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 17,
+      "runtimeEvents": 13,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "150PRBCompleteDisplay_2",
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 14,
+      "screen": "150PRBCompleteDisplay_2",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 18,
+      "runtimeEvents": 11,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "150PRBCompleteDisplay_3",
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 15,
+      "screen": "150PRBCompleteDisplay_3",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 18,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 16,
+      "screen": "150RobotCollision",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 53,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{4}"
+    },
+    {
+      "index": 17,
+      "screen": "150Rollerup Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 13,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 18,
+      "screen": "150V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION",
+        "150Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 19,
+      "screen": "15_SubMenus_ProductionData",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 16,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "ProductionCount",
+        "15_SubMenus_ProductionData",
+        "Call_ServiceButtons",
+        "Andon",
+        "CycleTime",
+        "ProductionCountSummary"
+      ],
+      "sampleTag": "None"
+    },
+    {
+      "index": 20,
+      "screen": "160FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 28,
+      "runtimeEvents": 16,
+      "popupsTriggered": [
+        "OP02Pop-up_PRBHome",
+        "OP02Pop-up_PRBWork",
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION",
+        "160FX1Layout_Lifter",
+        "160Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos",
+        "160V23",
+        "160J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 21,
+      "screen": "160FX1Layout_Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 27,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION"
+      ],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 22,
+      "screen": "160J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION",
+        "160Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "160V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 23,
+      "screen": "160PRBCompleteDisplay_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "runtimeEvents": 13,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "160PRBCompleteDisplay_2",
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 24,
+      "screen": "160PRBCompleteDisplay_2",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 16,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 25,
+      "screen": "160RobotCollision",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 59,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{13}"
+    },
+    {
+      "index": 26,
+      "screen": "160Rollerup Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 12,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 27,
+      "screen": "160V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Zone03Overview",
+        "USER_OPERATION",
+        "160Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 28,
+      "screen": "16_SubMenus_Diagnostic",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "runtimeEvents": 12,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "PN_DIAGNOSTIC_ALL",
+        "IF_SIGNALS_BOOL",
+        "SYSTEM_DIAGNOSTIC_DEVICE-VIEW",
+        "SYSTEM_DIAGNOSTIC_IO-VIEW",
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "FilePathDiagnosticFiles"
+    },
+    {
+      "index": 29,
+      "screen": "170FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 30,
+      "screen": "170PRBCompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 12,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 31,
+      "screen": "170Rollerup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 7,
+      "runtimeEvents": 6,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "170FX1Layout",
+        "USER_OPERATION",
+        "SafetyZone04Overview"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 32,
+      "screen": "17_SubMenus_SystemSettings",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 1,
+      "runtimeEvents": 8,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "SYSTEM_SETTINGS_1",
+        "17_SubMenus_SystemSettings",
+        "PN_DIAGNOSTIC_ALL",
+        "16_SubMenus_Diagnostic",
+        "ALARM",
+        "14_SubMenus_Alarm",
+        "13_SubMenus_SEW",
+        "Robot_Kuka",
+        "12_SubMenus_Robot",
+        "StyleOverview",
+        "11_SubMenus_Type",
+        "ProductionCount",
+        "15_SubMenus_ProductionData"
+      ],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 33,
+      "screen": "180FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP04Pop-up_PRBWork",
+        "OP04Pop-up_PRBHome"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "180Rollerup",
+        "Valve8Pos"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 34,
+      "screen": "180PRBCompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 13,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 35,
+      "screen": "180Rollerup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 7,
+      "runtimeEvents": 6,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "190FX1Layout",
+        "USER_OPERATION",
+        "SafetyZone05Overview"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 36,
+      "screen": "190CompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 5,
+      "runtimeEvents": 5,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 37,
+      "screen": "190FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 31,
+      "runtimeEvents": 16,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190FX1Layout_Lifter",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos",
+        "190J5",
+        "190V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 38,
+      "screen": "190FX1Layout_Docking",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 12,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "Pop-up_PRBHome",
+        "Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "Valve8Pos",
+        "190FX1Layout_Lifter"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 39,
+      "screen": "190FX1Layout_Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 32,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBWork",
+        "OP01Pop-up_PRBHome"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190FX2RhSliderFixtureLayout",
+        "190Passing stand"
+      ],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 40,
+      "screen": "190FX2RhSliderFixtureLayout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 22,
+      "runtimeEvents": 13,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190FX2RhSliderLayout",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 41,
+      "screen": "190FX2RhSliderLayout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 14,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190FX2RhSliderFixtureLayout",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos",
+        "190FX3LhSliderLayout"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 42,
+      "screen": "190FX3LhSliderFixtureLayout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 22,
+      "runtimeEvents": 12,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 43,
+      "screen": "190FX3LhSliderLayout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 13,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "OP01Pop-up_PRBHome",
+        "OP01Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "190FX2RhSliderFixtureLayout",
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190FX3LhSliderFixtureLayout",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "Valve8Pos"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 44,
+      "screen": "190J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190J5RoofGeo",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 45,
+      "screen": "190J5RoofGeo",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190J5RoofHandling",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 46,
+      "screen": "190J5RoofHandling",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 47,
+      "screen": "190Passing stand",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 9,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 48,
+      "screen": "190PRBCompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 18,
+      "runtimeEvents": 14,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM",
+        "190PRBCompleteDisplay_1"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 49,
+      "screen": "190PRBCompleteDisplay_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 11,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 50,
+      "screen": "190PSCompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 51,
+      "screen": "190RB02CompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 52,
+      "screen": "190RB02_J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB02_V23",
+        "190RB02_Stand_J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 53,
+      "screen": "190RB02_Stand_J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB02_Stand_V23",
+        "190RB02_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 54,
+      "screen": "190RB02_Stand_V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB02_Stand_J5",
+        "190RB02_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 55,
+      "screen": "190RB02_V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB02_J5",
+        "190RB02_Stand_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 56,
+      "screen": "190RB06CompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 57,
+      "screen": "190RB06_J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB06_V23",
+        "190RB06_Stand_J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 58,
+      "screen": "190RB06_Stand_J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB06_Stand_V23",
+        "190RB06_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 59,
+      "screen": "190RB06_Stand_V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 5,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB06_Stand_J5",
+        "190RB06_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 60,
+      "screen": "190RB06_V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 4,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "190RB06_J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 61,
+      "screen": "190RobotCollision",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 134,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{6}"
+    },
+    {
+      "index": 62,
+      "screen": "190Rollerup Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 13,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 63,
+      "screen": "190V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190V23RoofGeo",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 64,
+      "screen": "190V23RoofGeo",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190V23RoofHandling",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 65,
+      "screen": "190V23RoofHandling",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "190Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 66,
+      "screen": "20023Fkt_Bkt",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "USER_OPERATION",
+        "190J5RoofGeo",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 67,
+      "screen": "200APC1ayout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "Sew_APC",
+        "SafetyZone06Overview",
+        "USER_OPERATION",
+        "MB200APCRH1 LOADING STAND FIFO"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 68,
+      "screen": "200APC1CompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 69,
+      "screen": "200APC1FIFO",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 70,
+      "screen": "200APC1FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 13,
+      "runtimeEvents": 12,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone05Overview",
+        "USER_OPERATION",
+        "Valve8Pos"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 71,
+      "screen": "200FX1Layout",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 34,
+      "runtimeEvents": 16,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "Pop-up_PRBHome",
+        "Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone06Overview",
+        "Valve8Pos",
+        "USER_OPERATION",
+        "200FX1Layout_Docking",
+        "200Rollerup Lifter",
+        "Robot_PLP_Kuka",
+        "200V23",
+        "200J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 72,
+      "screen": "200FX1Layout_Docking",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 12,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "Pop-up_PRBHome",
+        "Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone06Overview",
+        "USER_OPERATION",
+        "Valve8Pos",
+        "200FX1Layout_Lifter"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 73,
+      "screen": "200FX1Layout_Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 30,
+      "runtimeEvents": 6,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup",
+        "Pop-up_PRBHome",
+        "Pop-up_PRBWork"
+      ],
+      "navigationTargets": [
+        "SafetyZone06Overview",
+        "USER_OPERATION"
+      ],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 74,
+      "screen": "200J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 10,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "SafetyZone06Overview",
+        "USER_OPERATION",
+        "190J5RoofGeo",
+        "200Rollerup Lifter",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 75,
+      "screen": "200J5Fkt_Bkt",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "USER_OPERATION",
+        "190J5RoofGeo",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 76,
+      "screen": "200PRBCompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 18,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM",
+        "200PRBCompleteDisplay_1"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 77,
+      "screen": "200PRBCompleteDisplay_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 14,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 78,
+      "screen": "200RB04CompleteDisplay",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 9,
+      "runtimeEvents": 7,
+      "popupsTriggered": [
+        "Pop-up_TEC_UNIT_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 79,
+      "screen": "200RB04_J5",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 4,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "200RB04_Stand_J5"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 80,
+      "screen": "200RB04_Stand_J5",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "runtimeEvents": 3,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 81,
+      "screen": "200RB04_Stand_V23",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "runtimeEvents": 3,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "R03_Stand_J5_PRX01"
+    },
+    {
+      "index": 82,
+      "screen": "200RB04_V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 4,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "200RB04_Stand_V23"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 83,
+      "screen": "200RobotCollision",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 71,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{13}"
+    },
+    {
+      "index": 84,
+      "screen": "200Rollerup Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 13,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 85,
+      "screen": "200V23",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 8,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "USER_OPERATION",
+        "190J5RoofGeo",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 86,
+      "screen": "ALARM",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 87,
+      "screen": "ALARM_HISTORY",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 6,
+      "popupsTriggered": [
+        "Pop-up_ALARM_HISTORY_LEGEND_Popup"
+      ],
+      "navigationTargets": [
+        "ALARM"
+      ],
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 88,
+      "screen": "Andon",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 23,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Andon"
+    },
+    {
+      "index": 89,
+      "screen": "Barcode_Scanner",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 90,
+      "screen": "Call_ServiceButtons",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "Call_ServiceButtons_1"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 91,
+      "screen": "Call_ServiceButtons_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "Call_ServiceButtons_2"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 92,
+      "screen": "Call_ServiceButtons_2",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 93,
+      "screen": "CENTRAL LOADING FIFO",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanelopmode{4}userInterfaceOut"
+    },
+    {
+      "index": 94,
+      "screen": "CycleTime",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 15,
+      "runtimeEvents": 4,
+      "popupsTriggered": [
+        "Pop-up_MOVE_LEGEND_Popup"
+      ],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 95,
+      "screen": "Dry_runFunction Select",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 96,
+      "screen": "Grinding",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 97,
+      "screen": "Hemming Process",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 98,
+      "screen": "HTML_VIEW",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 31,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OVERVIEW_LEGEND_Popup_XPos"
+    },
+    {
+      "index": 99,
+      "screen": "IF_SIGNALS_BOOL",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 5,
+      "runtimeEvents": 5,
+      "popupsTriggered": [
+        "Pop-up_IF_SIGNALS_LEGEND_Popup"
+      ],
+      "navigationTargets": [],
+      "sampleTag": "Temp_bool"
+    },
+    {
+      "index": 100,
+      "screen": "Main",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 4,
+      "runtimeEvents": 10,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "SafetyZone03Overview",
+        "SafetyZone04Overview",
+        "SafetyZone05Overview",
+        "SafetyZone06Overview"
+      ],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 101,
+      "screen": "MarriageFIFO_MB190_MB190RB02",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 102,
+      "screen": "MarriageFIFO_MB200_MB200RB04",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 103,
+      "screen": "Marriage_MB190_MB190R02",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Marriage ",
+        "Loading stand"
+      ],
+      "navigationTargets": [
+        "StyleWrite"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 104,
+      "screen": "Marriage_MB200_MB200R04",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "runtimeEvents": 9,
+      "popupsTriggered": [
+        "Marriage ",
+        "Loading stand"
+      ],
+      "navigationTargets": [
+        "StyleWrite"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 105,
+      "screen": "MB150 first station LOADING STAND FIFO",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanelopmode{4}userInterfaceOut"
+    },
+    {
+      "index": 106,
+      "screen": "MB190RB06 LOADING STAND FIFO",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanelopmode{4}userInterfaceOut"
+    },
+    {
+      "index": 107,
+      "screen": "MB200APCRH1 LOADING STAND FIFO",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanelopmode{4}userInterfaceOut"
+    },
+    {
+      "index": 108,
+      "screen": "OP010Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 109,
+      "screen": "OP010Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 110,
+      "screen": "OP01Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 111,
+      "screen": "OP01Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 112,
+      "screen": "OP02Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 113,
+      "screen": "OP02Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 114,
+      "screen": "OP03Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 15,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 115,
+      "screen": "OP03Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 15,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 116,
+      "screen": "OP04Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 15,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 117,
+      "screen": "OP04Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 12,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 118,
+      "screen": "OrderManagement",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 119,
+      "screen": "PN_DIAGNOSTIC ETH P1P2P3",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 30,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 120,
+      "screen": "PN_DIAGNOSTIC ETH P4P5P6",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 28,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 121,
+      "screen": "PN_DIAGNOSTIC ETH P7P8",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 26,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 122,
+      "screen": "PN_DIAGNOSTIC ETH P9P10",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 21,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 123,
+      "screen": "PN_DIAGNOSTIC_ALL",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 17,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 124,
+      "screen": "Pop-up_AI_ENERGYMETER_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 125,
+      "screen": "Pop-up_ALARM_HISTORY_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Alarmfilter"
+    },
+    {
+      "index": 126,
+      "screen": "Pop-up_ATDC",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 127,
+      "screen": "Pop-up_ControlOnOff_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "InstControlOnOffstatHmi"
+    },
+    {
+      "index": 128,
+      "screen": "Pop-up_CURVE_F-CYCLETIMES_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 129,
+      "screen": "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 130,
+      "screen": "Pop-up_Device",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Dev_Line_ComstatusHMI_Device_Com_OK"
+    },
+    {
+      "index": 131,
+      "screen": "Pop-up_EEM_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 132,
+      "screen": "Pop-up_EUCHNER_MGB_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 133,
+      "screen": "Pop-up_Hmi_Opmodes12_h_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 51,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 134,
+      "screen": "Pop-up_Hmi_Opmodes18_h_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 75,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 135,
+      "screen": "Pop-up_Hmi_Opmodes24_h_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 80,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 136,
+      "screen": "Pop-up_Hmi_Opmodes6_h_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 27,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 137,
+      "screen": "Pop-up_IF_SIGNALS_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "SelectSignalsHmi"
+    },
+    {
+      "index": 138,
+      "screen": "Pop-up_ISRA VISION",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 139,
+      "screen": "Pop-up_Mig Weld",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 140,
+      "screen": "Pop-up_MOVE_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 141,
+      "screen": "Pop-up_NutRunner",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 142,
+      "screen": "Pop-up_OPMode",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 51,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 143,
+      "screen": "Pop-up_Opmodes12_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 58,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 144,
+      "screen": "Pop-up_Opmodes18_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 82,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 145,
+      "screen": "Pop-up_Opmodes24_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 106,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 146,
+      "screen": "Pop-up_Opmodes6_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 34,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 147,
+      "screen": "Pop-up_OVERVIEW_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 148,
+      "screen": "Pop-up_PANEL_INITIALIZED_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 149,
+      "screen": "Pop-up_PLP",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 150,
+      "screen": "Pop-up_PN_DEV_DIAG_Counter_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 151,
+      "screen": "Pop-up_PN_DEV_DIAG_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 152,
+      "screen": "Pop-up_PRBHome",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 30,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 153,
+      "screen": "Pop-up_PRBWork",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 28,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "82140PRBLIFTRB3RB4RB02_Weldgraph_DB_learningModeThresholdWarn"
+    },
+    {
+      "index": 154,
+      "screen": "Pop-up_PRODDATA_CT_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 155,
+      "screen": "Pop-up_PRODDATA_LV_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 156,
+      "screen": "Pop-up_PRODDATA_PC_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 157,
+      "screen": "Pop-up_PRODDATA_SC_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 158,
+      "screen": "Pop-up_SafetyGate",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 159,
+      "screen": "Pop-up_Sealer_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 160,
+      "screen": "Pop-up_Sealer_2",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 161,
+      "screen": "Pop-up_SPEC_FUNCTIONS_Popup",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 162,
+      "screen": "Pop-up_StyleConfigLocal",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 163,
+      "screen": "Pop-up_StyleConfigMESDownload",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 164,
+      "screen": "Pop-up_StyleConfigRFIDRead",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 165,
+      "screen": "Pop-up_StyleConfigRFIDWrite",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 166,
+      "screen": "Pop-up_SYSTEM_DIAGNOSTIC_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 167,
+      "screen": "Pop-up_SYSTEM_RTSTOP_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 168,
+      "screen": "Pop-up_TEC_UNIT_DIAG_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalInterfacediagPlc"
+    },
+    {
+      "index": 169,
+      "screen": "Pop-up_TEC_UNIT_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "PN_DEV_DIAG_Counter_Popup_XPos"
+    },
+    {
+      "index": 170,
+      "screen": "Pop-up_USER_OPERATION_LEGEND_Popup",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 50,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 171,
+      "screen": "Pop-up_VISION OFFSET VALUES",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 172,
+      "screen": "PopupAndonLegend",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 173,
+      "screen": "PopupCycleTimeLegend",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 174,
+      "screen": "ProductionCount",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 2,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "ProductionCountIndex"
+    },
+    {
+      "index": 175,
+      "screen": "ProductionCountSummary",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 0,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "None"
+    },
+    {
+      "index": 176,
+      "screen": "RFIDWrite",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 3,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "Barcode_Scanner"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 177,
+      "screen": "RobotCollision",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 50,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 178,
+      "screen": "RobotService_Zone01_2",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 7,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 179,
+      "screen": "RobotService_Zone01_mig weld",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 4,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 180,
+      "screen": "RobotService_Zone02",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 4,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 181,
+      "screen": "RobotService_Zone03",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 10,
+      "runtimeEvents": 3,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "RobotService_Zone01_2"
+      ],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 182,
+      "screen": "RobotService_Zone04",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 8,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 183,
+      "screen": "RobotService_Zone05",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 9,
+      "runtimeEvents": 3,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "RobotService_Zone05_1",
+        "RobotService_Zone05"
+      ],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 184,
+      "screen": "RobotService_Zone05_1",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 7,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 185,
+      "screen": "RobotService_Zone06",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 9,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{0}"
+    },
+    {
+      "index": 186,
+      "screen": "Robot_Kuka",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 356,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 187,
+      "screen": "Robot_NBG_Kuka",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 152,
+      "runtimeEvents": 47,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{1}"
+    },
+    {
+      "index": 188,
+      "screen": "Robot_PLP_Kuka",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 111,
+      "runtimeEvents": 31,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{1}"
+    },
+    {
+      "index": 189,
+      "screen": "Rollerup Lifter",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 9,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Lifter2S2D2P_State"
+    },
+    {
+      "index": 190,
+      "screen": "SafetyZone03Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 14,
+      "runtimeEvents": 26,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode",
+        "Pop-up_SafetyGate",
+        "150Pop-up_Device"
+      ],
+      "navigationTargets": [
+        "Robot_Kuka",
+        "Robot_PLP_Kuka",
+        "150PRBCompleteDisplay_1",
+        "160FX1Layout",
+        "160PRBCompleteDisplay_1",
+        "150FX1Layout"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 191,
+      "screen": "SafetyZone04Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 192,
+      "screen": "SafetyZone05Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 18,
+      "runtimeEvents": 25,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode"
+      ],
+      "navigationTargets": [
+        "190RB02CompleteDisplay",
+        "Robot_Kuka",
+        "190PSCompleteDisplay",
+        "190FX1Layout",
+        "190RB06CompleteDisplay",
+        "190PRBCompleteDisplay",
+        "Robot_PLP_Kuka",
+        "190Passing stand",
+        "180FX1Layout",
+        "180PRBCompleteDisplay"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 193,
+      "screen": "SafetyZone06Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 14,
+      "runtimeEvents": 21,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode",
+        "Pop-up_SafetyGate",
+        "Pop-up_Device"
+      ],
+      "navigationTargets": [
+        "200APC1ayout",
+        "200FX1Layout",
+        "200PRBCompleteDisplay",
+        "200RB04CompleteDisplay",
+        "200APC1CompleteDisplay",
+        "Robot_Kuka",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 194,
+      "screen": "Screen_1",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 8,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "ExampleOverview_Screen1_Popup_XPos"
+    },
+    {
+      "index": 195,
+      "screen": "Sew_APC",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 86,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 196,
+      "screen": "SEW_FIFO",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "runtimeEvents": 1,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 197,
+      "screen": "Sew_Lifter-Tp",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 6,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 198,
+      "screen": "Sew_TurnTable",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 120,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalSEW07B_HMI_Interface_HMI_Interface_SewLfterTp{1}_receive_Actual_Position_1"
+    },
+    {
+      "index": 199,
+      "screen": "StyleOverview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 15,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [
+        "StyleWrite"
+      ],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 200,
+      "screen": "StyleWrite",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 2,
+      "runtimeEvents": 6,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 201,
+      "screen": "SWEServoHelp",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 1,
+      "runtimeEvents": 2,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Global_Robot_State_State_Robot{1}"
+    },
+    {
+      "index": 202,
+      "screen": "SYSTEM_DIAGNOSTIC_DEVICE-VIEW",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 5,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 203,
+      "screen": "SYSTEM_SETTINGS_1",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "runtimeEvents": 26,
+      "popupsTriggered": [
+        "Pop-up_CURVE_F-CYCLETIMES_Popup",
+        "Pop-up_CURVE_STD-CYCLETIMES_Popup",
+        "Pop-up_SYSTEM_RTSTOP_Popup"
+      ],
+      "navigationTargets": [
+        "SYSTEM_SETTINGS_2"
+      ],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 204,
+      "screen": "SYSTEM_SETTINGS_2",
+      "tagPrecision": "SUBSYSTEM_FILTER",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "SystemSettings_Changed"
+    },
+    {
+      "index": 205,
+      "screen": "Tool Stand Bit",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 3,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRobotNBGHmiInterface"
+    },
+    {
+      "index": 206,
+      "screen": "USER_OPERATION",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 17,
+      "runtimeEvents": 6,
+      "popupsTriggered": [
+        "Pop-up_USER_OPERATION_LEGEND_Popup"
+      ],
+      "navigationTargets": [],
+      "sampleTag": "OpmodePanel_opmode{1}_userInterfaceOut_controlNoHmi"
+    },
+    {
+      "index": 207,
+      "screen": "Valve8Pos",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 77,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "Valve1To8_State"
+    },
+    {
+      "index": 208,
+      "screen": "Zone03Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 18,
+      "runtimeEvents": 28,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode",
+        "Pop-up_SafetyGate",
+        "150Pop-up_Device"
+      ],
+      "navigationTargets": [
+        "Robot_Kuka",
+        "Robot_PLP_Kuka",
+        "150PRBCompleteDisplay_1",
+        "160FX1Layout",
+        "160PRBCompleteDisplay_1",
+        "150FX1Layout",
+        "CENTRAL LOADING FIFO",
+        "MB150 first station LOADING STAND FIFO"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 209,
+      "screen": "Zone04Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 5,
+      "runtimeEvents": 0,
+      "popupsTriggered": [],
+      "navigationTargets": [],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 210,
+      "screen": "Zone05Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 25,
+      "runtimeEvents": 28,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode"
+      ],
+      "navigationTargets": [
+        "190RB02CompleteDisplay",
+        "Robot_Kuka",
+        "190PSCompleteDisplay",
+        "190FX1Layout",
+        "190RB06CompleteDisplay",
+        "190PRBCompleteDisplay",
+        "Robot_PLP_Kuka",
+        "190Passing stand",
+        "180FX1Layout",
+        "180PRBCompleteDisplay",
+        "CENTRAL LOADING FIFO",
+        "MB190RB06 LOADING STAND FIFO",
+        "Marriage_MB190_MB190R02"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    },
+    {
+      "index": 211,
+      "screen": "Zone06Overview",
+      "tagPrecision": "100%_ELEMENT_LEVEL",
+      "mappedTags": 20,
+      "runtimeEvents": 21,
+      "popupsTriggered": [
+        "Pop-up_OVERVIEW_LEGEND_Popup",
+        "Pop-up_OPMode"
+      ],
+      "navigationTargets": [
+        "MB200APCRH1 LOADING STAND FIFO",
+        "Marriage_MB200_MB200R04",
+        "200APC1ayout",
+        "200FX1Layout",
+        "200PRBCompleteDisplay",
+        "200RB04CompleteDisplay",
+        "200APC1CompleteDisplay",
+        "Robot_Kuka",
+        "Robot_PLP_Kuka"
+      ],
+      "sampleTag": "GlobalRoller_Bed_Com_Command_RB_Trans{10}_Motor_H"
+    }
+  ]
+}
